@@ -1,7 +1,8 @@
 import React from 'react'
+import AdminLayout from '../layout'
 
 export default function AdminDashboardPage() {
   return (
-    <div>AdminDashboardPage</div>
+    <AdminLayout>AdminDashboardPage</AdminLayout>
   )
 }
