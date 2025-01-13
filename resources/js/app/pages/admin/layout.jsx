@@ -21,30 +21,54 @@ import {
   WrenchScrewdriverIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
-import { ArrowRightEndOnRectangleIcon, ArrowsRightLeftIcon, BarsArrowDownIcon, BuildingOffice2Icon, ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/react/20/solid'
+import { AdjustmentsHorizontalIcon, ArrowRightEndOnRectangleIcon, ArrowsRightLeftIcon, BarsArrowDownIcon, BuildingOffice2Icon, ChevronDownIcon, ChevronRightIcon, MagnifyingGlassIcon, PhoneArrowUpRightIcon } from '@heroicons/react/20/solid'
 import AdminSidenavSection from './_sections/admin-sidenav-sections'
 
 const navigation = [
   { name: 'Dashboard', href: './dashboard', icon: HomeIcon, current: true },
-  { name: 'User Section', href: './users', icon: UsersIcon, current: false },
-  { name: 'Employee Section', href: './employee', icon: UserCircleIcon, current: false },
-  { name: 'Department Section', href: './department', icon: FolderIcon, current: false },
-  { name: 'Office Section', href: './office', icon: BuildingOffice2Icon, current: false },
-  { name: 'Position Section', href: './position', icon: UserGroupIcon, current: false },
-  { name: 'Equipment Type Section', href: './equiptype', icon: WrenchIcon, current: false },
-  { name: 'Furniture/App Type Section', href: './apptype', icon: ArchiveBoxIcon, current: false },
-  { name: 'Maintenance Section', href: './maintenance', icon: WrenchScrewdriverIcon, current: false },
-  { name: 'Report Section', href: './reports', icon: PresentationChartBarIcon, current: false },
-  { name: 'Equipment Inventory', href: './equipinventory', icon: CircleStackIcon, current: false },
-  { name: 'Furniture/Appliances Inventory', href: './appinventory', icon: DocumentChartBarIcon, current: false },
+  { 
+    name: 'Beneficiary Section', icon: UsersIcon, current: false,
+    children: [
+      { name: 'Register Beneficiary', href: './register' , icon: ChevronRightIcon },
+      { name: 'Active Beneficiary', href: './active' , icon: ChevronRightIcon },
+      { name: 'Inactive Beneficiary', href: './inactive' , icon: ChevronRightIcon },
+      { name: 'Most Recent Encoded', href: './recent' , icon: ChevronRightIcon },
+    ],
+  },
+  { 
+    name: 'Report Section', icon: PresentationChartBarIcon, current: false,
+    children: [
+      { name: 'General Report', href: './general' , icon: ChevronRightIcon },
+      { name: 'Batch Printing', href: './printing' , icon: ChevronRightIcon },
+    ],
+  },
 ]
 const teams = [
-  { id: 1, name: 'Send/Transfer Items', href: './transfer', icon: ArrowsRightLeftIcon, current: false },
-  { id: 2, name: 'Receive Items', href: './receive', icon: ArrowRightEndOnRectangleIcon, current: false },
-  { id: 3, name: 'Purchase Request', href: './request', icon: BarsArrowDownIcon, current: false },
+  { 
+    id: 1, name: 'Account Management', icon: UserGroupIcon, current: false,
+    children: [
+      { name: 'Accounts List', href: './accounts' , icon: ChevronRightIcon },
+      { name: 'Create Account', href: './create-account' , icon: ChevronRightIcon },
+    ], 
+  },
+  { 
+    id: 2, name: 'System Maintenance', icon: AdjustmentsHorizontalIcon, current: false,
+    children: [
+      { name: 'LGU Profile', href: './lgu-profile' , icon: ChevronRightIcon },
+      { name: 'Brgy.Verifier', href: './verifier' , icon: ChevronRightIcon },
+      { name: 'Organization', href: './organization' , icon: ChevronRightIcon },
+    ], 
+  },
+  { 
+    id: 3, name: 'Help Desk', icon: PhoneArrowUpRightIcon, current: false,
+    children: [
+      { name: 'Download User Manual', href: './manual' , icon: ChevronRightIcon },
+      { name: 'Contact Us', href: './contact' , icon: ChevronRightIcon },
+    ], 
+  },
 ]
 const userNavigation = [
-  { name: 'Your profile', href: '#' },
+  { name: 'My profile', href: '#' },
   { name: 'Sign out', href: '#' },
 ]
 
