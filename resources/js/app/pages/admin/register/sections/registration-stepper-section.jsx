@@ -122,7 +122,7 @@ export default function RegistrationStepperSection() {
                                                     )}
                                                 >
                                                     <span className="shrink-0">
-                                                        <span className="flex size-10 items-center justify-center rounded-full bg-indigo-600">
+                                                        <span className="flex size-10 items-center justify-center rounded-full bg-green-600">
                                                             <CheckIcon
                                                                 aria-hidden="true"
                                                                 className="size-6 text-white"
@@ -143,7 +143,7 @@ export default function RegistrationStepperSection() {
                                             <>
                                                 <span
                                                     aria-hidden="true"
-                                                    className="absolute left-0 top-0 h-full w-1 bg-indigo-600 lg:bottom-0 lg:top-auto lg:h-1 lg:w-full"
+                                                    className="absolute left-0 top-0 h-full w-1 bg-green-600 lg:bottom-0 lg:top-auto lg:h-1 lg:w-full"
                                                 />
                                                 <span
                                                     className={classNames(
@@ -152,14 +152,14 @@ export default function RegistrationStepperSection() {
                                                     )}
                                                 >
                                                     <span className="shrink-0">
-                                                        <span className="flex size-10 items-center justify-center rounded-full border-2 border-indigo-600">
-                                                            <span className="text-indigo-600">
+                                                        <span className="flex size-10 items-center justify-center rounded-full border-2 border-green-600">
+                                                            <span className="text-green-600">
                                                                 {step.id}
                                                             </span>
                                                         </span>
                                                     </span>
                                                     <span className="ml-4 mt-0.5 flex min-w-0 flex-col">
-                                                        <span className="text-sm font-medium text-indigo-600">
+                                                        <span className="text-sm font-medium text-green-600">
                                                             {step.name}
                                                         </span>
                                                         <span className="text-sm font-medium text-gray-500">
@@ -214,7 +214,7 @@ export default function RegistrationStepperSection() {
                     </button>
                     <button
                         onClick={currentStep === steps.length ? () => alert('Form Submitted') : handleNext} // Change this action to submit or redirect
-                        className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
+                        className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
                         disabled={currentStep === steps.length}
                     >
                         {currentStep === steps.length ? "Submit" : "Next"}

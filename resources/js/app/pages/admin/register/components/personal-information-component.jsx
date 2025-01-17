@@ -5,7 +5,7 @@ export default function PersonalInformationComponent() {
     <div>
         <div className="border-b border-gray-900/10 pb-12">
                             <h2 className="text-base/7 font-semibold text-gray-900">
-                                Personal Information
+                                I. Personal Information
                             </h2>
                             <p className="mt-1 text-sm/6 text-gray-600">
                                 Use a permanent address where you can receive
