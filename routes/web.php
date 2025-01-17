@@ -33,6 +33,42 @@ Route::get('/admin/dashboard', function () {
     return Inertia::render('admin/dashboard/page');
 });
 
+Route::get('/admin/register', function () {
+    return Inertia::render('admin/register/page');
+});
+
+Route::get('/admin/beneficiary', function () {
+    return Inertia::render('admin/beneficiary/page');
+});
+
+Route::get('/admin/reports', function () {
+    return Inertia::render('admin/reports/page');
+});
+
+Route::get('/admin/accounts', function () {
+    return Inertia::render('admin/accounts/page');
+});
+
+Route::get('/admin/create-account', function () {
+    return Inertia::render('admin/create-account/page');
+});
+
+Route::get('/admin/lgu-profile', function () {
+    return Inertia::render('admin/lgu-profile/page');
+});
+
+Route::get('/admin/verifier', function () {
+    return Inertia::render('admin/verifier/page');
+});
+
+Route::get('/admin/organization', function () {
+    return Inertia::render('admin/organization/page');
+});
+
+Route::get('/admin/contact', function () {
+    return Inertia::render('admin/contact/page');
+});
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
