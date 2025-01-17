@@ -30,15 +30,15 @@ const navigation = [
     name: 'Beneficiary Section', icon: UsersIcon, current: false,
     children: [
       { name: 'Register Beneficiary', href: './register' , icon: ChevronRightIcon },
-      { name: 'Active Beneficiary', href: './active' , icon: ChevronRightIcon },
-      { name: 'Inactive Beneficiary', href: './inactive' , icon: ChevronRightIcon },
+      { name: 'Active Beneficiary', href: './beneficiary?status=active' , icon: ChevronRightIcon },
+      { name: 'Inactive Beneficiary', href: './beneficiary?status=inactive' , icon: ChevronRightIcon },
       { name: 'Most Recent Encoded', href: './recent' , icon: ChevronRightIcon },
     ],
   },
   { 
     name: 'Report Section', icon: PresentationChartBarIcon, current: false,
     children: [
-      { name: 'General Report', href: './general' , icon: ChevronRightIcon },
+      { name: 'General Report', href: './reports' , icon: ChevronRightIcon },
       { name: 'Batch Printing', href: './printing' , icon: ChevronRightIcon },
     ],
   },
