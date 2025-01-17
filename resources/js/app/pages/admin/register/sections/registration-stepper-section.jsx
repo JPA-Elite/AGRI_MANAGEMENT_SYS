@@ -70,14 +70,34 @@ export default function RegistrationStepperSection() {
             <div className="lg:border-b lg:border-t lg:border-gray-200">
                 <nav
                     aria-label="Progress"
-                    className="mx-auto max-w px-4 sm:px-6 lg:px-8"
+                    className=""
                 >
                     <ol
                         role="list"
-                        className="overflow-hidden rounded-md lg:flex lg:rounded-none lg:border-l lg:border-r lg:border-gray-200"
+                        className="overflow-hidden rounded-md lg:flex lg:rounded-none lg:border-l lg:border-r lg:border-b lg:border-gray-200"
                     >
                         {stepsWithStatus.map((step, stepIdx) => (
                             <li key={step.id} className="relative overflow-hidden lg:flex-1">
+                                {/* Separator for all steps except the first */}
+                                {stepIdx > 0 && (
+                                    <div
+                                        aria-hidden="true"
+                                        className="absolute inset-0 left-0 top-0 hidden w-3 lg:block"
+                                    >
+                                        <svg
+                                            fill="none"
+                                            viewBox="0 0 12 82"
+                                            preserveAspectRatio="none"
+                                            className="size-full text-gray-300"
+                                        >
+                                            <path
+                                                d="M0.5 0V31L10.5 41L0.5 51V82"
+                                                stroke="currentColor"
+                                                vectorEffect="non-scaling-stroke"
+                                            />
+                                        </svg>
+                                    </div>
+                                )}
                                 <div
                                     className={classNames(
                                         stepIdx === 0 ? "rounded-t-md border-b-0" : "",
@@ -180,11 +200,11 @@ export default function RegistrationStepperSection() {
                                 </div>
                             </li>
                         ))}
+
                     </ol>
                 </nav>
-                <div className="mb-8 ml-8 mt-4">{renderCurrentForm()}</div>
-                {/* Navigation Buttons */}
-                <div className="mt-4 mb-3 flex items-center justify-between px-8">
+                <div className="mb-8 mt-4">{renderCurrentForm()}</div>
+                <div className="mt-4 flex items-center justify-between mb-3">
                     <button
                         onClick={handlePrevious}
                         className="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400"
@@ -193,11 +213,11 @@ export default function RegistrationStepperSection() {
                         Previous
                     </button>
                     <button
-                        onClick={handleNext}
+                        onClick={currentStep === steps.length ? () => alert('Form Submitted') : handleNext} // Change this action to submit or redirect
                         className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
                         disabled={currentStep === steps.length}
                     >
-                        Next
+                        {currentStep === steps.length ? "Done" : "Next"}
                     </button>
                 </div>
             </div>
