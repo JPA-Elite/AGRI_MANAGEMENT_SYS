@@ -217,7 +217,7 @@ export default function RegistrationStepperSection() {
                         className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
                         disabled={currentStep === steps.length}
                     >
-                        {currentStep === steps.length ? "Done" : "Next"}
+                        {currentStep === steps.length ? "Submit" : "Next"}
                     </button>
                 </div>
             </div>
