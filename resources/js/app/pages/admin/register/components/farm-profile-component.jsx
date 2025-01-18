@@ -26,7 +26,7 @@ function FarmProfileComponent() {
                         value="Farmer"
                         checked={selected === "Farmer"}
                         onChange={() => handleCheckboxChange("Farmer")}
-                        className="h-5 w-5 text-green-600 focus:ring-green-500 border-green-300 rounded"
+                        className="h-5 w-5 text-green-600 focus:ring-green-500 border-gray-300 rounded"
                     />
                     <label
                         htmlFor="farmer"
@@ -44,7 +44,7 @@ function FarmProfileComponent() {
                         onChange={() =>
                             handleCheckboxChange("Farmworker/Laborer")
                         }
-                        className="h-5 w-5 text-green-600 focus:ring-green-500 border-green-300 rounded"
+                        className="h-5 w-5 text-green-600 focus:ring-green-500 border-gray-300 rounded"
                     />
                     <label
                         htmlFor="farmworker"
@@ -60,7 +60,7 @@ function FarmProfileComponent() {
                         value="Fisherfolk"
                         checked={selected === "Fisherfolk"}
                         onChange={() => handleCheckboxChange("Fisherfolk")}
-                        className="h-5 w-5 text-green-600 focus:ring-green-500 border-green-300 rounded"
+                        className="h-5 w-5 text-green-600 focus:ring-green-500 border-gray-300 rounded"
                     />
                     <label
                         htmlFor="fisherfolk"
@@ -76,7 +76,7 @@ function FarmProfileComponent() {
                         value="Agri Youth"
                         checked={selected === "Agri Youth"}
                         onChange={() => handleCheckboxChange("Agri Youth")}
-                        className="h-5 w-5 text-green-600 focus:ring-green-500 border-green-300 rounded"
+                        className="h-5 w-5 text-green-600 focus:ring-green-500 border-gray-300 rounded"
                     />
                     <label
                         htmlFor="agri_youth"
@@ -108,7 +108,7 @@ function FarmProfileComponent() {
                                     id="number"
                                     name="number"
                                     type="number"
-                                    className="w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
+                                    className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                                 />
                             </div>
                         </div>

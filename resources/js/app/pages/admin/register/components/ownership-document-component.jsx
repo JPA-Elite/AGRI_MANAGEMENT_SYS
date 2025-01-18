@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function OwnershipDocumentComponent() {
   return (
-    <div>
+    <div className='mt-5'>
          <div className="col-span-full">
               <label htmlFor="cover-photo" className="block text-sm/6 font-medium text-gray-900">
                 Cover photo
