@@ -16,8 +16,9 @@ export default function SecondFormSection() {
                                 be careful what you share.
                             </p>
                         </div>
-
-                        <FarmProfileComponent />
+                        <div className="border-b border-gray-900/10 pb-12">
+                            <FarmProfileComponent />
+                        </div>
                     </div>
                 </form>
             </div>
