@@ -74,7 +74,7 @@ export default function AdminSidenavSection({ navigation, classNames, teams }) {
                                                                         >
                                                                             <child.icon
                                                                                 aria-hidden="true"
-                                                                                className="h-5 w-5 shrink-0 mr-2"
+                                                                                className="h-3 w-3 shrink-0 mr-2"
                                                                             />
                                                                             {
                                                                                 child.name
@@ -160,7 +160,7 @@ export default function AdminSidenavSection({ navigation, classNames, teams }) {
                                                                         >
                                                                             <child.icon
                                                                                 aria-hidden="true"
-                                                                                className="h-5 w-5 shrink-0 mr-2"
+                                                                                className="h-3 w-3 shrink-0 mr-2"
                                                                             />
                                                                             {
                                                                                 child.name
@@ -195,7 +195,7 @@ export default function AdminSidenavSection({ navigation, classNames, teams }) {
                             </li>
                             <li className="mt-auto">
                                 <a
-                                    href="#"
+                                    href="./settings"
                                     className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-400 hover:bg-green-700 hover:text-white"
                                 >
                                     <Cog6ToothIcon

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CheckIcon } from "@heroicons/react/24/outline";
+import { CheckIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
 import FirstFormSection from "./first-form-section";
 import SecondFormSection from "./second-form-section";
 import ThirdFormSection from "./third-form-section";
@@ -107,7 +107,7 @@ export default function RegistrationStepperSection() {
                                 >
                                     <button
                                         onClick={() => handleStepClick(stepIdx)}
-                                        className="group w-full text-left"
+                                        className="group w-full text-left:"
                                     >
                                         {step.status === "complete" ? (
                                             <>
@@ -210,7 +210,7 @@ export default function RegistrationStepperSection() {
                         className="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400"
                         disabled={currentStep === 1}
                     >
-                        Previous
+                       Previous
                     </button>
                     <button
                         onClick={currentStep === steps.length ? () => alert('Form Submitted') : handleNext} // Change this action to submit or redirect

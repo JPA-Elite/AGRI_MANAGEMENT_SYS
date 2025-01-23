@@ -5,23 +5,17 @@ import {
   Transition,
 } from '@headlessui/react'
 import {
-  ArchiveBoxIcon,
   Bars3Icon,
   BellIcon,
-  CircleStackIcon,
-  Cog6ToothIcon,
-  DocumentChartBarIcon,
-  FolderIcon,
   HomeIcon,
   PresentationChartBarIcon,
-  UserCircleIcon,
   UserGroupIcon,
   UsersIcon,
-  WrenchIcon,
-  WrenchScrewdriverIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
-import { AdjustmentsHorizontalIcon, ArrowRightEndOnRectangleIcon, ArrowsRightLeftIcon, BarsArrowDownIcon, BuildingOffice2Icon, ChevronDownIcon, ChevronRightIcon, MagnifyingGlassIcon, PhoneArrowUpRightIcon } from '@heroicons/react/20/solid'
+import { FaCircleDot } from "react-icons/fa6";
+
+import { AdjustmentsHorizontalIcon, ChevronDownIcon, MagnifyingGlassIcon, PhoneArrowUpRightIcon } from '@heroicons/react/20/solid'
 import AdminSidenavSection from './_sections/admin-sidenav-sections'
 
 const navigation = [
@@ -29,17 +23,16 @@ const navigation = [
   { 
     name: 'Beneficiary Section', icon: UsersIcon, current: false,
     children: [
-      { name: 'Register Beneficiary', href: './register' , icon: ChevronRightIcon },
-      { name: 'Active Beneficiary', href: './beneficiary?status=active' , icon: ChevronRightIcon },
-      { name: 'Inactive Beneficiary', href: './beneficiary?status=inactive' , icon: ChevronRightIcon },
-      { name: 'Most Recent Encoded', href: './recent' , icon: ChevronRightIcon },
+      { name: 'Register Beneficiary', href: './register' , icon: FaCircleDot },
+      { name: 'Active Beneficiary', href: './beneficiary?status=active' , icon: FaCircleDot },
+      { name: 'Inactive Beneficiary', href: './beneficiary?status=inactive' , icon: FaCircleDot },
     ],
   },
   { 
     name: 'Report Section', icon: PresentationChartBarIcon, current: false,
     children: [
-      { name: 'General Report', href: './reports' , icon: ChevronRightIcon },
-      { name: 'Batch Printing', href: './printing' , icon: ChevronRightIcon },
+      { name: 'General Report', href: './reports' , icon: FaCircleDot },
+      { name: 'Batch Printing', href: './printing' , icon: FaCircleDot },
     ],
   },
 ]
@@ -47,23 +40,23 @@ const teams = [
   { 
     id: 1, name: 'Account Management', icon: UserGroupIcon, current: false,
     children: [
-      { name: 'Accounts List', href: './accounts' , icon: ChevronRightIcon },
-      { name: 'Create Account', href: './create-account' , icon: ChevronRightIcon },
+      { name: 'Accounts List', href: './accounts' , icon: FaCircleDot },
+      { name: 'Create Account', href: './create-account' , icon: FaCircleDot },
     ], 
   },
   { 
     id: 2, name: 'System Maintenance', icon: AdjustmentsHorizontalIcon, current: false,
     children: [
-      { name: 'LGU Profile', href: './lgu-profile' , icon: ChevronRightIcon },
-      { name: 'Brgy.Verifier', href: './verifier' , icon: ChevronRightIcon },
-      { name: 'Organization', href: './organization' , icon: ChevronRightIcon },
+      { name: 'LGU Profile', href: './lgu-profile' , icon: FaCircleDot },
+      { name: 'Brgy.Verifier', href: './verifier' , icon: FaCircleDot },
+      { name: 'Organization', href: './organization' , icon: FaCircleDot },
     ], 
   },
   { 
     id: 3, name: 'Help Desk', icon: PhoneArrowUpRightIcon, current: false,
     children: [
-      { name: 'Download User Manual', href: './manual' , icon: ChevronRightIcon },
-      { name: 'Contact Us', href: './contact' , icon: ChevronRightIcon },
+      { name: 'Download User Manual', href: './manual' , icon: FaCircleDot },
+      { name: 'Contact Us', href: './contact' , icon: FaCircleDot },
     ], 
   },
 ]
@@ -116,7 +109,7 @@ export default function AdminLayout({ children }) {
       />
 
       <div className="lg:pl-72">
-        <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
+        <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8 print:hidden">
           <button type="button" onClick={() => setSidebarOpen(true)} className="-m-2.5 p-2.5 text-gray-700 lg:hidden">
             <span className="sr-only">Open sidebar</span>
             <Bars3Icon aria-hidden="true" className="h-6 w-6" />
