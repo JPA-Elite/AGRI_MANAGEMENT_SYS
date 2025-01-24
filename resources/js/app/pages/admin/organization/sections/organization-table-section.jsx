@@ -1,23 +1,15 @@
 import React from "react";
-import AddUserSection from "./add-user-section";
+import AddOrganizationSection from "./add-organization-section";
 
-export default function UserTableSection() {
+export default function OrganizationTableSection() {
     const people = [
         {
-            lastname: "Soon",
-            firstname: "Jose Dary",
-            middlename: "Ybalez",
-            email: "vhermoso.encoder@gmail.com",
-            role: "LGU Encoder",
+            organization: "Vallehermoso Farmers Association",
             status: "Active",
         },
         {
-            lastname: "Cristobal",
-            firstname: "Jose Marie Juancho",
-            middlename: "Camingao",
-            email: "	vhermoso.@gmail.com",
-            role: "LGU Supervisor",
-            status: "Active",
+            organization: "Samahan ng Mangingisda ng PU-AN",
+            status: "Inactive",
         },
     ];
     return (
@@ -25,14 +17,16 @@ export default function UserTableSection() {
             <div className="sm:flex sm:items-center">
                 <div className="sm:flex-auto">
                     <h1 className="text-base font-semibold text-gray-900">
-                        Account User Records
+                        Agricultural Organization/Association Records
                     </h1>
                     <p className="mt-2 text-sm text-gray-700">
-                        A list of all the active users in the system.
+                        A list of all the Agricultural Organization/Association in the
+                        system.
                     </p>
                 </div>
-                <AddUserSection/>
+                <AddOrganizationSection />
             </div>
+
             <div className="mt-8 flow-root">
                 <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
@@ -41,33 +35,9 @@ export default function UserTableSection() {
                                 <tr>
                                     <th
                                         scope="col"
-                                        className="px-3 py-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500"
+                                        className="py-3.5 pl-4 pr-3 text-left text-xs font-semibold text-gray-500 uppercase sm:pl-0"
                                     >
-                                        Lastname
-                                    </th>
-                                    <th
-                                        scope="col"
-                                        className="px-3 py-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500"
-                                    >
-                                        Firstname
-                                    </th>
-                                    <th
-                                        scope="col"
-                                        className="px-3 py-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500"
-                                    >
-                                        Middlename
-                                    </th>
-                                    <th
-                                        scope="col"
-                                        className="px-3 py-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500"
-                                    >
-                                        Role
-                                    </th>
-                                    <th
-                                        scope="col"
-                                        className="px-3 py-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500"
-                                    >
-                                        Email Address
+                                        Organization Name
                                     </th>
                                     <th
                                         scope="col"
@@ -87,21 +57,7 @@ export default function UserTableSection() {
                                 {people.map((person) => (
                                     <tr key={person.email}>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm uppercase text-gray-900">
-                                            {person.lastname}
-                                        </td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm uppercase text-gray-900">
-                                            {person.firstname}
-                                        </td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm uppercase text-gray-900">
-                                            {person.middlename}
-                                        </td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
-                                            <span className="inline-flex items-center rounded-full bg-indigo-100 px-2 py-1 text-xs font-medium text-indigo-700">
-                                                {person.role}
-                                            </span>
-                                        </td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
-                                            {person.email}
+                                            {person.organization}
                                         </td>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
                                             <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">

@@ -19,7 +19,7 @@ import { AdjustmentsHorizontalIcon, ChevronDownIcon, MagnifyingGlassIcon, PhoneA
 import AdminSidenavSection from './_sections/admin-sidenav-sections'
 
 const navigation = [
-  { name: 'Dashboard', href: './dashboard', icon: HomeIcon, current: true },
+  { name: 'Dashboard', href: './dashboard', icon: HomeIcon, current: false },
   { 
     name: 'Beneficiary Section', icon: UsersIcon, current: false,
     children: [
@@ -41,7 +41,6 @@ const teams = [
     id: 1, name: 'Account Management', icon: UserGroupIcon, current: false,
     children: [
       { name: 'Accounts List', href: './accounts' , icon: FaCircleDot },
-      { name: 'Create Account', href: './create-account' , icon: FaCircleDot },
     ], 
   },
   { 

@@ -1,22 +1,24 @@
 import React from "react";
-import AddUserSection from "./add-user-section";
+import AddVerifierSection from "./add-verifier-section";
 
-export default function UserTableSection() {
+export default function VerifierTableSection() {
     const people = [
         {
             lastname: "Soon",
             firstname: "Jose Dary",
             middlename: "Ybalez",
-            email: "vhermoso.encoder@gmail.com",
-            role: "LGU Encoder",
+            email: "vhermoso.macapso@gmail.com",
+            barangay: "Macapso",
+            role: "Barangay Verifier",
             status: "Active",
         },
         {
             lastname: "Cristobal",
             firstname: "Jose Marie Juancho",
             middlename: "Camingao",
-            email: "	vhermoso.@gmail.com",
-            role: "LGU Supervisor",
+            email: "	vhermoso.bagawines@gmail.com",
+            barangay: "Bagawines",
+            role: "Barangay Verifier",
             status: "Active",
         },
     ];
@@ -25,14 +27,16 @@ export default function UserTableSection() {
             <div className="sm:flex sm:items-center">
                 <div className="sm:flex-auto">
                     <h1 className="text-base font-semibold text-gray-900">
-                        Account User Records
+                        Barangay Verifier Records
                     </h1>
                     <p className="mt-2 text-sm text-gray-700">
-                        A list of all the active users in the system.
+                        A list of all the active Barangay Verifier in the
+                        system.
                     </p>
                 </div>
-                <AddUserSection/>
+                <AddVerifierSection />
             </div>
+
             <div className="mt-8 flow-root">
                 <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
@@ -43,19 +47,13 @@ export default function UserTableSection() {
                                         scope="col"
                                         className="px-3 py-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500"
                                     >
-                                        Lastname
+                                        Fullname
                                     </th>
                                     <th
                                         scope="col"
                                         className="px-3 py-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500"
                                     >
-                                        Firstname
-                                    </th>
-                                    <th
-                                        scope="col"
-                                        className="px-3 py-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500"
-                                    >
-                                        Middlename
+                                        Barangay
                                     </th>
                                     <th
                                         scope="col"
@@ -87,16 +85,15 @@ export default function UserTableSection() {
                                 {people.map((person) => (
                                     <tr key={person.email}>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm uppercase text-gray-900">
-                                            {person.lastname}
-                                        </td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm uppercase text-gray-900">
-                                            {person.firstname}
-                                        </td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm uppercase text-gray-900">
+                                            {person.lastname},{" "}
+                                            {person.firstname}{" "}
                                             {person.middlename}
                                         </td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
-                                            <span className="inline-flex items-center rounded-full bg-indigo-100 px-2 py-1 text-xs font-medium text-indigo-700">
+                                        <td className="whitespace-nowrap px-3 py-4 text-sm uppercase text-gray-900">
+                                            {person.barangay}
+                                        </td>
+                                        <td className="whitespace-nowrap px-3 py-4 text-sm uppercase text-gray-900">
+                                            <span className="inline-flex items-center rounded-full bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">
                                                 {person.role}
                                             </span>
                                         </td>

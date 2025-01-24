@@ -43,7 +43,7 @@ export default function AdminSidenavSection({ navigation, classNames, teams }) {
                                                             "group flex cursor-pointer gap-x-3 rounded-md p-2 text-sm font-semibold leading-6",
                                                             expanded[item.name]
                                                                 ? "text-gray-800 bg-white-800"
-                                                                : "text-gray-400 hover:bg-green-700 hover:text-white"
+                                                                : "text-gray-400 hover:bg-green-600 hover:text-white"
                                                         )}
                                                     >
                                                         <item.icon
@@ -92,7 +92,7 @@ export default function AdminSidenavSection({ navigation, classNames, teams }) {
                                                     className={classNames(
                                                         item.current
                                                             ? "bg-white-800 text-gray-800"
-                                                            : "text-gray-400 hover:bg-green-700 hover:text-white",
+                                                            : "text-gray-400 hover:bg-green-600 hover:text-white",
                                                         "group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6"
                                                     )}
                                                 >
@@ -129,7 +129,7 @@ export default function AdminSidenavSection({ navigation, classNames, teams }) {
                                                             "group flex cursor-pointer gap-x-3 rounded-md p-2 text-sm font-semibold leading-6",
                                                             expanded[teams.name]
                                                                 ? "text-gray-800 bg-white-800"
-                                                                : "text-gray-400 hover:bg-green-700 hover:text-white"
+                                                                : "text-gray-400 hover:bg-green-600 hover:text-white"
                                                         )}
                                                     >
                                                         <teams.icon
@@ -156,7 +156,7 @@ export default function AdminSidenavSection({ navigation, classNames, teams }) {
                                                                             href={
                                                                                 child.href
                                                                             }
-                                                                            className="flex items-center text-gray-400 hover:text-white hover:bg-green-700 rounded-md px-2 py-1 text-sm font-semibold leading-6"
+                                                                            className="flex items-center text-gray-400 hover:text-white hover:bg-green-600 rounded-md px-2 py-1 text-sm font-semibold leading-6"
                                                                         >
                                                                             <child.icon
                                                                                 aria-hidden="true"
@@ -178,7 +178,7 @@ export default function AdminSidenavSection({ navigation, classNames, teams }) {
                                                     className={classNames(
                                                         teams.current
                                                             ? "bg-white-800 text-gray-800"
-                                                            : "text-gray-400 hover:bg-green-700 hover:text-white",
+                                                            : "text-gray-400 hover:bg-green-600 hover:text-white",
                                                         "group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6"
                                                     )}
                                                 >
@@ -196,7 +196,7 @@ export default function AdminSidenavSection({ navigation, classNames, teams }) {
                             <li className="mt-auto">
                                 <a
                                     href="./settings"
-                                    className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-400 hover:bg-green-700 hover:text-white"
+                                    className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-400 hover:bg-green-600 hover:text-white"
                                 >
                                     <Cog6ToothIcon
                                         aria-hidden="true"

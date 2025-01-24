@@ -17,7 +17,7 @@ export default function AdminDashboardPage() {
     return (
         <AdminLayout>
             <h3 className="text-base font-semibold text-gray-900">
-                Current Data as of date {currentDate}
+                Current Data as of {currentDate}
             </h3>
             <StatsSection />
             <GraphSection />
