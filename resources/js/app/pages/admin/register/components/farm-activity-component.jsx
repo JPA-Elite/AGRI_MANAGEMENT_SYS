@@ -1,6 +1,10 @@
+import { setForm } from "@/app/redux/register-slice";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function FarmActivityComponent() {
+    const { form } = useSelector((store) => store.register);
+    const dispatch = useDispatch();
     return (
         <div className="sm:col-span-3">
             <div className="border border-green-900/80 rounded-md px-3 py-4">
@@ -17,7 +21,27 @@ export default function FarmActivityComponent() {
                             <div className="group grid size-4 grid-cols-1">
                                 <input
                                     id="rice"
-                                    name="rice"
+                                    name="farm_activity"
+                                    value="Rice"
+                                    onChange={(e) => {
+                                        const newValue = e.target.value;
+                                        const updatedFarmActivity = e.target
+                                            .checked
+                                            ? [...form.farm_activity, newValue] // Add the value if checked
+                                            : form.farm_activity.filter(
+                                                  (activity) =>
+                                                      activity !== newValue
+                                              ); // Remove the value if unchecked
+
+                                        dispatch(
+                                            setForm({
+                                                ...form,
+                                                farm_activity:
+                                                    updatedFarmActivity,
+                                            })
+                                        );
+                                    }}
+
                                     type="checkbox"
                                     aria-describedby="rice-description"
                                     className="col-start-1 row-start-1 appearance-none rounded border border-green-300 bg-white checked:border-green-600 checked:bg-green-600 indeterminate:border-green-600 indeterminate:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-green-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto"
@@ -58,7 +82,26 @@ export default function FarmActivityComponent() {
                             <div className="group grid size-4 grid-cols-1">
                                 <input
                                     id="corns"
-                                    name="corns"
+                                    name="farm_activity"
+                                    value="Corns"
+                                    onChange={(e) => {
+                                        const newValue = e.target.value;
+                                        const updatedFarmActivity = e.target
+                                            .checked
+                                            ? [...form.farm_activity, newValue] // Add the value if checked
+                                            : form.farm_activity.filter(
+                                                  (activity) =>
+                                                      activity !== newValue
+                                              ); // Remove the value if unchecked
+
+                                        dispatch(
+                                            setForm({
+                                                ...form,
+                                                farm_activity:
+                                                    updatedFarmActivity,
+                                            })
+                                        );
+                                    }}
                                     type="checkbox"
                                     aria-describedby="corns-description"
                                     className="col-start-1 row-start-1 appearance-none rounded border border-green-300 bg-white checked:border-green-600 checked:bg-green-600 indeterminate:border-green-600 indeterminate:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-green-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto"
@@ -94,56 +137,35 @@ export default function FarmActivityComponent() {
                             </label>
                         </div>
                     </div>
-                    <div className="flex gap-3">
-                        <div className="flex h-6 shrink-0 items-center">
-                            <div className="group grid size-4 grid-cols-1">
-                                <input
-                                    id="crops"
-                                    name="crops"
-                                    type="checkbox"
-                                    aria-describedby="crops-description"
-                                    className="col-start-1 row-start-1 appearance-none rounded border border-green-300 bg-white checked:border-green-600 checked:bg-green-600 indeterminate:border-green-600 indeterminate:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-green-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto"
-                                />
-                                <svg
-                                    fill="none"
-                                    viewBox="0 0 14 14"
-                                    className="pointer-events-none col-start-1 row-start-1 size-3.5 self-center justify-self-center stroke-white group-has-[:disabled]:stroke-gray-950/25"
-                                >
-                                    <path
-                                        d="M3 8L6 11L11 3.5"
-                                        strokeWidth={2}
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        className="opacity-0 group-has-[:checked]:opacity-100"
-                                    />
-                                    <path
-                                        d="M3 7H11"
-                                        strokeWidth={2}
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        className="opacity-0 group-has-[:indeterminate]:opacity-100"
-                                    />
-                                </svg>
-                            </div>
-                        </div>
-                        <div className="text-sm/6">
-                            <label
-                                htmlFor="crops"
-                                className="font-medium text-gray-900"
-                            >
-                                Other Crops
-                            </label>
-                        </div>
-                    </div>
+                    
 
                     <div className="flex gap-3">
                         <div className="flex h-6 shrink-0 items-center">
                             <div className="group grid size-4 grid-cols-1">
                                 <input
                                     id="livestock"
-                                    name="livestock"
+                                    name="farm_activity"
+                                    value="Livestock"
                                     type="checkbox"
-                                    aria-describedby="livestock-description"
+                                    onChange={(e) => {
+                                        const newValue = e.target.value;
+                                        const updatedFarmActivity = e.target
+                                            .checked
+                                            ? [...form.farm_activity, newValue] // Add the value if checked
+                                            : form.farm_activity.filter(
+                                                  (activity) =>
+                                                      activity !== newValue
+                                              ); // Remove the value if unchecked
+
+                                        dispatch(
+                                            setForm({
+                                                ...form,
+                                                farm_activity:
+                                                    updatedFarmActivity,
+                                            })
+                                        );
+                                    }}
+                                    
                                     className="col-start-1 row-start-1 appearance-none rounded border border-green-300 bg-white checked:border-green-600 checked:bg-green-600 indeterminate:border-green-600 indeterminate:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-green-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto"
                                 />
                                 <svg
@@ -183,9 +205,27 @@ export default function FarmActivityComponent() {
                             <div className="group grid size-4 grid-cols-1">
                                 <input
                                     id="poultry"
-                                    name="poultry"
+                                    name="farm_activity"
                                     type="checkbox"
-                                    aria-describedby="poultry-description"
+                                    value="Poultry"
+                                    onChange={(e) => {
+                                        const newValue = e.target.value;
+                                        const updatedFarmActivity = e.target
+                                            .checked
+                                            ? [...form.farm_activity, newValue] // Add the value if checked
+                                            : form.farm_activity.filter(
+                                                  (activity) =>
+                                                      activity !== newValue
+                                              ); // Remove the value if unchecked
+
+                                        dispatch(
+                                            setForm({
+                                                ...form,
+                                                farm_activity:
+                                                    updatedFarmActivity,
+                                            })
+                                        );
+                                    }}
                                     className="col-start-1 row-start-1 appearance-none rounded border border-green-300 bg-white checked:border-green-600 checked:bg-green-600 indeterminate:border-green-600 indeterminate:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-green-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto"
                                 />
                                 <svg
@@ -216,6 +256,66 @@ export default function FarmActivityComponent() {
                                 className="font-medium text-gray-900"
                             >
                                 Poultry
+                            </label>
+                        </div>
+                    </div>
+
+                    <div className="flex gap-3">
+                        <div className="flex h-6 shrink-0 items-center">
+                            <div className="group grid size-4 grid-cols-1">
+                                <input
+                                    id="crops"
+                                    name="farm_activity"
+                                    type="checkbox"
+                                    value="Other Crops"
+                                    onChange={(e) => {
+                                        const newValue = e.target.value;
+                                        const updatedFarmActivity = e.target
+                                            .checked
+                                            ? [...form.farm_activity, newValue] // Add the value if checked
+                                            : form.farm_activity.filter(
+                                                  (activity) =>
+                                                      activity !== newValue
+                                              ); // Remove the value if unchecked
+
+                                        dispatch(
+                                            setForm({
+                                                ...form,
+                                                farm_activity:
+                                                    updatedFarmActivity,
+                                            })
+                                        );
+                                    }}
+                                    className="col-start-1 row-start-1 appearance-none rounded border border-green-300 bg-white checked:border-green-600 checked:bg-green-600 indeterminate:border-green-600 indeterminate:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-green-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto"
+                                />
+                                <svg
+                                    fill="none"
+                                    viewBox="0 0 14 14"
+                                    className="pointer-events-none col-start-1 row-start-1 size-3.5 self-center justify-self-center stroke-white group-has-[:disabled]:stroke-gray-950/25"
+                                >
+                                    <path
+                                        d="M3 8L6 11L11 3.5"
+                                        strokeWidth={2}
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        className="opacity-0 group-has-[:checked]:opacity-100"
+                                    />
+                                    <path
+                                        d="M3 7H11"
+                                        strokeWidth={2}
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        className="opacity-0 group-has-[:indeterminate]:opacity-100"
+                                    />
+                                </svg>
+                            </div>
+                        </div>
+                        <div className="text-sm/6">
+                            <label
+                                htmlFor="crops"
+                                className="font-medium text-gray-900"
+                            >
+                                Other Crops
                             </label>
                         </div>
                     </div>

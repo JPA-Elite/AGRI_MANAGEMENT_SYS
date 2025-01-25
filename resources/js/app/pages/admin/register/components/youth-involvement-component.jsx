@@ -1,6 +1,10 @@
+import { setForm } from "@/app/redux/register-slice";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function YouthInvolvementComponent() {
+    const { form } = useSelector((store) => store.register);
+    const dispatch = useDispatch();
     return (
         <div className="sm:col-span-3">
             <div className="border border-green-900/80 border- rounded-md px-3 py-4">
@@ -20,10 +24,27 @@ export default function YouthInvolvementComponent() {
                         <div className="flex h-6 shrink-0 items-center">
                             <div className="group grid size-4 grid-cols-1">
                                 <input
-                                    id="farminghousehold"
-                                    name="farminghousehold"
+                                    name="farm_activity"
                                     type="checkbox"
-                                    aria-describedby="farminghousehold-description"
+                                    value="Part of Farming Household"
+                                    onChange={(e) => {
+                                        const newValue = e.target.value;
+                                        const updatedFarmActivity = e.target
+                                            .checked
+                                            ? [...form.farm_activity, newValue] // Add the value if checked
+                                            : form.farm_activity.filter(
+                                                  (activity) =>
+                                                      activity !== newValue
+                                              ); // Remove the value if unchecked
+
+                                        dispatch(
+                                            setForm({
+                                                ...form,
+                                                farm_activity:
+                                                    updatedFarmActivity,
+                                            })
+                                        );
+                                    }}
                                     className="col-start-1 row-start-1 appearance-none rounded border border-green-300 bg-white checked:border-green-600 checked:bg-green-600 indeterminate:border-green-600 indeterminate:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-green-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto"
                                 />
                                 <svg
@@ -61,10 +82,28 @@ export default function YouthInvolvementComponent() {
                         <div className="flex h-6 shrink-0 items-center">
                             <div className="group grid size-4 grid-cols-1">
                                 <input
-                                    id="fisheryformal"
-                                    name="fisheryformal"
+                                    name="farm_activity"
                                     type="checkbox"
-                                    aria-describedby="fisheryformal-description"
+                                    value="Attending/attended formal agri-fishery related
+                                course"
+                                    onChange={(e) => {
+                                        const newValue = e.target.value;
+                                        const updatedFarmActivity = e.target
+                                            .checked
+                                            ? [...form.farm_activity, newValue] // Add the value if checked
+                                            : form.farm_activity.filter(
+                                                  (activity) =>
+                                                      activity !== newValue
+                                              ); // Remove the value if unchecked
+
+                                        dispatch(
+                                            setForm({
+                                                ...form,
+                                                farm_activity:
+                                                    updatedFarmActivity,
+                                            })
+                                        );
+                                    }}
                                     className="col-start-1 row-start-1 appearance-none rounded border border-green-300 bg-white checked:border-green-600 checked:bg-green-600 indeterminate:border-green-600 indeterminate:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-green-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto"
                                 />
                                 <svg
@@ -103,10 +142,28 @@ export default function YouthInvolvementComponent() {
                         <div className="flex h-6 shrink-0 items-center">
                             <div className="group grid size-4 grid-cols-1">
                                 <input
-                                    id="agrifishernformal"
-                                    name="agrifishernformal"
+                                    name="farm_activity"
                                     type="checkbox"
-                                    aria-describedby="agrifishernformal-description"
+                                    value="Attending/attended non-formal agri-fishery
+                                related course"
+                                    onChange={(e) => {
+                                        const newValue = e.target.value;
+                                        const updatedFarmActivity = e.target
+                                            .checked
+                                            ? [...form.farm_activity, newValue] // Add the value if checked
+                                            : form.farm_activity.filter(
+                                                  (activity) =>
+                                                      activity !== newValue
+                                              ); // Remove the value if unchecked
+
+                                        dispatch(
+                                            setForm({
+                                                ...form,
+                                                farm_activity:
+                                                    updatedFarmActivity,
+                                            })
+                                        );
+                                    }}
                                     className="col-start-1 row-start-1 appearance-none rounded border border-green-300 bg-white checked:border-green-600 checked:bg-green-600 indeterminate:border-green-600 indeterminate:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-green-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto"
                                 />
                                 <svg
@@ -146,10 +203,28 @@ export default function YouthInvolvementComponent() {
                         <div className="flex h-6 shrink-0 items-center">
                             <div className="group grid size-4 grid-cols-1">
                                 <input
-                                    id="agriactivity"
-                                    name="agriactivity"
-                                    type="checkbox"
-                                    aria-describedby="agriactivity-description"
+                                     name="farm_activity"
+                                     type="checkbox"
+                                     value="Participated in any agricultural
+                                activity/program"
+                                     onChange={(e) => {
+                                         const newValue = e.target.value;
+                                         const updatedFarmActivity = e.target
+                                             .checked
+                                             ? [...form.farm_activity, newValue] // Add the value if checked
+                                             : form.farm_activity.filter(
+                                                   (activity) =>
+                                                       activity !== newValue
+                                               ); // Remove the value if unchecked
+ 
+                                         dispatch(
+                                             setForm({
+                                                 ...form,
+                                                 farm_activity:
+                                                     updatedFarmActivity,
+                                             })
+                                         );
+                                     }}
                                     className="col-start-1 row-start-1 appearance-none rounded border border-green-300 bg-white checked:border-green-600 checked:bg-green-600 indeterminate:border-green-600 indeterminate:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-green-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto"
                                 />
                                 <svg
@@ -189,10 +264,27 @@ export default function YouthInvolvementComponent() {
                         <div className="flex h-6 shrink-0 items-center">
                             <div className="group grid size-4 grid-cols-1">
                                 <input
-                                    id="otheryouth"
-                                    name="otheryouth"
+                                    name="farm_activity"
                                     type="checkbox"
-                                    aria-describedby="otheryouth-description"
+                                    value="Others"
+                                    onChange={(e) => {
+                                        const newValue = e.target.value;
+                                        const updatedFarmActivity = e.target
+                                            .checked
+                                            ? [...form.farm_activity, newValue] // Add the value if checked
+                                            : form.farm_activity.filter(
+                                                  (activity) =>
+                                                      activity !== newValue
+                                              ); // Remove the value if unchecked
+
+                                        dispatch(
+                                            setForm({
+                                                ...form,
+                                                farm_activity:
+                                                    updatedFarmActivity,
+                                            })
+                                        );
+                                    }}
                                     className="col-start-1 row-start-1 appearance-none rounded border border-green-300 bg-white checked:border-green-600 checked:bg-green-600 indeterminate:border-green-600 indeterminate:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-green-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto"
                                 />
                                 <svg

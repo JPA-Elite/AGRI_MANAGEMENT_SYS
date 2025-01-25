@@ -3,14 +3,18 @@ import FarmActivityComponent from "./farm-activity-component";
 import FarmersWorkComponent from "./farmers-work-component";
 import FishingActivityComponent from "./fishing-activity-component";
 import YouthInvolvementComponent from "./youth-involvement-component";
+import { useDispatch, useSelector } from "react-redux";
+import { setForm } from "@/app/redux/register-slice";
 
 function FarmProfileComponent() {
-    const [selected, setSelected] = useState("");
+    const [isFarmer, setIsFarmer] = useState(false);
+    const [isFarmWorker, setIsFarmWorker] = useState(false);
+    const [isFisherfolk, setIsFisherfolk] = useState(false);
+    const [isYouth, setIsYouth] = useState(false);
+    const { form } = useSelector((store) => store.register);
+    const dispatch = useDispatch();
 
-    const handleCheckboxChange = (value) => {
-        setSelected(value);
-    };
-
+    console.log("formform", form);
     return (
         <form>
             <div className="flex justify-between gap-y-4 font-medium mt-2">
@@ -24,8 +28,20 @@ function FarmProfileComponent() {
                         id="farmer"
                         name="main_livelihood"
                         value="Farmer"
-                        checked={selected === "Farmer"}
-                        onChange={() => handleCheckboxChange("Farmer")}
+                        checked={isFarmer}
+                        onClick={(e) => {
+                            setIsFarmer(true);
+                            setIsFarmWorker(false);
+                            setIsFisherfolk(false);
+                            setIsYouth(false);
+                            dispatch(
+                                setForm({
+                                    ...form,
+                                    [e.target.name]: e.target.value,
+                                    farm_activity: [],
+                                })
+                            );
+                        }}
                         className="h-5 w-5 text-green-600 focus:ring-green-500 border-gray-300 rounded"
                     />
                     <label
@@ -37,13 +53,22 @@ function FarmProfileComponent() {
 
                     <input
                         type="checkbox"
-                        id="farmworker"
                         name="main_livelihood"
-                        value="Farmworker/Laborer"
-                        checked={selected === "Farmworker/Laborer"}
-                        onChange={() =>
-                            handleCheckboxChange("Farmworker/Laborer")
-                        }
+                        value="FarmWorker"
+                        checked={isFarmWorker}
+                        onClick={(e) => {
+                            setIsFarmer(false);
+                            setIsFarmWorker(true);
+                            setIsFisherfolk(false);
+                            setIsYouth(false);
+                            dispatch(
+                                setForm({
+                                    ...form,
+                                    [e.target.name]: e.target.value,
+                                    farm_activity: [],
+                                })
+                            );
+                        }}
                         className="h-5 w-5 text-green-600 focus:ring-green-500 border-gray-300 rounded"
                     />
                     <label
@@ -55,11 +80,22 @@ function FarmProfileComponent() {
 
                     <input
                         type="checkbox"
-                        id="fisherfolk"
                         name="main_livelihood"
                         value="Fisherfolk"
-                        checked={selected === "Fisherfolk"}
-                        onChange={() => handleCheckboxChange("Fisherfolk")}
+                        checked={isFisherfolk}
+                        onClick={(e) => {
+                            setIsFarmer(false);
+                            setIsFarmWorker(false);
+                            setIsFisherfolk(true);
+                            setIsYouth(false);
+                            dispatch(
+                                setForm({
+                                    ...form,
+                                    [e.target.name]: e.target.value,
+                                    farm_activity: [],
+                                })
+                            );
+                        }}
                         className="h-5 w-5 text-green-600 focus:ring-green-500 border-gray-300 rounded"
                     />
                     <label
@@ -71,11 +107,22 @@ function FarmProfileComponent() {
 
                     <input
                         type="checkbox"
-                        id="agri_youth"
                         name="main_livelihood"
                         value="Agri Youth"
-                        checked={selected === "Agri Youth"}
-                        onChange={() => handleCheckboxChange("Agri Youth")}
+                        checked={isYouth}
+                        onClick={(e) => {
+                            setIsFarmer(false);
+                            setIsFarmWorker(false);
+                            setIsFisherfolk(false);
+                            setIsYouth(true);
+                            dispatch(
+                                setForm({
+                                    ...form,
+                                    [e.target.name]: e.target.value,
+                                    farm_activity: [],
+                                })
+                            );
+                        }}
                         className="h-5 w-5 text-green-600 focus:ring-green-500 border-gray-300 rounded"
                     />
                     <label
@@ -88,13 +135,26 @@ function FarmProfileComponent() {
             </div>
 
             <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-12">
-                <FarmActivityComponent />
-
-                <FarmersWorkComponent />
-
-                <FishingActivityComponent />
-
-                <YouthInvolvementComponent />
+                {isFarmer && (
+                    <>
+                        <FarmActivityComponent />
+                    </>
+                )}
+                {isFarmWorker && (
+                    <>
+                        <FarmersWorkComponent />
+                    </>
+                )}
+                {isFisherfolk && (
+                    <>
+                        <FishingActivityComponent />
+                    </>
+                )}
+                {isYouth && (
+                    <>
+                        <YouthInvolvementComponent />
+                    </>
+                )}
 
                 <div className="sm:col-span-12 border-t border-gray-900/20">
                     <div className="gap-y-4 font-medium mt-10">
@@ -105,9 +165,16 @@ function FarmProfileComponent() {
 
                             <div className="col-span-8 ml-3">
                                 <input
-                                    id="number"
-                                    name="number"
+                                    name="Annual_Income"
                                     type="number"
+                                    onChange={(e) =>
+                                        dispatch(
+                                            setForm({
+                                                ...form,
+                                                [e.target.name]: e.target.value,
+                                            })
+                                        )
+                                    }
                                     className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                                 />
                             </div>

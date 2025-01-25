@@ -1,6 +1,11 @@
+import { setForm } from "@/app/redux/register-slice";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function AddressInformationComponent() {
+    
+    const { form } = useSelector((store) => store.register);
+    const dispatch = useDispatch();
     return (
         <div>
             <div className="border-b border-gray-900/10 pb-12">
@@ -14,17 +19,24 @@ export default function AddressInformationComponent() {
                 <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-12">
                     <div className="col-span-4">
                         <label
-                            htmlFor="street-address-1"
+                            htmlFor="street_address"
                             className="block text-sm/6 font-medium text-gray-900"
                         >
                             House No./Lot/Bldg.No./Purok
                         </label>
                         <div className="mt-2">
                             <input
-                                id="street-address-1"
-                                name="street-address-1"
+                                id="street_address"
+                                name="street_address"
                                 type="text"
-                                autoComplete="street-address-1"
+                                onChange={(e) =>
+                                    dispatch(
+                                        setForm({
+                                            ...form,
+                                            [e.target.name]: e.target.value,
+                                        })
+                                    )
+                                }
                                 className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                             />
                         </div>
@@ -32,17 +44,24 @@ export default function AddressInformationComponent() {
 
                     <div className="col-span-4">
                         <label
-                            htmlFor="street-address-2"
+                            htmlFor="street_address_2"
                             className="block text-sm/6 font-medium text-gray-900"
                         >
                             Street/Sitio/Subdv.
                         </label>
                         <div className="mt-2">
                             <input
-                                id="street-address-2"
-                                name="street-address-2"
+                                id="street_address_2"
+                                name="street_address_2"
                                 type="text"
-                                autoComplete="street-address-2"
+                                onChange={(e) =>
+                                    dispatch(
+                                        setForm({
+                                            ...form,
+                                            [e.target.name]: e.target.value,
+                                        })
+                                    )
+                                }
                                 className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                             />
                         </div>
@@ -60,6 +79,14 @@ export default function AddressInformationComponent() {
                                 id="barangay"
                                 name="barangay"
                                 placeholder="Barangay"
+                                onChange={(e) =>
+                                    dispatch(
+                                        setForm({
+                                            ...form,
+                                            [e.target.name]: e.target.value,
+                                        })
+                                    )
+                                }
                                 className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                             >
                                 <option value="" disabled selected>
@@ -96,7 +123,14 @@ export default function AddressInformationComponent() {
                                 id="city"
                                 name="city"
                                 type="text"
-                                autoComplete="address-level2"
+                                onChange={(e) =>
+                                    dispatch(
+                                        setForm({
+                                            ...form,
+                                            [e.target.name]: e.target.value,
+                                        })
+                                    )
+                                }
                                 className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                             />
                         </div>
@@ -114,7 +148,14 @@ export default function AddressInformationComponent() {
                                 id="Province"
                                 name="Province"
                                 type="text"
-                                autoComplete="address-level1"
+                                onChange={(e) =>
+                                    dispatch(
+                                        setForm({
+                                            ...form,
+                                            [e.target.name]: e.target.value,
+                                        })
+                                    )
+                                }
                                 className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                             />
                         </div>
@@ -131,7 +172,14 @@ export default function AddressInformationComponent() {
                             <select
                                 id="region"
                                 name="region"
-                                autoComplete="region"
+                                onChange={(e) =>
+                                    dispatch(
+                                        setForm({
+                                            ...form,
+                                            [e.target.name]: e.target.value,
+                                        })
+                                    )
+                                }
                                 className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                             >
                                 <option value="" disabled selected>
