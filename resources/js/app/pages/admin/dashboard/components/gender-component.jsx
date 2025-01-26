@@ -1,5 +1,5 @@
 import React from "react";
-import { FaPersonHalfDress } from "react-icons/fa6";
+import { FaPerson, FaPersonDress, FaPersonHalfDress } from "react-icons/fa6";
 import ApexCharts from "react-apexcharts";
 
 export default function GenderComponent() {
@@ -12,7 +12,7 @@ export default function GenderComponent() {
         },
 
         xaxis: {
-            categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"], // x-axis categories
+            categories: ["MALE", "FEMALE"], // x-axis categories
         },
         plotOptions: {
             bar: {
@@ -21,7 +21,7 @@ export default function GenderComponent() {
             },
         },
         title: {
-            text: "Monthly Sales",
+            text: "Gender Count",
             align: "center",
             style: {
                 fontSize: "16px",
@@ -32,13 +32,13 @@ export default function GenderComponent() {
         grid: {
             borderColor: "#e7e7e7", // Lighter grid border
         },
-        colors: ["#FF5733"], // Customize the bar color if desired
+        colors: ["#009933"], // Customize the bar color if desired
     };
 
     const series = [
         {
-            name: "Sales",
-            data: [30, 40, 35, 50, 49, 60, 70], // Data corresponding to each category
+            name: "Gender Count",
+            data: [865, 430], // Data corresponding to each category
         },
     ];
 
@@ -57,9 +57,35 @@ export default function GenderComponent() {
                         options={options}
                         series={series}
                         type="bar"
-                        height={350}
+                        height={200}
                     />
                 </div>
+                <div className="sm:col-span-2">
+                <div className="flex flex-row gap-3">
+                    <div className="divide-y divide-gray-200 overflow-hidden w-full rounded-lg bg-white shadow">
+                        <div className="flex flex-row px-4 py-5 sm:px-6 bg-green-500">
+                        <FaPerson className="text-white size-6"/>
+                        <h3 className="text-base text-white font-medium">MALE</h3>
+                        </div>
+                        <div className="px-4 py-5 sm:p-6 bg-green-300">
+                            <h2 className="text-3xl font-medium text-center text-gray-700">865</h2>
+                        </div>
+                    </div>
+
+                    <div className="divide-y divide-gray-200 overflow-hidden w-full rounded-lg bg-white shadow">
+                        <div className="flex flex-row px-4 py-5 sm:px-6 bg-green-500">
+                            <FaPersonDress className="text-white size-6"/>
+                            <h3 className="text-base text-white font-medium">FEMALE</h3>
+                        </div>
+                        <div className="px-4 py-5 sm:p-6 bg-green-300">
+                        <h2 className="text-3xl font-medium text-center text-gray-700">430</h2>
+                        </div>
+                    </div>
+
+                    
+                </div>
+                </div>
+                
             </div>
         </div>
     );

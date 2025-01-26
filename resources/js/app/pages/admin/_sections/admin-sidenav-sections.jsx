@@ -155,7 +155,7 @@ export default function AdminSidenavSection({ navigation, classNames, teams,setS
                                         </ul>
                                     </li>
                                     <li>
-                                        <div className="text-xs/6 font-semibold text-indigo-200">
+                                        <div className="text-xs/6 font-semibold text-gray-400">
                                             Your teams
                                         </div>
                                         <ul
@@ -168,14 +168,15 @@ export default function AdminSidenavSection({ navigation, classNames, teams,setS
                                                         href={team.href}
                                                         className={classNames(
                                                             team.current
-                                                                ? "bg-indigo-700 text-white"
-                                                                : "text-indigo-200 hover:bg-indigo-700 hover:text-white",
+                                                                ? "bg-green-700 text-white"
+                                                                : "text-gray-400 hover:bg-green-700 hover:text-white",
                                                             "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
                                                         )}
                                                     >
-                                                        <span className="flex size-6 shrink-0 items-center justify-center rounded-lg border border-indigo-400 bg-indigo-500 text-[0.625rem] font-medium text-white">
-                                                            {team.initial}
-                                                        </span>
+                                                        <team.icon
+                                                                aria-hidden="true"
+                                                                className="h-6 w-6 shrink-0"
+                                                            />
                                                         <span className="truncate">
                                                             {team.name}
                                                         </span>
@@ -187,11 +188,11 @@ export default function AdminSidenavSection({ navigation, classNames, teams,setS
                                     <li className="mt-auto">
                                         <Link
                                             href="#"
-                                            className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-indigo-200 hover:bg-indigo-700 hover:text-white"
+                                            className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-400 hover:bg-green-700 hover:text-white"
                                         >
                                             <Cog6ToothIcon
                                                 aria-hidden="true"
-                                                className="size-6 shrink-0 text-indigo-200 group-hover:text-white"
+                                                className="size-6 shrink-0 text-gray-400 group-hover:text-white"
                                             />
                                             Settings
                                         </Link>
