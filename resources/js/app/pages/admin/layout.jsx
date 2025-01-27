@@ -3,14 +3,13 @@ import { Dialog, Menu, Transition } from "@headlessui/react";
 import {
     Bars3Icon,
     BellIcon,
-    Cog6ToothIcon,
     HomeIcon,
     PresentationChartBarIcon,
     UserGroupIcon,
     UsersIcon,
-    XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { FaCircleDot } from "react-icons/fa6";
+import { FcAssistant, FcButtingIn, FcComboChart, FcConferenceCall, FcDataConfiguration, FcHome } from "react-icons/fc";
 
 import {
     AdjustmentsHorizontalIcon,
@@ -21,10 +20,10 @@ import {
 import AdminSidenavSection from "./_sections/admin-sidenav-sections";
 
 const navigation = [
-    { name: "Dashboard", href: "./dashboard", icon: HomeIcon, current: false },
+    { name: "Dashboard", href: "./dashboard", icon: FcHome, current: false },
     {
         name: "Beneficiary Section",
-        icon: UsersIcon,
+        icon: FcConferenceCall,
         current: false,
         children: [
             {
@@ -46,7 +45,7 @@ const navigation = [
     },
     {
         name: "Report Section",
-        icon: PresentationChartBarIcon,
+        icon: FcComboChart,
         current: false,
         children: [
             { name: "General Report", href: "./reports", icon: FaCircleDot },
@@ -58,7 +57,7 @@ const teams = [
     {
         id: 1,
         name: "Account Management",
-        icon: UserGroupIcon,
+        icon: FcButtingIn,
         current: false,
         children: [
             { name: "Accounts List", href: "./accounts", icon: FaCircleDot },
@@ -67,7 +66,7 @@ const teams = [
     {
         id: 2,
         name: "System Maintenance",
-        icon: AdjustmentsHorizontalIcon,
+        icon: FcDataConfiguration,
         current: false,
         children: [
             { name: "LGU Profile", href: "./lgu-profile", icon: FaCircleDot },
@@ -78,7 +77,7 @@ const teams = [
     {
         id: 3,
         name: "Help Desk",
-        icon: PhoneArrowUpRightIcon,
+        icon: FcAssistant,
         current: false,
         children: [
             {
@@ -123,7 +122,7 @@ export default function AdminLayout({ children }) {
             />
 
             <div className="lg:pl-72">
-                <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8 print:hidden">
+                <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-gray-100 px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8 print:hidden">
                     <button
                         type="button"
                         onClick={() => setSidebarOpen(true)}
@@ -157,7 +156,7 @@ export default function AdminLayout({ children }) {
                                 name="search"
                                 type="search"
                                 placeholder="Search..."
-                                className="block h-full w-full border-0 py-0 pl-8 pr-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
+                                className="block h-full w-full border-0 py-0 pl-8 pr-0 text-gray-900 bg-gray-100 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
                             />
                         </form>
                         <div className="flex items-center gap-x-4 lg:gap-x-6">

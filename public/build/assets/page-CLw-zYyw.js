@@ -1,1 +1,0 @@
-import{j as t}from"./app-DzeIBodI.js";import o from"./layout-DS5HaHeA.js";import"./index-CQgdXxNp.js";import"./admin-sidenav-sections-d5uBKgl2.js";import"./dialog-CzHlAymY.js";import"./use-tab-direction-CJos-y7R.js";import"./ChevronDownIcon-CNpKdI2P.js";function s(){return t.jsx(o,{children:"ContactPage"})}export{s as default};

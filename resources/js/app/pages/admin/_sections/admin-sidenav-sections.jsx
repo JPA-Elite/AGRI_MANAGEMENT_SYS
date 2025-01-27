@@ -48,11 +48,11 @@ export default function AdminSidenavSection({ navigation, classNames, teams,setS
                             </div>
                         </Transition.Child>
                         {/* Sidebar component, swap this element with another sidebar if you like */}
-                        <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-4">
+                        <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-100 px-6 pb-4">
                             <div className="flex h-16 shrink-0 items-center">
                                 <img
                                     alt="Your Company"
-                                    src="https://tailwindui.com/plus/img/logos/mark.svg?color=white"
+                                    src="/images/DOA.png"
                                     className="h-8 w-auto"
                                 />
                             </div>
@@ -83,7 +83,7 @@ export default function AdminSidenavSection({ navigation, classNames, teams,setS
                                                                             .name
                                                                     ]
                                                                         ? "text-gray-800 bg-white-800"
-                                                                        : "text-gray-400 hover:bg-green-600 hover:text-white"
+                                                                        : "text-gray-600 hover:bg-green-600 hover:text-white"
                                                                 )}
                                                             >
                                                                 <item.icon
@@ -117,7 +117,7 @@ export default function AdminSidenavSection({ navigation, classNames, teams,setS
                                                                                     href={
                                                                                         child.href
                                                                                     }
-                                                                                    className="flex items-center text-gray-400 hover:text-white hover:bg-green-600 rounded-md px-2 py-1 text-sm font-semibold leading-6"
+                                                                                    className="flex items-center text-gray-600 hover:text-white hover:bg-green-600 rounded-md px-2 py-1 text-sm font-semibold leading-6"
                                                                                 >
                                                                                     <child.icon
                                                                                         aria-hidden="true"
@@ -139,7 +139,7 @@ export default function AdminSidenavSection({ navigation, classNames, teams,setS
                                                             className={classNames(
                                                                 item.current
                                                                     ? "bg-white-800 text-gray-800"
-                                                                    : "text-gray-400 hover:bg-green-600 hover:text-white",
+                                                                    : "text-gray-600 hover:bg-green-600 hover:text-white",
                                                                 "group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6"
                                                             )}
                                                         >
@@ -155,7 +155,7 @@ export default function AdminSidenavSection({ navigation, classNames, teams,setS
                                         </ul>
                                     </li>
                                     <li>
-                                        <div className="text-xs/6 font-semibold text-gray-400">
+                                        <div className="text-xs/6 font-semibold text-gray-600">
                                             Your teams
                                         </div>
                                         <ul
@@ -169,7 +169,7 @@ export default function AdminSidenavSection({ navigation, classNames, teams,setS
                                                         className={classNames(
                                                             team.current
                                                                 ? "bg-green-700 text-white"
-                                                                : "text-gray-400 hover:bg-green-700 hover:text-white",
+                                                                : "text-gray-600 hover:bg-green-700 hover:text-white",
                                                             "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
                                                         )}
                                                     >
@@ -188,11 +188,11 @@ export default function AdminSidenavSection({ navigation, classNames, teams,setS
                                     <li className="mt-auto">
                                         <Link
                                             href="#"
-                                            className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-400 hover:bg-green-700 hover:text-white"
+                                            className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-600 hover:bg-green-700 hover:text-white"
                                         >
                                             <Cog6ToothIcon
                                                 aria-hidden="true"
-                                                className="size-6 shrink-0 text-gray-400 group-hover:text-white"
+                                                className="size-6 shrink-0 text-gray-600 group-hover:text-white"
                                             />
                                             Settings
                                         </Link>
@@ -204,7 +204,7 @@ export default function AdminSidenavSection({ navigation, classNames, teams,setS
                 </div>
             </Dialog>
             <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col border-r border-gray-300">
-                <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-4">
+                <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-100 px-6 pb-4">
                     <div className="flex h-16 shrink-0 items-center justify-center mt-2">
                         <img
                             alt="Your Company"
@@ -233,7 +233,7 @@ export default function AdminSidenavSection({ navigation, classNames, teams,setS
                                                             "group flex cursor-pointer gap-x-3 rounded-md p-2 text-sm font-semibold leading-6",
                                                             expanded[item.name]
                                                                 ? "text-gray-800 bg-white-800"
-                                                                : "text-gray-400 hover:bg-green-600 hover:text-white"
+                                                                : "text-gray-600 hover:bg-green-600 hover:text-white"
                                                         )}
                                                     >
                                                         <item.icon
@@ -260,7 +260,7 @@ export default function AdminSidenavSection({ navigation, classNames, teams,setS
                                                                             href={
                                                                                 child.href
                                                                             }
-                                                                            className="flex items-center text-gray-400 hover:text-white hover:bg-green-600 rounded-md px-2 py-1 text-sm font-semibold leading-6"
+                                                                            className="flex items-center text-gray-600 hover:text-white hover:bg-green-600 rounded-md px-2 py-1 text-sm font-semibold leading-6"
                                                                         >
                                                                             <child.icon
                                                                                 aria-hidden="true"
@@ -282,7 +282,7 @@ export default function AdminSidenavSection({ navigation, classNames, teams,setS
                                                     className={classNames(
                                                         item.current
                                                             ? "bg-white-800 text-gray-800"
-                                                            : "text-gray-400 hover:bg-green-600 hover:text-white",
+                                                            : "text-gray-600 hover:bg-green-600 hover:text-white",
                                                         "group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6"
                                                     )}
                                                 >
@@ -298,7 +298,7 @@ export default function AdminSidenavSection({ navigation, classNames, teams,setS
                                 </ul>
                             </li>
                             <li>
-                                <div className="text-xs font-semibold leading-6 text-gray-400">
+                                <div className="text-xs font-semibold leading-6 text-gray-600">
                                     My Team
                                 </div>
                                 <ul
@@ -319,7 +319,7 @@ export default function AdminSidenavSection({ navigation, classNames, teams,setS
                                                             "group flex cursor-pointer gap-x-3 rounded-md p-2 text-sm font-semibold leading-6",
                                                             expanded[teams.name]
                                                                 ? "text-gray-800 bg-white-800"
-                                                                : "text-gray-400 hover:bg-green-600 hover:text-white"
+                                                                : "text-gray-600 hover:bg-green-600 hover:text-white"
                                                         )}
                                                     >
                                                         <teams.icon
@@ -346,7 +346,7 @@ export default function AdminSidenavSection({ navigation, classNames, teams,setS
                                                                             href={
                                                                                 child.href
                                                                             }
-                                                                            className="flex items-center text-gray-400 hover:text-white hover:bg-green-600 rounded-md px-2 py-1 text-sm font-semibold leading-6"
+                                                                            className="flex items-center text-gray-600 hover:text-white hover:bg-green-600 rounded-md px-2 py-1 text-sm font-semibold leading-6"
                                                                         >
                                                                             <child.icon
                                                                                 aria-hidden="true"
@@ -368,7 +368,7 @@ export default function AdminSidenavSection({ navigation, classNames, teams,setS
                                                     className={classNames(
                                                         teams.current
                                                             ? "bg-white-800 text-gray-800"
-                                                            : "text-gray-400 hover:bg-green-600 hover:text-white",
+                                                            : "text-gray-600 hover:bg-green-600 hover:text-white",
                                                         "group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6"
                                                     )}
                                                 >
@@ -386,7 +386,7 @@ export default function AdminSidenavSection({ navigation, classNames, teams,setS
                             <li className="mt-auto">
                                 <Link
                                     href="./settings"
-                                    className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-400 hover:bg-green-600 hover:text-white"
+                                    className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-600 hover:bg-green-600 hover:text-white"
                                 >
                                     <Cog6ToothIcon
                                         aria-hidden="true"
