@@ -465,7 +465,120 @@ export default function PersonalInformationComponent() {
                                 </label>
                             </div>
                         </div>
-                        {!isHouseHold && <>Ning Gawas sya diri</>}
+                    </div>
+
+                    {!isHouseHold && (
+                        <>
+                            <div className="sm:col-span-4">
+                                <label
+                                    htmlFor="household_name"
+                                    className="block text-sm/6 font-medium text-gray-900 pr-10"
+                                >
+                                    Name of Household Head
+                                </label>
+                                <input
+                                    name="household_name"
+                                    type="text"
+                                    onChange={(e) =>
+                                        dispatch(
+                                            setForm({
+                                                ...form,
+                                                [e.target.name]: e.target.value,
+                                            })
+                                        )
+                                    }
+                                    className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
+                                />
+                            </div>
+
+                            <div className="sm:col-span-4">
+                                <label
+                                    htmlFor="household_relation"
+                                    className="block text-sm/6 font-medium text-gray-900 pr-10"
+                                >
+                                    Relationship to the Household Head
+                                </label>
+                                <input
+                                    name="household_relation"
+                                    type="text"
+                                    onChange={(e) =>
+                                        dispatch(
+                                            setForm({
+                                                ...form,
+                                                [e.target.name]: e.target.value,
+                                            })
+                                        )
+                                    }
+                                    className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
+                                />
+                            </div>
+                        </>
+                    )}
+
+                    <div className="sm:col-span-4">
+                        <label
+                            htmlFor="household_members"
+                            className="block text-sm/6 font-medium text-gray-900 pr-10"
+                        >
+                            No. of living household members
+                        </label>
+                        <input
+                            name="household_members"
+                            type="number"
+                            onChange={(e) =>
+                                dispatch(
+                                    setForm({
+                                        ...form,
+                                        [e.target.name]: e.target.value,
+                                    })
+                                )
+                            }
+                            className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
+                        />
+                    </div>
+
+                    <div className="sm:col-span-4">
+                        <label
+                            htmlFor="male_members"
+                            className="block text-sm/6 font-medium text-gray-900 pr-10"
+                        >
+                            No. of Male household members
+                        </label>
+                        <input
+                            name="male_members"
+                            type="number"
+                            onChange={(e) =>
+                                dispatch(
+                                    setForm({
+                                        ...form,
+                                        [e.target.name]: e.target.value,
+                                    })
+                                )
+                            }
+                            className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
+                        />
+                    </div>
+
+                    <div className="sm:col-span-4">
+                        <label
+                            htmlFor="female_members"
+                            className="block text-sm/6 font-medium text-gray-900 pr-10"
+                        >
+                            No. of Female household members
+                        </label>
+                        <input
+                            name="female_members"
+                            type="number"
+                            onChange={(e) =>
+                                dispatch(
+                                    setForm({
+                                        ...form,
+                                        [e.target.name]: e.target.value,
+                                    })
+                                )
+                            }
+                            className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
+                        />
                     </div>
                 </div>
             </div>

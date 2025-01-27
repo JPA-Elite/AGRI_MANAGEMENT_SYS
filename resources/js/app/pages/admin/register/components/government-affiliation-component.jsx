@@ -87,13 +87,13 @@ export default function GovernmentAffiliationComponent() {
                                     type="radio"
                                     value="YES"
                                     onChange={(e) =>
-                                      dispatch(
-                                          setForm({
-                                              ...form,
-                                              [e.target.name]: e.target.value,
-                                          })
-                                      )
-                                  }
+                                        dispatch(
+                                            setForm({
+                                                ...form,
+                                                [e.target.name]: e.target.value,
+                                            })
+                                        )
+                                    }
                                     className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-600 checked:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
                                 />
                                 <label
@@ -109,13 +109,13 @@ export default function GovernmentAffiliationComponent() {
                                     type="radio"
                                     value="NO"
                                     onChange={(e) =>
-                                      dispatch(
-                                          setForm({
-                                              ...form,
-                                              [e.target.name]: e.target.value,
-                                          })
-                                      )
-                                  }
+                                        dispatch(
+                                            setForm({
+                                                ...form,
+                                                [e.target.name]: e.target.value,
+                                            })
+                                        )
+                                    }
                                     className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-600 checked:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
                                 />
                                 <label
@@ -143,13 +143,13 @@ export default function GovernmentAffiliationComponent() {
                                     value="YES"
                                     onClick={() => setIsIndigenous(false)}
                                     onChange={(e) =>
-                                      dispatch(
-                                          setForm({
-                                              ...form,
-                                              [e.target.name]: e.target.value,
-                                          })
-                                      )
-                                  }
+                                        dispatch(
+                                            setForm({
+                                                ...form,
+                                                [e.target.name]: e.target.value,
+                                            })
+                                        )
+                                    }
                                     className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-600 checked:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
                                 />
                                 <label
@@ -166,13 +166,13 @@ export default function GovernmentAffiliationComponent() {
                                     value="NO"
                                     onClick={() => setIsIndigenous(true)}
                                     onChange={(e) =>
-                                      dispatch(
-                                          setForm({
-                                              ...form,
-                                              [e.target.name]: e.target.value,
-                                          })
-                                      )
-                                  }
+                                        dispatch(
+                                            setForm({
+                                                ...form,
+                                                [e.target.name]: e.target.value,
+                                            })
+                                        )
+                                    }
                                     className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-600 checked:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
                                 />
                                 <label
@@ -181,9 +181,26 @@ export default function GovernmentAffiliationComponent() {
                                 >
                                     NO
                                 </label>
-
-                                {!isIndigenous && <>Gawas sya diri</>}
                             </div>
+                            {!isIndigenous && (
+                                <>
+                                    <input
+                                        name="indigent_specify"
+                                        type="text"
+                                        placeholder="If YES, Please Specify"
+                                        onChange={(e) =>
+                                            dispatch(
+                                                setForm({
+                                                    ...form,
+                                                    [e.target.name]:
+                                                        e.target.value,
+                                                })
+                                            )
+                                        }
+                                        className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 mt-4 sm:text-sm/6"
+                                    />
+                                </>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -205,13 +222,13 @@ export default function GovernmentAffiliationComponent() {
                                 value="YES"
                                 onClick={() => setIsGovernment(false)}
                                 onChange={(e) =>
-                                  dispatch(
-                                      setForm({
-                                          ...form,
-                                          [e.target.name]: e.target.value,
-                                      })
-                                  )
-                              }
+                                    dispatch(
+                                        setForm({
+                                            ...form,
+                                            [e.target.name]: e.target.value,
+                                        })
+                                    )
+                                }
                                 className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-600 checked:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
                             />
                             <label
@@ -228,13 +245,13 @@ export default function GovernmentAffiliationComponent() {
                                 value="NO"
                                 onClick={() => setIsGovernment(true)}
                                 onChange={(e) =>
-                                  dispatch(
-                                      setForm({
-                                          ...form,
-                                          [e.target.name]: e.target.value,
-                                      })
-                                  )
-                              }
+                                    dispatch(
+                                        setForm({
+                                            ...form,
+                                            [e.target.name]: e.target.value,
+                                        })
+                                    )
+                                }
                                 className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-600 checked:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
                             />
                             <label
@@ -243,8 +260,40 @@ export default function GovernmentAffiliationComponent() {
                             >
                                 NO
                             </label>
-                            {!isGovernment && <>Gawas sya diri</>}
                         </div>
+                        {!isGovernment && (
+                            <>
+                                <input
+                                    name="gov_type"
+                                    type="text"
+                                    placeholder="If YES, Please Specify ID Type"
+                                    onChange={(e) =>
+                                        dispatch(
+                                            setForm({
+                                                ...form,
+                                                [e.target.name]: e.target.value,
+                                            })
+                                        )
+                                    }
+                                    className="block w-1/2 rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 mt-4 sm:text-sm/6"
+                                />
+
+                                <input
+                                    name="gov_number"
+                                    type="text"
+                                    placeholder="ID Number"
+                                    onChange={(e) =>
+                                        dispatch(
+                                            setForm({
+                                                ...form,
+                                                [e.target.name]: e.target.value,
+                                            })
+                                        )
+                                    }
+                                    className="block w-1/2 rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 mt-4 sm:text-sm/6"
+                                />
+                            </>
+                        )}
                     </div>
                 </div>
 
@@ -263,13 +312,13 @@ export default function GovernmentAffiliationComponent() {
                                 value="YES"
                                 onClick={() => setIsCooperative(false)}
                                 onChange={(e) =>
-                                  dispatch(
-                                      setForm({
-                                          ...form,
-                                          [e.target.name]: e.target.value,
-                                      })
-                                  )
-                              }
+                                    dispatch(
+                                        setForm({
+                                            ...form,
+                                            [e.target.name]: e.target.value,
+                                        })
+                                    )
+                                }
                                 className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-600 checked:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
                             />
                             <label
@@ -286,13 +335,13 @@ export default function GovernmentAffiliationComponent() {
                                 value="NO"
                                 onClick={() => setIsCooperative(true)}
                                 onChange={(e) =>
-                                  dispatch(
-                                      setForm({
-                                          ...form,
-                                          [e.target.name]: e.target.value,
-                                      })
-                                  )
-                              }
+                                    dispatch(
+                                        setForm({
+                                            ...form,
+                                            [e.target.name]: e.target.value,
+                                        })
+                                    )
+                                }
                                 className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-600 checked:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
                             />
                             <label
@@ -301,8 +350,24 @@ export default function GovernmentAffiliationComponent() {
                             >
                                 NO
                             </label>
-                            {!isCooperative && <>Gawas sya diri</>}
+                           
                         </div>
+                        {!isCooperative && <>
+                                <input
+                                    name="farmassoc_name"
+                                    type="text"
+                                    placeholder="If YES, Please Specify"
+                                    onChange={(e) =>
+                                        dispatch(
+                                            setForm({
+                                                ...form,
+                                                [e.target.name]: e.target.value,
+                                            })
+                                        )
+                                    }
+                                    className="block w-1/2 rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 mt-4 sm:text-sm/6"
+                                />
+                            </>}
                     </div>
                 </div>
             </div>
