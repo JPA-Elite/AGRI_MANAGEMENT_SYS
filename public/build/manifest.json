@@ -1,0 +1,747 @@
+{
+  "_ChevronDownIcon-CNpKdI2P.js": {
+    "file": "assets/ChevronDownIcon-CNpKdI2P.js",
+    "name": "ChevronDownIcon",
+    "imports": [
+      "resources/js/app.jsx",
+      "_use-tab-direction-CJos-y7R.js"
+    ]
+  },
+  "_dialog-CzHlAymY.js": {
+    "file": "assets/dialog-CzHlAymY.js",
+    "name": "dialog",
+    "imports": [
+      "resources/js/app.jsx",
+      "_use-tab-direction-CJos-y7R.js"
+    ]
+  },
+  "_index-CQgdXxNp.js": {
+    "file": "assets/index-CQgdXxNp.js",
+    "name": "index",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_react-apexcharts.min-Ca3XN8es.js": {
+    "file": "assets/react-apexcharts.min-Ca3XN8es.js",
+    "name": "react-apexcharts.min",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_use-tab-direction-CJos-y7R.js": {
+    "file": "assets/use-tab-direction-CJos-y7R.js",
+    "name": "use-tab-direction",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/js/app.jsx": {
+    "file": "assets/app-DzeIBodI.js",
+    "name": "app",
+    "src": "resources/js/app.jsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx",
+      "resources/js/app/pages/admin/_sections/footer-section.jsx",
+      "resources/js/app/pages/admin/accounts/page.jsx",
+      "resources/js/app/pages/admin/accounts/sections/add-user-section.jsx",
+      "resources/js/app/pages/admin/accounts/sections/user-table-section.jsx",
+      "resources/js/app/pages/admin/beneficiary/components/beneficiary-table-component.jsx",
+      "resources/js/app/pages/admin/beneficiary/components/filter-drawer-component.jsx",
+      "resources/js/app/pages/admin/beneficiary/components/filter-search-component.jsx",
+      "resources/js/app/pages/admin/beneficiary/page.jsx",
+      "resources/js/app/pages/admin/beneficiary/sections/active-beneficiary-section.jsx",
+      "resources/js/app/pages/admin/contact/page.jsx",
+      "resources/js/app/pages/admin/dashboard/components/age-bracket-component.jsx",
+      "resources/js/app/pages/admin/dashboard/components/children-component.jsx",
+      "resources/js/app/pages/admin/dashboard/components/gender-component.jsx",
+      "resources/js/app/pages/admin/dashboard/components/income-component.jsx",
+      "resources/js/app/pages/admin/dashboard/components/organization-component.jsx",
+      "resources/js/app/pages/admin/dashboard/page.jsx",
+      "resources/js/app/pages/admin/dashboard/sections/graph-section.jsx",
+      "resources/js/app/pages/admin/dashboard/sections/stats-section.jsx",
+      "resources/js/app/pages/admin/layout.jsx",
+      "resources/js/app/pages/admin/lgu-profile/page.jsx",
+      "resources/js/app/pages/admin/lgu-profile/sections/lgu-information-section.jsx",
+      "resources/js/app/pages/admin/organization/page.jsx",
+      "resources/js/app/pages/admin/organization/sections/add-organization-section.jsx",
+      "resources/js/app/pages/admin/organization/sections/organization-table-section.jsx",
+      "resources/js/app/pages/admin/register/components/address-information-component.jsx",
+      "resources/js/app/pages/admin/register/components/education-component.jsx",
+      "resources/js/app/pages/admin/register/components/farm-activity-component.jsx",
+      "resources/js/app/pages/admin/register/components/farm-land-component.jsx",
+      "resources/js/app/pages/admin/register/components/farm-profile-component.jsx",
+      "resources/js/app/pages/admin/register/components/farmers-work-component.jsx",
+      "resources/js/app/pages/admin/register/components/fishing-activity-component.jsx",
+      "resources/js/app/pages/admin/register/components/government-affiliation-component.jsx",
+      "resources/js/app/pages/admin/register/components/personal-information-component.jsx",
+      "resources/js/app/pages/admin/register/components/youth-involvement-component.jsx",
+      "resources/js/app/pages/admin/register/page.jsx",
+      "resources/js/app/pages/admin/register/sections/first-form-section.jsx",
+      "resources/js/app/pages/admin/register/sections/preview-form-section.jsx",
+      "resources/js/app/pages/admin/register/sections/registration-stepper-section.jsx",
+      "resources/js/app/pages/admin/register/sections/second-form-section.jsx",
+      "resources/js/app/pages/admin/register/sections/third-form-section.jsx",
+      "resources/js/app/pages/admin/reports/components/active-agriworker-component.jsx",
+      "resources/js/app/pages/admin/reports/page.jsx",
+      "resources/js/app/pages/admin/reports/sections/general-report-section.jsx",
+      "resources/js/app/pages/admin/settings/page.jsx",
+      "resources/js/app/pages/admin/settings/section/settings-screen-section.jsx",
+      "resources/js/app/pages/admin/verifier/page.jsx",
+      "resources/js/app/pages/admin/verifier/sections/add-verifier-section.jsx",
+      "resources/js/app/pages/admin/verifier/sections/verifier-table-section.jsx",
+      "resources/js/app/pages/login/page.jsx"
+    ],
+    "css": [
+      "assets/app-DrfPWFXI.css"
+    ]
+  },
+  "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx": {
+    "file": "assets/admin-sidenav-sections-d5uBKgl2.js",
+    "name": "admin-sidenav-sections",
+    "src": "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_dialog-CzHlAymY.js",
+      "_use-tab-direction-CJos-y7R.js"
+    ]
+  },
+  "resources/js/app/pages/admin/_sections/footer-section.jsx": {
+    "file": "assets/footer-section-BdYG45XM.js",
+    "name": "footer-section",
+    "src": "resources/js/app/pages/admin/_sections/footer-section.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/js/app/pages/admin/accounts/page.jsx": {
+    "file": "assets/page-BXyQeN9J.js",
+    "name": "page",
+    "src": "resources/js/app/pages/admin/accounts/page.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "resources/js/app/pages/admin/layout.jsx",
+      "resources/js/app/pages/admin/accounts/sections/user-table-section.jsx",
+      "_index-CQgdXxNp.js",
+      "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx",
+      "_dialog-CzHlAymY.js",
+      "_use-tab-direction-CJos-y7R.js",
+      "_ChevronDownIcon-CNpKdI2P.js",
+      "resources/js/app/pages/admin/accounts/sections/add-user-section.jsx"
+    ]
+  },
+  "resources/js/app/pages/admin/accounts/sections/add-user-section.jsx": {
+    "file": "assets/add-user-section-B1lqcano.js",
+    "name": "add-user-section",
+    "src": "resources/js/app/pages/admin/accounts/sections/add-user-section.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_index-CQgdXxNp.js",
+      "_dialog-CzHlAymY.js",
+      "_use-tab-direction-CJos-y7R.js"
+    ]
+  },
+  "resources/js/app/pages/admin/accounts/sections/user-table-section.jsx": {
+    "file": "assets/user-table-section-DdY5DSyx.js",
+    "name": "user-table-section",
+    "src": "resources/js/app/pages/admin/accounts/sections/user-table-section.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "resources/js/app/pages/admin/accounts/sections/add-user-section.jsx",
+      "_index-CQgdXxNp.js",
+      "_dialog-CzHlAymY.js",
+      "_use-tab-direction-CJos-y7R.js"
+    ]
+  },
+  "resources/js/app/pages/admin/beneficiary/components/beneficiary-table-component.jsx": {
+    "file": "assets/beneficiary-table-component-BRauvzT2.js",
+    "name": "beneficiary-table-component",
+    "src": "resources/js/app/pages/admin/beneficiary/components/beneficiary-table-component.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "resources/js/app/pages/admin/beneficiary/components/filter-drawer-component.jsx",
+      "_dialog-CzHlAymY.js",
+      "_use-tab-direction-CJos-y7R.js"
+    ]
+  },
+  "resources/js/app/pages/admin/beneficiary/components/filter-drawer-component.jsx": {
+    "file": "assets/filter-drawer-component-DOS6aeaQ.js",
+    "name": "filter-drawer-component",
+    "src": "resources/js/app/pages/admin/beneficiary/components/filter-drawer-component.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_dialog-CzHlAymY.js",
+      "_use-tab-direction-CJos-y7R.js"
+    ]
+  },
+  "resources/js/app/pages/admin/beneficiary/components/filter-search-component.jsx": {
+    "file": "assets/filter-search-component-DSy2WLv1.js",
+    "name": "filter-search-component",
+    "src": "resources/js/app/pages/admin/beneficiary/components/filter-search-component.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_ChevronDownIcon-CNpKdI2P.js",
+      "_use-tab-direction-CJos-y7R.js"
+    ]
+  },
+  "resources/js/app/pages/admin/beneficiary/page.jsx": {
+    "file": "assets/page-BDxk9rOz.js",
+    "name": "page",
+    "src": "resources/js/app/pages/admin/beneficiary/page.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "resources/js/app/pages/admin/layout.jsx",
+      "resources/js/app/pages/admin/beneficiary/sections/active-beneficiary-section.jsx",
+      "_index-CQgdXxNp.js",
+      "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx",
+      "_dialog-CzHlAymY.js",
+      "_use-tab-direction-CJos-y7R.js",
+      "_ChevronDownIcon-CNpKdI2P.js",
+      "resources/js/app/pages/admin/beneficiary/components/beneficiary-table-component.jsx",
+      "resources/js/app/pages/admin/beneficiary/components/filter-drawer-component.jsx"
+    ]
+  },
+  "resources/js/app/pages/admin/beneficiary/sections/active-beneficiary-section.jsx": {
+    "file": "assets/active-beneficiary-section-BnaNZJPL.js",
+    "name": "active-beneficiary-section",
+    "src": "resources/js/app/pages/admin/beneficiary/sections/active-beneficiary-section.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "resources/js/app/pages/admin/beneficiary/components/beneficiary-table-component.jsx",
+      "resources/js/app/pages/admin/beneficiary/components/filter-drawer-component.jsx",
+      "_dialog-CzHlAymY.js",
+      "_use-tab-direction-CJos-y7R.js"
+    ]
+  },
+  "resources/js/app/pages/admin/contact/page.jsx": {
+    "file": "assets/page-CLw-zYyw.js",
+    "name": "page",
+    "src": "resources/js/app/pages/admin/contact/page.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "resources/js/app/pages/admin/layout.jsx",
+      "_index-CQgdXxNp.js",
+      "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx",
+      "_dialog-CzHlAymY.js",
+      "_use-tab-direction-CJos-y7R.js",
+      "_ChevronDownIcon-CNpKdI2P.js"
+    ]
+  },
+  "resources/js/app/pages/admin/dashboard/components/age-bracket-component.jsx": {
+    "file": "assets/age-bracket-component-CCUqr8oo.js",
+    "name": "age-bracket-component",
+    "src": "resources/js/app/pages/admin/dashboard/components/age-bracket-component.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_index-CQgdXxNp.js",
+      "_react-apexcharts.min-Ca3XN8es.js"
+    ]
+  },
+  "resources/js/app/pages/admin/dashboard/components/children-component.jsx": {
+    "file": "assets/children-component-DR4diU55.js",
+    "name": "children-component",
+    "src": "resources/js/app/pages/admin/dashboard/components/children-component.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_index-CQgdXxNp.js",
+      "_react-apexcharts.min-Ca3XN8es.js"
+    ]
+  },
+  "resources/js/app/pages/admin/dashboard/components/gender-component.jsx": {
+    "file": "assets/gender-component-DcIvhQKB.js",
+    "name": "gender-component",
+    "src": "resources/js/app/pages/admin/dashboard/components/gender-component.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_index-CQgdXxNp.js",
+      "_react-apexcharts.min-Ca3XN8es.js"
+    ]
+  },
+  "resources/js/app/pages/admin/dashboard/components/income-component.jsx": {
+    "file": "assets/income-component-BZmPbNQv.js",
+    "name": "income-component",
+    "src": "resources/js/app/pages/admin/dashboard/components/income-component.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_index-CQgdXxNp.js",
+      "_react-apexcharts.min-Ca3XN8es.js"
+    ]
+  },
+  "resources/js/app/pages/admin/dashboard/components/organization-component.jsx": {
+    "file": "assets/organization-component-0FElMx9_.js",
+    "name": "organization-component",
+    "src": "resources/js/app/pages/admin/dashboard/components/organization-component.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_index-CQgdXxNp.js",
+      "_react-apexcharts.min-Ca3XN8es.js"
+    ]
+  },
+  "resources/js/app/pages/admin/dashboard/page.jsx": {
+    "file": "assets/page-D_3BkvN9.js",
+    "name": "page",
+    "src": "resources/js/app/pages/admin/dashboard/page.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "resources/js/app/pages/admin/layout.jsx",
+      "resources/js/app/pages/admin/dashboard/sections/stats-section.jsx",
+      "resources/js/app/pages/admin/dashboard/sections/graph-section.jsx",
+      "_index-CQgdXxNp.js",
+      "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx",
+      "_dialog-CzHlAymY.js",
+      "_use-tab-direction-CJos-y7R.js",
+      "_ChevronDownIcon-CNpKdI2P.js",
+      "resources/js/app/pages/admin/dashboard/components/gender-component.jsx",
+      "_react-apexcharts.min-Ca3XN8es.js",
+      "resources/js/app/pages/admin/dashboard/components/age-bracket-component.jsx",
+      "resources/js/app/pages/admin/dashboard/components/children-component.jsx",
+      "resources/js/app/pages/admin/dashboard/components/income-component.jsx",
+      "resources/js/app/pages/admin/dashboard/components/organization-component.jsx"
+    ]
+  },
+  "resources/js/app/pages/admin/dashboard/sections/graph-section.jsx": {
+    "file": "assets/graph-section-BzZPtOHw.js",
+    "name": "graph-section",
+    "src": "resources/js/app/pages/admin/dashboard/sections/graph-section.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "resources/js/app/pages/admin/dashboard/components/gender-component.jsx",
+      "resources/js/app/pages/admin/dashboard/components/age-bracket-component.jsx",
+      "resources/js/app/pages/admin/dashboard/components/children-component.jsx",
+      "resources/js/app/pages/admin/dashboard/components/income-component.jsx",
+      "resources/js/app/pages/admin/dashboard/components/organization-component.jsx",
+      "_index-CQgdXxNp.js",
+      "_react-apexcharts.min-Ca3XN8es.js"
+    ]
+  },
+  "resources/js/app/pages/admin/dashboard/sections/stats-section.jsx": {
+    "file": "assets/stats-section-CfMzz6OM.js",
+    "name": "stats-section",
+    "src": "resources/js/app/pages/admin/dashboard/sections/stats-section.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_index-CQgdXxNp.js"
+    ]
+  },
+  "resources/js/app/pages/admin/layout.jsx": {
+    "file": "assets/layout-DS5HaHeA.js",
+    "name": "layout",
+    "src": "resources/js/app/pages/admin/layout.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_index-CQgdXxNp.js",
+      "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx",
+      "_ChevronDownIcon-CNpKdI2P.js",
+      "_use-tab-direction-CJos-y7R.js",
+      "_dialog-CzHlAymY.js"
+    ]
+  },
+  "resources/js/app/pages/admin/lgu-profile/page.jsx": {
+    "file": "assets/page-DVP4CzNQ.js",
+    "name": "page",
+    "src": "resources/js/app/pages/admin/lgu-profile/page.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "resources/js/app/pages/admin/layout.jsx",
+      "resources/js/app/pages/admin/lgu-profile/sections/lgu-information-section.jsx",
+      "_index-CQgdXxNp.js",
+      "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx",
+      "_dialog-CzHlAymY.js",
+      "_use-tab-direction-CJos-y7R.js",
+      "_ChevronDownIcon-CNpKdI2P.js"
+    ]
+  },
+  "resources/js/app/pages/admin/lgu-profile/sections/lgu-information-section.jsx": {
+    "file": "assets/lgu-information-section-CW8jwgyl.js",
+    "name": "lgu-information-section",
+    "src": "resources/js/app/pages/admin/lgu-profile/sections/lgu-information-section.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_index-CQgdXxNp.js"
+    ]
+  },
+  "resources/js/app/pages/admin/organization/page.jsx": {
+    "file": "assets/page-DelPNnb3.js",
+    "name": "page",
+    "src": "resources/js/app/pages/admin/organization/page.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "resources/js/app/pages/admin/layout.jsx",
+      "resources/js/app/pages/admin/organization/sections/organization-table-section.jsx",
+      "_index-CQgdXxNp.js",
+      "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx",
+      "_dialog-CzHlAymY.js",
+      "_use-tab-direction-CJos-y7R.js",
+      "_ChevronDownIcon-CNpKdI2P.js",
+      "resources/js/app/pages/admin/organization/sections/add-organization-section.jsx"
+    ]
+  },
+  "resources/js/app/pages/admin/organization/sections/add-organization-section.jsx": {
+    "file": "assets/add-organization-section-DtorOHBX.js",
+    "name": "add-organization-section",
+    "src": "resources/js/app/pages/admin/organization/sections/add-organization-section.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_dialog-CzHlAymY.js",
+      "_use-tab-direction-CJos-y7R.js"
+    ]
+  },
+  "resources/js/app/pages/admin/organization/sections/organization-table-section.jsx": {
+    "file": "assets/organization-table-section-DYJISaGR.js",
+    "name": "organization-table-section",
+    "src": "resources/js/app/pages/admin/organization/sections/organization-table-section.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "resources/js/app/pages/admin/organization/sections/add-organization-section.jsx",
+      "_dialog-CzHlAymY.js",
+      "_use-tab-direction-CJos-y7R.js"
+    ]
+  },
+  "resources/js/app/pages/admin/register/components/address-information-component.jsx": {
+    "file": "assets/address-information-component-FX6cmRB_.js",
+    "name": "address-information-component",
+    "src": "resources/js/app/pages/admin/register/components/address-information-component.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/js/app/pages/admin/register/components/education-component.jsx": {
+    "file": "assets/education-component-DWVkb4Gs.js",
+    "name": "education-component",
+    "src": "resources/js/app/pages/admin/register/components/education-component.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/js/app/pages/admin/register/components/farm-activity-component.jsx": {
+    "file": "assets/farm-activity-component-D2YQ2bAU.js",
+    "name": "farm-activity-component",
+    "src": "resources/js/app/pages/admin/register/components/farm-activity-component.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/js/app/pages/admin/register/components/farm-land-component.jsx": {
+    "file": "assets/farm-land-component-DT5oATXc.js",
+    "name": "farm-land-component",
+    "src": "resources/js/app/pages/admin/register/components/farm-land-component.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_index-CQgdXxNp.js"
+    ]
+  },
+  "resources/js/app/pages/admin/register/components/farm-profile-component.jsx": {
+    "file": "assets/farm-profile-component-DgXdyhY3.js",
+    "name": "farm-profile-component",
+    "src": "resources/js/app/pages/admin/register/components/farm-profile-component.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "resources/js/app/pages/admin/register/components/farm-activity-component.jsx",
+      "resources/js/app/pages/admin/register/components/farmers-work-component.jsx",
+      "resources/js/app/pages/admin/register/components/fishing-activity-component.jsx",
+      "resources/js/app/pages/admin/register/components/youth-involvement-component.jsx"
+    ]
+  },
+  "resources/js/app/pages/admin/register/components/farmers-work-component.jsx": {
+    "file": "assets/farmers-work-component-BoTPGFKm.js",
+    "name": "farmers-work-component",
+    "src": "resources/js/app/pages/admin/register/components/farmers-work-component.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/js/app/pages/admin/register/components/fishing-activity-component.jsx": {
+    "file": "assets/fishing-activity-component-BZ1XwOC4.js",
+    "name": "fishing-activity-component",
+    "src": "resources/js/app/pages/admin/register/components/fishing-activity-component.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/js/app/pages/admin/register/components/government-affiliation-component.jsx": {
+    "file": "assets/government-affiliation-component-Ib1BxdFB.js",
+    "name": "government-affiliation-component",
+    "src": "resources/js/app/pages/admin/register/components/government-affiliation-component.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/js/app/pages/admin/register/components/personal-information-component.jsx": {
+    "file": "assets/personal-information-component-r8aE1THp.js",
+    "name": "personal-information-component",
+    "src": "resources/js/app/pages/admin/register/components/personal-information-component.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/js/app/pages/admin/register/components/youth-involvement-component.jsx": {
+    "file": "assets/youth-involvement-component-BXp46gII.js",
+    "name": "youth-involvement-component",
+    "src": "resources/js/app/pages/admin/register/components/youth-involvement-component.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/js/app/pages/admin/register/page.jsx": {
+    "file": "assets/page-CtuuKwPV.js",
+    "name": "page",
+    "src": "resources/js/app/pages/admin/register/page.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "resources/js/app/pages/admin/layout.jsx",
+      "resources/js/app/pages/admin/register/sections/registration-stepper-section.jsx",
+      "_index-CQgdXxNp.js",
+      "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx",
+      "_dialog-CzHlAymY.js",
+      "_use-tab-direction-CJos-y7R.js",
+      "_ChevronDownIcon-CNpKdI2P.js",
+      "resources/js/app/pages/admin/register/sections/first-form-section.jsx",
+      "resources/js/app/pages/admin/register/components/personal-information-component.jsx",
+      "resources/js/app/pages/admin/register/components/address-information-component.jsx",
+      "resources/js/app/pages/admin/register/components/education-component.jsx",
+      "resources/js/app/pages/admin/register/components/government-affiliation-component.jsx",
+      "resources/js/app/pages/admin/register/sections/second-form-section.jsx",
+      "resources/js/app/pages/admin/register/components/farm-profile-component.jsx",
+      "resources/js/app/pages/admin/register/components/farm-activity-component.jsx",
+      "resources/js/app/pages/admin/register/components/farmers-work-component.jsx",
+      "resources/js/app/pages/admin/register/components/fishing-activity-component.jsx",
+      "resources/js/app/pages/admin/register/components/youth-involvement-component.jsx",
+      "resources/js/app/pages/admin/register/sections/third-form-section.jsx",
+      "resources/js/app/pages/admin/register/components/farm-land-component.jsx",
+      "resources/js/app/pages/admin/register/sections/preview-form-section.jsx"
+    ]
+  },
+  "resources/js/app/pages/admin/register/sections/first-form-section.jsx": {
+    "file": "assets/first-form-section-CafGrpxm.js",
+    "name": "first-form-section",
+    "src": "resources/js/app/pages/admin/register/sections/first-form-section.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "resources/js/app/pages/admin/register/components/personal-information-component.jsx",
+      "resources/js/app/pages/admin/register/components/address-information-component.jsx",
+      "resources/js/app/pages/admin/register/components/education-component.jsx",
+      "resources/js/app/pages/admin/register/components/government-affiliation-component.jsx"
+    ]
+  },
+  "resources/js/app/pages/admin/register/sections/preview-form-section.jsx": {
+    "file": "assets/preview-form-section-xY__Q7D8.js",
+    "name": "preview-form-section",
+    "src": "resources/js/app/pages/admin/register/sections/preview-form-section.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/js/app/pages/admin/register/sections/registration-stepper-section.jsx": {
+    "file": "assets/registration-stepper-section-BAZ4cpZb.js",
+    "name": "registration-stepper-section",
+    "src": "resources/js/app/pages/admin/register/sections/registration-stepper-section.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "resources/js/app/pages/admin/register/sections/first-form-section.jsx",
+      "resources/js/app/pages/admin/register/sections/second-form-section.jsx",
+      "resources/js/app/pages/admin/register/sections/third-form-section.jsx",
+      "resources/js/app/pages/admin/register/sections/preview-form-section.jsx",
+      "resources/js/app/pages/admin/register/components/personal-information-component.jsx",
+      "resources/js/app/pages/admin/register/components/address-information-component.jsx",
+      "resources/js/app/pages/admin/register/components/education-component.jsx",
+      "resources/js/app/pages/admin/register/components/government-affiliation-component.jsx",
+      "resources/js/app/pages/admin/register/components/farm-profile-component.jsx",
+      "resources/js/app/pages/admin/register/components/farm-activity-component.jsx",
+      "resources/js/app/pages/admin/register/components/farmers-work-component.jsx",
+      "resources/js/app/pages/admin/register/components/fishing-activity-component.jsx",
+      "resources/js/app/pages/admin/register/components/youth-involvement-component.jsx",
+      "resources/js/app/pages/admin/register/components/farm-land-component.jsx",
+      "_index-CQgdXxNp.js"
+    ]
+  },
+  "resources/js/app/pages/admin/register/sections/second-form-section.jsx": {
+    "file": "assets/second-form-section-YX8sScAw.js",
+    "name": "second-form-section",
+    "src": "resources/js/app/pages/admin/register/sections/second-form-section.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "resources/js/app/pages/admin/register/components/farm-profile-component.jsx",
+      "resources/js/app/pages/admin/register/components/farm-activity-component.jsx",
+      "resources/js/app/pages/admin/register/components/farmers-work-component.jsx",
+      "resources/js/app/pages/admin/register/components/fishing-activity-component.jsx",
+      "resources/js/app/pages/admin/register/components/youth-involvement-component.jsx"
+    ]
+  },
+  "resources/js/app/pages/admin/register/sections/third-form-section.jsx": {
+    "file": "assets/third-form-section-Dz_33ujS.js",
+    "name": "third-form-section",
+    "src": "resources/js/app/pages/admin/register/sections/third-form-section.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "resources/js/app/pages/admin/register/components/farm-land-component.jsx",
+      "_index-CQgdXxNp.js"
+    ]
+  },
+  "resources/js/app/pages/admin/reports/components/active-agriworker-component.jsx": {
+    "file": "assets/active-agriworker-component-BcWpDplC.js",
+    "name": "active-agriworker-component",
+    "src": "resources/js/app/pages/admin/reports/components/active-agriworker-component.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/js/app/pages/admin/reports/page.jsx": {
+    "file": "assets/page-B0FMrhfL.js",
+    "name": "page",
+    "src": "resources/js/app/pages/admin/reports/page.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "resources/js/app/pages/admin/layout.jsx",
+      "resources/js/app/pages/admin/reports/sections/general-report-section.jsx",
+      "_index-CQgdXxNp.js",
+      "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx",
+      "_dialog-CzHlAymY.js",
+      "_use-tab-direction-CJos-y7R.js",
+      "_ChevronDownIcon-CNpKdI2P.js",
+      "resources/js/app/pages/admin/dashboard/sections/stats-section.jsx",
+      "resources/js/app/pages/admin/dashboard/components/gender-component.jsx",
+      "_react-apexcharts.min-Ca3XN8es.js",
+      "resources/js/app/pages/admin/dashboard/components/age-bracket-component.jsx",
+      "resources/js/app/pages/admin/dashboard/components/children-component.jsx",
+      "resources/js/app/pages/admin/dashboard/components/income-component.jsx",
+      "resources/js/app/pages/admin/reports/components/active-agriworker-component.jsx"
+    ]
+  },
+  "resources/js/app/pages/admin/reports/sections/general-report-section.jsx": {
+    "file": "assets/general-report-section-CS2UnAeE.js",
+    "name": "general-report-section",
+    "src": "resources/js/app/pages/admin/reports/sections/general-report-section.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "resources/js/app/pages/admin/dashboard/sections/stats-section.jsx",
+      "resources/js/app/pages/admin/dashboard/components/gender-component.jsx",
+      "resources/js/app/pages/admin/dashboard/components/age-bracket-component.jsx",
+      "resources/js/app/pages/admin/dashboard/components/children-component.jsx",
+      "resources/js/app/pages/admin/dashboard/components/income-component.jsx",
+      "resources/js/app/pages/admin/reports/components/active-agriworker-component.jsx",
+      "_index-CQgdXxNp.js",
+      "_react-apexcharts.min-Ca3XN8es.js"
+    ]
+  },
+  "resources/js/app/pages/admin/settings/page.jsx": {
+    "file": "assets/page-CayjZpzp.js",
+    "name": "page",
+    "src": "resources/js/app/pages/admin/settings/page.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "resources/js/app/pages/admin/layout.jsx",
+      "resources/js/app/pages/admin/settings/section/settings-screen-section.jsx",
+      "_index-CQgdXxNp.js",
+      "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx",
+      "_dialog-CzHlAymY.js",
+      "_use-tab-direction-CJos-y7R.js",
+      "_ChevronDownIcon-CNpKdI2P.js"
+    ]
+  },
+  "resources/js/app/pages/admin/settings/section/settings-screen-section.jsx": {
+    "file": "assets/settings-screen-section-B98hn3GM.js",
+    "name": "settings-screen-section",
+    "src": "resources/js/app/pages/admin/settings/section/settings-screen-section.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/js/app/pages/admin/verifier/page.jsx": {
+    "file": "assets/page-DentCvjV.js",
+    "name": "page",
+    "src": "resources/js/app/pages/admin/verifier/page.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "resources/js/app/pages/admin/layout.jsx",
+      "resources/js/app/pages/admin/verifier/sections/verifier-table-section.jsx",
+      "_index-CQgdXxNp.js",
+      "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx",
+      "_dialog-CzHlAymY.js",
+      "_use-tab-direction-CJos-y7R.js",
+      "_ChevronDownIcon-CNpKdI2P.js",
+      "resources/js/app/pages/admin/verifier/sections/add-verifier-section.jsx"
+    ]
+  },
+  "resources/js/app/pages/admin/verifier/sections/add-verifier-section.jsx": {
+    "file": "assets/add-verifier-section-DwvpGg1E.js",
+    "name": "add-verifier-section",
+    "src": "resources/js/app/pages/admin/verifier/sections/add-verifier-section.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_index-CQgdXxNp.js",
+      "_dialog-CzHlAymY.js",
+      "_use-tab-direction-CJos-y7R.js"
+    ]
+  },
+  "resources/js/app/pages/admin/verifier/sections/verifier-table-section.jsx": {
+    "file": "assets/verifier-table-section-kHBy_9lP.js",
+    "name": "verifier-table-section",
+    "src": "resources/js/app/pages/admin/verifier/sections/verifier-table-section.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "resources/js/app/pages/admin/verifier/sections/add-verifier-section.jsx",
+      "_index-CQgdXxNp.js",
+      "_dialog-CzHlAymY.js",
+      "_use-tab-direction-CJos-y7R.js"
+    ]
+  },
+  "resources/js/app/pages/login/page.jsx": {
+    "file": "assets/page-DvbE_jNw.js",
+    "name": "page",
+    "src": "resources/js/app/pages/login/page.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  }
+}
