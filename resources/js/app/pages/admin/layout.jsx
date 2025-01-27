@@ -9,7 +9,7 @@ import {
     UsersIcon,
 } from "@heroicons/react/24/outline";
 import { FaCircleDot } from "react-icons/fa6";
-import { FcAssistant, FcButtingIn, FcComboChart, FcConferenceCall, FcDataConfiguration, FcHome } from "react-icons/fc";
+import { FcAssistant, FcButtingIn, FcComboChart, FcConferenceCall, FcDataConfiguration, FcHome, FcList } from "react-icons/fc";
 
 import {
     AdjustmentsHorizontalIcon,
@@ -29,17 +29,17 @@ const navigation = [
             {
                 name: "Register Beneficiary",
                 href: "./register",
-                icon: FaCircleDot,
+                icon: FcList,
             },
             {
                 name: "Active Beneficiary",
                 href: "./beneficiary?status=active",
-                icon: FaCircleDot,
+                icon: FcList,
             },
             {
                 name: "Inactive Beneficiary",
                 href: "./beneficiary?status=inactive",
-                icon: FaCircleDot,
+                icon: FcList,
             },
         ],
     },
@@ -48,8 +48,8 @@ const navigation = [
         icon: FcComboChart,
         current: false,
         children: [
-            { name: "General Report", href: "./reports", icon: FaCircleDot },
-            { name: "Batch Printing", href: "./printing", icon: FaCircleDot },
+            { name: "General Report", href: "./reports", icon: FcList },
+            { name: "Batch Printing", href: "./printing", icon: FcList },
         ],
     },
 ];
@@ -60,7 +60,7 @@ const teams = [
         icon: FcButtingIn,
         current: false,
         children: [
-            { name: "Accounts List", href: "./accounts", icon: FaCircleDot },
+            { name: "Accounts List", href: "./accounts", icon: FcList },
         ],
     },
     {
@@ -69,9 +69,9 @@ const teams = [
         icon: FcDataConfiguration,
         current: false,
         children: [
-            { name: "LGU Profile", href: "./lgu-profile", icon: FaCircleDot },
-            { name: "Brgy.Verifier", href: "./verifier", icon: FaCircleDot },
-            { name: "Organization", href: "./organization", icon: FaCircleDot },
+            { name: "LGU Profile", href: "./lgu-profile", icon: FcList },
+            { name: "Brgy.Verifier", href: "./verifier", icon: FcList },
+            { name: "Organization", href: "./organization", icon: FcList },
         ],
     },
     {
@@ -83,9 +83,9 @@ const teams = [
             {
                 name: "Download User Manual",
                 href: "./manual",
-                icon: FaCircleDot,
+                icon: FcList,
             },
-            { name: "Contact Us", href: "./contact", icon: FaCircleDot },
+            { name: "Contact Us", href: "./contact", icon: FcList },
         ],
     },
 ];

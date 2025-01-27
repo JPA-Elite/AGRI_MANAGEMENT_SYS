@@ -1,1 +1,0 @@
-import{j as o}from"./app-Cy15hxTA.js";import r from"./layout-BuKRTOau.js";import t from"./lgu-information-section-Cua4tdHY.js";import"./index-BOcq5a-C.js";import"./admin-sidenav-sections-BBxiOioW.js";import"./dialog-CgqYOUUf.js";import"./use-tab-direction-reEodp2e.js";import"./ChevronDownIcon-BG03inU-.js";function s(){return o.jsx(r,{children:o.jsx(t,{})})}export{s as default};

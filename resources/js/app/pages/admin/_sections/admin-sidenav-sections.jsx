@@ -2,6 +2,7 @@ import { Cog6ToothIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "@inertiajs/react";
 import React, { useState } from "react";
 import { Dialog, Menu, Transition } from "@headlessui/react";
+import { FcServices } from "react-icons/fc";
 
 export default function AdminSidenavSection({ navigation, classNames, teams,setSidebarOpen,sidebarOpen }) {
     const [expanded, setExpanded] = useState({}); // To manage expanded state of items with children
@@ -388,7 +389,7 @@ export default function AdminSidenavSection({ navigation, classNames, teams,setS
                                     href="./settings"
                                     className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-600 hover:bg-green-600 hover:text-white"
                                 >
-                                    <Cog6ToothIcon
+                                    <FcServices 
                                         aria-hidden="true"
                                         className="h-6 w-6 shrink-0"
                                     />
