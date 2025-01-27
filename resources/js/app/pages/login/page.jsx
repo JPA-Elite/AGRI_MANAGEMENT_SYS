@@ -114,7 +114,7 @@ export default function LoginPage() {
                 </div>
               </div>
 
-              <div className="mt-6 grid grid-cols-2 gap-4">
+              <div className="mt-6 grid grid-cols-1 gap-4">
                 <a
                   href="#"
                   className="flex w-full items-center justify-center gap-3 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:ring-transparent"
@@ -140,7 +140,7 @@ export default function LoginPage() {
                   <span className="text-sm/6 font-semibold">Google</span>
                 </a>
 
-                <a
+                {/* <a
                   href="#"
                   className="flex w-full items-center justify-center gap-3 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:ring-transparent"
                 >
@@ -152,17 +152,17 @@ export default function LoginPage() {
                     />
                   </svg>
                   <span className="text-sm/6 font-semibold">GitHub</span>
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
 
-          <p className="mt-10 text-center text-sm/6 text-gray-500">
+          {/* <p className="mt-10 text-center text-sm/6 text-gray-500">
             Not a member?{' '}
             <a href="#" className="font-semibold text-green-700 hover:text-green-500">
               Start a 14 day free trial
             </a>
-          </p>
+          </p> */}
         </div>
       </div>
         </div>

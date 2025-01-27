@@ -12,7 +12,7 @@ export default function RegistrationStepperSection() {
         { id: "01", name: "Personal Information", description: "Completed" },
         { id: "02", name: "Farm Profile", description: "Current" },
         { id: "03", name: "Farm Land Information", description: "Upcoming" },
-        { id: "04", name: "Preview", description: "Upcoming" },
+        // { id: "04", name: "Preview", description: "Upcoming" },
     ];
 
     function classNames(...classes) {
