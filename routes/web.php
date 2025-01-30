@@ -73,6 +73,10 @@ Route::get('/admin/settings', function () {
     return Inertia::render('admin/settings/page');
 });
 
+Route::get('/admin/profile', function () {
+    return Inertia::render('admin/profile/page');
+});
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
