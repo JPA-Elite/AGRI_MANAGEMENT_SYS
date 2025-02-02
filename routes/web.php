@@ -77,6 +77,82 @@ Route::get('/admin/profile', function () {
     return Inertia::render('admin/profile/page');
 });
 
+Route::get('/verifier/dashboard', function () {
+    return Inertia::render('verifier/dashboard/page');
+});
+
+Route::get('/verifier/beneficiary', function () {
+    return Inertia::render('verifier/beneficiary/page');
+});
+
+Route::get('/verifier/reports', function () {
+    return Inertia::render('verifier/reports/page');
+});
+
+Route::get('/verifier/contact', function () {
+    return Inertia::render('verifier/contact/page');
+});
+
+Route::get('/verifier/settings', function () {
+    return Inertia::render('verifier/settings/page');
+});
+
+Route::get('/verifier/profile', function () {
+    return Inertia::render('verifier/profile/page');
+});
+
+Route::get('/verifier/verify', function () {
+    return Inertia::render('verifier/verify/page');
+});
+
+Route::get('/encoder/dashboard', function () {
+    return Inertia::render('encoder/dashboard/page');
+});
+
+Route::get('/encoder/register', function () {
+    return Inertia::render('encoder/register/page');
+});
+
+Route::get('/encoder/beneficiary', function () {
+    return Inertia::render('encoder/beneficiary/page');
+});
+
+Route::get('/encoder/reports', function () {
+    return Inertia::render('encoder/reports/page');
+});
+
+Route::get('/encoder/accounts', function () {
+    return Inertia::render('encoder/accounts/page');
+});
+
+Route::get('/encoder/create-account', function () {
+    return Inertia::render('encoder/create-account/page');
+});
+
+Route::get('/encoder/lgu-profile', function () {
+    return Inertia::render('encoder/lgu-profile/page');
+});
+
+Route::get('/encoder/verifier', function () {
+    return Inertia::render('encoder/verifier/page');
+});
+
+Route::get('/encoder/organization', function () {
+    return Inertia::render('encoder/organization/page');
+});
+
+Route::get('/encoder/contact', function () {
+    return Inertia::render('encoder/contact/page');
+});
+
+Route::get('/encoder/settings', function () {
+    return Inertia::render('encoder/settings/page');
+});
+
+Route::get('/encoder/profile', function () {
+    return Inertia::render('encoder/profile/page');
+});
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
