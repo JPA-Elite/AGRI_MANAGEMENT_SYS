@@ -1,8 +1,8 @@
 import React from "react";
-import { FaBaby } from "react-icons/fa6";
+import { FaPersonDigging } from "react-icons/fa6";
 import ApexCharts from "react-apexcharts";
 
-export default function ChildrenComponent() {
+export default function LivelihoodComponent() {
     const options = {
         chart: {
             id: "bar-chart",
@@ -13,23 +13,20 @@ export default function ChildrenComponent() {
 
         xaxis: {
             categories: [
-                "0 yr",
-                "1 yr",
-                "2 yrs",
-                "3 yrs",
-                "4 yrs",
-                "5 yrs",
-                "Above 5 yrs",
+                "Farmers",
+                "Fisherfolks",
+                "Farm Workers/Laborer",
+                "Agri-Youth",
             ], // x-axis categories
         },
         plotOptions: {
             bar: {
-                horizontal: true, // Set to false to create a vertical bar chart
+                horizontal: false, // Set to false to create a vertical bar chart
                 columnWidth: "60%", // Adjust width of bars
             },
         },
         title: {
-            text: "Children Age Count",
+            text: "Main Livelihood Graph",
             align: "center",
             style: {
                 fontSize: "16px",
@@ -45,16 +42,16 @@ export default function ChildrenComponent() {
 
     const series = [
         {
-            name: "Age Count",
-            data: [182, 54, 90, 95, 62, 64, 128], // Data corresponding to each category
+            name: "Main Livelihood Count",
+            data: [182, 128, 90, 32], // Data corresponding to each category
         },
     ];
     return (
         <div className="sm:col-span-2">
             <div className="bg-gray-200/20 shadow-md p-4 gap-4">
                 <div className="flex flex-row">
-                    <FaBaby className="size-6 text-green-500 mr-2" />
-                    Children
+                    <FaPersonDigging className="size-6 text-green-500 mr-2" />
+                    Livelihood
                 </div>
                 <div
                     className="chart-container"

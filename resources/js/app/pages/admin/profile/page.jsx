@@ -6,6 +6,7 @@ import ProfileAddressInfoSection from "./sections/profile-address-info-section";
 import ProfileEducationInfoSection from "./sections/profile-education-info-section";
 import ProfileGovernmentInfoSection from "./sections/profile-government-info-section";
 import ProfileFarmTypeSection from "./sections/profile-farm-type-section";
+import ProfileFarmlandSection from "./sections/profile-farmland-section";
 
 export default function ProfilePage() {
     return (
@@ -70,6 +71,7 @@ export default function ProfilePage() {
                                 <ProfileEducationInfoSection/>
                                 <ProfileGovernmentInfoSection/>
                                 <ProfileFarmTypeSection/>
+                                <ProfileFarmlandSection/>
                             </main>
                         </div>
                     </div>

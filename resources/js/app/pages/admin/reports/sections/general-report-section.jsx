@@ -2,10 +2,10 @@ import React from "react";
 import StatsSection from "../../dashboard/sections/stats-section";
 import GenderComponent from "../../dashboard/components/gender-component";
 import AgeBracketComponent from "../../dashboard/components/age-bracket-component";
-import ChildrenComponent from "../../dashboard/components/children-component";
 import IncomeComponent from "../../dashboard/components/income-component";
 import ActiveAgriworkerComponent from "../components/active-agriworker-component";
 import { PrinterIcon } from "@heroicons/react/20/solid";
+import LivelihoodComponent from "../../dashboard/components/livelihood-component";
 
 export default function GeneralReportSection() {
     const handlePrint = () => {
@@ -30,7 +30,7 @@ export default function GeneralReportSection() {
             <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
                 <GenderComponent />
                 <AgeBracketComponent />
-                <ChildrenComponent />
+                <LivelihoodComponent />
                 <IncomeComponent />
             </div>
             <ActiveAgriworkerComponent />

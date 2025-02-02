@@ -1,10 +1,12 @@
+import { setPersonalInformation } from "@/app/redux/personal-information-slice";
 import { setForm } from "@/app/redux/register-slice";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function AddressInformationComponent() {
-    
-    const { form } = useSelector((store) => store.register);
+    const { personal_information } = useSelector(
+        (store) => store.personal_information
+    );
     const dispatch = useDispatch();
     return (
         <div>
@@ -31,9 +33,12 @@ export default function AddressInformationComponent() {
                                 type="text"
                                 onChange={(e) =>
                                     dispatch(
-                                        setForm({
-                                            ...form,
-                                            [e.target.name]: e.target.value,
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            address_info: {
+                                                ...personal_information.address_info, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
                                         })
                                     )
                                 }
@@ -56,9 +61,12 @@ export default function AddressInformationComponent() {
                                 type="text"
                                 onChange={(e) =>
                                     dispatch(
-                                        setForm({
-                                            ...form,
-                                            [e.target.name]: e.target.value,
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            address_info: {
+                                                ...personal_information.address_info, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
                                         })
                                     )
                                 }
@@ -81,9 +89,12 @@ export default function AddressInformationComponent() {
                                 placeholder="Barangay"
                                 onChange={(e) =>
                                     dispatch(
-                                        setForm({
-                                            ...form,
-                                            [e.target.name]: e.target.value,
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            address_info: {
+                                                ...personal_information.address_info, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
                                         })
                                     )
                                 }
@@ -125,9 +136,12 @@ export default function AddressInformationComponent() {
                                 type="text"
                                 onChange={(e) =>
                                     dispatch(
-                                        setForm({
-                                            ...form,
-                                            [e.target.name]: e.target.value,
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            address_info: {
+                                                ...personal_information.address_info, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
                                         })
                                     )
                                 }
@@ -150,9 +164,12 @@ export default function AddressInformationComponent() {
                                 type="text"
                                 onChange={(e) =>
                                     dispatch(
-                                        setForm({
-                                            ...form,
-                                            [e.target.name]: e.target.value,
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            address_info: {
+                                                ...personal_information.address_info, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
                                         })
                                     )
                                 }
@@ -174,9 +191,12 @@ export default function AddressInformationComponent() {
                                 name="region"
                                 onChange={(e) =>
                                     dispatch(
-                                        setForm({
-                                            ...form,
-                                            [e.target.name]: e.target.value,
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            address_info: {
+                                                ...personal_information.address_info, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
                                         })
                                     )
                                 }

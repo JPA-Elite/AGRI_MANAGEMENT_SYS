@@ -5,6 +5,7 @@ import FishingActivityComponent from "./fishing-activity-component";
 import YouthInvolvementComponent from "./youth-involvement-component";
 import { useDispatch, useSelector } from "react-redux";
 import { setForm } from "@/app/redux/register-slice";
+import { setPersonalInformation } from "@/app/redux/personal-information-slice";
 
 function FarmProfileComponent() {
     const [isFarmer, setIsFarmer] = useState(false);
@@ -13,8 +14,11 @@ function FarmProfileComponent() {
     const [isYouth, setIsYouth] = useState(false);
     const { form } = useSelector((store) => store.register);
     const dispatch = useDispatch();
+    const { personal_information } = useSelector(
+        (store) => store.personal_information
+    );
 
-    console.log("formform", form);
+    console.log("personal_information", personal_information);
     return (
         <form>
             <div className="flex justify-between gap-y-4 font-medium mt-2">
@@ -35,12 +39,21 @@ function FarmProfileComponent() {
                             setIsFisherfolk(false);
                             setIsYouth(false);
                             dispatch(
-                                setForm({
-                                    ...form,
-                                    [e.target.name]: e.target.value,
-                                    farm_activity: [],
+                                setPersonalInformation({
+                                    ...personal_information,
+                                    farm_profile: {
+                                        ...personal_information.farm_profile, // Spread the existing home_address fields
+                                        [e.target.name]: e.target.value, // Dynamically set the updated field
+                                    },
                                 })
                             );
+                            // dispatch(
+                            //     setForm({
+                            //         ...form,
+                            //         [e.target.name]: e.target.value,
+                            //         farm_activity: [],
+                            //     })
+                            // );
                         }}
                         className="h-5 w-5 text-green-600 focus:ring-green-500 border-gray-300 rounded"
                     />
@@ -62,10 +75,12 @@ function FarmProfileComponent() {
                             setIsFisherfolk(false);
                             setIsYouth(false);
                             dispatch(
-                                setForm({
-                                    ...form,
-                                    [e.target.name]: e.target.value,
-                                    farm_activity: [],
+                                setPersonalInformation({
+                                    ...personal_information,
+                                    farm_profile: {
+                                        ...personal_information.farm_profile, // Spread the existing home_address fields
+                                        [e.target.name]: e.target.value, // Dynamically set the updated field
+                                    },
                                 })
                             );
                         }}
@@ -89,10 +104,12 @@ function FarmProfileComponent() {
                             setIsFisherfolk(true);
                             setIsYouth(false);
                             dispatch(
-                                setForm({
-                                    ...form,
-                                    [e.target.name]: e.target.value,
-                                    farm_activity: [],
+                                setPersonalInformation({
+                                    ...personal_information,
+                                    farm_profile: {
+                                        ...personal_information.farm_profile, // Spread the existing home_address fields
+                                        [e.target.name]: e.target.value, // Dynamically set the updated field
+                                    },
                                 })
                             );
                         }}
@@ -116,10 +133,12 @@ function FarmProfileComponent() {
                             setIsFisherfolk(false);
                             setIsYouth(true);
                             dispatch(
-                                setForm({
-                                    ...form,
-                                    [e.target.name]: e.target.value,
-                                    farm_activity: [],
+                                setPersonalInformation({
+                                    ...personal_information,
+                                    farm_profile: {
+                                        ...personal_information.farm_profile, // Spread the existing home_address fields
+                                        [e.target.name]: e.target.value, // Dynamically set the updated field
+                                    },
                                 })
                             );
                         }}

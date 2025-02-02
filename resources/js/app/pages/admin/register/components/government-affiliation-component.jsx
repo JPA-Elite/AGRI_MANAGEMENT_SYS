@@ -1,3 +1,4 @@
+import { setPersonalInformation } from "@/app/redux/personal-information-slice";
 import { setForm } from "@/app/redux/register-slice";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -6,7 +7,9 @@ export default function GovernmentAffiliationComponent() {
     const [isIndigenous, setIsIndigenous] = useState(true);
     const [isGovernment, setIsGovernment] = useState(true);
     const [isCooperative, setIsCooperative] = useState(true);
-    const { form } = useSelector((store) => store.register);
+    const { personal_information } = useSelector(
+        (store) => store.personal_information
+    );
     const dispatch = useDispatch();
     return (
         <div>
@@ -33,9 +36,13 @@ export default function GovernmentAffiliationComponent() {
                                     value="YES"
                                     onChange={(e) =>
                                         dispatch(
-                                            setForm({
-                                                ...form,
-                                                [e.target.name]: e.target.value,
+                                            setPersonalInformation({
+                                                ...personal_information,
+                                                government_affiliation: {
+                                                    ...personal_information.government_affiliation, // Spread the existing home_address fields
+                                                    [e.target.name]:
+                                                        e.target.value, // Dynamically set the updated field
+                                                },
                                             })
                                         )
                                     }
@@ -55,9 +62,13 @@ export default function GovernmentAffiliationComponent() {
                                     value="NO"
                                     onChange={(e) =>
                                         dispatch(
-                                            setForm({
-                                                ...form,
-                                                [e.target.name]: e.target.value,
+                                            setPersonalInformation({
+                                                ...personal_information,
+                                                government_affiliation: {
+                                                    ...personal_information.government_affiliation, // Spread the existing home_address fields
+                                                    [e.target.name]:
+                                                        e.target.value, // Dynamically set the updated field
+                                                },
                                             })
                                         )
                                     }
@@ -88,9 +99,13 @@ export default function GovernmentAffiliationComponent() {
                                     value="YES"
                                     onChange={(e) =>
                                         dispatch(
-                                            setForm({
-                                                ...form,
-                                                [e.target.name]: e.target.value,
+                                            setPersonalInformation({
+                                                ...personal_information,
+                                                government_affiliation: {
+                                                    ...personal_information.government_affiliation, // Spread the existing home_address fields
+                                                    [e.target.name]:
+                                                        e.target.value, // Dynamically set the updated field
+                                                },
                                             })
                                         )
                                     }
@@ -110,9 +125,13 @@ export default function GovernmentAffiliationComponent() {
                                     value="NO"
                                     onChange={(e) =>
                                         dispatch(
-                                            setForm({
-                                                ...form,
-                                                [e.target.name]: e.target.value,
+                                            setPersonalInformation({
+                                                ...personal_information,
+                                                government_affiliation: {
+                                                    ...personal_information.government_affiliation, // Spread the existing home_address fields
+                                                    [e.target.name]:
+                                                        e.target.value, // Dynamically set the updated field
+                                                },
                                             })
                                         )
                                     }
@@ -144,9 +163,13 @@ export default function GovernmentAffiliationComponent() {
                                     onClick={() => setIsIndigenous(false)}
                                     onChange={(e) =>
                                         dispatch(
-                                            setForm({
-                                                ...form,
-                                                [e.target.name]: e.target.value,
+                                            setPersonalInformation({
+                                                ...personal_information,
+                                                government_affiliation: {
+                                                    ...personal_information.government_affiliation, // Spread the existing home_address fields
+                                                    [e.target.name]:
+                                                        e.target.value, // Dynamically set the updated field
+                                                },
                                             })
                                         )
                                     }
@@ -167,9 +190,13 @@ export default function GovernmentAffiliationComponent() {
                                     onClick={() => setIsIndigenous(true)}
                                     onChange={(e) =>
                                         dispatch(
-                                            setForm({
-                                                ...form,
-                                                [e.target.name]: e.target.value,
+                                            setPersonalInformation({
+                                                ...personal_information,
+                                                government_affiliation: {
+                                                    ...personal_information.government_affiliation, // Spread the existing home_address fields
+                                                    [e.target.name]:
+                                                        e.target.value, // Dynamically set the updated field
+                                                },
                                             })
                                         )
                                     }
@@ -190,10 +217,13 @@ export default function GovernmentAffiliationComponent() {
                                         placeholder="If YES, Please Specify"
                                         onChange={(e) =>
                                             dispatch(
-                                                setForm({
-                                                    ...form,
-                                                    [e.target.name]:
-                                                        e.target.value,
+                                                setPersonalInformation({
+                                                    ...personal_information,
+                                                    government_affiliation: {
+                                                        ...personal_information.government_affiliation, // Spread the existing home_address fields
+                                                        [e.target.name]:
+                                                            e.target.value, // Dynamically set the updated field
+                                                    },
                                                 })
                                             )
                                         }
@@ -223,9 +253,12 @@ export default function GovernmentAffiliationComponent() {
                                 onClick={() => setIsGovernment(false)}
                                 onChange={(e) =>
                                     dispatch(
-                                        setForm({
-                                            ...form,
-                                            [e.target.name]: e.target.value,
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            government_affiliation: {
+                                                ...personal_information.government_affiliation, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
                                         })
                                     )
                                 }
@@ -246,9 +279,12 @@ export default function GovernmentAffiliationComponent() {
                                 onClick={() => setIsGovernment(true)}
                                 onChange={(e) =>
                                     dispatch(
-                                        setForm({
-                                            ...form,
-                                            [e.target.name]: e.target.value,
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            government_affiliation: {
+                                                ...personal_information.government_affiliation, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
                                         })
                                     )
                                 }
@@ -269,9 +305,13 @@ export default function GovernmentAffiliationComponent() {
                                     placeholder="If YES, Please Specify ID Type"
                                     onChange={(e) =>
                                         dispatch(
-                                            setForm({
-                                                ...form,
-                                                [e.target.name]: e.target.value,
+                                            setPersonalInformation({
+                                                ...personal_information,
+                                                government_affiliation: {
+                                                    ...personal_information.government_affiliation, // Spread the existing home_address fields
+                                                    [e.target.name]:
+                                                        e.target.value, // Dynamically set the updated field
+                                                },
                                             })
                                         )
                                     }
@@ -284,9 +324,13 @@ export default function GovernmentAffiliationComponent() {
                                     placeholder="ID Number"
                                     onChange={(e) =>
                                         dispatch(
-                                            setForm({
-                                                ...form,
-                                                [e.target.name]: e.target.value,
+                                            setPersonalInformation({
+                                                ...personal_information,
+                                                government_affiliation: {
+                                                    ...personal_information.government_affiliation, // Spread the existing home_address fields
+                                                    [e.target.name]:
+                                                        e.target.value, // Dynamically set the updated field
+                                                },
                                             })
                                         )
                                     }
@@ -310,12 +354,15 @@ export default function GovernmentAffiliationComponent() {
                                 name="farm_assoc"
                                 type="radio"
                                 value="YES"
-                                onClick={() => setIsCooperative(false)}
+                                // onClick={() => setIsCooperative(false)}
                                 onChange={(e) =>
                                     dispatch(
-                                        setForm({
-                                            ...form,
-                                            [e.target.name]: e.target.value,
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            government_affiliation: {
+                                                ...personal_information.government_affiliation, // Spread the existing government_affiliation fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
                                         })
                                     )
                                 }
@@ -335,12 +382,13 @@ export default function GovernmentAffiliationComponent() {
                                 value="NO"
                                 onClick={() => setIsCooperative(true)}
                                 onChange={(e) =>
-                                    dispatch(
-                                        setForm({
-                                            ...form,
-                                            [e.target.name]: e.target.value,
-                                        })
-                                    )
+                                    setPersonalInformation({
+                                        ...personal_information,
+                                        government_affiliation: {
+                                            ...personal_information.government_affiliation, // Spread the existing government_affiliation fields
+                                            [e.target.name]: e.target.value, // Dynamically set the updated field
+                                        },
+                                    })
                                 }
                                 className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-600 checked:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
                             />
@@ -350,24 +398,29 @@ export default function GovernmentAffiliationComponent() {
                             >
                                 NO
                             </label>
-                           
                         </div>
-                        {!isCooperative && <>
+                        {!isCooperative && (
+                            <>
                                 <input
                                     name="farmassoc_name"
                                     type="text"
                                     placeholder="If YES, Please Specify"
                                     onChange={(e) =>
                                         dispatch(
-                                            setForm({
-                                                ...form,
-                                                [e.target.name]: e.target.value,
+                                            setPersonalInformation({
+                                                ...personal_information,
+                                                government_affiliation: {
+                                                    ...personal_information.government_affiliation, // Spread the existing home_address fields
+                                                    [e.target.name]:
+                                                        e.target.value, // Dynamically set the updated field
+                                                },
                                             })
                                         )
                                     }
                                     className="block w-1/2 rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 mt-4 sm:text-sm/6"
                                 />
-                            </>}
+                            </>
+                        )}
                     </div>
                 </div>
             </div>

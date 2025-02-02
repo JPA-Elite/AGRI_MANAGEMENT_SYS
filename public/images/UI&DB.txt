@@ -1,0 +1,167 @@
+VERIFIER UI
+
+Dashboard
+Beneficiary - Verify Beneficiary, Active Beneficiary, Inactive Beneficiary
+Report Section - General Report (For Specific Barangay Only)
+Help Desk - Contact Us, Download User Manual
+
+
+ENCODER UI
+
+Dashboard
+Beneficiary Section - Register Beneficiary, Active Beneficiary, Inactive Beneficiary
+Report Section - General Report
+System Maintenance - Brgy. Verifier, Organization
+Help Desk - Contact Us, Download User Manual
+
+SUPERVISOR UI
+
+Dashboard
+Beneficiary Section - Register Beneficiary, Active Beneficiary, Inactive Beneficiary
+Report Section - General Report
+System Maintenance - LGU Profile, Brgy. Verifier, Organization
+Help Desk - Contact Us, Download User Manual
+
+
+-------------------------------------
+
+personal_information table
+
+id
+rsbsa_id
+register_id
+firstname
+middlename
+lastname
+suffix
+mothers_maiden
+dob
+pob
+religion
+gender
+civil
+mobile
+landline
+contact_person
+contact_person_mobile
+street_address
+street_address_2
+barangay
+city
+province
+region
+highest_education
+status
+avatar
+verifier
+register_date
+
+--------------------------------------------
+
+household table
+
+id
+farmer_id
+household_head
+household_head_name
+household_relation
+male_members
+female_members
+annual_income
+
+------------------------------------------
+
+government_affiliation table
+
+id
+farmer_id
+PWD
+4Ps
+indigenous_group
+indigenous_group_name
+government_id
+government_id_type
+government_id_number
+farmers_association
+farmers_association_name
+
+-------------------------------------------------
+
+farm_profile table
+
+id
+farmer_id
+main_livelihood
+work_type
+
+--------------------------------------------------
+
+land_farmer table
+
+id
+farmer_id
+farmer_rotation_name
+
+---------------------------------------------
+
+parcel table
+
+id
+farmer_id
+farm_location
+farm_area
+ancestral_domain
+agrarian_beneficiary
+ownership_doc_number
+ownership_type
+
+----------------------------------------------------
+
+parcel_components table
+
+id
+farmer_id
+parcel_id
+commodity
+size
+number_heads
+farm_type
+organic_practioner
+remarks
+
+------------------------------------------------------
+
+users table
+
+id
+firstname
+middlename
+lastname
+email
+password
+role
+status
+
+--------------------------------------------------------
+
+lgu_profile table
+
+id
+address
+barangay
+city
+province
+region
+contact
+email
+municipal_agricultural_office
+logo
+
+--------------------------------------------------------
+
+organization table
+
+id
+organization_name
+status
+

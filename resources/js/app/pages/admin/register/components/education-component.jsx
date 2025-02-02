@@ -1,10 +1,14 @@
+import { setPersonalInformation } from "@/app/redux/personal-information-slice";
 import { setForm } from "@/app/redux/register-slice";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function EducationComponent() {
-    const { form } = useSelector((store) => store.register);
+    const { personal_information } = useSelector(
+        (store) => store.personal_information
+    );
     const dispatch = useDispatch();
+    console.log('personal_information',personal_information)
     return (
         <div>
             <div className="border-b border-gray-900/10 pb-12">
@@ -27,11 +31,14 @@ export default function EducationComponent() {
                             <select
                                 id="education"
                                 name="education"
-                                onChange={(e) =>
+                                oonChange={(e) =>
                                     dispatch(
-                                        setForm({
-                                            ...form,
-                                            [e.target.name]: e.target.value,
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            education: {
+                                                ...personal_information.education, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
                                         })
                                     )
                                 }

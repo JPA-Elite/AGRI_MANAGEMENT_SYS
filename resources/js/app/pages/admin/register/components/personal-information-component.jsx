@@ -1,12 +1,16 @@
+import { setPersonalInformation } from "@/app/redux/personal-information-slice";
 import { setForm } from "@/app/redux/register-slice";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function PersonalInformationComponent() {
     const [isHouseHold, setIsHouseHold] = useState(true);
-    const { form } = useSelector((store) => store.register);
+    const { personal_information } = useSelector(
+        (store) => store.personal_information
+    );
     const dispatch = useDispatch();
-    console.log("formform", form);
+
+    console.log("personal_information", personal_information);
     return (
         <div>
             <div className="border-b border-gray-900/10 pb-12">
@@ -29,9 +33,12 @@ export default function PersonalInformationComponent() {
                             <input
                                 onChange={(e) =>
                                     dispatch(
-                                        setForm({
-                                            ...form,
-                                            [e.target.name]: e.target.value,
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            personal_info: {
+                                                ...personal_information.personal_info, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
                                         })
                                     )
                                 }
@@ -55,9 +62,12 @@ export default function PersonalInformationComponent() {
                                 name="middle_name"
                                 onChange={(e) =>
                                     dispatch(
-                                        setForm({
-                                            ...form,
-                                            [e.target.name]: e.target.value,
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            personal_info: {
+                                                ...personal_information.personal_info, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
                                         })
                                     )
                                 }
@@ -81,9 +91,12 @@ export default function PersonalInformationComponent() {
                                 name="last_name"
                                 onChange={(e) =>
                                     dispatch(
-                                        setForm({
-                                            ...form,
-                                            [e.target.name]: e.target.value,
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            personal_info: {
+                                                ...personal_information.personal_info, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
                                         })
                                     )
                                 }
@@ -106,9 +119,12 @@ export default function PersonalInformationComponent() {
                                 name="suffix"
                                 onChange={(e) =>
                                     dispatch(
-                                        setForm({
-                                            ...form,
-                                            [e.target.name]: e.target.value,
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            personal_info: {
+                                                ...personal_information.personal_info, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
                                         })
                                     )
                                 }
@@ -137,9 +153,12 @@ export default function PersonalInformationComponent() {
                                 type="text"
                                 onChange={(e) =>
                                     dispatch(
-                                        setForm({
-                                            ...form,
-                                            [e.target.name]: e.target.value,
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            personal_info: {
+                                                ...personal_information.personal_info, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
                                         })
                                     )
                                 }
@@ -162,9 +181,12 @@ export default function PersonalInformationComponent() {
                                 type="date"
                                 onChange={(e) =>
                                     dispatch(
-                                        setForm({
-                                            ...form,
-                                            [e.target.name]: e.target.value,
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            personal_info: {
+                                                ...personal_information.personal_info, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
                                         })
                                     )
                                 }
@@ -187,9 +209,12 @@ export default function PersonalInformationComponent() {
                                 type="text"
                                 onChange={(e) =>
                                     dispatch(
-                                        setForm({
-                                            ...form,
-                                            [e.target.name]: e.target.value,
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            personal_info: {
+                                                ...personal_information.personal_info, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
                                         })
                                     )
                                 }
@@ -212,9 +237,12 @@ export default function PersonalInformationComponent() {
                                 type="text"
                                 onChange={(e) =>
                                     dispatch(
-                                        setForm({
-                                            ...form,
-                                            [e.target.name]: e.target.value,
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            personal_info: {
+                                                ...personal_information.personal_info, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
                                         })
                                     )
                                 }
@@ -236,13 +264,19 @@ export default function PersonalInformationComponent() {
                                     id="gender"
                                     name="gender"
                                     type="radio"
-                                    value="MALE"
+                                    value="male"
                                     onChange={(e) =>
                                         dispatch(
-                                            setForm({
-                                                ...form,
-                                                [e.target.name]: e.target.value,
-                                            })
+                                            dispatch(
+                                                setPersonalInformation({
+                                                    ...personal_information,
+                                                    personal_info: {
+                                                        ...personal_information.personal_info, // Spread the existing home_address fields
+                                                        [e.target.name]:
+                                                            e.target.value, // Dynamically set the updated field
+                                                    },
+                                                })
+                                            )
                                         )
                                     }
                                     className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-500 checked:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
@@ -258,13 +292,19 @@ export default function PersonalInformationComponent() {
                                     id="gender"
                                     name="gender"
                                     type="radio"
-                                    value="FEMALE"
+                                    value="female"
                                     onChange={(e) =>
                                         dispatch(
-                                            setForm({
-                                                ...form,
-                                                [e.target.name]: e.target.value,
-                                            })
+                                            dispatch(
+                                                setPersonalInformation({
+                                                    ...personal_information,
+                                                    personal_info: {
+                                                        ...personal_information.personal_info, // Spread the existing home_address fields
+                                                        [e.target.name]:
+                                                            e.target.value, // Dynamically set the updated field
+                                                    },
+                                                })
+                                            )
                                         )
                                     }
                                     className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-500 checked:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
@@ -292,9 +332,12 @@ export default function PersonalInformationComponent() {
                                 name="civil"
                                 onChange={(e) =>
                                     dispatch(
-                                        setForm({
-                                            ...form,
-                                            [e.target.name]: e.target.value,
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            personal_info: {
+                                                ...personal_information.personal_info, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
                                         })
                                     )
                                 }
@@ -323,9 +366,12 @@ export default function PersonalInformationComponent() {
                                 type="text"
                                 onChange={(e) =>
                                     dispatch(
-                                        setForm({
-                                            ...form,
-                                            [e.target.name]: e.target.value,
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            personal_info: {
+                                                ...personal_information.personal_info, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
                                         })
                                     )
                                 }
@@ -348,9 +394,12 @@ export default function PersonalInformationComponent() {
                                 type="text"
                                 onChange={(e) =>
                                     dispatch(
-                                        setForm({
-                                            ...form,
-                                            [e.target.name]: e.target.value,
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            personal_info: {
+                                                ...personal_information.personal_info, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
                                         })
                                     )
                                 }
@@ -373,9 +422,12 @@ export default function PersonalInformationComponent() {
                                 type="text"
                                 onChange={(e) =>
                                     dispatch(
-                                        setForm({
-                                            ...form,
-                                            [e.target.name]: e.target.value,
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            personal_info: {
+                                                ...personal_information.personal_info, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
                                         })
                                     )
                                 }
@@ -398,9 +450,12 @@ export default function PersonalInformationComponent() {
                                 type="text"
                                 onChange={(e) =>
                                     dispatch(
-                                        setForm({
-                                            ...form,
-                                            [e.target.name]: e.target.value,
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            personal_info: {
+                                                ...personal_information.personal_info, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
                                         })
                                     )
                                 }
@@ -426,10 +481,16 @@ export default function PersonalInformationComponent() {
                                     onClick={() => setIsHouseHold(true)}
                                     onChange={(e) =>
                                         dispatch(
-                                            setForm({
-                                                ...form,
-                                                [e.target.name]: e.target.value,
-                                            })
+                                            dispatch(
+                                                setPersonalInformation({
+                                                    ...personal_information,
+                                                    personal_info: {
+                                                        ...personal_information.personal_info, // Spread the existing home_address fields
+                                                        [e.target.name]:
+                                                            e.target.value, // Dynamically set the updated field
+                                                    },
+                                                })
+                                            )
                                         )
                                     }
                                     className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-500 checked:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
@@ -449,10 +510,16 @@ export default function PersonalInformationComponent() {
                                     onClick={() => setIsHouseHold(false)}
                                     onChange={(e) =>
                                         dispatch(
-                                            setForm({
-                                                ...form,
-                                                [e.target.name]: e.target.value,
-                                            })
+                                            dispatch(
+                                                setPersonalInformation({
+                                                    ...personal_information,
+                                                    personal_info: {
+                                                        ...personal_information.personal_info, // Spread the existing home_address fields
+                                                        [e.target.name]:
+                                                            e.target.value, // Dynamically set the updated field
+                                                    },
+                                                })
+                                            )
                                         )
                                     }
                                     className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-500 checked:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
@@ -481,10 +548,16 @@ export default function PersonalInformationComponent() {
                                     type="text"
                                     onChange={(e) =>
                                         dispatch(
-                                            setForm({
-                                                ...form,
-                                                [e.target.name]: e.target.value,
-                                            })
+                                            dispatch(
+                                                setPersonalInformation({
+                                                    ...personal_information,
+                                                    personal_info: {
+                                                        ...personal_information.personal_info, // Spread the existing home_address fields
+                                                        [e.target.name]:
+                                                            e.target.value, // Dynamically set the updated field
+                                                    },
+                                                })
+                                            )
                                         )
                                     }
                                     className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
@@ -503,10 +576,16 @@ export default function PersonalInformationComponent() {
                                     type="text"
                                     onChange={(e) =>
                                         dispatch(
-                                            setForm({
-                                                ...form,
-                                                [e.target.name]: e.target.value,
-                                            })
+                                            dispatch(
+                                                setPersonalInformation({
+                                                    ...personal_information,
+                                                    personal_info: {
+                                                        ...personal_information.personal_info, // Spread the existing home_address fields
+                                                        [e.target.name]:
+                                                            e.target.value, // Dynamically set the updated field
+                                                    },
+                                                })
+                                            )
                                         )
                                     }
                                     className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
@@ -527,9 +606,12 @@ export default function PersonalInformationComponent() {
                             type="number"
                             onChange={(e) =>
                                 dispatch(
-                                    setForm({
-                                        ...form,
-                                        [e.target.name]: e.target.value,
+                                    setPersonalInformation({
+                                        ...personal_information,
+                                        personal_info: {
+                                            ...personal_information.personal_info, // Spread the existing home_address fields
+                                            [e.target.name]: e.target.value, // Dynamically set the updated field
+                                        },
                                     })
                                 )
                             }
@@ -549,9 +631,12 @@ export default function PersonalInformationComponent() {
                             type="number"
                             onChange={(e) =>
                                 dispatch(
-                                    setForm({
-                                        ...form,
-                                        [e.target.name]: e.target.value,
+                                    setPersonalInformation({
+                                        ...personal_information,
+                                        personal_info: {
+                                            ...personal_information.personal_info, // Spread the existing home_address fields
+                                            [e.target.name]: e.target.value, // Dynamically set the updated field
+                                        },
                                     })
                                 )
                             }
@@ -571,9 +656,12 @@ export default function PersonalInformationComponent() {
                             type="number"
                             onChange={(e) =>
                                 dispatch(
-                                    setForm({
-                                        ...form,
-                                        [e.target.name]: e.target.value,
+                                    setPersonalInformation({
+                                        ...personal_information,
+                                        personal_info: {
+                                            ...personal_information.personal_info, // Spread the existing home_address fields
+                                            [e.target.name]: e.target.value, // Dynamically set the updated field
+                                        },
                                     })
                                 )
                             }
