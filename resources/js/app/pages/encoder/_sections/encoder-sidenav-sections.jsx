@@ -1,7 +1,7 @@
 import { Cog6ToothIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "@inertiajs/react";
 import React, { useState } from "react";
-import { Dialog, Menu, Transition } from "@headlessui/react";
+import { Dialog, Transition } from "@headlessui/react";
 import { FcServices } from "react-icons/fc";
 
 export default function EncoderSidenavSection({ navigation, classNames, teams,setSidebarOpen,sidebarOpen }) {
