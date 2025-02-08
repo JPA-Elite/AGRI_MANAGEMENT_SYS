@@ -17,7 +17,7 @@ class PersonalInformationController extends Controller
 
     public function store(Request $request)
     {
-        PersonalInformation::create($request->all());
+        $personalInfo = PersonalInformation::create($request->personal_info);
         return response()->json([
             'response' => 'success',
         ], 200);

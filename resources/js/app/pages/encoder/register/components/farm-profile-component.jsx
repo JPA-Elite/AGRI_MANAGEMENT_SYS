@@ -18,7 +18,6 @@ function FarmProfileComponent() {
         (store) => store.personal_information
     );
 
-    console.log("personal_information", personal_information);
     return (
         <form>
             <div className="flex justify-between gap-y-4 font-medium mt-2">

@@ -10,7 +10,6 @@ export default function PersonalInformationComponent() {
     );
     const dispatch = useDispatch();
 
-    console.log("personal_information", personal_information);
     return (
         <div>
             <div className="border-b border-gray-900/10 pb-12">
