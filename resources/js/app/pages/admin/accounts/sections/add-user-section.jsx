@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 import {
     Dialog,
     DialogBackdrop,
@@ -8,8 +9,70 @@ import {
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { FaUserPlus } from "react-icons/fa6";
 
-export default function AddUserSection() {
+export default function AddUserSection({ addUser }) {
     const [open, setOpen] = useState(false);
+    const [formData, setFormData] = useState({
+        firstname: "",
+        middlename: "",
+        lastname: "",
+        suffix: "",
+        role: "",
+        email: "",
+        password: "",
+        password2: "",
+        status: "Active",
+    });
+
+    const [message, setMessage] = useState("");
+    
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+    
+        if (formData.password !== formData.password2) {
+            setMessage("Passwords do not match.");
+            return;
+        }
+    
+        try {
+            const response = await axios.post("http://localhost:8000/api/users", {
+                firstname: formData.firstname,
+                middlename: formData.middlename,
+                lastname: formData.lastname,
+                suffix: formData.suffix,
+                role: formData.role,
+                email: formData.email,
+                password: formData.password,
+                password_confirmation: formData.password2,
+                status: formData.status,
+            });
+    
+            setMessage(response.data.message);
+            addUser(response.data.user);
+            console.log(addUser);
+            setFormData({
+                firstname: "",
+                middlename: "",
+                lastname: "",
+                suffix: "",
+                role: "",
+                email: "",
+                password: "",
+                password2: "",
+                status: "Active",
+            });
+    
+            setOpen(false);
+        } catch (error) {
+            setMessage("Error saving user. Check console for details.");
+            console.error(error.response?.data || error.message);
+        }
+    };
+    
+    
 
     return (
         <>
@@ -67,46 +130,52 @@ export default function AddUserSection() {
                                         </div>
                                     </div>
                                     <div className="relative mt-6 flex-1 px-4 sm:px-6">
+                                        <form onSubmit={handleSubmit}>
                                         <div>
                                             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
                                                 <div className="sm:col-span-12">
+                                                {message && <p className="text-red-500">{message}</p>}
                                                     <hr />
                                                     <h3 className="text-base font-medium text-gray-500 pt-3">Personal Information</h3>
                                                 </div>
                                                 <div className="sm:col-span-6">
                                                     <input
-                                                        id="firstname"
                                                         name="firstname"
                                                         type="text"
                                                         placeholder="Firstname"
+                                                        value={formData.firstname} 
+                                                        onChange={handleChange} 
                                                         className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                                                     />
                                                 </div>
 
                                                 <div className="sm:col-span-6">
                                                     <input
-                                                        id="middlename"
                                                         name="middlename"
                                                         type="text"
                                                         placeholder="Middlename"
+                                                        value={formData.middlename} 
+                                                        onChange={handleChange} 
                                                         className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                                                     />
                                                 </div>
                                                 <div className="sm:col-span-6">
                                                     <input
-                                                        id="lastname"
                                                         name="lastname"
                                                         type="text"
                                                         placeholder="Lastname"
+                                                        value={formData.lastname} 
+                                                        onChange={handleChange} 
                                                         className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                                                     />
                                                 </div>
 
                                                 <div className="sm:col-span-6">
                                                     <select
-                                                        id="suffix"
                                                         name="suffix"
                                                         autoComplete="suffix-name"
+                                                        value={formData.suffix} 
+                                                        onChange={handleChange} 
                                                         className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                                                     >
                                                         <option
@@ -126,8 +195,9 @@ export default function AddUserSection() {
 
                                                 <div className="sm:col-span-12">
                                                     <select
-                                                        id="role"
                                                         name="role"
+                                                        value={formData.role} 
+                                                        onChange={handleChange} 
                                                         className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                                                     >
                                                         <option
@@ -151,19 +221,23 @@ export default function AddUserSection() {
 
                                                 <div className="sm:col-span-12">
                                                     <input
-                                                        id="email"
                                                         name="email"
                                                         type="email"
                                                         placeholder="Email Address"
+                                                        autoComplete="email"
+                                                        value={formData.email} 
+                                                        onChange={handleChange} 
                                                         className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                                                     />
                                                 </div>
                                                 <div className="sm:col-span-12">
                                                     <input
-                                                        id="password"
                                                         name="password"
                                                         type="password"
                                                         placeholder="Password"
+                                                        autoComplete="password"
+                                                        value={formData.password} 
+                                                        onChange={handleChange} 
                                                         className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                                                     />
                                                 </div>
@@ -173,11 +247,21 @@ export default function AddUserSection() {
                                                         name="password2"
                                                         type="password"
                                                         placeholder="Confirm Password"
+                                                        autoComplete="password"
+                                                        value={formData.password2} 
+                                                        onChange={handleChange}
                                                         className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                                                     />
                                                 </div>
 
                                                 <div className="sm:col-span-12">
+                                                <input
+                                                        
+                                                        name="status"
+                                                        type="hidden"
+                                                        value={formData.status}
+                                                        className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
+                                                    />
                                                    <hr />
                                                 </div>
                                             </div>
@@ -197,6 +281,7 @@ export default function AddUserSection() {
                                                 Save
                                             </button>
                                         </div>
+                                        </form>
                                     </div>
                                 </div>
                             </DialogPanel>
