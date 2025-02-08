@@ -9,7 +9,15 @@ import {
     UsersIcon,
 } from "@heroicons/react/24/outline";
 import { FaCircleDot } from "react-icons/fa6";
-import { FcAssistant, FcButtingIn, FcComboChart, FcConferenceCall, FcDataConfiguration, FcHome, FcList } from "react-icons/fc";
+import {
+    FcAssistant,
+    FcButtingIn,
+    FcComboChart,
+    FcConferenceCall,
+    FcDataConfiguration,
+    FcHome,
+    FcList,
+} from "react-icons/fc";
 
 import {
     AdjustmentsHorizontalIcon,
@@ -18,6 +26,7 @@ import {
     PhoneArrowUpRightIcon,
 } from "@heroicons/react/20/solid";
 import AdminSidenavSection from "./_sections/admin-sidenav-sections";
+import { Link, router } from "@inertiajs/react";
 
 const navigation = [
     { name: "Dashboard", href: "./dashboard", icon: FcHome, current: false },
@@ -59,9 +68,7 @@ const teams = [
         name: "Account Management",
         icon: FcButtingIn,
         current: false,
-        children: [
-            { name: "Accounts List", href: "./accounts", icon: FcList },
-        ],
+        children: [{ name: "Accounts List", href: "./accounts", icon: FcList }],
     },
     {
         id: 2,
@@ -110,11 +117,9 @@ export default function AdminLayout({ children }) {
     };
     return (
         <div>
-     
-
             {/* Static sidebar for desktop */}
             <AdminSidenavSection
-            setSidebarOpen={setSidebarOpen}
+                setSidebarOpen={setSidebarOpen}
                 navigation={navigation}
                 classNames={classNames}
                 teams={teams}
@@ -207,7 +212,7 @@ export default function AdminLayout({ children }) {
                                     transition
                                     className="absolute right-0 z-10 mt-2.5 w-32 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
                                 >
-                                    {userNavigation.map((item) => (
+                                    {/* {userNavigation.map((item) => (
                                         <Menu.Item key={item.name}>
                                             <a
                                                 href={item.href}
@@ -216,7 +221,27 @@ export default function AdminLayout({ children }) {
                                                 {item.name}
                                             </a>
                                         </Menu.Item>
-                                    ))}
+                                    ))} */}
+                                    <Menu.Item>
+                                        <a
+                                            onClick={()=>router.visit(
+                                                "/administrator/profile"
+                                            )}
+                                            className="block px-3 py-1 text-sm leading-6 text-gray-900 data-[focus]:bg-gray-50"
+                                        >
+                                          Profile
+                                        </a>
+                                    </Menu.Item>
+                                    <Menu.Item>
+                                        <Link
+                                            method="post"
+                                            href={route("logout")}
+                                            as="button"
+                                            className=" flex w-full px-3 py-1 text-sm leading-6 text-gray-900 data-[focus]:bg-gray-50"
+                                        >
+                                            Sign Out
+                                        </Link>
+                                    </Menu.Item>
                                 </Menu.Items>
                             </Menu>
                         </div>
