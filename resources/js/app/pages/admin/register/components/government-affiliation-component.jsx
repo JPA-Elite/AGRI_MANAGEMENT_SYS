@@ -31,7 +31,7 @@ export default function GovernmentAffiliationComponent() {
                         <div className="mt-2">
                             <div className="flex items-center gap-x-3 mb-3">
                                 <input
-                                    name="pwd"
+                                    name="PWD"
                                     type="radio"
                                     value="YES"
                                     onChange={(e) =>
@@ -57,7 +57,7 @@ export default function GovernmentAffiliationComponent() {
                             </div>
                             <div className="flex items-center gap-x-3">
                                 <input
-                                    name="pwd"
+                                    name="PWD"
                                     type="radio"
                                     value="NO"
                                     onChange={(e) =>
@@ -94,7 +94,7 @@ export default function GovernmentAffiliationComponent() {
                         <div className="mt-2">
                             <div className="flex items-center gap-x-3 mb-3">
                                 <input
-                                    name="4ps"
+                                    name="4Ps"
                                     type="radio"
                                     value="YES"
                                     onChange={(e) =>
@@ -120,7 +120,7 @@ export default function GovernmentAffiliationComponent() {
                             </div>
                             <div className="flex items-center gap-x-3">
                                 <input
-                                    name="4ps"
+                                    name="4Ps"
                                     type="radio"
                                     value="NO"
                                     onChange={(e) =>
@@ -157,7 +157,7 @@ export default function GovernmentAffiliationComponent() {
                         <div className="mt-2">
                             <div className="flex items-center gap-x-3 mb-3">
                                 <input
-                                    name="indigenous"
+                                    name="indigenous_group"
                                     type="radio"
                                     value="YES"
                                     onClick={() => setIsIndigenous(false)}
@@ -184,7 +184,7 @@ export default function GovernmentAffiliationComponent() {
                             </div>
                             <div className="flex items-center gap-x-3">
                                 <input
-                                    name="indigenous"
+                                    name="indigenous_group"
                                     type="radio"
                                     value="NO"
                                     onClick={() => setIsIndigenous(true)}
@@ -212,7 +212,7 @@ export default function GovernmentAffiliationComponent() {
                             {!isIndigenous && (
                                 <>
                                     <input
-                                        name="indigent_specify"
+                                        name="indigenous_group_name"
                                         type="text"
                                         placeholder="If YES, Please Specify"
                                         onChange={(e) =>
@@ -247,7 +247,7 @@ export default function GovernmentAffiliationComponent() {
                     <div className="mt-2">
                         <div className="flex items-center gap-x-3 mb-3">
                             <input
-                                name="gov_id"
+                                name="government_id"
                                 type="radio"
                                 value="YES"
                                 onClick={() => setIsGovernment(false)}
@@ -273,7 +273,7 @@ export default function GovernmentAffiliationComponent() {
                         </div>
                         <div className="flex items-center gap-x-3">
                             <input
-                                name="gov_id"
+                                name="government_id"
                                 type="radio"
                                 value="NO"
                                 onClick={() => setIsGovernment(true)}
@@ -300,7 +300,7 @@ export default function GovernmentAffiliationComponent() {
                         {!isGovernment && (
                             <>
                                 <input
-                                    name="gov_type"
+                                    name="government_id_type"
                                     type="text"
                                     placeholder="If YES, Please Specify ID Type"
                                     onChange={(e) =>
@@ -319,7 +319,7 @@ export default function GovernmentAffiliationComponent() {
                                 />
 
                                 <input
-                                    name="gov_number"
+                                    name="government_id_number"
                                     type="text"
                                     placeholder="ID Number"
                                     onChange={(e) =>
@@ -351,7 +351,7 @@ export default function GovernmentAffiliationComponent() {
                     <div className="mt-2">
                         <div className="flex items-center gap-x-3 mb-3">
                             <input
-                                name="farm_assoc"
+                                name="farmers_association"
                                 type="radio"
                                 value="YES"
                                 // onClick={() => setIsCooperative(false)}
@@ -377,7 +377,7 @@ export default function GovernmentAffiliationComponent() {
                         </div>
                         <div className="flex items-center gap-x-3">
                             <input
-                                name="farm_assoc"
+                                name="farmers_association"
                                 type="radio"
                                 value="NO"
                                 onClick={() => setIsCooperative(true)}
@@ -402,7 +402,7 @@ export default function GovernmentAffiliationComponent() {
                         {!isCooperative && (
                             <>
                                 <input
-                                    name="farmassoc_name"
+                                    name="farmers_association_name"
                                     type="text"
                                     placeholder="If YES, Please Specify"
                                     onChange={(e) =>

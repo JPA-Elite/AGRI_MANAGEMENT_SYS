@@ -30,7 +30,7 @@ export default function EducationComponent() {
                         <div className="mt-2">
                             <select
                                 id="education"
-                                name="education"
+                                name="highest_education"
                                 onChange={(e) =>
                                     dispatch(
                                         setPersonalInformation({

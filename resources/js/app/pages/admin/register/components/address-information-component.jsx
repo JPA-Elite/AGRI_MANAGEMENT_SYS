@@ -160,7 +160,7 @@ export default function AddressInformationComponent() {
                         <div className="mt-2">
                             <input
                                 id="Province"
-                                name="Province"
+                                name="province"
                                 type="text"
                                 onChange={(e) =>
                                     dispatch(

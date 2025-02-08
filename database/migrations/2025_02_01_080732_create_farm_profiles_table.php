@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id(); // Auto-incrementing 'id' field as primary key.
             $table->string('register_id')->nullable()->unique();
             $table->string('main_livelihood')->nullable();
-            $table->string('work_type')->nullable();
+            $table->string('farm_activity')->nullable();
             $table->timestamps(); 
         });
     }

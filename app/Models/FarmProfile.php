@@ -11,6 +11,6 @@ class FarmProfile extends Model
     protected $fillable = [
         'register_id',
         'main_livelihood',
-        'work_type',
+        'farm_activity',
     ];
 }
