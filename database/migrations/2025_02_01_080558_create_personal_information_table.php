@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('personal_information', function (Blueprint $table) {
             $table->id(); // This will create an auto-incrementing 'id' field as primary key.
-            $table->string('rsbsa_id')->nullable()->unique();
-            $table->string('register_id')->nullable()->unique();
+            $table->string('rsbsa_id')->nullable();
+            $table->string('register_id')->nullable();
             $table->string('firstname')->nullable();
             $table->string('middlename')->nullable();
             $table->string('lastname')->nullable();

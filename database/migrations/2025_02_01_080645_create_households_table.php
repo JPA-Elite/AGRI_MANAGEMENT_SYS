@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('households', function (Blueprint $table) {
             $table->id(); // This will create an auto-incrementing 'id' field as primary key.
-            $table->string('register_id')->nullable()->unique();
+            $table->string('register_id')->nullable();
             $table->string('household_head')->nullable();
             $table->string('household_head_name')->nullable();
             $table->string('household_relation')->nullable();

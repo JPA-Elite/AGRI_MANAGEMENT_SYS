@@ -75,10 +75,12 @@ export default function RegistrationStepperSection() {
         console.log("waaaaaaaaaaaaa", personal_information);
         setLoading(true);
         try {
-            await store.dispatch(store_personal_information_thunk(personal_information));
+            await store.dispatch(
+                store_personal_information_thunk(personal_information)
+            );
             setLoading(false);
         } catch (error) {
-            console.log('error',error)
+            console.log("error", error);
             setLoading(false);
         }
     }
@@ -123,11 +125,11 @@ export default function RegistrationStepperSection() {
                                         stepIdx === steps.length - 1
                                             ? "rounded-b-md border-t-0"
                                             : "",
-                                        "overflow-hidden border border-gray-200 lg:border-0"
+                                        "overflow-hidden border  border-gray-200 lg:border-0"
                                     )}
                                 >
                                     <button
-                                        onClick={() => handleStepClick(stepIdx)}
+                                        // onClick={() => handleStepClick(stepIdx)}
                                         className="group w-full text-left:"
                                     >
                                         {step.status === "complete" ? (
@@ -245,12 +247,18 @@ export default function RegistrationStepperSection() {
                             currentStep === steps.length
                                 ? () => submitHandler()
                                 : handleNext
-                        } 
+                        }
                         disabled={loading}
                         className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
                         // disabled={currentStep === steps.length}
                     >
-                        {currentStep === steps.length ? "Submit" : "Next"}
+                        {loading ? (
+                            <>Loading...</>
+                        ) : currentStep === steps.length ? (
+                            "Submit"
+                        ) : (
+                            "Next"
+                        )}
                     </button>
                 </div>
             </div>

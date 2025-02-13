@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('land_farmers', function (Blueprint $table) {
             $table->id();
-            $table->string('register_id')->nullable()->unique();
+            $table->string('register_id')->nullable();
             $table->string('farmer_rotation_name')->nullable();
             $table->timestamps();
         });

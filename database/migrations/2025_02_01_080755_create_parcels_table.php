@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('parcels', function (Blueprint $table) {
             $table->id();
-            $table->string('register_id')->nullable()->unique();
+            $table->string('register_id')->nullable();
             $table->string('farm_location')->nullable();
             $table->decimal('farm_area', 10, 2)->nullable(); // Farm area in hectares or relevant units
             $table->boolean('ancestral_domain')->nullable(); // True if the farm is in ancestral domain

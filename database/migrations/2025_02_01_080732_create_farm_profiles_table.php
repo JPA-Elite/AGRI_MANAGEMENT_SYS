@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('farm_profiles', function (Blueprint $table) {
             $table->id(); // Auto-incrementing 'id' field as primary key.
-            $table->string('register_id')->nullable()->unique();
+            $table->string('register_id')->nullable();
             $table->string('main_livelihood')->nullable();
             $table->string('farm_activity')->nullable();
             $table->timestamps(); 
