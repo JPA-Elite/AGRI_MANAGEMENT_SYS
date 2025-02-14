@@ -65,8 +65,8 @@ class PersonalInformationController extends Controller
 
         FarmProfile::create([
             'register_id' => $personalInfo->id,
-            'main_livelihood' => $request->personal_info['main_livelihood'] ?? null,
-            'farm_activity' => $request->personal_info['farm_activity'] ?? null,
+            'main_livelihood' => $request->farm_profile['main_livelihood'] ?? null,
+            'farm_activity' => $request->farm_profile['farm_activity'] ?? null,
         ]);
         foreach ($request->land_farmers as $key => $value) {
             LandFarmer::create([
