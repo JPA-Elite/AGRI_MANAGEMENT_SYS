@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class PersonalInformation extends Model
 {
@@ -37,4 +39,32 @@ class PersonalInformation extends Model
         'verifier',
         'register_date',
     ];
+
+
+    public function farm_profiles(): HasMany
+    {
+        return $this->hasMany(FarmProfile::class,'register_id','register_id');
+    }
+
+    public function government_affiliation(): HasOne
+    {
+        return $this->hasOne(GovernmentAffiliation::class,'register_id','register_id');
+    }
+    public function household(): HasOne
+    {
+        return $this->hasOne(Household::class,'register_id','register_id');
+    }
+    public function land_farmers(): HasMany
+    {
+        return $this->hasMany(LandFarmer::class,'register_id','register_id');
+    }
+    public function parcels(): HasMany
+    {
+        return $this->hasMany(Parcel::class,'register_id','register_id')->with(['parcel_components']);
+    }
+    public function parcel_components(): HasMany
+    {
+        return $this->hasMany(ParcelComponent::class,'register_id','register_id');
+    }
+    
 }

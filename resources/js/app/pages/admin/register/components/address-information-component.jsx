@@ -103,21 +103,23 @@ export default function AddressInformationComponent() {
                                 <option value="" disabled selected>
                                     -- Select a Barangay --
                                 </option>
-                                <option>Bairan</option>
-                                <option>Bagawines</option>
-                                <option>Cabulihan</option>
-                                <option>Don Esperidion Villegas</option>
-                                <option>Guba</option>
-                                <option>Macapso</option>
-                                <option>Maglahos</option>
-                                <option>Malangsa</option>
-                                <option>Molobolo</option>
-                                <option>Pinocawan</option>
-                                <option>Poblacion</option>
-                                <option>Puan</option>
-                                <option>Tabon</option>
-                                <option>Tagbino</option>
-                                <option>Ulay</option>
+                                <option value="Bairan">Bairan</option>
+                                <option value="Bagawines">Bagawines</option>
+                                <option value="Cabulihan">Cabulihan</option>
+                                <option value="Don Esperidion Villegas">
+                                    Don Esperidion Villegas
+                                </option>
+                                <option value="Guba">Guba</option>
+                                <option value="Macapso">Macapso</option>
+                                <option value="Maglahos">Maglahos</option>
+                                <option value="Malangsa">Malangsa</option>
+                                <option value="Molobolo">Molobolo</option>
+                                <option value="Pinocawan">Pinocawan</option>
+                                <option value="Poblacion">Poblacion</option>
+                                <option value="Puan">Puan</option>
+                                <option value="Tabon">Tabon</option>
+                                <option value="Tagbino">Tagbino</option>
+                                <option value="Ulay">Ulay</option>
                             </select>
                         </div>
                     </div>

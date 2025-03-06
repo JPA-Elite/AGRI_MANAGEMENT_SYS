@@ -382,13 +382,15 @@ export default function GovernmentAffiliationComponent() {
                                 value="NO"
                                 onClick={() => setIsCooperative(true)}
                                 onChange={(e) =>
-                                    setPersonalInformation({
-                                        ...personal_information,
-                                        government_affiliation: {
-                                            ...personal_information.government_affiliation, // Spread the existing government_affiliation fields
-                                            [e.target.name]: e.target.value, // Dynamically set the updated field
-                                        },
-                                    })
+                                    dispatch(
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            government_affiliation: {
+                                                ...personal_information.government_affiliation, // Spread the existing government_affiliation fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
+                                        })
+                                    )
                                 }
                                 className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-600 checked:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
                             />
@@ -399,7 +401,7 @@ export default function GovernmentAffiliationComponent() {
                                 NO
                             </label>
                         </div>
-                        {!isCooperative && (
+                        {personal_information?.government_affiliation?.farmers_association == 'YES' && (
                             <>
                                 <input
                                     name="farmers_association_name"

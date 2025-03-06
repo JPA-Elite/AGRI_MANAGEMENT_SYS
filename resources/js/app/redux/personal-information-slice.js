@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const personalInfomationSlice = createSlice({
   name: 'personal_information',
   initialState: {
+    personal_informations:[],
     personal_information: {
       land_farmers:[
         {name:''}
@@ -13,6 +14,9 @@ export const personalInfomationSlice = createSlice({
     },
   },
   reducers: {
+    setPersonalInformations: (state,action) => {
+      state.personal_informations =action.payload
+    },
     setPersonalInformation: (state,action) => {
       state.personal_information =action.payload
     },
@@ -20,6 +24,6 @@ export const personalInfomationSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { setPersonalInformation, } = personalInfomationSlice.actions
+export const { setPersonalInformation,setPersonalInformations } = personalInfomationSlice.actions
 
 export default personalInfomationSlice.reducer

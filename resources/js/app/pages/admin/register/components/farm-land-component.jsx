@@ -44,11 +44,11 @@ export default function FarmLandComponent() {
     };
 
     const handleRadioChange = (e, index) => {
-        const { name, checked } = e.target;
+        const { name, checked,value } = e.target;
 
         const updatedParcels = personal_information.parcels.map((parcel, i) => {
             if (i === index) {
-                return { ...parcel, [name]: checked };
+                return { ...parcel, [name]: value };
             }
             return parcel;
         });
@@ -332,11 +332,7 @@ export default function FarmLandComponent() {
                                             <input
                                                 id="ancestraldomain"
                                                 name="ancestraldomain"
-                                                value={
-                                                    personal_information
-                                                        .parcels[i]
-                                                        ?.ancestraldomain ?? ""
-                                                }
+                                                value='YES'
                                                 onChange={(e) =>
                                                     handleRadioChange(e, i)
                                                 }
@@ -354,11 +350,7 @@ export default function FarmLandComponent() {
                                                 id="ancestraldomain"
                                                 name="ancestraldomain"
                                                 type="radio"
-                                                value={
-                                                    personal_information
-                                                        .parcels[i]
-                                                        ?.ancestraldomain ?? ""
-                                                }
+                                                value='NO'
                                                 onChange={(e) =>
                                                     handleRadioChange(e, i)
                                                 }
@@ -385,11 +377,7 @@ export default function FarmLandComponent() {
                                                 id="agrarianreform"
                                                 name="agrarianreform"
                                                 type="radio"
-                                                value={
-                                                    personal_information
-                                                        .parcels[i]
-                                                        ?.agrarianreform ?? ""
-                                                }
+                                               value='YES'
                                                 onChange={(e) =>
                                                     handleRadioChange(e, i)
                                                 }
@@ -406,11 +394,7 @@ export default function FarmLandComponent() {
                                                 id="agrarianreform"
                                                 name="agrarianreform"
                                                 type="radio"
-                                                value={
-                                                    personal_information
-                                                        .parcels[i]
-                                                        ?.agrarianreform ?? ""
-                                                }
+                                               value='NO'
                                                 onChange={(e) =>
                                                     handleRadioChange(e, i)
                                                 }
@@ -437,191 +421,77 @@ export default function FarmLandComponent() {
                                             name="ownership_doc_number"
                                             type="text"
                                             value={
-                                                personal_information
-                                                    .parcels[i]
+                                                personal_information.parcels[i]
                                                     ?.ownership_doc_number ?? ""
                                             }
                                             onChange={(e) =>
                                                 handleInputChange(e, i)
                                             }
-                                            
                                             className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 placeholder:text-gray-400 sm:text-sm/6"
                                         />
                                     </div>
 
                                     <div className="sm:col-span-8">
                                         <label
-                                            htmlFor="ownertype"
+                                            htmlFor="ownership_type"
                                             className="block text-sm/6 font-medium text-gray-900"
                                         >
                                             Ownership Type
                                         </label>
                                         <div className="flex flex-row gap-x-4 mt-2">
-                                            <div className="flex gap-3">
-                                                <div className="flex h-6 shrink-0 items-center">
-                                                    <div className="group grid size-4 grid-cols-1">
+                                            {[
+                                                {
+                                                    id: "regowner",
+                                                    label: "Registered Owner",
+                                                },
+                                                {
+                                                    id: "tenant",
+                                                    label: "Tenant",
+                                                },
+                                                {
+                                                    id: "lessee",
+                                                    label: "Lessee",
+                                                },
+                                                {
+                                                    id: "others",
+                                                    label: "Others",
+                                                },
+                                            ].map(({ id, label }) => (
+                                                <div
+                                                    key={id}
+                                                    className="flex gap-3"
+                                                >
+                                                    <div className="flex h-6 shrink-0 items-center">
                                                         <input
-                                                            id="regowner"
-                                                            name="regowner"
-                                                            type="checkbox"
-                                                            aria-describedby="regowner-description"
-                                                            className="col-start-1 row-start-1 appearance-none rounded border border-gray-300 bg-white checked:border-green-600 checked:bg-green-600 indeterminate:border-green-600 indeterminate:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto"
+                                                            id={id}
+                                                            name="ownership_type"
+                                                            value={id}
+                                                            checked={
+                                                                personal_information
+                                                                    .parcels[i]
+                                                                    ?.ownership_type ===
+                                                                id
+                                                            }
+                                                            onChange={(e) =>
+                                                                handleInputChange(
+                                                                    e,
+                                                                    i
+                                                                )
+                                                            }
+                                                            type="radio"
+                                                            className="h-4 w-4 border-gray-300 text-green-600 focus:ring-green-600"
                                                         />
-                                                        <svg
-                                                            fill="none"
-                                                            viewBox="0 0 14 14"
-                                                            className="pointer-events-none col-start-1 row-start-1 size-3.5 self-center justify-self-center stroke-white group-has-[:disabled]:stroke-gray-950/25"
+                                                    </div>
+                                                    <div className="text-sm/6">
+                                                        <label
+                                                            htmlFor={id}
+                                                            className="font-medium text-gray-900"
                                                         >
-                                                            <path
-                                                                d="M3 8L6 11L11 3.5"
-                                                                strokeWidth={2}
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                                className="opacity-0 group-has-[:checked]:opacity-100"
-                                                            />
-                                                            <path
-                                                                d="M3 7H11"
-                                                                strokeWidth={2}
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                                className="opacity-0 group-has-[:indeterminate]:opacity-100"
-                                                            />
-                                                        </svg>
+                                                            {label}
+                                                        </label>
                                                     </div>
                                                 </div>
-                                                <div className="text-sm/6">
-                                                    <label
-                                                        htmlFor="regowner"
-                                                        className="font-medium text-gray-900"
-                                                    >
-                                                        Registered Owner
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div className="flex gap-3">
-                                                <div className="flex h-6 shrink-0 items-center">
-                                                    <div className="group grid size-4 grid-cols-1">
-                                                        <input
-                                                            id="tenant"
-                                                            name="tenant"
-                                                            type="checkbox"
-                                                            aria-describedby="tenant-description"
-                                                            className="col-start-1 row-start-1 appearance-none rounded border border-gray-300 bg-white checked:border-green-600 checked:bg-green-600 indeterminate:border-green-600 indeterminate:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto"
-                                                        />
-                                                        <svg
-                                                            fill="none"
-                                                            viewBox="0 0 14 14"
-                                                            className="pointer-events-none col-start-1 row-start-1 size-3.5 self-center justify-self-center stroke-white group-has-[:disabled]:stroke-gray-950/25"
-                                                        >
-                                                            <path
-                                                                d="M3 8L6 11L11 3.5"
-                                                                strokeWidth={2}
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                                className="opacity-0 group-has-[:checked]:opacity-100"
-                                                            />
-                                                            <path
-                                                                d="M3 7H11"
-                                                                strokeWidth={2}
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                                className="opacity-0 group-has-[:indeterminate]:opacity-100"
-                                                            />
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                                <div className="text-sm/6">
-                                                    <label
-                                                        htmlFor="tenant"
-                                                        className="font-medium text-gray-900"
-                                                    >
-                                                        Tenant
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div className="flex gap-3">
-                                                <div className="flex h-6 shrink-0 items-center">
-                                                    <div className="group grid size-4 grid-cols-1">
-                                                        <input
-                                                            id="lessee"
-                                                            name="lessee"
-                                                            type="checkbox"
-                                                            aria-describedby="lessee-description"
-                                                            className="col-start-1 row-start-1 appearance-none rounded border border-gray-300 bg-white checked:border-green-600 checked:bg-green-600 indeterminate:border-green-600 indeterminate:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto"
-                                                        />
-                                                        <svg
-                                                            fill="none"
-                                                            viewBox="0 0 14 14"
-                                                            className="pointer-events-none col-start-1 row-start-1 size-3.5 self-center justify-self-center stroke-white group-has-[:disabled]:stroke-gray-950/25"
-                                                        >
-                                                            <path
-                                                                d="M3 8L6 11L11 3.5"
-                                                                strokeWidth={2}
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                                className="opacity-0 group-has-[:checked]:opacity-100"
-                                                            />
-                                                            <path
-                                                                d="M3 7H11"
-                                                                strokeWidth={2}
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                                className="opacity-0 group-has-[:indeterminate]:opacity-100"
-                                                            />
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                                <div className="text-sm/6">
-                                                    <label
-                                                        htmlFor="lessee"
-                                                        className="font-medium text-gray-900"
-                                                    >
-                                                        Lessee
-                                                    </label>
-                                                </div>
-                                            </div>
-
-                                            <div className="flex gap-3">
-                                                <div className="flex h-6 shrink-0 items-center">
-                                                    <div className="group grid size-4 grid-cols-1">
-                                                        <input
-                                                            id="others"
-                                                            name="others"
-                                                            type="checkbox"
-                                                            aria-describedby="others-description"
-                                                            className="col-start-1 row-start-1 appearance-none rounded border border-gray-300 bg-white checked:border-green-600 checked:bg-green-600 indeterminate:border-green-600 indeterminate:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto"
-                                                        />
-                                                        <svg
-                                                            fill="none"
-                                                            viewBox="0 0 14 14"
-                                                            className="pointer-events-none col-start-1 row-start-1 size-3.5 self-center justify-self-center stroke-white group-has-[:disabled]:stroke-gray-950/25"
-                                                        >
-                                                            <path
-                                                                d="M3 8L6 11L11 3.5"
-                                                                strokeWidth={2}
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                                className="opacity-0 group-has-[:checked]:opacity-100"
-                                                            />
-                                                            <path
-                                                                d="M3 7H11"
-                                                                strokeWidth={2}
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                                className="opacity-0 group-has-[:indeterminate]:opacity-100"
-                                                            />
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                                <div className="text-sm/6">
-                                                    <label
-                                                        htmlFor="others"
-                                                        className="font-medium text-gray-900"
-                                                    >
-                                                        Others
-                                                    </label>
-                                                </div>
-                                            </div>
+                                            ))}
                                         </div>
                                     </div>
 

@@ -74,7 +74,7 @@ Route::middleware('auth:sanctum')->prefix('administrator')->group(function () {
         return Inertia::render('admin/settings/page');
     });
     
-    Route::get('profile', function () {
+    Route::get('profile/{id}', function () {
         return Inertia::render('admin/profile/page');
     });
 });

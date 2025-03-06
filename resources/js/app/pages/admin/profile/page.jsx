@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AdminLayout from "../layout";
 import { FaFilePen, FaPrint, FaRegFilePdf } from "react-icons/fa6";
 import ProfilePersonalInfoSection from "./sections/profile-personal-info-section";
@@ -7,8 +7,20 @@ import ProfileEducationInfoSection from "./sections/profile-education-info-secti
 import ProfileGovernmentInfoSection from "./sections/profile-government-info-section";
 import ProfileFarmTypeSection from "./sections/profile-farm-type-section";
 import ProfileFarmlandSection from "./sections/profile-farmland-section";
+import { get_personal_information_by_id_thunk } from "@/app/redux/personal-information-thunk";
+import store from "@/app/store/store";
+import { useSelector } from "react-redux";
+import moment from "moment";
 
 export default function ProfilePage() {
+    const id = window.location.pathname.split("/")[3];
+    const { personal_information } = useSelector(
+        (store) => store.personal_information
+    );
+    useEffect(() => {
+        store.dispatch(get_personal_information_by_id_thunk(id));
+    }, []);
+console.log('personal_information',personal_information)
     return (
         <AdminLayout>
             <div className="overflow-hidden bg-gray-200 shadow-xl sm:rounded-lg">
@@ -26,14 +38,21 @@ export default function ProfilePage() {
                                     </div>
                                     <div className="sm:col-span-8">
                                         <h2 className="text-3xl font-extrabold text-gray-700">
-                                            Mr. JOSE MARIE JUANCHO CAMINGAO
-                                            CRISTOBAL
+                                            {personal_information == "male"
+                                                ? "Mr."
+                                                : "Ms./Mrs."}
+                                            &nbsp;
+                                            {personal_information.firstname}
+                                            &nbsp;{" "}
+                                            {personal_information.middlename}
+                                            &nbsp;
+                                            {personal_information.lastname}
                                         </h2>
                                         <p className="text-lg font-medium text-gray-700 italic">
-                                            2023-074624000-00659
+                                            {personal_information.register_id}
                                         </p>
                                         <p className="text-md font-medium text-gray-400 italic">
-                                            Registered since December 12, 2023
+                                            Registered since {moment(personal_information.created_at).format('LL')}
                                         </p>
                                     </div>
                                 </div>
@@ -67,11 +86,11 @@ export default function ProfilePage() {
                                 </div>
                                 <hr />
                                 <ProfilePersonalInfoSection />
-                                <ProfileAddressInfoSection/>
-                                <ProfileEducationInfoSection/>
-                                <ProfileGovernmentInfoSection/>
-                                <ProfileFarmTypeSection/>
-                                <ProfileFarmlandSection/>
+                                <ProfileAddressInfoSection />
+                                <ProfileEducationInfoSection />
+                                <ProfileGovernmentInfoSection />
+                                <ProfileFarmTypeSection />
+                                <ProfileFarmlandSection />
                             </main>
                         </div>
                     </div>

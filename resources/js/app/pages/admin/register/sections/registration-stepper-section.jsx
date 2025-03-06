@@ -7,6 +7,8 @@ import PreviewFormSection from "./preview-form-section";
 import { useSelector } from "react-redux";
 import store from "@/app/store/store";
 import { store_personal_information_thunk } from "@/app/redux/personal-information-thunk";
+import { router } from "@inertiajs/react";
+import moment from "moment";
 
 export default function RegistrationStepperSection() {
     const [currentStep, setCurrentStep] = useState(1); // Set the first step as current (1-based index)
@@ -70,15 +72,18 @@ export default function RegistrationStepperSection() {
                 return null;
         }
     };
-
     async function submitHandler(params) {
         console.log("waaaaaaaaaaaaa", personal_information);
         setLoading(true);
         try {
             await store.dispatch(
-                store_personal_information_thunk(personal_information)
+                store_personal_information_thunk({
+                    ...personal_information,
+                    register_id: moment().format("MDDYYYYHHmmss")
+                })
             );
             setLoading(false);
+            // router.visit("/administrator/register");
         } catch (error) {
             console.log("error", error);
             setLoading(false);

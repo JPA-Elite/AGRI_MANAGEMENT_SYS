@@ -15,7 +15,7 @@ class PersonalInformationController extends Controller
 {
     public function index()
     {
-        $res = PersonalInformation::get();
+        $res = PersonalInformation::with(['farm_profiles','government_affiliation','household','land_farmers','parcels','parcel_components'])->get();
         return response()->json([
             'response' => $res,
         ], 200);
@@ -23,7 +23,10 @@ class PersonalInformationController extends Controller
 
     public function store(Request $request)
     {
-        $personalInfo = PersonalInformation::create([
+
+        
+       PersonalInformation::create([
+            'register_id' => $request->register_id?? null,
             'firstname' => $request->personal_info['firstname'] ?? null,
             'civil' => $request->personal_info['civil'] ?? null,
             'contact_person' => $request->personal_info['contact_person'] ?? null,
@@ -38,20 +41,32 @@ class PersonalInformationController extends Controller
             'pob' => $request->personal_info['pob'] ?? null,
             'religion' => $request->personal_info['religion'] ?? null,
             'suffix' => $request->personal_info['suffix'] ?? null,
+            'street_address' => $request->address_info['street_address'] ?? null,
+            'street_address_2' => $request->address_info['street_address_2'] ?? null,
+            'barangay' => $request->address_info['barangay'] ?? null,
+            'city' => $request->address_info['city'] ?? null,
+            'province' => $request->address_info['province'] ?? null,
+            'region' => $request->address_info['region'] ?? null,
+            'highest_education' => $request->education['highest_education'] ?? null,
+            'status' => $request->personal_info['status'] ?? null,
+            'avatar' => $request->personal_info['avatar'] ?? null,
+            'verifier' => $request->personal_info['verifier'] ?? null,
+            'register_date' => $request->personal_info['register_date'] ?? null,
+            'status'=>'inactive'
         ]);
 
         Household::create([
-            'register_id' => $personalInfo->id,
+            'register_id' => $request->register_id,
             'household_head' => $request->personal_info['household_head'] ?? null,
             'household_head_name' => $request->personal_info['household_head_name'] ?? null,
             'household_relation' => $request->personal_info['household_relation'] ?? null,
             'male_members' => $request->personal_info['male_members'] ?? null,
             'female_members' => $request->personal_info['female_members'] ?? null,
-            'annual_income' => $request->personal_info['annual_income'] ?? null,
+            'annual_income' => $request->farm_profile['annual_income'] ?? null,
         ]);
 
         GovernmentAffiliation::create([
-            'register_id' => $personalInfo->id,
+            'register_id' => $request->register_id,
             'PWD' => $request->government_affiliation['PWD'] ?? null,
             '4Ps' => $request->government_affiliation['4Ps'] ?? null,
             'indigenous_group' => $request->government_affiliation['indigenous_group'] ?? null,
@@ -63,39 +78,50 @@ class PersonalInformationController extends Controller
             'farmers_association_name' => $request->government_affiliation['farmers_association_name'] ?? null,
         ]);
 
-        FarmProfile::create([
-            'register_id' => $personalInfo->id,
-            'main_livelihood' => $request->farm_profile['main_livelihood'] ?? null,
-            'farm_activity' => $request->farm_profile['farm_activity'] ?? null,
-        ]);
-        foreach ($request->land_farmers as $key => $value) {
-            LandFarmer::create([
-                'register_id' => $personalInfo->id,
-                'farmer_rotation_name' => $value['name'] ?? null,
-            ]);
+        if ($request->farm_profile['farm_activity'] ?? null) {
+            foreach ($request->farm_profile['farm_activity'] as $key => $activity) {
+                FarmProfile::create([
+                    'register_id' => $request->register_id,
+                    'main_livelihood' => $request->farm_profile['main_livelihood'] ?? null,
+                    'farm_activity' => $activity ?? null,
+                ]);
+            }
+        }
+
+        if ($request->land_farmers ?? null) {
+            foreach ($request->land_farmers as $key => $value) {
+                if ($value['name']) {
+                    LandFarmer::create([
+                        'register_id' => $request->register_id,
+                        'farmer_rotation_name' => $value['name'] ?? null,
+                    ]);
+                }
+            }
         }
 
         foreach ($request->parcels as $key => $value) {
             $parcel = Parcel::create([
-                'register_id' => $personalInfo->id,
+                'register_id' => $request->register_id,
                 'farm_location' => $value['farmlocation'] ?? null,
                 'farm_area' => $value['farmarea'] ?? null,
                 'ancestral_domain' => $value['ancestraldomain'] ?? null,
                 'agrarian_beneficiary' => $value['agrarianreform'] ?? null,
-                'ownership_doc_number' => $value['ownership_doc_number'] ?? '',
+                'ownership_doc_number' => $value['ownership_doc_number'] ?? null,
                 'ownership_type' => $value['ownership_type'] ?? null,
             ]);
-            foreach ($value['components'] as $key => $val) {
-                ParcelComponent::create([
-                    'register_id' => $personalInfo->id,
-                    'parcel_id' => $parcel->id,
-                    'commodity' => $val['cropcommodity'] ?? null,
-                    'size' => $val['sizeha'] ?? null,
-                    'number_heads' => $val['heads'] ?? null,
-                    'farm_type' => $val['farmtype'] ?? null,
-                    'organic_practioner' => $val['organicpractitioner'] ?? null,
-                    'remarks' => $val['remarks'] ?? null,
-                ]);
+            if ($value['components'] ?? null) {
+                foreach ($value['components'] as $key => $val) {
+                    ParcelComponent::create([
+                        'register_id' => $request->register_id,
+                        'parcel_id' => $parcel->id,
+                        'commodity' => $val['cropcommodity'] ?? null,
+                        'size' => $val['sizeha'] ?? null,
+                        'number_heads' => $val['heads'] ?? null,
+                        'farm_type' => $val['farmtype'] ?? null,
+                        'organic_practioner' => $val['organicpractitioner'] ?? null,
+                        'remarks' => $val['remarks'] ?? null,
+                    ]);
+                }
             }
         }
         return response()->json([
@@ -105,7 +131,7 @@ class PersonalInformationController extends Controller
 
     public function show($id)
     {
-        $res = PersonalInformation::where('id', $id)->first();
+        $res = PersonalInformation::where('id', $id)->with(['farm_profiles','government_affiliation','household','land_farmers','parcels'])->first();
         return response()->json([
             'response' => $res,
         ], 200);

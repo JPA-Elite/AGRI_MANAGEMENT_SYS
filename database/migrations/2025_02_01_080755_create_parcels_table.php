@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('register_id')->nullable();
             $table->string('farm_location')->nullable();
             $table->decimal('farm_area', 10, 2)->nullable(); // Farm area in hectares or relevant units
-            $table->boolean('ancestral_domain')->nullable(); // True if the farm is in ancestral domain
-            $table->boolean('agrarian_beneficiary')->nullable(); // True if the farmer is an agrarian reform beneficiary
+            $table->string('ancestral_domain')->nullable(); // True if the farm is in ancestral domain
+            $table->string('agrarian_beneficiary')->nullable(); // True if the farmer is an agrarian reform beneficiary
             $table->string('ownership_doc_number')->nullable(); // Document number for land ownership
             $table->string('ownership_type')->nullable();
             $table->timestamps();

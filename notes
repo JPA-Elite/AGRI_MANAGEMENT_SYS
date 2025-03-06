@@ -1,26 +1,5 @@
-VERIFIER UI
+household_members
 
-Dashboard
-Beneficiary - Verify Beneficiary, Active Beneficiary, Inactive Beneficiary
-Report Section - General Report (For Specific Barangay Only)
-Help Desk - Contact Us, Download User Manual
-
-
-ENCODER UI
-
-Dashboard
-Beneficiary Section - Register Beneficiary, Active Beneficiary, Inactive Beneficiary
-Report Section - General Report
-System Maintenance - Brgy. Verifier, Organization
-Help Desk - Contact Us, Download User Manual
-
-SUPERVISOR UI
-
-Dashboard
-Beneficiary Section - Register Beneficiary, Active Beneficiary, Inactive Beneficiary
-Report Section - General Report
-System Maintenance - LGU Profile, Brgy. Verifier, Organization
-Help Desk - Contact Us, Download User Manual
 
 
 -------------------------------------
