@@ -9,13 +9,47 @@ use App\Models\LandFarmer;
 use App\Models\Parcel;
 use App\Models\ParcelComponent;
 use App\Models\PersonalInformation;
+use App\Models\User;
+use App\Notifications\ApprovedNotification;
+use App\Notifications\DeclinedNotification;
+use App\Notifications\PendingNotification;
 use Illuminate\Http\Request;
 
 class PersonalInformationController extends Controller
 {
-    public function index()
+    public function verify_beneficiary(Request $request)
     {
-        $res = PersonalInformation::with(['farm_profiles','government_affiliation','household','land_farmers','parcels','parcel_components'])->get();
+
+        $personalInformation = PersonalInformation::where('register_id', $request->register_id)->first();
+
+
+        $users = User::where('role', '=', 'Admin')->get();
+        foreach ($users as $key => $user) {
+            if ($user) {
+                if ($request->status == 'active') {
+                    $user->notify(new ApprovedNotification($personalInformation));
+                }else if ($request->status == 'declined') {
+                    $user->notify(new DeclinedNotification($personalInformation));
+                }
+                
+            }
+        }
+
+
+        if ($personalInformation) {
+            $personalInformation->update([
+                'status' => $request->status
+            ]);
+        }
+        return response()->json([
+            'response' => 'success',
+        ], 200);
+    }
+    public function index(Request $request)
+    {
+        $res = PersonalInformation::where('status', $request->status)
+            ->with(['farm_profiles', 'government_affiliation', 'household', 'land_farmers', 'parcels', 'parcel_components'])->get();
+
         return response()->json([
             'response' => $res,
         ], 200);
@@ -24,9 +58,9 @@ class PersonalInformationController extends Controller
     public function store(Request $request)
     {
 
-        
-       PersonalInformation::create([
-            'register_id' => $request->register_id?? null,
+
+        PersonalInformation::create([
+            'register_id' => $request->register_id ?? null,
             'firstname' => $request->personal_info['firstname'] ?? null,
             'civil' => $request->personal_info['civil'] ?? null,
             'contact_person' => $request->personal_info['contact_person'] ?? null,
@@ -52,7 +86,7 @@ class PersonalInformationController extends Controller
             'avatar' => $request->personal_info['avatar'] ?? null,
             'verifier' => $request->personal_info['verifier'] ?? null,
             'register_date' => $request->personal_info['register_date'] ?? null,
-            'status'=>'inactive'
+            'status' => 'pending'
         ]);
 
         Household::create([
@@ -123,6 +157,13 @@ class PersonalInformationController extends Controller
                     ]);
                 }
             }
+
+            $users = User::where('brgy', '=', $request->address_info['barangay'])->get();
+            foreach ($users as $key => $user) {
+                if ($user) {
+                    $user->notify(new PendingNotification($request->all()));
+                }
+            }
         }
         return response()->json([
             'response' => 'success',
@@ -131,7 +172,7 @@ class PersonalInformationController extends Controller
 
     public function show($id)
     {
-        $res = PersonalInformation::where('id', $id)->with(['farm_profiles','government_affiliation','household','land_farmers','parcels'])->first();
+        $res = PersonalInformation::where('id', $id)->with(['farm_profiles', 'government_affiliation', 'household', 'land_farmers', 'parcels'])->first();
         return response()->json([
             'response' => $res,
         ], 200);

@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
 export default function ProfileGovernmentInfoSection() {
+    const { personal_information } = useSelector(
+        (store) => store.personal_information
+    );
     const [isIndigenous, setIsIndigenous] = useState(true);
     const [isGovernment, setIsGovernment] = useState(true);
     const [isCooperative, setIsCooperative] = useState(true);
@@ -27,6 +31,11 @@ export default function ProfileGovernmentInfoSection() {
                                     name="pwd"
                                     type="radio"
                                     value="YES"
+                                    checked={
+                                        personal_information
+                                            ?.government_affiliation?.PWD ==
+                                        "YES"
+                                    }
                                     className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-600 checked:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
                                 />
                                 <label
@@ -39,7 +48,11 @@ export default function ProfileGovernmentInfoSection() {
                             <div className="flex items-center gap-x-3">
                                 <input
                                     disabled
-                                    checked
+                                    checked={
+                                        personal_information
+                                            ?.government_affiliation?.PWD ==
+                                        "NO"
+                                    }
                                     name="pwd"
                                     type="radio"
                                     value="NO"
@@ -68,6 +81,12 @@ export default function ProfileGovernmentInfoSection() {
                                     disabled
                                     name="4ps"
                                     type="radio"
+                                    checked={
+                                        personal_information
+                                            ?.government_affiliation?.[
+                                            "4Ps"
+                                        ] === "YES"
+                                    }
                                     value="YES"
                                     className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-600 checked:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
                                 />
@@ -81,7 +100,12 @@ export default function ProfileGovernmentInfoSection() {
                             <div className="flex items-center gap-x-3">
                                 <input
                                     disabled
-                                    checked
+                                    checked={
+                                        personal_information
+                                            ?.government_affiliation?.[
+                                            "4Ps"
+                                        ] === "NO"
+                                    }
                                     name="4ps"
                                     type="radio"
                                     value="NO"
@@ -111,6 +135,11 @@ export default function ProfileGovernmentInfoSection() {
                                     name="indigenous"
                                     type="radio"
                                     value="YES"
+                                    checked={
+                                        personal_information
+                                            ?.government_affiliation
+                                            ?.indigenous_group === "YES"
+                                    }
                                     onClick={() => setIsIndigenous(false)}
                                     className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-600 checked:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
                                 />
@@ -124,7 +153,11 @@ export default function ProfileGovernmentInfoSection() {
                             <div className="flex items-center gap-x-3">
                                 <input
                                     disabled
-                                    checked
+                                    checked={
+                                        personal_information
+                                            ?.government_affiliation
+                                            ?.indigenous_group === "NO"
+                                    }
                                     name="indigenous"
                                     type="radio"
                                     value="NO"
@@ -138,12 +171,18 @@ export default function ProfileGovernmentInfoSection() {
                                     NO
                                 </label>
                             </div>
-                            {!isIndigenous && (
+                            {personal_information?.government_affiliation
+                                ?.indigenous_group === "YES" && (
                                 <>
                                     <input
                                         disabled
                                         name="indigent_specify"
                                         type="text"
+                                        value={
+                                            personal_information
+                                                ?.government_affiliation
+                                                ?.indigenous_group_name
+                                        }
                                         placeholder="If YES, Please Specify"
                                         className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 mt-4 sm:text-sm/6"
                                     />
@@ -166,7 +205,10 @@ export default function ProfileGovernmentInfoSection() {
                         <div className="flex items-center gap-x-3 mb-3">
                             <input
                                 disabled
-                                checked
+                                checked={
+                                    personal_information?.government_affiliation
+                                        ?.government_id === "YES"
+                                }
                                 name="gov_id"
                                 type="radio"
                                 value="YES"
@@ -185,6 +227,10 @@ export default function ProfileGovernmentInfoSection() {
                                 disabled
                                 name="gov_id"
                                 type="radio"
+                                checked={
+                                    personal_information?.government_affiliation
+                                        ?.government_id === "NO"
+                                }
                                 value="NO"
                                 onClick={() => setIsGovernment(true)}
                                 className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-600 checked:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
@@ -196,11 +242,17 @@ export default function ProfileGovernmentInfoSection() {
                                 NO
                             </label>
                         </div>
-                        {!isGovernment && (
+                        {personal_information?.government_affiliation
+                            ?.government_id === "YES" && (
                             <>
                                 <input
                                     disabled
                                     name="gov_type"
+                                    value={
+                                        personal_information
+                                            ?.government_affiliation
+                                            ?.government_id_type
+                                    }
                                     type="text"
                                     placeholder="If YES, Please Specify ID Type"
                                     className="block w-1/2 rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 mt-4 sm:text-sm/6"
@@ -209,6 +261,11 @@ export default function ProfileGovernmentInfoSection() {
                                 <input
                                     disabled
                                     name="gov_number"
+                                    value={
+                                        personal_information
+                                            ?.government_affiliation
+                                            ?.government_id_number
+                                    }
                                     type="text"
                                     placeholder="ID Number"
                                     className="block w-1/2 rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 mt-4 sm:text-sm/6"
@@ -232,6 +289,10 @@ export default function ProfileGovernmentInfoSection() {
                                 name="farm_assoc"
                                 type="radio"
                                 value="YES"
+                                checked={
+                                    personal_information?.government_affiliation
+                                        ?.farmers_association == "YES"
+                                }
                                 onClick={() => setIsCooperative(false)}
                                 className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-600 checked:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
                             />
@@ -245,7 +306,10 @@ export default function ProfileGovernmentInfoSection() {
                         <div className="flex items-center gap-x-3">
                             <input
                                 disabled
-                                checked
+                                checked={
+                                    personal_information?.government_affiliation
+                                        ?.farmers_association == "NO"
+                                }
                                 name="farm_assoc"
                                 type="radio"
                                 value="NO"
@@ -259,12 +323,15 @@ export default function ProfileGovernmentInfoSection() {
                                 NO
                             </label>
                         </div>
-                        {!isCooperative && (
+                        {personal_information?.government_affiliation
+                                        ?.farmers_association == "YES" && (
                             <>
                                 <input
                                     disabled
                                     name="farmassoc_name"
                                     type="text"
+                                    value={personal_information?.government_affiliation
+                                        ?.farmers_association_name }
                                     placeholder="If YES, Please Specify"
                                     className="block w-1/2 rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 mt-4 sm:text-sm/6"
                                 />

@@ -1,5 +1,11 @@
-import React from "react";
-import { FaFilePen, FaPrint, FaRegFilePdf, FaUserCheck, FaUserXmark } from "react-icons/fa6";
+import React, { useEffect } from "react";
+import {
+    FaFilePen,
+    FaPrint,
+    FaRegFilePdf,
+    FaUserCheck,
+    FaUserXmark,
+} from "react-icons/fa6";
 import ProfilePersonalInfoSection from "./sections/profile-personal-info-section";
 import ProfileAddressInfoSection from "./sections/profile-address-info-section";
 import ProfileEducationInfoSection from "./sections/profile-education-info-section";
@@ -7,8 +13,21 @@ import ProfileGovernmentInfoSection from "./sections/profile-government-info-sec
 import ProfileFarmTypeSection from "./sections/profile-farm-type-section";
 import ProfileFarmlandSection from "./sections/profile-farmland-section";
 import VerifierLayout from "../layout";
+import { useSelector } from "react-redux";
+import store from "@/app/store/store";
+import { get_personal_information_by_id_thunk } from "@/app/redux/personal-information-thunk";
+import moment from "moment";
+import ProfileVerifySection from "./sections/profile-verify-section";
 
 export default function ProfilePage() {
+    const id = window.location.pathname.split("/")[3];
+    const { personal_information } = useSelector(
+        (store) => store.personal_information
+    );
+    useEffect(() => {
+        store.dispatch(get_personal_information_by_id_thunk(id));
+    }, []);
+    console.log("personal_information", personal_information);
     return (
         <VerifierLayout>
             <div className="overflow-hidden bg-gray-200 shadow-xl sm:rounded-lg">
@@ -26,14 +45,24 @@ export default function ProfilePage() {
                                     </div>
                                     <div className="sm:col-span-8">
                                         <h2 className="text-3xl font-extrabold text-gray-700">
-                                            Mr. JOSE MARIE JUANCHO CAMINGAO
-                                            CRISTOBAL
+                                            {personal_information == "male"
+                                                ? "Mr."
+                                                : "Ms./Mrs."}
+                                            &nbsp;
+                                            {personal_information.firstname}
+                                            &nbsp;{" "}
+                                            {personal_information.middlename}
+                                            &nbsp;
+                                            {personal_information.lastname}
                                         </h2>
                                         <p className="text-lg font-medium text-gray-700 italic">
-                                            2023-074624000-00659
+                                            {personal_information.register_id}
                                         </p>
                                         <p className="text-md font-medium text-gray-400 italic">
-                                            Registered since December 12, 2023
+                                            Registered since{" "}
+                                            {moment(
+                                                personal_information.created_at
+                                            ).format("LL")}
                                         </p>
                                     </div>
                                 </div>
@@ -41,31 +70,45 @@ export default function ProfilePage() {
 
                             <main>
                                 <div className="p-3">
-                                    <span className="isolate inline-flex rounded-md shadow-sm">
-                                        <button
-                                            type="button"
-                                            className="relative inline-flex items-center rounded-l-md bg-white px-6 py-3 text-lg font-semibold text-gray-600 ring-1 ring-inset ring-gray-300 hover:bg-green-200 focus:z-10"
-                                        >
-                                            <FaUserCheck className="size-5 mr-2 text-green-600" />
-                                            Verify Registration
-                                        </button>
-                                       
-                                        <button
-                                            type="button"
-                                            className="relative -ml-px inline-flex items-center rounded-r-md bg-white px-6 py-3 text-lg font-semibold text-gray-600 ring-1 ring-inset ring-gray-300 hover:bg-red-200 focus:z-10"
-                                        >
-                                            <FaUserXmark className="size-5 mr-2 text-red-600" />
-                                            Decline Registration
-                                        </button>
+                                    <span className="flex isolate items-center justify-between rounded-md shadow-sm">
+                                        <div>
+                                            <button
+                                                type="button"
+                                                className="relative inline-flex items-center rounded-l-md bg-white px-6 py-3 text-lg font-semibold text-gray-600 ring-1 ring-inset ring-gray-300 hover:bg-green-200 focus:z-10"
+                                            >
+                                                <FaFilePen className="size-5 mr-2 text-green-600" />
+                                                Edit
+                                            </button>
+                                            <button
+                                                type="button"
+                                                className="relative -ml-px inline-flex items-center bg-white px-6 py-3 text-lg font-semibold text-gray-600 ring-1 ring-inset ring-gray-300 hover:bg-green-200 focus:z-10"
+                                            >
+                                                <FaPrint className="size-5 mr-2 text-green-600" />
+                                                Print Form
+                                            </button>
+                                            <button
+                                                type="button"
+                                                className="relative -ml-px inline-flex items-center rounded-r-md bg-white px-6 py-3 text-lg font-semibold text-gray-600 ring-1 ring-inset ring-gray-300 hover:bg-green-200 focus:z-10"
+                                            >
+                                                <FaRegFilePdf className="size-5 mr-2 text-green-600" />
+                                                Export to PDF
+                                            </button>
+                                        </div>
+                                        {personal_information.status ==
+                                            "pending" && (
+                                            <ProfileVerifySection
+                                                data={personal_information}
+                                            />
+                                        )}
                                     </span>
                                 </div>
                                 <hr />
                                 <ProfilePersonalInfoSection />
-                                <ProfileAddressInfoSection/>
-                                <ProfileEducationInfoSection/>
-                                <ProfileGovernmentInfoSection/>
-                                <ProfileFarmTypeSection/>
-                                <ProfileFarmlandSection/>
+                                <ProfileAddressInfoSection />
+                                <ProfileEducationInfoSection />
+                                <ProfileGovernmentInfoSection />
+                                <ProfileFarmTypeSection />
+                                <ProfileFarmlandSection />
                             </main>
                         </div>
                     </div>

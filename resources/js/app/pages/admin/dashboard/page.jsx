@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AdminLayout from "../layout";
 import StatsSection from "./sections/stats-section";
 import GraphSection from "./sections/graph-section";
+import store from "@/app/store/store";
+import { get_admin_dashboard_thunk } from "@/app/redux/app-thunk";
 
 const currentDate = new Date().toLocaleDateString('en-US', {
   year: 'numeric',    // Full year (e.g., 2025)
@@ -14,6 +16,10 @@ function classNames(...classes) {
 }
 
 export default function AdminDashboardPage() {
+
+    useEffect(()=>{
+        store.dispatch(get_admin_dashboard_thunk())
+    },[])
     return (
         <AdminLayout>
             <h3 className="text-base font-semibold text-gray-900">

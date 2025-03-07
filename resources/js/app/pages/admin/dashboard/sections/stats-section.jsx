@@ -1,13 +1,15 @@
 import React from "react";
 import { ArrowDownIcon, ArrowUpIcon } from "@heroicons/react/20/solid";
 import { FaChildReaching, FaFishFins, FaPersonDigging, FaWheatAwn } from "react-icons/fa6";
+import { useSelector } from "react-redux";
 
 export default function StatsSection() {
+    const {dashboard}=useSelector((store)=>store.app)
     const stats = [
         {
             id: 1,
             name: "Total No. of Farmers",
-            stat: "71,897",
+            stat: dashboard?.total_farmer??0,
             icon: FaWheatAwn,
             change: "122",
             changeType: "increase",
@@ -15,7 +17,7 @@ export default function StatsSection() {
         {
             id: 2,
             name: "Total No. of Farmworkers/Laborer",
-            stat: "58.16%",
+            stat: dashboard?.total_workers??0,
             icon: FaPersonDigging,
             change: "5.4%",
             changeType: "increase",
@@ -23,7 +25,7 @@ export default function StatsSection() {
         {
             id: 3,
             name: "Total No. of Fisherfolks",
-            stat: "24.57%",
+            stat: dashboard?.total_fisherfolks??0,
             icon: FaFishFins,
             change: "3.2%",
             changeType: "decrease",
@@ -31,7 +33,7 @@ export default function StatsSection() {
         {
             id: 4,
             name: "Total No. of Agri-Youth",
-            stat: "24.57%",
+            stat: dashboard?.total_agri_youth??0,
             icon: FaChildReaching,
             change: "3.2%",
             changeType: "decrease",

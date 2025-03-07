@@ -36,7 +36,7 @@ return new class extends Migration
             $table->string('province')->nullable();
             $table->string('region')->nullable();
             $table->string('highest_education')->nullable();
-            $table->enum('status', ['active', 'inactive'])->nullable();
+            $table->string('status')->nullable();
             $table->string('avatar')->nullable();
             $table->string('verifier')->nullable();
             $table->date('register_date')->nullable();

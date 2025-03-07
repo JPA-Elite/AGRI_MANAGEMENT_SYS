@@ -34,7 +34,7 @@ Route::middleware('auth:sanctum')->prefix('administrator')->group(function () {
         return Inertia::render('admin/dashboard/page');
     });
     
-    Route::get('register', function () {
+    Route::get('beneficiary/register', function () {
         return Inertia::render('admin/register/page');
     });
     
@@ -88,6 +88,10 @@ Route::get('/verifier/beneficiary', function () {
     return Inertia::render('verifier/beneficiary/page');
 });
 
+Route::get('/verifier/beneficiary/{id}', function () {
+    return Inertia::render('verifier/profile/page');
+});
+
 Route::get('/verifier/reports', function () {
     return Inertia::render('verifier/reports/page');
 });
@@ -104,9 +108,9 @@ Route::get('/verifier/profile', function () {
     return Inertia::render('verifier/profile/page');
 });
 
-Route::get('/verifier/verify', function () {
-    return Inertia::render('verifier/verify/page');
-});
+// Route::get('/verifier/verify', function () {
+//     return Inertia::render('verifier/verify/page');
+// });
 
 Route::get('/encoder/dashboard', function () {
     return Inertia::render('encoder/dashboard/page');

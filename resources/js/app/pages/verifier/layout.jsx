@@ -1,10 +1,15 @@
 import { useState } from "react";
 import { Menu } from "@headlessui/react";
+import { Bars3Icon, BellIcon } from "@heroicons/react/24/outline";
 import {
-    Bars3Icon,
-    BellIcon,
-} from "@heroicons/react/24/outline";
-import { FcAssistant, FcButtingIn, FcComboChart, FcConferenceCall, FcDataConfiguration, FcHome, FcList } from "react-icons/fc";
+    FcAssistant,
+    FcButtingIn,
+    FcComboChart,
+    FcConferenceCall,
+    FcDataConfiguration,
+    FcHome,
+    FcList,
+} from "react-icons/fc";
 
 import {
     ChevronDownIcon,
@@ -12,6 +17,7 @@ import {
 } from "@heroicons/react/20/solid";
 import AdminSidenavSection from "./_sections/verifier-sidenav-sections";
 import VerifierSidenavSection from "./_sections/verifier-sidenav-sections";
+import { Link } from "@inertiajs/react";
 
 const navigation = [
     { name: "Dashboard", href: "./dashboard", icon: FcHome, current: false },
@@ -22,17 +28,22 @@ const navigation = [
         children: [
             {
                 name: "Verify Beneficiary",
-                href: "./verify",
+                href: "/verifier/beneficiary?status=pending",
                 icon: FcList,
             },
             {
                 name: "Active Beneficiary",
-                href: "./beneficiary?status=active",
+                href: "/verifier/beneficiary?status=active",
                 icon: FcList,
             },
             {
                 name: "Inactive Beneficiary",
-                href: "./beneficiary?status=inactive",
+                href: "/verifier/beneficiary?status=inactive",
+                icon: FcList,
+            },
+            {
+                name: "Declined Beneficiary",
+                href: "/verifier/beneficiary?status=declined",
                 icon: FcList,
             },
         ],
@@ -41,13 +52,10 @@ const navigation = [
         name: "Report Section",
         icon: FcComboChart,
         current: false,
-        children: [
-            { name: "General Report", href: "./reports", icon: FcList },
-        ],
+        children: [{ name: "General Report", href: "./reports", icon: FcList }],
     },
 ];
 const teams = [
-   
     {
         id: 1,
         name: "Help Desk",
@@ -84,11 +92,9 @@ export default function VerifierLayout({ children }) {
     };
     return (
         <div>
-     
-
             {/* Static sidebar for desktop */}
             <VerifierSidenavSection
-            setSidebarOpen={setSidebarOpen}
+                setSidebarOpen={setSidebarOpen}
                 navigation={navigation}
                 classNames={classNames}
                 teams={teams}
@@ -181,16 +187,14 @@ export default function VerifierLayout({ children }) {
                                     transition
                                     className="absolute right-0 z-10 mt-2.5 w-32 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
                                 >
-                                    {userNavigation.map((item) => (
-                                        <Menu.Item key={item.name}>
-                                            <a
-                                                href={item.href}
-                                                className="block px-3 py-1 text-sm leading-6 text-gray-900 data-[focus]:bg-gray-50"
-                                            >
-                                                {item.name}
-                                            </a>
-                                        </Menu.Item>
-                                    ))}
+                                    <Link
+                                        method="post"
+                                        href={route("logout")}
+                                        as="button"
+                                        className=" flex w-full px-3 py-1 text-sm leading-6 text-gray-900 data-[focus]:bg-gray-50"
+                                    >
+                                        Sign Out
+                                    </Link>
                                 </Menu.Items>
                             </Menu>
                         </div>

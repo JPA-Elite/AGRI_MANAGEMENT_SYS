@@ -1,13 +1,17 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 export default function ProfileAddressInfoSection() {
+    const { personal_information } = useSelector(
+        (store) => store.personal_information
+    );
     return (
         <div className="border-b border-gray-900/10 pb-12">
             <h2 className="text-xl/7 font-semibold text-gray-900 mt-3">
-                    <span className="block w-full rounded-full bg-gray-200 px-4 py-2">
-                        II. Address Information
-                    </span>
-                </h2>
+                <span className="block w-full rounded-full bg-gray-200 px-4 py-2">
+                    II. Address Information
+                </span>
+            </h2>
 
             <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-12">
                 <div className="col-span-4">
@@ -19,11 +23,11 @@ export default function ProfileAddressInfoSection() {
                     </label>
                     <div className="mt-2">
                         <input
-                        disabled
+                            disabled
                             id="street_address"
                             name="street_address"
                             type="text"
-                            value="Purok Pine-Tree"
+                            value={personal_information?.street_address??''}
                             className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                         />
                     </div>
@@ -38,9 +42,10 @@ export default function ProfileAddressInfoSection() {
                     </label>
                     <div className="mt-2">
                         <input
-                        disabled
+                            disabled
                             id="street_address_2"
                             name="street_address_2"
+                            value={personal_information?.street_address_2??''}
                             type="text"
                             className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                         />
@@ -59,26 +64,27 @@ export default function ProfileAddressInfoSection() {
                             disabled
                             name="barangay"
                             placeholder="Barangay"
+                            value={personal_information?.barangay??''}
                             className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                         >
                             <option value="" disabled selected>
                                 -- Select a Barangay --
                             </option>
-                            <option>Bairan</option>
-                            <option>Bagawines</option>
-                            <option>Cabulihan</option>
-                            <option>Don Esperidion Villegas</option>
-                            <option>Guba</option>
-                            <option selected>Macapso</option>
-                            <option>Maglahos</option>
-                            <option>Malangsa</option>
-                            <option>Molobolo</option>
-                            <option>Pinocawan</option>
-                            <option>Poblacion</option>
-                            <option>Puan</option>
-                            <option>Tabon</option>
-                            <option>Tagbino</option>
-                            <option>Ulay</option>
+                            <option value="Bairan">Bairan</option>
+                            <option value="Bagawines">Bagawines</option>
+                            <option value="Cabulihan">Cabulihan</option>
+                            <option value="Don Esperidion Villegas">Don Esperidion Villegas</option>
+                            <option value="Guba">Guba</option>
+                            <option value="Macapso">Macapso</option>
+                            <option value="Maglahos">Maglahos</option>
+                            <option value="Malangsa">Malangsa</option>
+                            <option value="Molobolo">Molobolo</option>
+                            <option value="Pinocawan">Pinocawan</option>
+                            <option value="Poblacion">Poblacion</option>
+                            <option value="Puan">Puan</option>
+                            <option value="Tabon">Tabon</option>
+                            <option value="Tagbino">Tagbino</option>
+                            <option value="Ulay">Ulay</option>
                         </select>
                     </div>
                 </div>
@@ -92,10 +98,10 @@ export default function ProfileAddressInfoSection() {
                     </label>
                     <div className="mt-2">
                         <input
-                        disabled
+                            disabled
                             name="city"
                             type="text"
-                            value="Vallehermoso"
+                            value={personal_information?.city??''}
                             className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                         />
                     </div>
@@ -110,11 +116,11 @@ export default function ProfileAddressInfoSection() {
                     </label>
                     <div className="mt-2">
                         <input
-                        disabled
+                            disabled
                             id="Province"
-                            name="Province"
+                            name="province"
                             type="text"
-                            value="Negros Oriental"
+                            value={personal_information?.province??''}
                             className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                         />
                     </div>
@@ -131,6 +137,7 @@ export default function ProfileAddressInfoSection() {
                         <select
                             disabled
                             name="region"
+                            value={personal_information?.region??''}
                             className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                         >
                             <option value="" disabled>

@@ -4,6 +4,7 @@ import {
     get_personal_information_service,
     store_personal_information_service,
     update_personal_information_service,
+    verify_beneficiary_service,
 } from "../services/personal-information-service";
 import { personalInfomationSlice } from "./personal-information-slice";
 
@@ -11,6 +12,16 @@ export function get_personal_information_thunk() {
     return async function (dispatch, getState) {
         const res = await get_personal_information_service();
         dispatch(personalInfomationSlice.actions.setPersonalInformations(res.data.response));
+        return res.data;
+    };
+}
+
+
+
+export  function verify_beneficiary_thunk(data) {
+    return async function (dispatch, getState) {
+       
+        const res = await verify_beneficiary_service(data);
         return res.data;
     };
 }

@@ -1,8 +1,11 @@
 import React from "react";
 import { FaPerson, FaPersonDress, FaPersonHalfDress } from "react-icons/fa6";
 import ApexCharts from "react-apexcharts";
+import { useSelector } from "react-redux";
 
 export default function GenderComponent() {
+    
+    const {dashboard}=useSelector((store)=>store.app)
     const options = {
         chart: {
             id: "bar-chart",
@@ -38,7 +41,7 @@ export default function GenderComponent() {
     const series = [
         {
             name: "Gender Count",
-            data: [865, 430], // Data corresponding to each category
+            data: [dashboard?.total_male??0, dashboard?.total_female??0], // Data corresponding to each category
         },
     ];
 
@@ -68,7 +71,7 @@ export default function GenderComponent() {
                         <h3 className="text-base text-white font-medium">MALE</h3>
                         </div>
                         <div className="px-4 py-5 sm:p-6 bg-green-300">
-                            <h2 className="text-3xl font-medium text-center text-gray-700">865</h2>
+                            <h2 className="text-3xl font-medium text-center text-gray-700">{dashboard?.total_male??0}</h2>
                         </div>
                     </div>
 
@@ -78,7 +81,7 @@ export default function GenderComponent() {
                             <h3 className="text-base text-white font-medium">FEMALE</h3>
                         </div>
                         <div className="px-4 py-5 sm:p-6 bg-green-300">
-                        <h2 className="text-3xl font-medium text-center text-gray-700">430</h2>
+                        <h2 className="text-3xl font-medium text-center text-gray-700">{dashboard?.total_female??0}</h2>
                         </div>
                     </div>
 

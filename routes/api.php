@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FarmProfileController;
 use App\Http\Controllers\GovernmentAffiliationController;
 use App\Http\Controllers\HouseholdController;
@@ -32,6 +33,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 
+Route::get('/admin_dashboard', [DashboardController::class, 'admin_dashboard']);
 Route::resource('farm_profile', FarmProfileController::class);
 Route::resource('government_affiliation', GovernmentAffiliationController::class);
 Route::resource('household', HouseholdController::class);
@@ -41,6 +43,7 @@ Route::resource('organization', OrganizationController::class);
 Route::resource('parcel_component', ParcelComponentController::class);
 Route::resource('parcel', ParcelController::class);
 Route::resource('personal_information', PersonalInformationController::class);
+Route::post('/verify_beneficiary', [PersonalInformationController::class, 'verify_beneficiary']);
 Route::resource('users', UserController::class);
 Route::resource('verifier', VerifierController::class);
 Route::post('/login', [AuthController::class, 'login']);

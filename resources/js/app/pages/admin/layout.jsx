@@ -28,26 +28,27 @@ import {
 import AdminSidenavSection from "./_sections/admin-sidenav-sections";
 import { Link, router } from "@inertiajs/react";
 
+
 const navigation = [
-    { name: "Dashboard", href: "./dashboard", icon: FcHome, current: false },
+    { name: "Dashboard", href: "/administrator/dashboard", icon: FcHome, current: false },
     {
         name: "Beneficiary Section",
         icon: FcConferenceCall,
-        current: false,
+        current:false,
         children: [
             {
                 name: "Register Beneficiary",
-                href: "./register",
+                href: "/administrator/beneficiary/register?status=register",
                 icon: FcList,
             },
             {
                 name: "Active Beneficiary",
-                href: "./beneficiary?status=active",
+                href: "/administrator/beneficiary?status=active",
                 icon: FcList,
             },
             {
                 name: "Inactive Beneficiary",
-                href: "./beneficiary?status=inactive",
+                href: "/administrator/beneficiary?status=inactive",
                 icon: FcList,
             },
         ],
@@ -57,8 +58,8 @@ const navigation = [
         icon: FcComboChart,
         current: false,
         children: [
-            { name: "General Report", href: "./reports", icon: FcList },
-            { name: "Batch Printing", href: "./printing", icon: FcList },
+            { name: "General Report", href: "/administrator/reports?status=reports", icon: FcList },
+            { name: "Batch Printing", href: "/administrator/printing?status=printing", icon: FcList },
         ],
     },
 ];
@@ -68,7 +69,7 @@ const teams = [
         name: "Account Management",
         icon: FcButtingIn,
         current: false,
-        children: [{ name: "Accounts List", href: "./accounts", icon: FcList }],
+        children: [{ name: "Accounts List", href: "/administrator/accounts", icon: FcList }],
     },
     {
         id: 2,
@@ -76,9 +77,9 @@ const teams = [
         icon: FcDataConfiguration,
         current: false,
         children: [
-            { name: "LGU Profile", href: "./lgu-profile", icon: FcList },
-            { name: "Brgy.Verifier", href: "./verifier", icon: FcList },
-            { name: "Organization", href: "./organization", icon: FcList },
+            { name: "LGU Profile", href: "/administrator/lgu-profile", icon: FcList },
+            { name: "Brgy.Verifier", href: "/administrator/verifier", icon: FcList },
+            { name: "Organization", href: "/administrator/organization", icon: FcList },
         ],
     },
     {
@@ -89,10 +90,10 @@ const teams = [
         children: [
             {
                 name: "Download User Manual",
-                href: "./manual",
+                href: "/administrator/manual",
                 icon: FcList,
             },
-            { name: "Contact Us", href: "./contact", icon: FcList },
+            { name: "Contact Us", href: "/administrator/contact", icon: FcList },
         ],
     },
 ];

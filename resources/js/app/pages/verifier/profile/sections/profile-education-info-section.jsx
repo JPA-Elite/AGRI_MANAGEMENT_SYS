@@ -1,6 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 export default function ProfileEducationInfoSection() {
+    const { personal_information } = useSelector(
+        (store) => store.personal_information
+    );
     return (
         <div className="border-b border-gray-900/10 pb-12">
             <h2 className="text-xl/7 font-semibold text-gray-900 mt-3">
@@ -21,20 +25,21 @@ export default function ProfileEducationInfoSection() {
                         <select
                             disabled
                             name="education"
+                            value={personal_information?.highest_education??''}
                             className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                         >
                             <option value="" disabled>
                                 -- Select Highest Formal Education --
                             </option>
-                            <option>Pre-school</option>
-                            <option>Elementary</option>
-                            <option>High School (Non K-12)</option>
-                            <option>Junior High School (K-12)</option>
-                            <option>Senior High School (K-12)</option>
-                            <option selected>College</option>
-                            <option>Vocational</option>
-                            <option>Post-graduate</option>
-                            <option>None</option>
+                            <option value="Pre-school">Pre-school</option>
+                            <option value="">Elementary</option>
+                            <option value="High School (Non K-12)">High School (Non K-12)</option>
+                            <option value="Junior High School (K-12)">Junior High School (K-12)</option>
+                            <option value="Senior High School (K-12)">Senior High School (K-12)</option>
+                            <option value="College">College</option>
+                            <option value="Vocational">Vocational</option>
+                            <option value="Post-graduate">Post-graduate</option>
+                            <option value="None">None</option>
                         </select>
                     </div>
                 </div>
