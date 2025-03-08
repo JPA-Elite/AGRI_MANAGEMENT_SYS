@@ -7,17 +7,29 @@ import { PhotoIcon } from "@heroicons/react/24/outline";
 import React, { useEffect, useState } from "react";
 import { FaBuildingFlag, FaPenToSquare } from "react-icons/fa6";
 import { useSelector } from "react-redux";
+import {
+    regions,
+    provinces,
+    cities,
+    barangays,
+    regionByCode,
+    provincesByCode,
+    provinceByName,
+} from "select-philippines-address";
 
-export default function LguInformationSection(id) {
+export default function LguInformationSection({ id }) {
     const [loading, setLoading] = useState(false);
     const { profile } = useSelector((store) => store.lgu_profile);
+    const [address, setAddress] = useState({
+        region: [],
+        province: [],
+    });
     const [form, setForm] = useState({
         city: "Vallehermoso",
         province: "Negros Oriental",
-        region: "Region VII",
+        region: null,
         lgu_user_id: id,
     });
-    console.log("form", form);
 
     useEffect(() => {
         setForm({
@@ -26,6 +38,55 @@ export default function LguInformationSection(id) {
             region: "Region VII",
         });
     }, [profile.id ?? 0]);
+
+    useEffect(() => {
+        regions().then((region) =>
+            setAddress({
+                ...address,
+                region,
+            })
+        );
+    }, []);
+
+    console.log("adddress", address);
+    console.log("form", form);
+    useEffect(() => {
+        if (form?.region_code) {
+            provinces(form?.region_code).then((province) =>
+                setAddress({
+                    ...address,
+                    province,
+                })
+            );
+        }
+    }, [form?.region_code ?? ""]);
+
+    useEffect(() => {
+        if (form?.province_code) {
+            cities(form?.province_code).then((cities) =>
+                setAddress({
+                    ...address,
+                    cities,
+                })
+            );
+        }
+    }, [form?.province_code ?? ""]);
+
+    useEffect(() => {
+        if (form?.city_code) {
+            barangays(form?.city_code).then((barangay) =>
+                setAddress({
+                    ...address,
+                    barangay,
+                })
+            );
+        }
+    }, [form?.city_code ?? ""]);
+    console.log("dddddddddd", address);
+    // provinceByName("Rizal").then((province) => console.log(province.province_code));
+    // cities(form.province_code).then((city) => console.log('waaaaaaaaaa',city));
+
+    // barangays("052011").then((barangays) => console.log(barangays));
 
     async function update_profile() {
         setLoading(true);
@@ -77,7 +138,157 @@ export default function LguInformationSection(id) {
                     </div>
 
                     <div className="sm:col-span-2">
-                        <div className="grid grid-cols-1 gap-2 sm:grid-cols-1 lg:grid-cols-2">
+                        <div className="grid grid-cols-1 gap-2 sm:grid-cols-1 lg:grid-cols-1">
+                            <div className="sm:cols-span-6">
+                                <label
+                                    htmlFor="region"
+                                    className="block text-sm/6 font-medium text-gray-900"
+                                >
+                                    Region
+                                </label>
+
+                                <select
+                                    id="region"
+                                    name="region"
+                                    onChange={(e) =>
+                                        setForm({
+                                            ...form,
+                                            [e.target.name]:
+                                                e.target.value.split(",")[0],
+                                            region_code:
+                                                e.target.value.split(",")[1],
+                                        })
+                                    }
+                                    className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
+                                >
+                                    <option value="" disabled selected>
+                                        -- Select a Region --
+                                    </option>
+
+                                    {address?.region?.map((res, i) => {
+                                        return (
+                                            <option
+                                                key={i}
+                                                value={`${res.region_name},${res.region_code}`}
+                                            >
+                                                {res.region_name}
+                                            </option>
+                                        );
+                                    })}
+                                </select>
+                            </div>
+
+                            <div className="sm:cols-span-6">
+                                <label
+                                    htmlFor="province"
+                                    className="block text-sm/6 font-medium text-gray-900"
+                                >
+                                    Province
+                                </label>
+
+                                <select
+                                    id="province"
+                                    name="province"
+                                    onChange={(e) =>
+                                        setForm({
+                                            ...form,
+                                            [e.target.name]:
+                                                e.target.value.split(",")[0],
+                                            province_code:
+                                                e.target.value.split(",")[1],
+                                        })
+                                    }
+                                    className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
+                                >
+                                    <option value="" disabled selected>
+                                        -- Select a Province --
+                                    </option>
+
+                                    {address?.province?.map((res, i) => {
+                                        return (
+                                            <option
+                                                key={i}
+                                                value={`${res.province_name},${res.province_code}`}
+                                            >
+                                                {res.province_name}
+                                            </option>
+                                        );
+                                    })}
+                                </select>
+                            </div>
+                            <div className="sm:cols-span-6">
+                                <label
+                                    htmlFor="city"
+                                    className="block text-sm/6 font-medium text-gray-900"
+                                >
+                                    City/Municipality
+                                </label>
+
+                                <select
+                                    id="city"
+                                    name="city"
+                                    onChange={(e) =>
+                                        setForm({
+                                            ...form,
+                                            [e.target.name]:
+                                                e.target.value.split(",")[0],
+                                            city_code:
+                                                e.target.value.split(",")[1],
+                                        })
+                                    }
+                                    className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
+                                >
+                                    <option value="" disabled selected>
+                                        -- Select a Province --
+                                    </option>
+
+                                    {address?.cities?.map((res, i) => {
+                                        return (
+                                            <option
+                                                key={i}
+                                                value={`${res.city_name},${res.city_code}`}
+                                            >
+                                                {res.city_name}
+                                            </option>
+                                        );
+                                    })}
+                                </select>
+                            </div>
+
+                            <div className="sm:cols-span-6">
+                                <label className="block text-sm/6 font-medium text-gray-900">
+                                    Barangay
+                                </label>
+                                <select
+                                    id="barangay"
+                                    name="barangay"
+                                    onChange={(e) =>
+                                        setForm({
+                                            ...form,
+                                            [e.target.name]:
+                                                e.target.value.split(",")[0],
+                                            brgy_code:
+                                                e.target.value.split(",")[1],
+                                        })
+                                    }
+                                    className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
+                                >
+                                    <option value="" disabled selected>
+                                        -- Select a Province --
+                                    </option>
+
+                                    {address?.barangay?.map((res, i) => {
+                                        return (
+                                            <option
+                                                key={i}
+                                                value={`${res.brgy_name},${res.brgy_code}`}
+                                            >
+                                                {res.brgy_name}
+                                            </option>
+                                        );
+                                    })}
+                                </select>
+                            </div>
                             <div className="sm:cols-span-6">
                                 <label className="block text-sm/6 font-medium text-gray-900">
                                     Address Details
@@ -96,106 +307,6 @@ export default function LguInformationSection(id) {
                                     className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                                 />
                             </div>
-                            <div className="sm:cols-span-6">
-                                <label className="block text-sm/6 font-medium text-gray-900">
-                                    Barangay
-                                </label>
-                                <select
-                                    id="barangay"
-                                    name="barangay"
-                                    onChange={(e) =>
-                                        setForm({
-                                            ...form,
-                                            [e.target.name]: e.target.value,
-                                        })
-                                    }
-                                    value={form?.barangay ?? ""}
-                                    placeholder="Barangay"
-                                    className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
-                                >
-                                    <option value="" disabled selected>
-                                        -- Select a Barangay --
-                                    </option>
-                                    <option value="Bairan">Bairan</option>
-                                    <option value="Bagawines">Bagawines</option>
-                                    <option value="Cabulihan">Cabulihan</option>
-                                    <option value="Don Esperidion Villegas">
-                                        Don Esperidion Villegas
-                                    </option>
-                                    <option value="Guba">Guba</option>
-                                    <option value="Macapso">Macapso</option>
-                                    <option value="Maglahos">Maglahos</option>
-                                    <option value="Malangsa">Malangsa</option>
-                                    <option value="Molobolo">Molobolo</option>
-                                    <option value="Pinocawan">Pinocawan</option>
-                                    <option value="Poblacion">Poblacion</option>
-                                    <option value="Puan">Puan</option>
-                                    <option value="Tabon">Tabon</option>
-                                    <option value="Tagbino">Tagbino</option>
-                                    <option value="Ulay">Ulay</option>
-                                </select>
-                            </div>
-                            <div className="sm:cols-span-6">
-                                <label
-                                    htmlFor="city"
-                                    className="block text-sm/6 font-medium text-gray-900"
-                                >
-                                    City/Municipality
-                                </label>
-                                <input
-                                    id="city"
-                                    name="city"
-                                    type="text"
-                                    onChange={(e) =>
-                                        setForm({
-                                            ...form,
-                                            [e.target.name]: e.target.value,
-                                        })
-                                    }
-                                    value={form?.city ?? ""}
-                                    className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
-                                    disabled
-                                />
-                            </div>
-                            <div className="sm:cols-span-6">
-                                <label
-                                    htmlFor="province"
-                                    className="block text-sm/6 font-medium text-gray-900"
-                                >
-                                    Province
-                                </label>
-                                <input
-                                    id="province"
-                                    name="province"
-                                    type="text"
-                                    value={form?.province ?? ""}
-                                    className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
-                                    disabled
-                                />
-                            </div>
-                            <div className="sm:cols-span-6">
-                                <label
-                                    htmlFor="region"
-                                    className="block text-sm/6 font-medium text-gray-900"
-                                >
-                                    Region
-                                </label>
-                                <input
-                                    id="region"
-                                    name="region"
-                                    onChange={(e) =>
-                                        setForm({
-                                            ...form,
-                                            [e.target.name]: e.target.value,
-                                        })
-                                    }
-                                    type="text"
-                                    value={form?.region ?? ""}
-                                    className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
-                                    disabled
-                                />
-                            </div>
-
                             <div className="sm:cols-span-6">
                                 <label
                                     htmlFor="contact"
