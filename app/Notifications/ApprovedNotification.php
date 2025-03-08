@@ -41,9 +41,6 @@ class ApprovedNotification extends Notification
      */
     public function toMail(object $notifiable): MailMessage
     {
-        // 'firstname',
-        // 'middlename',
-        // 'lastname',
         return (new MailMessage)
             ->subject('Beneficiary Verification Confirmation')
             ->line('This is to inform you that the following beneficiary has been successfully verified:')

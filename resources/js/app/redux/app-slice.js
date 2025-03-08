@@ -4,7 +4,8 @@ export const appSlice = createSlice({
   name: 'counter',
   initialState: {
     value: 0,
-    dashboard:{}
+    dashboard:{},
+    user:{}
   },
   reducers: {
     increment: (state) => {
@@ -13,10 +14,13 @@ export const appSlice = createSlice({
     setDashboard: (state,action) => {
       state.dashboard =action.payload
     },
+    setUser: (state,action) => {
+      state.user =action.payload
+    },
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { increment,setDashboard } = appSlice.actions
+export const { increment,setDashboard,setUser } = appSlice.actions
 
 export default appSlice.reducer

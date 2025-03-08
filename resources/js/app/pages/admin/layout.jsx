@@ -1,4 +1,4 @@
-import { Children, useState } from "react";
+import { Children, useEffect, useState } from "react";
 import { Dialog, Menu, Transition } from "@headlessui/react";
 import {
     Bars3Icon,
@@ -27,6 +27,9 @@ import {
 } from "@heroicons/react/20/solid";
 import AdminSidenavSection from "./_sections/admin-sidenav-sections";
 import { Link, router } from "@inertiajs/react";
+import store from "@/app/store/store";
+import { get_user_thunk } from "@/app/redux/user-thunk";
+import { useSelector } from "react-redux";
 
 
 const navigation = [
@@ -111,7 +114,12 @@ function classNames(...classes) {
 export default function AdminLayout({ children }) {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [expanded, setExpanded] = useState({});
-
+    const {user}=useSelector((store)=>store.app)
+    console.log('useruser',user)
+    useEffect(() => {
+     store.dispatch(get_user_thunk())
+    }, [])
+    
     const toggleExpand = (name) => {
         setExpanded((prev) => ({
             ...prev,
@@ -168,7 +176,7 @@ export default function AdminLayout({ children }) {
                             />
                         </form>
                         <div className="flex items-center gap-x-4 lg:gap-x-6">
-                            <button
+                            {/* <button
                                 type="button"
                                 className="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500"
                             >
@@ -179,13 +187,13 @@ export default function AdminLayout({ children }) {
                                     aria-hidden="true"
                                     className="h-6 w-6"
                                 />
-                            </button>
+                            </button> */}
 
                             {/* Separator */}
-                            <div
+                            {/* <div
                                 aria-hidden="true"
                                 className="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-900/10"
-                            />
+                            /> */}
 
                             {/* Profile dropdown */}
                             <Menu as="div" className="relative">
@@ -203,7 +211,7 @@ export default function AdminLayout({ children }) {
                                             aria-hidden="true"
                                             className="ml-4 text-sm font-semibold leading-6 text-gray-900"
                                         >
-                                            Tom Cook
+                                           {user?.firstname} {user?.middlename} {user?.lastname}
                                         </span>
                                         <ChevronDownIcon
                                             aria-hidden="true"

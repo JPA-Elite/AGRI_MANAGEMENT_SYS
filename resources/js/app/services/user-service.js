@@ -1,5 +1,9 @@
 import axios from "axios";
 
+export  async function get_user_service() {
+    const res = await axios.get("/api/user");
+    return res;
+}
 export  async function get_users_service() {
     const res = await axios.get("/api/accounts"+window.location.search);
     return res;
