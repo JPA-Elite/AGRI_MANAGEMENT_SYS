@@ -4,6 +4,7 @@ import registerSlice from "../redux/register-slice";
 import personalInfomationSlice from "../redux/personal-information-slice";
 import userSlice from "../redux/user-slice";
 import organizationSlice  from "../redux/organization-slice";
+import lguProfileSlice  from "../redux/lgu-profile-slice";
 
 const store = configureStore({
     reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
         users: userSlice,
         organization: organizationSlice,
         personal_information: personalInfomationSlice,
+        lgu_profile:lguProfileSlice
     },
 });
 

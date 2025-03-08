@@ -1,12 +1,28 @@
 import { setPersonalInformation } from "@/app/redux/personal-information-slice";
 import { setForm } from "@/app/redux/register-slice";
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function AddressInformationComponent() {
     const { personal_information } = useSelector(
         (store) => store.personal_information
     );
+    const { user } = useSelector((store) => store.app);
+
+    useEffect(() => {
+        dispatch(
+            setPersonalInformation({
+                ...personal_information,
+                address_info: {
+                    ...personal_information.address_info, // Spread the existing home_address fields
+                    city: user?.profile?.city ?? "",
+                    province: user?.profile?.province ?? "",
+                    region: user?.profile?.region ?? "",
+                },
+            })
+        );
+    }, [user?.id ?? ""]);
+
     const dispatch = useDispatch();
     return (
         <div>
@@ -136,6 +152,11 @@ export default function AddressInformationComponent() {
                                 id="city"
                                 name="city"
                                 type="text"
+                                value={
+                                    personal_information?.address_info?.city ??
+                                    ""
+                                }
+                                readOnly
                                 onChange={(e) =>
                                     dispatch(
                                         setPersonalInformation({
@@ -164,6 +185,11 @@ export default function AddressInformationComponent() {
                                 id="Province"
                                 name="province"
                                 type="text"
+                                value={
+                                    personal_information?.address_info
+                                        ?.province ?? ""
+                                }
+                                readOnly
                                 onChange={(e) =>
                                     dispatch(
                                         setPersonalInformation({
@@ -190,7 +216,12 @@ export default function AddressInformationComponent() {
                         <div className="mt-2">
                             <select
                                 id="region"
-                                name="region"
+                                name="Region"
+                                value={
+                                    personal_information?.address_info
+                                        ?.region ?? ""
+                                }
+                                readOnly
                                 onChange={(e) =>
                                     dispatch(
                                         setPersonalInformation({
@@ -215,52 +246,52 @@ export default function AddressInformationComponent() {
                                     <option value="car">
                                         Cordillera Administrative Region (CAR)
                                     </option>
-                                    <option value="region I">
+                                    <option value="Region I">
                                         Ilocos Region (Region I)
                                     </option>
-                                    <option value="region II">
+                                    <option value="Region II">
                                         Cagayan Valley (Region II)
                                     </option>
-                                    <option value="region III">
+                                    <option value="Region III">
                                         Central Luzon (Region III)
                                     </option>
-                                    <option value="region IV-A">
+                                    <option value="Region IV-A">
                                         CALABARZON (Region IV-A)
                                     </option>
-                                    <option value="region IV-B">
+                                    <option value="Region IV-B">
                                         MIMAROPA (Region IV-B)
                                     </option>
-                                    <option value="region V">
+                                    <option value="Region V">
                                         Bicol Region (Region V)
                                     </option>
                                 </optgroup>
 
                                 <optgroup label="Visayas">
-                                    <option value="region VI">
+                                    <option value="Region VI">
                                         Western Visayas (Region VI)
                                     </option>
-                                    <option value="region VII">
+                                    <option value="Region VII">
                                         Central Visayas (Region VII)
                                     </option>
-                                    <option value="region VIII">
+                                    <option value="Region VIII">
                                         Eastern Visayas (Region VIII)
                                     </option>
                                 </optgroup>
 
                                 <optgroup label="Mindanao">
-                                    <option value="region IX">
+                                    <option value="Region IX">
                                         Zamboanga Peninsula (Region IX)
                                     </option>
-                                    <option value="region X">
+                                    <option value="Region X">
                                         Northern Mindanao (Region X)
                                     </option>
-                                    <option value="region XI">
+                                    <option value="Region XI">
                                         Davao Region (Region XI)
                                     </option>
-                                    <option value="region XII">
+                                    <option value="Region XII">
                                         SOCCSKSARGEN (Region XII)
                                     </option>
-                                    <option value="region XIII">
+                                    <option value="Region XIII">
                                         Caraga (Region XIII)
                                     </option>
                                     <option value="barmm">

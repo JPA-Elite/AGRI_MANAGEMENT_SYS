@@ -1,8 +1,57 @@
+import {
+    get_lgu_profile_by_id_thunk,
+    store_lgu_profile_thunk,
+} from "@/app/redux/lgu-profile-thunk";
+import store from "@/app/store/store";
 import { PhotoIcon } from "@heroicons/react/24/outline";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaBuildingFlag, FaPenToSquare } from "react-icons/fa6";
+import { useSelector } from "react-redux";
 
-export default function LguInformationSection() {
+export default function LguInformationSection(id) {
+    const [loading, setLoading] = useState(false);
+    const { profile } = useSelector((store) => store.lgu_profile);
+    const [form, setForm] = useState({
+        city: "Vallehermoso",
+        province: "Negros Oriental",
+        region: "Region VII",
+        lgu_user_id: id,
+    });
+    console.log("form", form);
+
+    useEffect(() => {
+        setForm({
+            ...profile,
+            file: profile.logo,
+            region: "Region VII",
+        });
+    }, [profile.id ?? 0]);
+
+    async function update_profile() {
+        setLoading(true);
+        try {
+            const fd = new FormData();
+            fd.append("lgu_user_id", form.lgu_user_id);
+            fd.append("address", form.address);
+            fd.append("barangay", form.barangay);
+            fd.append("city", form.city);
+            fd.append("province", form.province);
+            fd.append("region", form.region);
+            fd.append("contact", form.contact);
+            fd.append("email", form.email);
+            fd.append(
+                "municipal_agricultural_office",
+                form.municipal_agricultural_office
+            );
+            fd.append("logo", form.file);
+
+            await store.dispatch(store_lgu_profile_thunk(fd));
+            await store.dispatch(get_lgu_profile_by_id_thunk(form.lgu_user_id));
+            setLoading(false);
+        } catch (error) {
+            setLoading(false);
+        }
+    }
     return (
         <div className="divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow-xl">
             <div className="px-4 py-5 sm:px-6 bg-green-600">
@@ -20,7 +69,7 @@ export default function LguInformationSection() {
                             <div className="px-4 py-5 sm:p-6">
                                 <img
                                     alt=""
-                                    src="/images/valle.png"
+                                    src={form.logo ?? ""}
                                     className="w-full rounded-2xl object-cover"
                                 />
                             </div>
@@ -30,51 +79,60 @@ export default function LguInformationSection() {
                     <div className="sm:col-span-2">
                         <div className="grid grid-cols-1 gap-2 sm:grid-cols-1 lg:grid-cols-2">
                             <div className="sm:cols-span-6">
-                                <label
-                                    htmlFor="first-name"
-                                    className="block text-sm/6 font-medium text-gray-900"
-                                >
+                                <label className="block text-sm/6 font-medium text-gray-900">
                                     Address Details
                                 </label>
                                 <input
-                                    id="first-name"
-                                    name="first-name"
+                                    name="address"
+                                    onChange={(e) =>
+                                        setForm({
+                                            ...form,
+                                            [e.target.name]: e.target.value,
+                                        })
+                                    }
+                                    value={form?.address ?? ""}
                                     type="text"
                                     autoComplete="given-name"
                                     className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                                 />
                             </div>
                             <div className="sm:cols-span-6">
-                                <label
-                                    htmlFor="first-name"
-                                    className="block text-sm/6 font-medium text-gray-900"
-                                >
+                                <label className="block text-sm/6 font-medium text-gray-900">
                                     Barangay
                                 </label>
                                 <select
                                     id="barangay"
                                     name="barangay"
+                                    onChange={(e) =>
+                                        setForm({
+                                            ...form,
+                                            [e.target.name]: e.target.value,
+                                        })
+                                    }
+                                    value={form?.barangay ?? ""}
                                     placeholder="Barangay"
                                     className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                                 >
                                     <option value="" disabled selected>
                                         -- Select a Barangay --
                                     </option>
-                                    <option>Bairan</option>
-                                    <option>Bagawines</option>
-                                    <option>Cabulihan</option>
-                                    <option>Don Esperidion Villegas</option>
-                                    <option>Guba</option>
-                                    <option>Macapso</option>
-                                    <option>Maglahos</option>
-                                    <option>Malangsa</option>
-                                    <option>Molobolo</option>
-                                    <option>Pinocawan</option>
-                                    <option>Poblacion</option>
-                                    <option>Puan</option>
-                                    <option>Tabon</option>
-                                    <option>Tagbino</option>
-                                    <option>Ulay</option>
+                                    <option value="Bairan">Bairan</option>
+                                    <option value="Bagawines">Bagawines</option>
+                                    <option value="Cabulihan">Cabulihan</option>
+                                    <option value="Don Esperidion Villegas">
+                                        Don Esperidion Villegas
+                                    </option>
+                                    <option value="Guba">Guba</option>
+                                    <option value="Macapso">Macapso</option>
+                                    <option value="Maglahos">Maglahos</option>
+                                    <option value="Malangsa">Malangsa</option>
+                                    <option value="Molobolo">Molobolo</option>
+                                    <option value="Pinocawan">Pinocawan</option>
+                                    <option value="Poblacion">Poblacion</option>
+                                    <option value="Puan">Puan</option>
+                                    <option value="Tabon">Tabon</option>
+                                    <option value="Tagbino">Tagbino</option>
+                                    <option value="Ulay">Ulay</option>
                                 </select>
                             </div>
                             <div className="sm:cols-span-6">
@@ -88,7 +146,13 @@ export default function LguInformationSection() {
                                     id="city"
                                     name="city"
                                     type="text"
-                                    value="Vallehermoso"
+                                    onChange={(e) =>
+                                        setForm({
+                                            ...form,
+                                            [e.target.name]: e.target.value,
+                                        })
+                                    }
+                                    value={form?.city ?? ""}
                                     className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                                     disabled
                                 />
@@ -104,7 +168,7 @@ export default function LguInformationSection() {
                                     id="province"
                                     name="province"
                                     type="text"
-                                    value="Negros Oriental"
+                                    value={form?.province ?? ""}
                                     className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                                     disabled
                                 />
@@ -119,8 +183,14 @@ export default function LguInformationSection() {
                                 <input
                                     id="region"
                                     name="region"
+                                    onChange={(e) =>
+                                        setForm({
+                                            ...form,
+                                            [e.target.name]: e.target.value,
+                                        })
+                                    }
                                     type="text"
-                                    value="Region 7"
+                                    value={form?.region ?? ""}
                                     className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                                     disabled
                                 />
@@ -131,11 +201,17 @@ export default function LguInformationSection() {
                                     htmlFor="contact"
                                     className="block text-sm/6 font-medium text-gray-900"
                                 >
-                                   LGU Contact
+                                    LGU Contact
                                 </label>
                                 <input
-                                    id="contact"
                                     name="contact"
+                                    onChange={(e) =>
+                                        setForm({
+                                            ...form,
+                                            [e.target.name]: e.target.value,
+                                        })
+                                    }
+                                    value={form?.contact ?? ""}
                                     type="number"
                                     className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                                 />
@@ -146,12 +222,19 @@ export default function LguInformationSection() {
                                     htmlFor="Email Address"
                                     className="block text-sm/6 font-medium text-gray-900"
                                 >
-                                   LGU Email Address
+                                    LGU Email Address
                                 </label>
                                 <input
                                     id="Email Address"
-                                    name="Email Address"
+                                    name="email"
+                                    value={form?.email ?? ""}
                                     type="email"
+                                    onChange={(e) =>
+                                        setForm({
+                                            ...form,
+                                            [e.target.name]: e.target.value,
+                                        })
+                                    }
                                     className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                                 />
                             </div>
@@ -166,7 +249,16 @@ export default function LguInformationSection() {
                             </label>
                             <input
                                 id="MAO"
-                                name="MAO"
+                                name="municipal_agricultural_office"
+                                value={
+                                    form?.municipal_agricultural_office ?? ""
+                                }
+                                onChange={(e) =>
+                                    setForm({
+                                        ...form,
+                                        [e.target.name]: e.target.value,
+                                    })
+                                }
                                 type="text"
                                 className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                             />
@@ -191,8 +283,27 @@ export default function LguInformationSection() {
                                             <span>Upload a file</span>
                                             <input
                                                 id="file-upload"
-                                                name="file-upload"
+                                                name="logo"
                                                 type="file"
+                                                onChange={(e) => {
+                                                    const file =
+                                                        e.target.files[0]; // Get the selected file
+                                                    if (file) {
+                                                        const reader =
+                                                            new FileReader();
+                                                        reader.readAsDataURL(
+                                                            file
+                                                        ); // Convert file to Base64
+                                                        reader.onload = () => {
+                                                            setForm({
+                                                                ...form,
+                                                                file: file,
+                                                                [e.target.name]:
+                                                                    reader.result, // Store Base64 string
+                                                            });
+                                                        };
+                                                    }
+                                                }}
                                                 className="sr-only"
                                             />
                                         </label>
@@ -205,11 +316,13 @@ export default function LguInformationSection() {
                             </div>
 
                             <button
+                                onClick={update_profile}
                                 type="button"
+                                disabled={loading}
                                 className="rounded-full bg-green-600 px-3.5 py-2 mt-4 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
                             >
                                 <FaPenToSquare className="float-left mr-2 size-4" />
-                                UPDATE
+                                {loading ? "Loading..." : "UPDATE"}
                             </button>
                         </div>
                     </div>

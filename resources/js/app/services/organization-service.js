@@ -2,7 +2,7 @@ import axios from "axios";
 
 export  async function get_organization_service() {
     const res = await axios.get("/api/organization");
-    return res;
+    return res.data;
 }
 
 export  async function store_organization_service(data) {

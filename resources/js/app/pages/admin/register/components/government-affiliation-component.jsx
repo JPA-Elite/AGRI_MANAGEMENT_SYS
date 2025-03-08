@@ -10,6 +10,8 @@ export default function GovernmentAffiliationComponent() {
     const { personal_information } = useSelector(
         (store) => store.personal_information
     );
+    const { organizations } = useSelector((store) => store.organization);
+    console.log("organizations", organizations);
     const dispatch = useDispatch();
     return (
         <div>
@@ -401,12 +403,12 @@ export default function GovernmentAffiliationComponent() {
                                 NO
                             </label>
                         </div>
-                        {personal_information?.government_affiliation?.farmers_association == 'YES' && (
+                        {personal_information?.government_affiliation
+                            ?.farmers_association == "YES" && (
                             <>
-                                <input
+                                <select
+                                    id="farmers_association_name"
                                     name="farmers_association_name"
-                                    type="text"
-                                    placeholder="If YES, Please Specify"
                                     onChange={(e) =>
                                         dispatch(
                                             setPersonalInformation({
@@ -419,8 +421,23 @@ export default function GovernmentAffiliationComponent() {
                                             })
                                         )
                                     }
-                                    className="block w-1/2 rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 mt-4 sm:text-sm/6"
-                                />
+                                    className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
+                                >
+                                    <option value="" disabled selected>
+                                        -- Member of any Farmers
+                                        Association/Cooperative? --
+                                    </option>
+                                    {organizations.map((res, i) => {
+                                        return (
+                                            <option
+                                                value={res.organization_name}
+                                                key={i}
+                                            >
+                                                {res.organization_name}
+                                            </option>
+                                        );
+                                    })}
+                                </select>
                             </>
                         )}
                     </div>

@@ -15,6 +15,7 @@ export default function RegistrationStepperSection() {
     const { personal_information } = useSelector(
         (store) => store.personal_information
     );
+  
     const [loading, setLoading] = useState(false);
     const steps = [
         { id: "01", name: "Personal Information", description: "Completed" },

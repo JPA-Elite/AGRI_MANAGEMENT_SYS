@@ -1,18 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export const appSlice = createSlice({
-  name: 'counter',
+export const lguProfileSlice = createSlice({
+  name: 'aluProfile',
   initialState: {
-    value: 0,
+    profile: {},
   },
   reducers: {
-    increment: (state) => {
-      state.value += 1
+    setProfile: (state,action) => {
+      state.profile =action.payload
     },
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { increment, } = appSlice.actions
+export const { setProfile, } = lguProfileSlice.actions
 
-export default appSlice.reducer
+export default lguProfileSlice.reducer

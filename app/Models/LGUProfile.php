@@ -9,6 +9,7 @@ class LGUProfile extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'lgu_user_id',
         'address',
         'barangay',
         'city',

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('l_g_u_profiles', function (Blueprint $table) {
             $table->id();
+            $table->string('lgu_user_id')->nullable();
             $table->string('address')->nullable();
             $table->string('barangay')->nullable();
             $table->string('city')->nullable();
