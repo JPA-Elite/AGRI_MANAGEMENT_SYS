@@ -51,6 +51,11 @@ const navigation = [
                 href: "/administrator/beneficiary?status=inactive",
                 icon: FcList,
             },
+            {
+                name: "Declined Beneficiary",
+                href: "/administrator/beneficiary?status=declined",
+                icon: FcList,
+            },
         ],
     },
     // {
@@ -69,7 +74,7 @@ const teams = [
         name: "Account Management",
         icon: FcButtingIn,
         current: false,
-        children: [{ name: "Accounts List", href: "/administrator/accounts?role=admin", icon: FcList }],
+        children: [{ name: "Accounts List", href: "/administrator/accounts/list?role=admin", icon: FcList }],
     },
     {
         id: 2,
@@ -77,9 +82,9 @@ const teams = [
         icon: FcDataConfiguration,
         current: false,
         children: [
-            { name: "LGU Profile", href: "/administrator/lgu-profile", icon: FcList },
-            { name: "Brgy.Verifier", href: "/administrator/verifier?role=verifier", icon: FcList },
-            { name: "Organization", href: "/administrator/organization", icon: FcList },
+            { name: "LGU Profile", href: "/administrator/system_maintenance/lgu-profile", icon: FcList },
+            { name: "Brgy.Verifier", href: "/administrator/system_maintenance/verifier?role=verifier", icon: FcList },
+            { name: "Organization", href: "/administrator/system_maintenance/organization", icon: FcList },
         ],
     },
     {
@@ -97,10 +102,7 @@ const teams = [
         ],
     },
 ];
-const userNavigation = [
-    { name: "My profile", href: "#" },
-    { name: "Sign out", href: "#" },
-];
+
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(" ");

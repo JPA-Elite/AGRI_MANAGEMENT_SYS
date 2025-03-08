@@ -1,1 +1,0 @@
-import{a as e,d as a}from"./app-BcEERKVv.js";async function n(){return await e.get("/api/accounts"+window.location.search)}function o(){return async function(t,r){const s=await n();return t(a.actions.setUsers(s)),s.data}}export{o as g};

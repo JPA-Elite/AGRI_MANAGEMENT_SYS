@@ -14,6 +14,7 @@ use App\Notifications\ApprovedNotification;
 use App\Notifications\DeclinedNotification;
 use App\Notifications\PendingNotification;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PersonalInformationController extends Controller
 {
@@ -21,17 +22,16 @@ class PersonalInformationController extends Controller
     {
 
         $personalInformation = PersonalInformation::where('register_id', $request->register_id)->first();
-
+        $auth = Auth::user();
 
         $users = User::where('role', '=', 'Admin')->get();
         foreach ($users as $key => $user) {
             if ($user) {
                 if ($request->status == 'active') {
-                    $user->notify(new ApprovedNotification($personalInformation));
-                }else if ($request->status == 'declined') {
-                    $user->notify(new DeclinedNotification($personalInformation));
+                    $user->notify(new ApprovedNotification($personalInformation, $auth));
+                } else if ($request->status == 'declined') {
+                    $user->notify(new DeclinedNotification($personalInformation, $auth));
                 }
-                
             }
         }
 
@@ -47,8 +47,20 @@ class PersonalInformationController extends Controller
     }
     public function index(Request $request)
     {
-        $res = PersonalInformation::where('status', $request->status)
-            ->with(['farm_profiles', 'government_affiliation', 'household', 'land_farmers', 'parcels', 'parcel_components'])->get();
+        $query = PersonalInformation::where('status', $request->status);
+
+        if ($request->has('search')) {
+            $query->where('register_id', $request->search);
+        }
+
+        $res = $query->with([
+            'farm_profiles',
+            'government_affiliation',
+            'household',
+            'land_farmers',
+            'parcels',
+            'parcel_components'
+        ])->get();
 
         return response()->json([
             'response' => $res,
@@ -59,7 +71,7 @@ class PersonalInformationController extends Controller
     {
 
 
-        PersonalInformation::create([
+        $personal_information = PersonalInformation::create([
             'register_id' => $request->register_id ?? null,
             'firstname' => $request->personal_info['firstname'] ?? null,
             'civil' => $request->personal_info['civil'] ?? null,
@@ -161,7 +173,7 @@ class PersonalInformationController extends Controller
             $users = User::where('brgy', '=', $request->address_info['barangay'])->get();
             foreach ($users as $key => $user) {
                 if ($user) {
-                    $user->notify(new PendingNotification($request->all()));
+                    $user->notify(new PendingNotification($user, $request->all()));
                 }
             }
         }

@@ -4,13 +4,9 @@ import AddUserSection from "./add-user-section";
 import { useSelector } from "react-redux";
 
 export default function UserTableSection() {
-    const [message, setMessage] = useState("");
     const {users}=useSelector((store)=>store.users)
-    console.log('users',users.data)
-  
-    const addUser = (newUser) => {
-        setUsers((prevUsers) => [...prevUsers, newUser]); // Add the new user to the users list
-    };
+
+ 
 
     return (
         <div className="px-4 sm:px-6 lg:px-8">
@@ -23,7 +19,7 @@ export default function UserTableSection() {
                         A list of all the active users in the system.
                     </p>
                 </div>
-                <AddUserSection addUser={addUser}/>
+                <AddUserSection />
             </div>
             <div className="mt-8 flow-root">
                 <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">

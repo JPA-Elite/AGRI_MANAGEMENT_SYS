@@ -15,12 +15,14 @@ export default function AdminSidenavSection({
     const params = new URLSearchParams(window.location.search);
     const isOpen = window.location.pathname.split("/")[2];
     const isActive = params.get("status");
+    const isSystemActive = window.location.pathname.split("/")[3];
     useEffect(() => {
         setExpanded((prev) => ({
             ...prev,
             "Beneficiary Section": isOpen == "beneficiary",
             "Report Section": isOpen == "reports",
             "Account Management": isOpen == "accounts",
+            "System Maintenance": isOpen == "system_maintenance",
         }));
     }, []);
 
@@ -269,7 +271,8 @@ export default function AdminSidenavSection({
                                                         <ul className="ml-6 mt-1 space-y-1">
                                                             {item.children.map(
                                                                 (child) => {
-                                                                    const path =child.href;
+                                                                    const path =
+                                                                        child.href;
                                                                     return (
                                                                         <Link
                                                                             key={
@@ -282,7 +285,10 @@ export default function AdminSidenavSection({
                                                                                 }
                                                                                 className={`
                                                                             ${
-                                                                                path.split('=')[1] == isActive
+                                                                                path.split(
+                                                                                    "="
+                                                                                )[1] ==
+                                                                                isActive
                                                                                     ? "bg-green-600 text-white"
                                                                                     : ""
                                                                             }
@@ -365,28 +371,45 @@ export default function AdminSidenavSection({
                                                     {expanded[teams.name] && (
                                                         <ul className="ml-6 mt-1 space-y-1">
                                                             {teams.children.map(
-                                                                (child) => (
-                                                                    <li
-                                                                        key={
-                                                                            child.name
-                                                                        }
-                                                                    >
+                                                                (child) => {
+                                                                    const path =
+                                                                        child.href;
+                                                                    return (
                                                                         <Link
-                                                                            href={
-                                                                                child.href
-                                                                            }
-                                                                            className="flex items-center text-gray-600 hover:text-white hover:bg-green-600 rounded-md px-2 py-1 text-sm font-semibold leading-6"
-                                                                        >
-                                                                            <child.icon
-                                                                                aria-hidden="true"
-                                                                                className="h-3 w-3 shrink-0 mr-2"
-                                                                            />
-                                                                            {
+                                                                            key={
                                                                                 child.name
                                                                             }
+                                                                        >
+                                                                            <Link
+                                                                                href={
+                                                                                    child.href
+                                                                                }
+                                                                                className={`
+                                                                            ${
+                                                                                path
+                                                                                    .split(
+                                                                                        "/"
+                                                                                    )[3]
+                                                                                    ?.split(
+                                                                                        "?"
+                                                                                    )[0] ==
+                                                                                isSystemActive
+                                                                                    ? "bg-green-600 text-white"
+                                                                                    : ""
+                                                                            }
+                                                                            flex items-center text-gray-600 hover:text-white hover:bg-green-600 rounded-md px-2 py-1 text-sm font-semibold leading-6`}
+                                                                            >
+                                                                                <child.icon
+                                                                                    aria-hidden="true"
+                                                                                    className="h-3 w-3 shrink-0 mr-2"
+                                                                                />
+                                                                                {
+                                                                                    child.name
+                                                                                }
+                                                                            </Link>
                                                                         </Link>
-                                                                    </li>
-                                                                )
+                                                                    );
+                                                                }
                                                             )}
                                                         </ul>
                                                     )}

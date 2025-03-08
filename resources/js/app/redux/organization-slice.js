@@ -1,18 +1,18 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
-export const appSlice = createSlice({
-  name: 'counter',
-  initialState: {
-    value: 0,
-  },
-  reducers: {
-    increment: (state) => {
-      state.value += 1
+export const organizationSlice = createSlice({
+    name: "organizations",
+    initialState: {
+        organizations: 0,
     },
-  },
-})
+    reducers: {
+        setOrganizations: (state, action) => {
+            state.organizations = action.payload;
+        },
+    },
+});
 
 // Action creators are generated for each case reducer function
-export const { increment, } = appSlice.actions
+export const { setOrganizations } = organizationSlice.actions;
 
-export default appSlice.reducer
+export default organizationSlice.reducer;

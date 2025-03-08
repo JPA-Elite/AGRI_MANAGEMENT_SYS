@@ -1,7 +1,9 @@
 import React from "react";
 import AddOrganizationSection from "./add-organization-section";
+import { useSelector } from "react-redux";
 
 export default function OrganizationTableSection() {
+    const { organizations } = useSelector((store) => store.organization);
     const people = [
         {
             organization: "Vallehermoso Farmers Association",
@@ -20,8 +22,8 @@ export default function OrganizationTableSection() {
                         Agricultural Organization/Association Records
                     </h1>
                     <p className="mt-2 text-sm text-gray-700">
-                        A list of all the Agricultural Organization/Association in the
-                        system.
+                        A list of all the Agricultural Organization/Association
+                        in the system.
                     </p>
                 </div>
                 <AddOrganizationSection />
@@ -54,10 +56,10 @@ export default function OrganizationTableSection() {
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-200 bg-white">
-                                {people.map((person) => (
+                                {organizations?.data?.map((person) => (
                                     <tr key={person.email}>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm uppercase text-gray-900">
-                                            {person.organization}
+                                            {person.organization_name}
                                         </td>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
                                             <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">

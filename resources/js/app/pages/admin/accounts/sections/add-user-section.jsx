@@ -11,8 +11,9 @@ import { FaUserPlus } from "react-icons/fa6";
 import store from "@/app/store/store";
 import { get_users_thunk } from "@/app/redux/user-thunk";
 
-export default function AddUserSection({ addUser }) {
+export default function AddUserSection() {
     const [open, setOpen] = useState(false);
+    const [loading,setLoading]=useState(false)
     const [formData, setFormData] = useState({
         firstname: "",
         middlename: "",
@@ -38,7 +39,7 @@ export default function AddUserSection({ addUser }) {
             setMessage("Passwords do not match.");
             return;
         }
-
+        setLoading(true)
         try {
             const response = await axios.post("/api/users",
                 {
@@ -53,10 +54,9 @@ export default function AddUserSection({ addUser }) {
                     status: formData.status,
                 }
             );
-
+            await store.dispatch(get_users_thunk())
+            setLoading(false)
             setMessage(response.data.message);
-            addUser(response.data.user);
-            console.log(addUser);
             setFormData({
                 firstname: "",
                 middlename: "",
@@ -70,10 +70,8 @@ export default function AddUserSection({ addUser }) {
             });
 
             setOpen(false);
-            store.dispatch(get_users_thunk())
         } catch (error) {
-            setMessage("Error saving user. Check console for details.");
-            console.error(error.response?.data || error.message);
+            setLoading(false)
         }
     };
 
@@ -324,10 +322,11 @@ export default function AddUserSection({ addUser }) {
                                                     Cancel
                                                 </button>
                                                 <button
+                                                disabled={loading}
                                                     type="submit"
                                                     className="ml-4 inline-flex justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500"
                                                 >
-                                                    Save
+                                                   {loading?"Loading...":"Save"} 
                                                 </button>
                                             </div>
                                         </form>

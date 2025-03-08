@@ -12,8 +12,9 @@ import axios from "axios";
 import store from "@/app/store/store";
 import { get_users_thunk } from "@/app/redux/user-thunk";
 
-export default function AddVerifierSection({addUser}) {
+export default function AddVerifierSection({ addUser }) {
     const [open, setOpen] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
         firstname: "",
         middlename: "",
@@ -40,26 +41,24 @@ export default function AddVerifierSection({addUser}) {
             setMessage("Passwords do not match.");
             return;
         }
-
+        setLoading(true);
         try {
-            const response = await axios.post(
-                "/api/users",
-                {
-                    firstname: formData.firstname,
-                    middlename: formData.middlename,
-                    lastname: formData.lastname,
-                    suffix: formData.suffix,
-                    role: formData.role,
-                    brgy: formData.brgy,
-                    email: formData.email,
-                    password: formData.password,
-                    password_confirmation: formData.password2,
-                    status: formData.status,
-                }
-            );
+            const response = await axios.post("/api/users", {
+                firstname: formData.firstname,
+                middlename: formData.middlename,
+                lastname: formData.lastname,
+                suffix: formData.suffix,
+                role: formData.role,
+                brgy: formData.brgy,
+                email: formData.email,
+                password: formData.password,
+                password_confirmation: formData.password2,
+                status: formData.status,
+            });
 
+            await store.dispatch(get_users_thunk());
             setMessage(response.data.message);
-            store.dispatch(get_users_thunk())
+            setLoading(false);
             setFormData({
                 firstname: "",
                 middlename: "",
@@ -74,6 +73,7 @@ export default function AddVerifierSection({addUser}) {
             });
 
             setOpen(false);
+            setLoading(false);
         } catch (error) {
             setMessage("Error saving user. Check console for details.");
             console.error(error.response?.data || error.message);
@@ -359,10 +359,13 @@ export default function AddVerifierSection({addUser}) {
                                                     Cancel
                                                 </button>
                                                 <button
+                                                    disabled={loading}
                                                     type="submit"
                                                     className="ml-4 inline-flex justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500"
                                                 >
-                                                    Save
+                                                    {loading
+                                                        ? "Loading..."
+                                                        : "Save"}
                                                 </button>
                                             </div>
                                         </form>

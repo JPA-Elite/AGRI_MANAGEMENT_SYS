@@ -10,9 +10,7 @@ class OrganizationController extends Controller
     public function index()
     {
         $res = Organization::get();
-        return response()->json([
-            'response' => $res,
-        ], 200);
+        return response()->json($res, 200);
     }
 
     public function store(Request $request)

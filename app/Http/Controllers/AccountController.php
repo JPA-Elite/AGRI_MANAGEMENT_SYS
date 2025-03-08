@@ -10,9 +10,9 @@ class AccountController extends Controller
     public function index(Request $request)
     {
         if ($request->role == 'admin') {
-            $accounts = User::where('role', '<>', 'Encoder')->get();
+            $accounts = User::where('role', '<>', 'Verifier')->get();
         } else {
-            $accounts = User::where('role', '=', 'Encoder')->get();
+            $accounts = User::where('role', '=', 'Verifier')->get();
         }
         return response()->json($accounts, 200);
     }

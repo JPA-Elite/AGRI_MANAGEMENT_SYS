@@ -83,7 +83,7 @@ export default function RegistrationStepperSection() {
                 })
             );
             setLoading(false);
-            // router.visit("/administrator/register");
+            router.visit("/administrator/beneficiary/register?status=register");
         } catch (error) {
             console.log("error", error);
             setLoading(false);

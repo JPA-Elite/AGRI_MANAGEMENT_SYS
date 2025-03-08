@@ -33,47 +33,52 @@ Route::middleware('auth:sanctum')->prefix('administrator')->group(function () {
     Route::get('dashboard', function () {
         return Inertia::render('admin/dashboard/page');
     });
-    
+
     Route::get('beneficiary/register', function () {
         return Inertia::render('admin/register/page');
     });
-    
+
     Route::get('beneficiary', function () {
         return Inertia::render('admin/beneficiary/page');
     });
-    
+
     Route::get('reports', function () {
         return Inertia::render('admin/reports/page');
     });
-    
-    Route::get('accounts', function () {
-        return Inertia::render('admin/accounts/page');
+
+    Route::prefix('accounts')->group(function () {
+        Route::get('list', function () {
+            return Inertia::render('admin/accounts/page');
+        });
     });
-    
+
     Route::get('create-account', function () {
         return Inertia::render('admin/create-account/page');
     });
-    
-    Route::get('lgu-profile', function () {
-        return Inertia::render('admin/lgu-profile/page');
+
+    Route::prefix('system_maintenance')->group(function () {
+        Route::get('lgu-profile', function () {
+            return Inertia::render('admin/lgu-profile/page');
+        });
+
+        Route::get('verifier', function () {
+            return Inertia::render('admin/verifier/page');
+        });
+
+        Route::get('organization', function () {
+            return Inertia::render('admin/organization/page');
+        });
     });
-    
-    Route::get('verifier', function () {
-        return Inertia::render('admin/verifier/page');
-    });
-    
-    Route::get('organization', function () {
-        return Inertia::render('admin/organization/page');
-    });
-    
+
+
     Route::get('contact', function () {
         return Inertia::render('admin/contact/page');
     });
-    
+
     Route::get('settings', function () {
         return Inertia::render('admin/settings/page');
     });
-    
+
     Route::get('profile/{id}', function () {
         return Inertia::render('admin/profile/page');
     });
