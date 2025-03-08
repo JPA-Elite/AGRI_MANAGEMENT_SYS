@@ -1,154 +1,161 @@
 {
-  "_ArrowUpIcon-BxEq9EBA.js": {
-    "file": "assets/ArrowUpIcon-BxEq9EBA.js",
+  "_ArrowUpIcon-D2ElCtxH.js": {
+    "file": "assets/ArrowUpIcon-D2ElCtxH.js",
     "name": "ArrowUpIcon",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_CheckIcon-BvH0Y9Hk.js": {
-    "file": "assets/CheckIcon-BvH0Y9Hk.js",
+  "_BellIcon-DwI8WMft.js": {
+    "file": "assets/BellIcon-DwI8WMft.js",
+    "name": "BellIcon",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_CheckIcon-Du2ffWkJ.js": {
+    "file": "assets/CheckIcon-Du2ffWkJ.js",
     "name": "CheckIcon",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_ChevronDownIcon-0jL-yGsE.js": {
-    "file": "assets/ChevronDownIcon-0jL-yGsE.js",
-    "name": "ChevronDownIcon",
-    "imports": [
-      "resources/js/app.jsx",
-      "_use-tab-direction-DO4dDO86.js"
-    ]
-  },
-  "_ChevronDownIcon-B5SGH--g.js": {
-    "file": "assets/ChevronDownIcon-B5SGH--g.js",
+  "_ChevronDownIcon-9fBmHbsX.js": {
+    "file": "assets/ChevronDownIcon-9fBmHbsX.js",
     "name": "ChevronDownIcon",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_FunnelIcon-DeZcPhNK.js": {
-    "file": "assets/FunnelIcon-DeZcPhNK.js",
+  "_ChevronDownIcon-GMnfO0Sw.js": {
+    "file": "assets/ChevronDownIcon-GMnfO0Sw.js",
+    "name": "ChevronDownIcon",
+    "imports": [
+      "resources/js/app.jsx",
+      "_use-tab-direction-V9n5VUiI.js"
+    ]
+  },
+  "_FunnelIcon-CEHX4Kut.js": {
+    "file": "assets/FunnelIcon-CEHX4Kut.js",
     "name": "FunnelIcon",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_MagnifyingGlassIcon-DPoQZbSh.js": {
-    "file": "assets/MagnifyingGlassIcon-DPoQZbSh.js",
+  "_MagnifyingGlassIcon-DEQ1oTVT.js": {
+    "file": "assets/MagnifyingGlassIcon-DEQ1oTVT.js",
     "name": "MagnifyingGlassIcon",
     "imports": [
       "resources/js/app.jsx",
-      "_ChevronDownIcon-0jL-yGsE.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_dialog-8YMUxH38.js"
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_dialog-uvQdSj7J.js"
     ]
   },
-  "_PrinterIcon-BkvtRvNY.js": {
-    "file": "assets/PrinterIcon-BkvtRvNY.js",
+  "_PrinterIcon-9X_zIROR.js": {
+    "file": "assets/PrinterIcon-9X_zIROR.js",
     "name": "PrinterIcon",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_UserGroupIcon-D1F9q8rD.js": {
-    "file": "assets/UserGroupIcon-D1F9q8rD.js",
+  "_UserGroupIcon-8ZMq5Eva.js": {
+    "file": "assets/UserGroupIcon-8ZMq5Eva.js",
     "name": "UserGroupIcon",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_UserPlusIcon-DmqWQcMd.js": {
-    "file": "assets/UserPlusIcon-DmqWQcMd.js",
+  "_UserPlusIcon-BkgflcWJ.js": {
+    "file": "assets/UserPlusIcon-BkgflcWJ.js",
     "name": "UserPlusIcon",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_add-organization-section-D9mIEpYH.js": {
-    "file": "assets/add-organization-section-D9mIEpYH.js",
+  "_add-organization-section-lCHYPIzc.js": {
+    "file": "assets/add-organization-section-lCHYPIzc.js",
     "name": "add-organization-section",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_UserGroupIcon-D1F9q8rD.js",
-      "_dialog-8YMUxH38.js"
+      "_UserGroupIcon-8ZMq5Eva.js",
+      "_dialog-uvQdSj7J.js"
     ]
   },
-  "_dialog-8YMUxH38.js": {
-    "file": "assets/dialog-8YMUxH38.js",
+  "_dialog-uvQdSj7J.js": {
+    "file": "assets/dialog-uvQdSj7J.js",
     "name": "dialog",
     "imports": [
       "resources/js/app.jsx",
-      "_use-tab-direction-DO4dDO86.js"
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
-  "_iconBase-CFwcon_-.js": {
-    "file": "assets/iconBase-CFwcon_-.js",
+  "_iconBase-DWCrd3wG.js": {
+    "file": "assets/iconBase-DWCrd3wG.js",
     "name": "iconBase",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_index-CU9QLh5w.js": {
-    "file": "assets/index-CU9QLh5w.js",
+  "_index-CmdSLLJA.js": {
+    "file": "assets/index-CmdSLLJA.js",
     "name": "index",
     "imports": [
       "resources/js/app.jsx",
-      "_iconBase-CFwcon_-.js"
+      "_iconBase-DWCrd3wG.js"
     ]
   },
-  "_index-DglaUQ-I.js": {
-    "file": "assets/index-DglaUQ-I.js",
+  "_index-D72KJyoR.js": {
+    "file": "assets/index-D72KJyoR.js",
     "name": "index",
     "imports": [
-      "_iconBase-CFwcon_-.js"
+      "_iconBase-DWCrd3wG.js"
     ]
   },
   "_moment-C5S46NFB.js": {
     "file": "assets/moment-C5S46NFB.js",
     "name": "moment"
   },
-  "_personal-information-thunk-DklZMs7o.js": {
-    "file": "assets/personal-information-thunk-DklZMs7o.js",
+  "_personal-information-thunk-uk85eM8k.js": {
+    "file": "assets/personal-information-thunk-uk85eM8k.js",
     "name": "personal-information-thunk",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_popover-D7_u5k6h.js": {
-    "file": "assets/popover-D7_u5k6h.js",
+  "_popover-Btg-ToHN.js": {
+    "file": "assets/popover-Btg-ToHN.js",
     "name": "popover",
     "imports": [
       "resources/js/app.jsx",
-      "_ChevronDownIcon-0jL-yGsE.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
-  "_react-apexcharts.min-C5J85x_d.js": {
-    "file": "assets/react-apexcharts.min-C5J85x_d.js",
+  "_react-apexcharts.min-K0iMrf8u.js": {
+    "file": "assets/react-apexcharts.min-K0iMrf8u.js",
     "name": "react-apexcharts.min",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_use-tab-direction-DO4dDO86.js": {
-    "file": "assets/use-tab-direction-DO4dDO86.js",
+  "_use-tab-direction-V9n5VUiI.js": {
+    "file": "assets/use-tab-direction-V9n5VUiI.js",
     "name": "use-tab-direction",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_user-thunk-DOr5Aqtf.js": {
-    "file": "assets/user-thunk-DOr5Aqtf.js",
+  "_user-thunk-SalFH7KN.js": {
+    "file": "assets/user-thunk-SalFH7KN.js",
     "name": "user-thunk",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-B4wWuyCt.js",
+    "file": "assets/app-BXHSB2hw.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,
@@ -177,7 +184,7 @@
       "resources/js/app/pages/admin/lgu-profile/page.jsx",
       "resources/js/app/pages/admin/lgu-profile/sections/lgu-information-section.jsx",
       "resources/js/app/pages/admin/organization/page.jsx",
-      "_add-organization-section-D9mIEpYH.js",
+      "_add-organization-section-lCHYPIzc.js",
       "resources/js/app/pages/admin/organization/sections/organization-table-section.jsx",
       "resources/js/app/pages/admin/profile/page.jsx",
       "resources/js/app/pages/admin/profile/sections/profile-address-info-section.jsx",
@@ -306,20 +313,20 @@
     ]
   },
   "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx": {
-    "file": "assets/admin-sidenav-sections-CEy5MciR.js",
+    "file": "assets/admin-sidenav-sections-BbSVKSzU.js",
     "name": "admin-sidenav-sections",
     "src": "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-CU9QLh5w.js",
-      "_dialog-8YMUxH38.js",
-      "_iconBase-CFwcon_-.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_index-CmdSLLJA.js",
+      "_dialog-uvQdSj7J.js",
+      "_iconBase-DWCrd3wG.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/admin/_sections/footer-section.jsx": {
-    "file": "assets/footer-section-DWfD1Nso.js",
+    "file": "assets/footer-section-PLrUUlX5.js",
     "name": "footer-section",
     "src": "resources/js/app/pages/admin/_sections/footer-section.jsx",
     "isDynamicEntry": true,
@@ -328,7 +335,7 @@
     ]
   },
   "resources/js/app/pages/admin/accounts/page.jsx": {
-    "file": "assets/page-DOQb3Cdr.js",
+    "file": "assets/page-DH5D5qbn.js",
     "name": "page",
     "src": "resources/js/app/pages/admin/accounts/page.jsx",
     "isDynamicEntry": true,
@@ -336,87 +343,87 @@
       "resources/js/app.jsx",
       "resources/js/app/pages/admin/layout.jsx",
       "resources/js/app/pages/admin/accounts/sections/user-table-section.jsx",
-      "_user-thunk-DOr5Aqtf.js",
-      "_index-CU9QLh5w.js",
-      "_iconBase-CFwcon_-.js",
+      "_user-thunk-SalFH7KN.js",
+      "_index-CmdSLLJA.js",
+      "_iconBase-DWCrd3wG.js",
       "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
       "resources/js/app/pages/admin/accounts/sections/add-user-section.jsx",
-      "_index-DglaUQ-I.js"
+      "_index-D72KJyoR.js"
     ]
   },
   "resources/js/app/pages/admin/accounts/sections/add-user-section.jsx": {
-    "file": "assets/add-user-section-D1Z3658r.js",
+    "file": "assets/add-user-section-Bt8Abub3.js",
     "name": "add-user-section",
     "src": "resources/js/app/pages/admin/accounts/sections/add-user-section.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-DglaUQ-I.js",
-      "_user-thunk-DOr5Aqtf.js",
-      "_dialog-8YMUxH38.js",
-      "_iconBase-CFwcon_-.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_index-D72KJyoR.js",
+      "_user-thunk-SalFH7KN.js",
+      "_dialog-uvQdSj7J.js",
+      "_iconBase-DWCrd3wG.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/admin/accounts/sections/user-table-section.jsx": {
-    "file": "assets/user-table-section-BkD4vY1T.js",
+    "file": "assets/user-table-section-BCDVQ6Zq.js",
     "name": "user-table-section",
     "src": "resources/js/app/pages/admin/accounts/sections/user-table-section.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/pages/admin/accounts/sections/add-user-section.jsx",
-      "_index-DglaUQ-I.js",
-      "_iconBase-CFwcon_-.js",
-      "_user-thunk-DOr5Aqtf.js",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_index-D72KJyoR.js",
+      "_iconBase-DWCrd3wG.js",
+      "_user-thunk-SalFH7KN.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/admin/beneficiary/components/beneficiary-table-component.jsx": {
-    "file": "assets/beneficiary-table-component-5sBkTmRG.js",
+    "file": "assets/beneficiary-table-component-CsDYMiU-.js",
     "name": "beneficiary-table-component",
     "src": "resources/js/app/pages/admin/beneficiary/components/beneficiary-table-component.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/pages/admin/beneficiary/components/filter-drawer-component.jsx",
-      "_UserPlusIcon-DmqWQcMd.js",
-      "_FunnelIcon-DeZcPhNK.js",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_UserPlusIcon-BkgflcWJ.js",
+      "_FunnelIcon-CEHX4Kut.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/admin/beneficiary/components/filter-drawer-component.jsx": {
-    "file": "assets/filter-drawer-component-DrrJdq-E.js",
+    "file": "assets/filter-drawer-component-C6BvNVXU.js",
     "name": "filter-drawer-component",
     "src": "resources/js/app/pages/admin/beneficiary/components/filter-drawer-component.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_FunnelIcon-DeZcPhNK.js",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_FunnelIcon-CEHX4Kut.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/admin/beneficiary/components/filter-search-component.jsx": {
-    "file": "assets/filter-search-component-DwDrdaWp.js",
+    "file": "assets/filter-search-component-C5Y2nUN0.js",
     "name": "filter-search-component",
     "src": "resources/js/app/pages/admin/beneficiary/components/filter-search-component.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_popover-D7_u5k6h.js",
-      "_ChevronDownIcon-0jL-yGsE.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_popover-Btg-ToHN.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/admin/beneficiary/page.jsx": {
-    "file": "assets/page-x_umRdmp.js",
+    "file": "assets/page-DPcCQOBS.js",
     "name": "page",
     "src": "resources/js/app/pages/admin/beneficiary/page.jsx",
     "isDynamicEntry": true,
@@ -424,22 +431,23 @@
       "resources/js/app.jsx",
       "resources/js/app/pages/admin/layout.jsx",
       "resources/js/app/pages/admin/beneficiary/sections/active-beneficiary-section.jsx",
-      "_personal-information-thunk-DklZMs7o.js",
-      "_index-CU9QLh5w.js",
-      "_iconBase-CFwcon_-.js",
+      "_personal-information-thunk-uk85eM8k.js",
+      "_index-CmdSLLJA.js",
+      "_iconBase-DWCrd3wG.js",
       "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_user-thunk-SalFH7KN.js",
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
       "resources/js/app/pages/admin/beneficiary/components/beneficiary-table-component.jsx",
       "resources/js/app/pages/admin/beneficiary/components/filter-drawer-component.jsx",
-      "_FunnelIcon-DeZcPhNK.js",
-      "_UserPlusIcon-DmqWQcMd.js"
+      "_FunnelIcon-CEHX4Kut.js",
+      "_UserPlusIcon-BkgflcWJ.js"
     ]
   },
   "resources/js/app/pages/admin/beneficiary/sections/active-beneficiary-section.jsx": {
-    "file": "assets/active-beneficiary-section-DtW2z49E.js",
+    "file": "assets/active-beneficiary-section-DqNmsq_e.js",
     "name": "active-beneficiary-section",
     "src": "resources/js/app/pages/admin/beneficiary/sections/active-beneficiary-section.jsx",
     "isDynamicEntry": true,
@@ -447,14 +455,14 @@
       "resources/js/app.jsx",
       "resources/js/app/pages/admin/beneficiary/components/beneficiary-table-component.jsx",
       "resources/js/app/pages/admin/beneficiary/components/filter-drawer-component.jsx",
-      "_FunnelIcon-DeZcPhNK.js",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_UserPlusIcon-DmqWQcMd.js"
+      "_FunnelIcon-CEHX4Kut.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_UserPlusIcon-BkgflcWJ.js"
     ]
   },
   "resources/js/app/pages/admin/contact/page.jsx": {
-    "file": "assets/page-DGdV27wZ.js",
+    "file": "assets/page-BhZ4j0dv.js",
     "name": "page",
     "src": "resources/js/app/pages/admin/contact/page.jsx",
     "isDynamicEntry": true,
@@ -462,17 +470,18 @@
       "resources/js/app.jsx",
       "resources/js/app/pages/admin/layout.jsx",
       "resources/js/app/pages/admin/contact/sections/contact-section.jsx",
-      "_index-CU9QLh5w.js",
-      "_iconBase-CFwcon_-.js",
+      "_index-CmdSLLJA.js",
+      "_iconBase-DWCrd3wG.js",
       "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js"
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_user-thunk-SalFH7KN.js",
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js"
     ]
   },
   "resources/js/app/pages/admin/contact/sections/contact-section.jsx": {
-    "file": "assets/contact-section-DNBL2SUw.js",
+    "file": "assets/contact-section-ClvUdAFz.js",
     "name": "contact-section",
     "src": "resources/js/app/pages/admin/contact/sections/contact-section.jsx",
     "isDynamicEntry": true,
@@ -481,67 +490,67 @@
     ]
   },
   "resources/js/app/pages/admin/dashboard/components/age-bracket-component.jsx": {
-    "file": "assets/age-bracket-component-BaMyJnTj.js",
+    "file": "assets/age-bracket-component-C3l2FlTm.js",
     "name": "age-bracket-component",
     "src": "resources/js/app/pages/admin/dashboard/components/age-bracket-component.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-DglaUQ-I.js",
-      "_react-apexcharts.min-C5J85x_d.js",
-      "_iconBase-CFwcon_-.js"
+      "_index-D72KJyoR.js",
+      "_react-apexcharts.min-K0iMrf8u.js",
+      "_iconBase-DWCrd3wG.js"
     ]
   },
   "resources/js/app/pages/admin/dashboard/components/gender-component.jsx": {
-    "file": "assets/gender-component-D036AQLR.js",
+    "file": "assets/gender-component-Chq0czUx.js",
     "name": "gender-component",
     "src": "resources/js/app/pages/admin/dashboard/components/gender-component.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-DglaUQ-I.js",
-      "_react-apexcharts.min-C5J85x_d.js",
-      "_iconBase-CFwcon_-.js"
+      "_index-D72KJyoR.js",
+      "_react-apexcharts.min-K0iMrf8u.js",
+      "_iconBase-DWCrd3wG.js"
     ]
   },
   "resources/js/app/pages/admin/dashboard/components/income-component.jsx": {
-    "file": "assets/income-component-BcctIhAn.js",
+    "file": "assets/income-component-sukl1aqw.js",
     "name": "income-component",
     "src": "resources/js/app/pages/admin/dashboard/components/income-component.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-DglaUQ-I.js",
-      "_react-apexcharts.min-C5J85x_d.js",
-      "_iconBase-CFwcon_-.js"
+      "_index-D72KJyoR.js",
+      "_react-apexcharts.min-K0iMrf8u.js",
+      "_iconBase-DWCrd3wG.js"
     ]
   },
   "resources/js/app/pages/admin/dashboard/components/livelihood-component.jsx": {
-    "file": "assets/livelihood-component-vv4iT8nX.js",
+    "file": "assets/livelihood-component-Dy2KJ43H.js",
     "name": "livelihood-component",
     "src": "resources/js/app/pages/admin/dashboard/components/livelihood-component.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-DglaUQ-I.js",
-      "_react-apexcharts.min-C5J85x_d.js",
-      "_iconBase-CFwcon_-.js"
+      "_index-D72KJyoR.js",
+      "_react-apexcharts.min-K0iMrf8u.js",
+      "_iconBase-DWCrd3wG.js"
     ]
   },
   "resources/js/app/pages/admin/dashboard/components/organization-component.jsx": {
-    "file": "assets/organization-component-DxEOvAjt.js",
+    "file": "assets/organization-component-C6aG1aIj.js",
     "name": "organization-component",
     "src": "resources/js/app/pages/admin/dashboard/components/organization-component.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-DglaUQ-I.js",
-      "_react-apexcharts.min-C5J85x_d.js",
-      "_iconBase-CFwcon_-.js"
+      "_index-D72KJyoR.js",
+      "_react-apexcharts.min-K0iMrf8u.js",
+      "_iconBase-DWCrd3wG.js"
     ]
   },
   "resources/js/app/pages/admin/dashboard/page.jsx": {
-    "file": "assets/page-w9aWrHWd.js",
+    "file": "assets/page-KfwT37Zf.js",
     "name": "page",
     "src": "resources/js/app/pages/admin/dashboard/page.jsx",
     "isDynamicEntry": true,
@@ -550,17 +559,18 @@
       "resources/js/app/pages/admin/layout.jsx",
       "resources/js/app/pages/admin/dashboard/sections/stats-section.jsx",
       "resources/js/app/pages/admin/dashboard/sections/graph-section.jsx",
-      "_index-CU9QLh5w.js",
-      "_iconBase-CFwcon_-.js",
+      "_index-CmdSLLJA.js",
+      "_iconBase-DWCrd3wG.js",
       "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js",
-      "_index-DglaUQ-I.js",
-      "_ArrowUpIcon-BxEq9EBA.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_user-thunk-SalFH7KN.js",
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_index-D72KJyoR.js",
+      "_ArrowUpIcon-D2ElCtxH.js",
       "resources/js/app/pages/admin/dashboard/components/gender-component.jsx",
-      "_react-apexcharts.min-C5J85x_d.js",
+      "_react-apexcharts.min-K0iMrf8u.js",
       "resources/js/app/pages/admin/dashboard/components/age-bracket-component.jsx",
       "resources/js/app/pages/admin/dashboard/components/income-component.jsx",
       "resources/js/app/pages/admin/dashboard/components/organization-component.jsx",
@@ -568,7 +578,7 @@
     ]
   },
   "resources/js/app/pages/admin/dashboard/sections/graph-section.jsx": {
-    "file": "assets/graph-section-DXgOOWc2.js",
+    "file": "assets/graph-section-BtgQWtrh.js",
     "name": "graph-section",
     "src": "resources/js/app/pages/admin/dashboard/sections/graph-section.jsx",
     "isDynamicEntry": true,
@@ -579,41 +589,42 @@
       "resources/js/app/pages/admin/dashboard/components/income-component.jsx",
       "resources/js/app/pages/admin/dashboard/components/organization-component.jsx",
       "resources/js/app/pages/admin/dashboard/components/livelihood-component.jsx",
-      "_index-DglaUQ-I.js",
-      "_iconBase-CFwcon_-.js",
-      "_react-apexcharts.min-C5J85x_d.js"
+      "_index-D72KJyoR.js",
+      "_iconBase-DWCrd3wG.js",
+      "_react-apexcharts.min-K0iMrf8u.js"
     ]
   },
   "resources/js/app/pages/admin/dashboard/sections/stats-section.jsx": {
-    "file": "assets/stats-section-hnfjm7T4.js",
+    "file": "assets/stats-section-DPd23AtR.js",
     "name": "stats-section",
     "src": "resources/js/app/pages/admin/dashboard/sections/stats-section.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-DglaUQ-I.js",
-      "_ArrowUpIcon-BxEq9EBA.js",
-      "_iconBase-CFwcon_-.js"
+      "_index-D72KJyoR.js",
+      "_ArrowUpIcon-D2ElCtxH.js",
+      "_iconBase-DWCrd3wG.js"
     ]
   },
   "resources/js/app/pages/admin/layout.jsx": {
-    "file": "assets/layout-BihjSeog.js",
+    "file": "assets/layout-BBTBJEwj.js",
     "name": "layout",
     "src": "resources/js/app/pages/admin/layout.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-CU9QLh5w.js",
+      "_index-CmdSLLJA.js",
       "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js",
-      "_iconBase-CFwcon_-.js",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_user-thunk-SalFH7KN.js",
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_iconBase-DWCrd3wG.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/admin/lgu-profile/page.jsx": {
-    "file": "assets/page-BujNO_--.js",
+    "file": "assets/page-DA3qEfoZ.js",
     "name": "page",
     "src": "resources/js/app/pages/admin/lgu-profile/page.jsx",
     "isDynamicEntry": true,
@@ -621,29 +632,30 @@
       "resources/js/app.jsx",
       "resources/js/app/pages/admin/layout.jsx",
       "resources/js/app/pages/admin/lgu-profile/sections/lgu-information-section.jsx",
-      "_index-CU9QLh5w.js",
-      "_iconBase-CFwcon_-.js",
+      "_index-CmdSLLJA.js",
+      "_iconBase-DWCrd3wG.js",
       "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js",
-      "_index-DglaUQ-I.js"
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_user-thunk-SalFH7KN.js",
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_index-D72KJyoR.js"
     ]
   },
   "resources/js/app/pages/admin/lgu-profile/sections/lgu-information-section.jsx": {
-    "file": "assets/lgu-information-section-Ck6tRpBf.js",
+    "file": "assets/lgu-information-section-Cyax75pW.js",
     "name": "lgu-information-section",
     "src": "resources/js/app/pages/admin/lgu-profile/sections/lgu-information-section.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-DglaUQ-I.js",
-      "_iconBase-CFwcon_-.js"
+      "_index-D72KJyoR.js",
+      "_iconBase-DWCrd3wG.js"
     ]
   },
   "resources/js/app/pages/admin/organization/page.jsx": {
-    "file": "assets/page-DANlVIUL.js",
+    "file": "assets/page-D4-0yPl8.js",
     "name": "page",
     "src": "resources/js/app/pages/admin/organization/page.jsx",
     "isDynamicEntry": true,
@@ -651,58 +663,60 @@
       "resources/js/app.jsx",
       "resources/js/app/pages/admin/layout.jsx",
       "resources/js/app/pages/admin/organization/sections/organization-table-section.jsx",
-      "_add-organization-section-D9mIEpYH.js",
-      "_index-CU9QLh5w.js",
-      "_iconBase-CFwcon_-.js",
+      "_add-organization-section-lCHYPIzc.js",
+      "_index-CmdSLLJA.js",
+      "_iconBase-DWCrd3wG.js",
       "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js",
-      "_UserGroupIcon-D1F9q8rD.js"
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_user-thunk-SalFH7KN.js",
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_UserGroupIcon-8ZMq5Eva.js"
     ]
   },
   "resources/js/app/pages/admin/organization/sections/organization-table-section.jsx": {
-    "file": "assets/organization-table-section-AEsyy2Oe.js",
+    "file": "assets/organization-table-section-DaDpyxrU.js",
     "name": "organization-table-section",
     "src": "resources/js/app/pages/admin/organization/sections/organization-table-section.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_add-organization-section-D9mIEpYH.js",
-      "_UserGroupIcon-D1F9q8rD.js",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_add-organization-section-lCHYPIzc.js",
+      "_UserGroupIcon-8ZMq5Eva.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/admin/profile/page.jsx": {
-    "file": "assets/page-BFElnkV7.js",
+    "file": "assets/page-DtPEvEcb.js",
     "name": "page",
     "src": "resources/js/app/pages/admin/profile/page.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/pages/admin/layout.jsx",
-      "_index-DglaUQ-I.js",
+      "_index-D72KJyoR.js",
       "resources/js/app/pages/admin/profile/sections/profile-personal-info-section.jsx",
       "resources/js/app/pages/admin/profile/sections/profile-address-info-section.jsx",
       "resources/js/app/pages/admin/profile/sections/profile-education-info-section.jsx",
       "resources/js/app/pages/admin/profile/sections/profile-government-info-section.jsx",
       "resources/js/app/pages/admin/profile/sections/profile-farm-type-section.jsx",
       "resources/js/app/pages/admin/profile/sections/profile-farmland-section.jsx",
-      "_personal-information-thunk-DklZMs7o.js",
+      "_personal-information-thunk-uk85eM8k.js",
       "_moment-C5S46NFB.js",
-      "_index-CU9QLh5w.js",
-      "_iconBase-CFwcon_-.js",
+      "_index-CmdSLLJA.js",
+      "_iconBase-DWCrd3wG.js",
       "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js"
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_user-thunk-SalFH7KN.js",
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js"
     ]
   },
   "resources/js/app/pages/admin/profile/sections/profile-address-info-section.jsx": {
-    "file": "assets/profile-address-info-section-DmTZ1h0x.js",
+    "file": "assets/profile-address-info-section-CHkVUd5E.js",
     "name": "profile-address-info-section",
     "src": "resources/js/app/pages/admin/profile/sections/profile-address-info-section.jsx",
     "isDynamicEntry": true,
@@ -711,7 +725,7 @@
     ]
   },
   "resources/js/app/pages/admin/profile/sections/profile-education-info-section.jsx": {
-    "file": "assets/profile-education-info-section-CvQt5nhK.js",
+    "file": "assets/profile-education-info-section-FxTvpMLv.js",
     "name": "profile-education-info-section",
     "src": "resources/js/app/pages/admin/profile/sections/profile-education-info-section.jsx",
     "isDynamicEntry": true,
@@ -720,7 +734,7 @@
     ]
   },
   "resources/js/app/pages/admin/profile/sections/profile-farm-type-section.jsx": {
-    "file": "assets/profile-farm-type-section-DbvBHdF-.js",
+    "file": "assets/profile-farm-type-section-Ddc5H5x2.js",
     "name": "profile-farm-type-section",
     "src": "resources/js/app/pages/admin/profile/sections/profile-farm-type-section.jsx",
     "isDynamicEntry": true,
@@ -729,7 +743,7 @@
     ]
   },
   "resources/js/app/pages/admin/profile/sections/profile-farmland-section.jsx": {
-    "file": "assets/profile-farmland-section-CbPIHWIP.js",
+    "file": "assets/profile-farmland-section-CeQ3-ZeP.js",
     "name": "profile-farmland-section",
     "src": "resources/js/app/pages/admin/profile/sections/profile-farmland-section.jsx",
     "isDynamicEntry": true,
@@ -738,7 +752,7 @@
     ]
   },
   "resources/js/app/pages/admin/profile/sections/profile-government-info-section.jsx": {
-    "file": "assets/profile-government-info-section-ui7482tZ.js",
+    "file": "assets/profile-government-info-section-M2wEcFPz.js",
     "name": "profile-government-info-section",
     "src": "resources/js/app/pages/admin/profile/sections/profile-government-info-section.jsx",
     "isDynamicEntry": true,
@@ -747,7 +761,7 @@
     ]
   },
   "resources/js/app/pages/admin/profile/sections/profile-personal-info-section.jsx": {
-    "file": "assets/profile-personal-info-section-mOZrVpvk.js",
+    "file": "assets/profile-personal-info-section-B70mHtOB.js",
     "name": "profile-personal-info-section",
     "src": "resources/js/app/pages/admin/profile/sections/profile-personal-info-section.jsx",
     "isDynamicEntry": true,
@@ -756,7 +770,7 @@
     ]
   },
   "resources/js/app/pages/admin/register/components/address-information-component.jsx": {
-    "file": "assets/address-information-component-nL5oRMtC.js",
+    "file": "assets/address-information-component-WPKy3kJY.js",
     "name": "address-information-component",
     "src": "resources/js/app/pages/admin/register/components/address-information-component.jsx",
     "isDynamicEntry": true,
@@ -765,7 +779,7 @@
     ]
   },
   "resources/js/app/pages/admin/register/components/education-component.jsx": {
-    "file": "assets/education-component-B45nmlaV.js",
+    "file": "assets/education-component-CKbQMs-O.js",
     "name": "education-component",
     "src": "resources/js/app/pages/admin/register/components/education-component.jsx",
     "isDynamicEntry": true,
@@ -774,7 +788,7 @@
     ]
   },
   "resources/js/app/pages/admin/register/components/farm-activity-component.jsx": {
-    "file": "assets/farm-activity-component-DWy-djpI.js",
+    "file": "assets/farm-activity-component-WDIUG4uz.js",
     "name": "farm-activity-component",
     "src": "resources/js/app/pages/admin/register/components/farm-activity-component.jsx",
     "isDynamicEntry": true,
@@ -783,18 +797,18 @@
     ]
   },
   "resources/js/app/pages/admin/register/components/farm-land-component.jsx": {
-    "file": "assets/farm-land-component-Lkgbbjg7.js",
+    "file": "assets/farm-land-component-C1cbVTuv.js",
     "name": "farm-land-component",
     "src": "resources/js/app/pages/admin/register/components/farm-land-component.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-DglaUQ-I.js",
-      "_iconBase-CFwcon_-.js"
+      "_index-D72KJyoR.js",
+      "_iconBase-DWCrd3wG.js"
     ]
   },
   "resources/js/app/pages/admin/register/components/farm-profile-component.jsx": {
-    "file": "assets/farm-profile-component-DwMX92PX.js",
+    "file": "assets/farm-profile-component-D_t-Gflu.js",
     "name": "farm-profile-component",
     "src": "resources/js/app/pages/admin/register/components/farm-profile-component.jsx",
     "isDynamicEntry": true,
@@ -807,7 +821,7 @@
     ]
   },
   "resources/js/app/pages/admin/register/components/farmers-work-component.jsx": {
-    "file": "assets/farmers-work-component-D6FOlEl1.js",
+    "file": "assets/farmers-work-component-BaJVwt6h.js",
     "name": "farmers-work-component",
     "src": "resources/js/app/pages/admin/register/components/farmers-work-component.jsx",
     "isDynamicEntry": true,
@@ -816,7 +830,7 @@
     ]
   },
   "resources/js/app/pages/admin/register/components/fishing-activity-component.jsx": {
-    "file": "assets/fishing-activity-component-B0_pvwvT.js",
+    "file": "assets/fishing-activity-component-CFW4uxzm.js",
     "name": "fishing-activity-component",
     "src": "resources/js/app/pages/admin/register/components/fishing-activity-component.jsx",
     "isDynamicEntry": true,
@@ -825,7 +839,7 @@
     ]
   },
   "resources/js/app/pages/admin/register/components/government-affiliation-component.jsx": {
-    "file": "assets/government-affiliation-component-D4-0Alt4.js",
+    "file": "assets/government-affiliation-component-lIZWoxmj.js",
     "name": "government-affiliation-component",
     "src": "resources/js/app/pages/admin/register/components/government-affiliation-component.jsx",
     "isDynamicEntry": true,
@@ -834,7 +848,7 @@
     ]
   },
   "resources/js/app/pages/admin/register/components/personal-information-component.jsx": {
-    "file": "assets/personal-information-component-B5dyXqrx.js",
+    "file": "assets/personal-information-component-DSnpxrhi.js",
     "name": "personal-information-component",
     "src": "resources/js/app/pages/admin/register/components/personal-information-component.jsx",
     "isDynamicEntry": true,
@@ -843,7 +857,7 @@
     ]
   },
   "resources/js/app/pages/admin/register/components/youth-involvement-component.jsx": {
-    "file": "assets/youth-involvement-component-CRywWVk6.js",
+    "file": "assets/youth-involvement-component-Cc_j6TbH.js",
     "name": "youth-involvement-component",
     "src": "resources/js/app/pages/admin/register/components/youth-involvement-component.jsx",
     "isDynamicEntry": true,
@@ -852,7 +866,7 @@
     ]
   },
   "resources/js/app/pages/admin/register/page.jsx": {
-    "file": "assets/page-KhjdcXJx.js",
+    "file": "assets/page-DcMzvk8X.js",
     "name": "page",
     "src": "resources/js/app/pages/admin/register/page.jsx",
     "isDynamicEntry": true,
@@ -860,13 +874,14 @@
       "resources/js/app.jsx",
       "resources/js/app/pages/admin/layout.jsx",
       "resources/js/app/pages/admin/register/sections/registration-stepper-section.jsx",
-      "_index-CU9QLh5w.js",
-      "_iconBase-CFwcon_-.js",
+      "_index-CmdSLLJA.js",
+      "_iconBase-DWCrd3wG.js",
       "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_user-thunk-SalFH7KN.js",
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
       "resources/js/app/pages/admin/register/sections/first-form-section.jsx",
       "resources/js/app/pages/admin/register/components/personal-information-component.jsx",
       "resources/js/app/pages/admin/register/components/address-information-component.jsx",
@@ -880,15 +895,15 @@
       "resources/js/app/pages/admin/register/components/youth-involvement-component.jsx",
       "resources/js/app/pages/admin/register/sections/third-form-section.jsx",
       "resources/js/app/pages/admin/register/components/farm-land-component.jsx",
-      "_index-DglaUQ-I.js",
+      "_index-D72KJyoR.js",
       "resources/js/app/pages/admin/register/sections/preview-form-section.jsx",
-      "_personal-information-thunk-DklZMs7o.js",
+      "_personal-information-thunk-uk85eM8k.js",
       "_moment-C5S46NFB.js",
-      "_CheckIcon-BvH0Y9Hk.js"
+      "_CheckIcon-Du2ffWkJ.js"
     ]
   },
   "resources/js/app/pages/admin/register/sections/first-form-section.jsx": {
-    "file": "assets/first-form-section-DsxjF7Gl.js",
+    "file": "assets/first-form-section-CO52Z6UI.js",
     "name": "first-form-section",
     "src": "resources/js/app/pages/admin/register/sections/first-form-section.jsx",
     "isDynamicEntry": true,
@@ -901,7 +916,7 @@
     ]
   },
   "resources/js/app/pages/admin/register/sections/preview-form-section.jsx": {
-    "file": "assets/preview-form-section-CVCZqisQ.js",
+    "file": "assets/preview-form-section-BT3DLMwk.js",
     "name": "preview-form-section",
     "src": "resources/js/app/pages/admin/register/sections/preview-form-section.jsx",
     "isDynamicEntry": true,
@@ -910,7 +925,7 @@
     ]
   },
   "resources/js/app/pages/admin/register/sections/registration-stepper-section.jsx": {
-    "file": "assets/registration-stepper-section-BjT7CBfp.js",
+    "file": "assets/registration-stepper-section-Brezuf34.js",
     "name": "registration-stepper-section",
     "src": "resources/js/app/pages/admin/register/sections/registration-stepper-section.jsx",
     "isDynamicEntry": true,
@@ -920,9 +935,9 @@
       "resources/js/app/pages/admin/register/sections/second-form-section.jsx",
       "resources/js/app/pages/admin/register/sections/third-form-section.jsx",
       "resources/js/app/pages/admin/register/sections/preview-form-section.jsx",
-      "_personal-information-thunk-DklZMs7o.js",
+      "_personal-information-thunk-uk85eM8k.js",
       "_moment-C5S46NFB.js",
-      "_CheckIcon-BvH0Y9Hk.js",
+      "_CheckIcon-Du2ffWkJ.js",
       "resources/js/app/pages/admin/register/components/personal-information-component.jsx",
       "resources/js/app/pages/admin/register/components/address-information-component.jsx",
       "resources/js/app/pages/admin/register/components/education-component.jsx",
@@ -933,12 +948,12 @@
       "resources/js/app/pages/admin/register/components/fishing-activity-component.jsx",
       "resources/js/app/pages/admin/register/components/youth-involvement-component.jsx",
       "resources/js/app/pages/admin/register/components/farm-land-component.jsx",
-      "_index-DglaUQ-I.js",
-      "_iconBase-CFwcon_-.js"
+      "_index-D72KJyoR.js",
+      "_iconBase-DWCrd3wG.js"
     ]
   },
   "resources/js/app/pages/admin/register/sections/second-form-section.jsx": {
-    "file": "assets/second-form-section-DE2JoL00.js",
+    "file": "assets/second-form-section-BxO9Y5Iv.js",
     "name": "second-form-section",
     "src": "resources/js/app/pages/admin/register/sections/second-form-section.jsx",
     "isDynamicEntry": true,
@@ -952,19 +967,19 @@
     ]
   },
   "resources/js/app/pages/admin/register/sections/third-form-section.jsx": {
-    "file": "assets/third-form-section-BSv-66WF.js",
+    "file": "assets/third-form-section-0_YGH1Vr.js",
     "name": "third-form-section",
     "src": "resources/js/app/pages/admin/register/sections/third-form-section.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/pages/admin/register/components/farm-land-component.jsx",
-      "_index-DglaUQ-I.js",
-      "_iconBase-CFwcon_-.js"
+      "_index-D72KJyoR.js",
+      "_iconBase-DWCrd3wG.js"
     ]
   },
   "resources/js/app/pages/admin/reports/components/active-agriworker-component.jsx": {
-    "file": "assets/active-agriworker-component-CsmdII1C.js",
+    "file": "assets/active-agriworker-component-BcCTEr0D.js",
     "name": "active-agriworker-component",
     "src": "resources/js/app/pages/admin/reports/components/active-agriworker-component.jsx",
     "isDynamicEntry": true,
@@ -973,7 +988,7 @@
     ]
   },
   "resources/js/app/pages/admin/reports/page.jsx": {
-    "file": "assets/page-BgpRifLg.js",
+    "file": "assets/page-DT1j48mI.js",
     "name": "page",
     "src": "resources/js/app/pages/admin/reports/page.jsx",
     "isDynamicEntry": true,
@@ -981,27 +996,28 @@
       "resources/js/app.jsx",
       "resources/js/app/pages/admin/layout.jsx",
       "resources/js/app/pages/admin/reports/sections/general-report-section.jsx",
-      "_index-CU9QLh5w.js",
-      "_iconBase-CFwcon_-.js",
+      "_index-CmdSLLJA.js",
+      "_iconBase-DWCrd3wG.js",
       "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_user-thunk-SalFH7KN.js",
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
       "resources/js/app/pages/admin/dashboard/sections/stats-section.jsx",
-      "_index-DglaUQ-I.js",
-      "_ArrowUpIcon-BxEq9EBA.js",
+      "_index-D72KJyoR.js",
+      "_ArrowUpIcon-D2ElCtxH.js",
       "resources/js/app/pages/admin/dashboard/components/gender-component.jsx",
-      "_react-apexcharts.min-C5J85x_d.js",
+      "_react-apexcharts.min-K0iMrf8u.js",
       "resources/js/app/pages/admin/dashboard/components/age-bracket-component.jsx",
       "resources/js/app/pages/admin/dashboard/components/income-component.jsx",
       "resources/js/app/pages/admin/reports/components/active-agriworker-component.jsx",
       "resources/js/app/pages/admin/dashboard/components/livelihood-component.jsx",
-      "_PrinterIcon-BkvtRvNY.js"
+      "_PrinterIcon-9X_zIROR.js"
     ]
   },
   "resources/js/app/pages/admin/reports/sections/general-report-section.jsx": {
-    "file": "assets/general-report-section-BGgHqBZv.js",
+    "file": "assets/general-report-section-Bz8hw6xo.js",
     "name": "general-report-section",
     "src": "resources/js/app/pages/admin/reports/sections/general-report-section.jsx",
     "isDynamicEntry": true,
@@ -1013,15 +1029,15 @@
       "resources/js/app/pages/admin/dashboard/components/income-component.jsx",
       "resources/js/app/pages/admin/reports/components/active-agriworker-component.jsx",
       "resources/js/app/pages/admin/dashboard/components/livelihood-component.jsx",
-      "_PrinterIcon-BkvtRvNY.js",
-      "_index-DglaUQ-I.js",
-      "_iconBase-CFwcon_-.js",
-      "_ArrowUpIcon-BxEq9EBA.js",
-      "_react-apexcharts.min-C5J85x_d.js"
+      "_PrinterIcon-9X_zIROR.js",
+      "_index-D72KJyoR.js",
+      "_iconBase-DWCrd3wG.js",
+      "_ArrowUpIcon-D2ElCtxH.js",
+      "_react-apexcharts.min-K0iMrf8u.js"
     ]
   },
   "resources/js/app/pages/admin/settings/page.jsx": {
-    "file": "assets/page-Dx1M8g42.js",
+    "file": "assets/page-CIgynyIo.js",
     "name": "page",
     "src": "resources/js/app/pages/admin/settings/page.jsx",
     "isDynamicEntry": true,
@@ -1029,28 +1045,29 @@
       "resources/js/app.jsx",
       "resources/js/app/pages/admin/layout.jsx",
       "resources/js/app/pages/admin/settings/section/settings-screen-section.jsx",
-      "_index-CU9QLh5w.js",
-      "_iconBase-CFwcon_-.js",
+      "_index-CmdSLLJA.js",
+      "_iconBase-DWCrd3wG.js",
       "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js",
-      "_ChevronDownIcon-B5SGH--g.js"
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_user-thunk-SalFH7KN.js",
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_ChevronDownIcon-9fBmHbsX.js"
     ]
   },
   "resources/js/app/pages/admin/settings/section/settings-screen-section.jsx": {
-    "file": "assets/settings-screen-section-Bnkq2Q_4.js",
+    "file": "assets/settings-screen-section-Do_sPV84.js",
     "name": "settings-screen-section",
     "src": "resources/js/app/pages/admin/settings/section/settings-screen-section.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_ChevronDownIcon-B5SGH--g.js"
+      "_ChevronDownIcon-9fBmHbsX.js"
     ]
   },
   "resources/js/app/pages/admin/verifier/page.jsx": {
-    "file": "assets/page-lQVzlr6r.js",
+    "file": "assets/page-BUU63HST.js",
     "name": "page",
     "src": "resources/js/app/pages/admin/verifier/page.jsx",
     "isDynamicEntry": true,
@@ -1058,62 +1075,62 @@
       "resources/js/app.jsx",
       "resources/js/app/pages/admin/layout.jsx",
       "resources/js/app/pages/admin/verifier/sections/verifier-table-section.jsx",
-      "_user-thunk-DOr5Aqtf.js",
-      "_index-CU9QLh5w.js",
-      "_iconBase-CFwcon_-.js",
+      "_user-thunk-SalFH7KN.js",
+      "_index-CmdSLLJA.js",
+      "_iconBase-DWCrd3wG.js",
       "resources/js/app/pages/admin/_sections/admin-sidenav-sections.jsx",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
       "resources/js/app/pages/admin/verifier/sections/add-verifier-section.jsx",
-      "_index-DglaUQ-I.js"
+      "_index-D72KJyoR.js"
     ]
   },
   "resources/js/app/pages/admin/verifier/sections/add-verifier-section.jsx": {
-    "file": "assets/add-verifier-section-CESUt4np.js",
+    "file": "assets/add-verifier-section-CkepiDyy.js",
     "name": "add-verifier-section",
     "src": "resources/js/app/pages/admin/verifier/sections/add-verifier-section.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-DglaUQ-I.js",
-      "_user-thunk-DOr5Aqtf.js",
-      "_dialog-8YMUxH38.js",
-      "_iconBase-CFwcon_-.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_index-D72KJyoR.js",
+      "_user-thunk-SalFH7KN.js",
+      "_dialog-uvQdSj7J.js",
+      "_iconBase-DWCrd3wG.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/admin/verifier/sections/verifier-table-section.jsx": {
-    "file": "assets/verifier-table-section-BOq3sLPh.js",
+    "file": "assets/verifier-table-section-DJvy1kMX.js",
     "name": "verifier-table-section",
     "src": "resources/js/app/pages/admin/verifier/sections/verifier-table-section.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/pages/admin/verifier/sections/add-verifier-section.jsx",
-      "_index-DglaUQ-I.js",
-      "_iconBase-CFwcon_-.js",
-      "_user-thunk-DOr5Aqtf.js",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_index-D72KJyoR.js",
+      "_iconBase-DWCrd3wG.js",
+      "_user-thunk-SalFH7KN.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/encoder/_sections/encoder-sidenav-sections.jsx": {
-    "file": "assets/encoder-sidenav-sections-DB1b5Hak.js",
+    "file": "assets/encoder-sidenav-sections-x-9oJtdG.js",
     "name": "encoder-sidenav-sections",
     "src": "resources/js/app/pages/encoder/_sections/encoder-sidenav-sections.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-CU9QLh5w.js",
-      "_dialog-8YMUxH38.js",
-      "_iconBase-CFwcon_-.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_index-CmdSLLJA.js",
+      "_dialog-uvQdSj7J.js",
+      "_iconBase-DWCrd3wG.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/encoder/_sections/footer-section.jsx": {
-    "file": "assets/footer-section-BybTWBUB.js",
+    "file": "assets/footer-section-BDV3_UM7.js",
     "name": "footer-section",
     "src": "resources/js/app/pages/encoder/_sections/footer-section.jsx",
     "isDynamicEntry": true,
@@ -1122,7 +1139,7 @@
     ]
   },
   "resources/js/app/pages/encoder/accounts/page.jsx": {
-    "file": "assets/page-BLp3jYmv.js",
+    "file": "assets/page-BSh38KwC.js",
     "name": "page",
     "src": "resources/js/app/pages/encoder/accounts/page.jsx",
     "isDynamicEntry": true,
@@ -1131,83 +1148,84 @@
       "resources/js/app/pages/encoder/accounts/sections/user-table-section.jsx",
       "resources/js/app/pages/encoder/layout.jsx",
       "resources/js/app/pages/encoder/accounts/sections/add-user-section.jsx",
-      "_index-DglaUQ-I.js",
-      "_iconBase-CFwcon_-.js",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_index-CU9QLh5w.js",
+      "_index-D72KJyoR.js",
+      "_iconBase-DWCrd3wG.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_index-CmdSLLJA.js",
       "resources/js/app/pages/encoder/_sections/encoder-sidenav-sections.jsx",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js"
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_BellIcon-DwI8WMft.js"
     ]
   },
   "resources/js/app/pages/encoder/accounts/sections/add-user-section.jsx": {
-    "file": "assets/add-user-section-DmCk09Vy.js",
+    "file": "assets/add-user-section-CZW__Nkh.js",
     "name": "add-user-section",
     "src": "resources/js/app/pages/encoder/accounts/sections/add-user-section.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-DglaUQ-I.js",
-      "_dialog-8YMUxH38.js",
-      "_iconBase-CFwcon_-.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_index-D72KJyoR.js",
+      "_dialog-uvQdSj7J.js",
+      "_iconBase-DWCrd3wG.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/encoder/accounts/sections/user-table-section.jsx": {
-    "file": "assets/user-table-section-BlZFOXyY.js",
+    "file": "assets/user-table-section-fbrSM4L7.js",
     "name": "user-table-section",
     "src": "resources/js/app/pages/encoder/accounts/sections/user-table-section.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/pages/encoder/accounts/sections/add-user-section.jsx",
-      "_index-DglaUQ-I.js",
-      "_iconBase-CFwcon_-.js",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_index-D72KJyoR.js",
+      "_iconBase-DWCrd3wG.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/encoder/beneficiary/components/beneficiary-table-component.jsx": {
-    "file": "assets/beneficiary-table-component-DRElqVU_.js",
+    "file": "assets/beneficiary-table-component-DDlpZucc.js",
     "name": "beneficiary-table-component",
     "src": "resources/js/app/pages/encoder/beneficiary/components/beneficiary-table-component.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/pages/encoder/beneficiary/components/filter-drawer-component.jsx",
-      "_UserPlusIcon-DmqWQcMd.js",
-      "_FunnelIcon-DeZcPhNK.js",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_UserPlusIcon-BkgflcWJ.js",
+      "_FunnelIcon-CEHX4Kut.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/encoder/beneficiary/components/filter-drawer-component.jsx": {
-    "file": "assets/filter-drawer-component-DOzq4cjl.js",
+    "file": "assets/filter-drawer-component-LZDLnUZx.js",
     "name": "filter-drawer-component",
     "src": "resources/js/app/pages/encoder/beneficiary/components/filter-drawer-component.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_FunnelIcon-DeZcPhNK.js",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_FunnelIcon-CEHX4Kut.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/encoder/beneficiary/components/filter-search-component.jsx": {
-    "file": "assets/filter-search-component-DEsDeqYT.js",
+    "file": "assets/filter-search-component-DJkCTdB8.js",
     "name": "filter-search-component",
     "src": "resources/js/app/pages/encoder/beneficiary/components/filter-search-component.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_popover-D7_u5k6h.js",
-      "_ChevronDownIcon-0jL-yGsE.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_popover-Btg-ToHN.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/encoder/beneficiary/page.jsx": {
-    "file": "assets/page-Bp1sbx4q.js",
+    "file": "assets/page-Bamve9X7.js",
     "name": "page",
     "src": "resources/js/app/pages/encoder/beneficiary/page.jsx",
     "isDynamicEntry": true,
@@ -1217,19 +1235,20 @@
       "resources/js/app/pages/encoder/layout.jsx",
       "resources/js/app/pages/encoder/beneficiary/components/beneficiary-table-component.jsx",
       "resources/js/app/pages/encoder/beneficiary/components/filter-drawer-component.jsx",
-      "_FunnelIcon-DeZcPhNK.js",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_UserPlusIcon-DmqWQcMd.js",
-      "_index-CU9QLh5w.js",
-      "_iconBase-CFwcon_-.js",
+      "_FunnelIcon-CEHX4Kut.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_UserPlusIcon-BkgflcWJ.js",
+      "_index-CmdSLLJA.js",
+      "_iconBase-DWCrd3wG.js",
       "resources/js/app/pages/encoder/_sections/encoder-sidenav-sections.jsx",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js"
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_BellIcon-DwI8WMft.js"
     ]
   },
   "resources/js/app/pages/encoder/beneficiary/sections/active-beneficiary-section.jsx": {
-    "file": "assets/active-beneficiary-section-HViBEpLx.js",
+    "file": "assets/active-beneficiary-section-NeLFI36W.js",
     "name": "active-beneficiary-section",
     "src": "resources/js/app/pages/encoder/beneficiary/sections/active-beneficiary-section.jsx",
     "isDynamicEntry": true,
@@ -1237,14 +1256,14 @@
       "resources/js/app.jsx",
       "resources/js/app/pages/encoder/beneficiary/components/beneficiary-table-component.jsx",
       "resources/js/app/pages/encoder/beneficiary/components/filter-drawer-component.jsx",
-      "_FunnelIcon-DeZcPhNK.js",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_UserPlusIcon-DmqWQcMd.js"
+      "_FunnelIcon-CEHX4Kut.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_UserPlusIcon-BkgflcWJ.js"
     ]
   },
   "resources/js/app/pages/encoder/contact/page.jsx": {
-    "file": "assets/page-CHZY9FJU.js",
+    "file": "assets/page-De-7_led.js",
     "name": "page",
     "src": "resources/js/app/pages/encoder/contact/page.jsx",
     "isDynamicEntry": true,
@@ -1252,17 +1271,18 @@
       "resources/js/app.jsx",
       "resources/js/app/pages/encoder/contact/sections/contact-section.jsx",
       "resources/js/app/pages/encoder/layout.jsx",
-      "_index-CU9QLh5w.js",
-      "_iconBase-CFwcon_-.js",
+      "_index-CmdSLLJA.js",
+      "_iconBase-DWCrd3wG.js",
       "resources/js/app/pages/encoder/_sections/encoder-sidenav-sections.jsx",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js"
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_BellIcon-DwI8WMft.js"
     ]
   },
   "resources/js/app/pages/encoder/contact/sections/contact-section.jsx": {
-    "file": "assets/contact-section-D38kcATw.js",
+    "file": "assets/contact-section-CGPsYynG.js",
     "name": "contact-section",
     "src": "resources/js/app/pages/encoder/contact/sections/contact-section.jsx",
     "isDynamicEntry": true,
@@ -1271,67 +1291,67 @@
     ]
   },
   "resources/js/app/pages/encoder/dashboard/components/age-bracket-component.jsx": {
-    "file": "assets/age-bracket-component-pmtm-AaA.js",
+    "file": "assets/age-bracket-component-MDcyYUCE.js",
     "name": "age-bracket-component",
     "src": "resources/js/app/pages/encoder/dashboard/components/age-bracket-component.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-DglaUQ-I.js",
-      "_react-apexcharts.min-C5J85x_d.js",
-      "_iconBase-CFwcon_-.js"
+      "_index-D72KJyoR.js",
+      "_react-apexcharts.min-K0iMrf8u.js",
+      "_iconBase-DWCrd3wG.js"
     ]
   },
   "resources/js/app/pages/encoder/dashboard/components/gender-component.jsx": {
-    "file": "assets/gender-component-U0NbuXPV.js",
+    "file": "assets/gender-component-DGIlwlgM.js",
     "name": "gender-component",
     "src": "resources/js/app/pages/encoder/dashboard/components/gender-component.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-DglaUQ-I.js",
-      "_react-apexcharts.min-C5J85x_d.js",
-      "_iconBase-CFwcon_-.js"
+      "_index-D72KJyoR.js",
+      "_react-apexcharts.min-K0iMrf8u.js",
+      "_iconBase-DWCrd3wG.js"
     ]
   },
   "resources/js/app/pages/encoder/dashboard/components/income-component.jsx": {
-    "file": "assets/income-component-BKC3zPzK.js",
+    "file": "assets/income-component-BaGs3N3q.js",
     "name": "income-component",
     "src": "resources/js/app/pages/encoder/dashboard/components/income-component.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-DglaUQ-I.js",
-      "_react-apexcharts.min-C5J85x_d.js",
-      "_iconBase-CFwcon_-.js"
+      "_index-D72KJyoR.js",
+      "_react-apexcharts.min-K0iMrf8u.js",
+      "_iconBase-DWCrd3wG.js"
     ]
   },
   "resources/js/app/pages/encoder/dashboard/components/livelihood-component.jsx": {
-    "file": "assets/livelihood-component-DNfVZ-LX.js",
+    "file": "assets/livelihood-component-CFP1Pv24.js",
     "name": "livelihood-component",
     "src": "resources/js/app/pages/encoder/dashboard/components/livelihood-component.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-DglaUQ-I.js",
-      "_react-apexcharts.min-C5J85x_d.js",
-      "_iconBase-CFwcon_-.js"
+      "_index-D72KJyoR.js",
+      "_react-apexcharts.min-K0iMrf8u.js",
+      "_iconBase-DWCrd3wG.js"
     ]
   },
   "resources/js/app/pages/encoder/dashboard/components/organization-component.jsx": {
-    "file": "assets/organization-component-DDKHgYa4.js",
+    "file": "assets/organization-component-Drn9BQEb.js",
     "name": "organization-component",
     "src": "resources/js/app/pages/encoder/dashboard/components/organization-component.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-DglaUQ-I.js",
-      "_react-apexcharts.min-C5J85x_d.js",
-      "_iconBase-CFwcon_-.js"
+      "_index-D72KJyoR.js",
+      "_react-apexcharts.min-K0iMrf8u.js",
+      "_iconBase-DWCrd3wG.js"
     ]
   },
   "resources/js/app/pages/encoder/dashboard/page.jsx": {
-    "file": "assets/page-aRmEln_s.js",
+    "file": "assets/page-CCYD4vjS.js",
     "name": "page",
     "src": "resources/js/app/pages/encoder/dashboard/page.jsx",
     "isDynamicEntry": true,
@@ -1340,25 +1360,26 @@
       "resources/js/app/pages/encoder/dashboard/sections/stats-section.jsx",
       "resources/js/app/pages/encoder/dashboard/sections/graph-section.jsx",
       "resources/js/app/pages/encoder/layout.jsx",
-      "_index-DglaUQ-I.js",
-      "_iconBase-CFwcon_-.js",
-      "_ArrowUpIcon-BxEq9EBA.js",
+      "_index-D72KJyoR.js",
+      "_iconBase-DWCrd3wG.js",
+      "_ArrowUpIcon-D2ElCtxH.js",
       "resources/js/app/pages/encoder/dashboard/components/gender-component.jsx",
-      "_react-apexcharts.min-C5J85x_d.js",
+      "_react-apexcharts.min-K0iMrf8u.js",
       "resources/js/app/pages/encoder/dashboard/components/age-bracket-component.jsx",
       "resources/js/app/pages/encoder/dashboard/components/income-component.jsx",
       "resources/js/app/pages/encoder/dashboard/components/organization-component.jsx",
       "resources/js/app/pages/encoder/dashboard/components/livelihood-component.jsx",
-      "_index-CU9QLh5w.js",
+      "_index-CmdSLLJA.js",
       "resources/js/app/pages/encoder/_sections/encoder-sidenav-sections.jsx",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js"
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_BellIcon-DwI8WMft.js"
     ]
   },
   "resources/js/app/pages/encoder/dashboard/sections/graph-section.jsx": {
-    "file": "assets/graph-section-Bw-BEP-4.js",
+    "file": "assets/graph-section-CHjwd8xF.js",
     "name": "graph-section",
     "src": "resources/js/app/pages/encoder/dashboard/sections/graph-section.jsx",
     "isDynamicEntry": true,
@@ -1369,41 +1390,42 @@
       "resources/js/app/pages/encoder/dashboard/components/income-component.jsx",
       "resources/js/app/pages/encoder/dashboard/components/organization-component.jsx",
       "resources/js/app/pages/encoder/dashboard/components/livelihood-component.jsx",
-      "_index-DglaUQ-I.js",
-      "_iconBase-CFwcon_-.js",
-      "_react-apexcharts.min-C5J85x_d.js"
+      "_index-D72KJyoR.js",
+      "_iconBase-DWCrd3wG.js",
+      "_react-apexcharts.min-K0iMrf8u.js"
     ]
   },
   "resources/js/app/pages/encoder/dashboard/sections/stats-section.jsx": {
-    "file": "assets/stats-section-JXIo80wX.js",
+    "file": "assets/stats-section-D8-j-VCn.js",
     "name": "stats-section",
     "src": "resources/js/app/pages/encoder/dashboard/sections/stats-section.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-DglaUQ-I.js",
-      "_ArrowUpIcon-BxEq9EBA.js",
-      "_iconBase-CFwcon_-.js"
+      "_index-D72KJyoR.js",
+      "_ArrowUpIcon-D2ElCtxH.js",
+      "_iconBase-DWCrd3wG.js"
     ]
   },
   "resources/js/app/pages/encoder/layout.jsx": {
-    "file": "assets/layout-H53PbN9i.js",
+    "file": "assets/layout-BEtO3IPK.js",
     "name": "layout",
     "src": "resources/js/app/pages/encoder/layout.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-CU9QLh5w.js",
+      "_index-CmdSLLJA.js",
       "resources/js/app/pages/encoder/_sections/encoder-sidenav-sections.jsx",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js",
-      "_iconBase-CFwcon_-.js",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_BellIcon-DwI8WMft.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_iconBase-DWCrd3wG.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/encoder/organization/page.jsx": {
-    "file": "assets/page-C_j-sffw.js",
+    "file": "assets/page-CxhFh-Pe.js",
     "name": "page",
     "src": "resources/js/app/pages/encoder/organization/page.jsx",
     "isDynamicEntry": true,
@@ -1412,49 +1434,50 @@
       "resources/js/app/pages/encoder/organization/sections/organization-table-section.jsx",
       "resources/js/app/pages/encoder/layout.jsx",
       "resources/js/app/pages/encoder/organization/sections/add-organization-section.jsx",
-      "_UserGroupIcon-D1F9q8rD.js",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_index-CU9QLh5w.js",
-      "_iconBase-CFwcon_-.js",
+      "_UserGroupIcon-8ZMq5Eva.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_index-CmdSLLJA.js",
+      "_iconBase-DWCrd3wG.js",
       "resources/js/app/pages/encoder/_sections/encoder-sidenav-sections.jsx",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js"
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_BellIcon-DwI8WMft.js"
     ]
   },
   "resources/js/app/pages/encoder/organization/sections/add-organization-section.jsx": {
-    "file": "assets/add-organization-section-DPTrRJuL.js",
+    "file": "assets/add-organization-section-DkgVWK6H.js",
     "name": "add-organization-section",
     "src": "resources/js/app/pages/encoder/organization/sections/add-organization-section.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_UserGroupIcon-D1F9q8rD.js",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_UserGroupIcon-8ZMq5Eva.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/encoder/organization/sections/organization-table-section.jsx": {
-    "file": "assets/organization-table-section-qvtJk16D.js",
+    "file": "assets/organization-table-section-HgnG8M2r.js",
     "name": "organization-table-section",
     "src": "resources/js/app/pages/encoder/organization/sections/organization-table-section.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/pages/encoder/organization/sections/add-organization-section.jsx",
-      "_UserGroupIcon-D1F9q8rD.js",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_UserGroupIcon-8ZMq5Eva.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/encoder/profile/page.jsx": {
-    "file": "assets/page-D1Klb2vM.js",
+    "file": "assets/page-DR4bfa4_.js",
     "name": "page",
     "src": "resources/js/app/pages/encoder/profile/page.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-DglaUQ-I.js",
+      "_index-D72KJyoR.js",
       "resources/js/app/pages/encoder/profile/sections/profile-personal-info-section.jsx",
       "resources/js/app/pages/encoder/profile/sections/profile-address-info-section.jsx",
       "resources/js/app/pages/encoder/profile/sections/profile-education-info-section.jsx",
@@ -1462,17 +1485,18 @@
       "resources/js/app/pages/encoder/profile/sections/profile-farm-type-section.jsx",
       "resources/js/app/pages/encoder/profile/sections/profile-farmland-section.jsx",
       "resources/js/app/pages/encoder/layout.jsx",
-      "_iconBase-CFwcon_-.js",
-      "_index-CU9QLh5w.js",
+      "_iconBase-DWCrd3wG.js",
+      "_index-CmdSLLJA.js",
       "resources/js/app/pages/encoder/_sections/encoder-sidenav-sections.jsx",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js"
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_BellIcon-DwI8WMft.js"
     ]
   },
   "resources/js/app/pages/encoder/profile/sections/profile-address-info-section.jsx": {
-    "file": "assets/profile-address-info-section-DU2IoPii.js",
+    "file": "assets/profile-address-info-section-Cc0ZJpyQ.js",
     "name": "profile-address-info-section",
     "src": "resources/js/app/pages/encoder/profile/sections/profile-address-info-section.jsx",
     "isDynamicEntry": true,
@@ -1481,7 +1505,7 @@
     ]
   },
   "resources/js/app/pages/encoder/profile/sections/profile-education-info-section.jsx": {
-    "file": "assets/profile-education-info-section-BMPsMJIW.js",
+    "file": "assets/profile-education-info-section-DoGtdlOA.js",
     "name": "profile-education-info-section",
     "src": "resources/js/app/pages/encoder/profile/sections/profile-education-info-section.jsx",
     "isDynamicEntry": true,
@@ -1490,7 +1514,7 @@
     ]
   },
   "resources/js/app/pages/encoder/profile/sections/profile-farm-type-section.jsx": {
-    "file": "assets/profile-farm-type-section-uP5Ie3ds.js",
+    "file": "assets/profile-farm-type-section-Dz5jeVUX.js",
     "name": "profile-farm-type-section",
     "src": "resources/js/app/pages/encoder/profile/sections/profile-farm-type-section.jsx",
     "isDynamicEntry": true,
@@ -1499,7 +1523,7 @@
     ]
   },
   "resources/js/app/pages/encoder/profile/sections/profile-farmland-section.jsx": {
-    "file": "assets/profile-farmland-section-rToZuN7I.js",
+    "file": "assets/profile-farmland-section-gzTPoxhy.js",
     "name": "profile-farmland-section",
     "src": "resources/js/app/pages/encoder/profile/sections/profile-farmland-section.jsx",
     "isDynamicEntry": true,
@@ -1508,7 +1532,7 @@
     ]
   },
   "resources/js/app/pages/encoder/profile/sections/profile-government-info-section.jsx": {
-    "file": "assets/profile-government-info-section-Cf0rFrU3.js",
+    "file": "assets/profile-government-info-section-BX1CkCUi.js",
     "name": "profile-government-info-section",
     "src": "resources/js/app/pages/encoder/profile/sections/profile-government-info-section.jsx",
     "isDynamicEntry": true,
@@ -1517,7 +1541,7 @@
     ]
   },
   "resources/js/app/pages/encoder/profile/sections/profile-personal-info-section.jsx": {
-    "file": "assets/profile-personal-info-section-el9JAVUI.js",
+    "file": "assets/profile-personal-info-section-D3t4dvth.js",
     "name": "profile-personal-info-section",
     "src": "resources/js/app/pages/encoder/profile/sections/profile-personal-info-section.jsx",
     "isDynamicEntry": true,
@@ -1526,7 +1550,7 @@
     ]
   },
   "resources/js/app/pages/encoder/register/components/address-information-component.jsx": {
-    "file": "assets/address-information-component-BTV2iK_O.js",
+    "file": "assets/address-information-component-CfKJSjtZ.js",
     "name": "address-information-component",
     "src": "resources/js/app/pages/encoder/register/components/address-information-component.jsx",
     "isDynamicEntry": true,
@@ -1535,7 +1559,7 @@
     ]
   },
   "resources/js/app/pages/encoder/register/components/education-component.jsx": {
-    "file": "assets/education-component-y0ZaI2Nz.js",
+    "file": "assets/education-component-DSZuVG3d.js",
     "name": "education-component",
     "src": "resources/js/app/pages/encoder/register/components/education-component.jsx",
     "isDynamicEntry": true,
@@ -1544,7 +1568,7 @@
     ]
   },
   "resources/js/app/pages/encoder/register/components/farm-activity-component.jsx": {
-    "file": "assets/farm-activity-component-CmAKXs9n.js",
+    "file": "assets/farm-activity-component-CQ3ElMiO.js",
     "name": "farm-activity-component",
     "src": "resources/js/app/pages/encoder/register/components/farm-activity-component.jsx",
     "isDynamicEntry": true,
@@ -1553,18 +1577,18 @@
     ]
   },
   "resources/js/app/pages/encoder/register/components/farm-land-component.jsx": {
-    "file": "assets/farm-land-component-dHhNhzCm.js",
+    "file": "assets/farm-land-component-Cz88rXfA.js",
     "name": "farm-land-component",
     "src": "resources/js/app/pages/encoder/register/components/farm-land-component.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-DglaUQ-I.js",
-      "_iconBase-CFwcon_-.js"
+      "_index-D72KJyoR.js",
+      "_iconBase-DWCrd3wG.js"
     ]
   },
   "resources/js/app/pages/encoder/register/components/farm-profile-component.jsx": {
-    "file": "assets/farm-profile-component-Ddl72Uzq.js",
+    "file": "assets/farm-profile-component-DAEW8pll.js",
     "name": "farm-profile-component",
     "src": "resources/js/app/pages/encoder/register/components/farm-profile-component.jsx",
     "isDynamicEntry": true,
@@ -1577,7 +1601,7 @@
     ]
   },
   "resources/js/app/pages/encoder/register/components/farmers-work-component.jsx": {
-    "file": "assets/farmers-work-component-BUBvY58L.js",
+    "file": "assets/farmers-work-component-CGXvvoxv.js",
     "name": "farmers-work-component",
     "src": "resources/js/app/pages/encoder/register/components/farmers-work-component.jsx",
     "isDynamicEntry": true,
@@ -1586,7 +1610,7 @@
     ]
   },
   "resources/js/app/pages/encoder/register/components/fishing-activity-component.jsx": {
-    "file": "assets/fishing-activity-component-Bo2d80x_.js",
+    "file": "assets/fishing-activity-component-CeTl-dxp.js",
     "name": "fishing-activity-component",
     "src": "resources/js/app/pages/encoder/register/components/fishing-activity-component.jsx",
     "isDynamicEntry": true,
@@ -1595,7 +1619,7 @@
     ]
   },
   "resources/js/app/pages/encoder/register/components/government-affiliation-component.jsx": {
-    "file": "assets/government-affiliation-component-CA4ES_Y2.js",
+    "file": "assets/government-affiliation-component-C8gaaFRs.js",
     "name": "government-affiliation-component",
     "src": "resources/js/app/pages/encoder/register/components/government-affiliation-component.jsx",
     "isDynamicEntry": true,
@@ -1604,7 +1628,7 @@
     ]
   },
   "resources/js/app/pages/encoder/register/components/personal-information-component.jsx": {
-    "file": "assets/personal-information-component-B57RQscG.js",
+    "file": "assets/personal-information-component-DIM_Q77-.js",
     "name": "personal-information-component",
     "src": "resources/js/app/pages/encoder/register/components/personal-information-component.jsx",
     "isDynamicEntry": true,
@@ -1613,7 +1637,7 @@
     ]
   },
   "resources/js/app/pages/encoder/register/components/youth-involvement-component.jsx": {
-    "file": "assets/youth-involvement-component-DFsxG7MG.js",
+    "file": "assets/youth-involvement-component-Cmuegxhn.js",
     "name": "youth-involvement-component",
     "src": "resources/js/app/pages/encoder/register/components/youth-involvement-component.jsx",
     "isDynamicEntry": true,
@@ -1622,7 +1646,7 @@
     ]
   },
   "resources/js/app/pages/encoder/register/page.jsx": {
-    "file": "assets/page-DAAXh0tq.js",
+    "file": "assets/page-ebxaGI86.js",
     "name": "page",
     "src": "resources/js/app/pages/encoder/register/page.jsx",
     "isDynamicEntry": true,
@@ -1643,20 +1667,21 @@
       "resources/js/app/pages/encoder/register/components/youth-involvement-component.jsx",
       "resources/js/app/pages/encoder/register/sections/third-form-section.jsx",
       "resources/js/app/pages/encoder/register/components/farm-land-component.jsx",
-      "_index-DglaUQ-I.js",
-      "_iconBase-CFwcon_-.js",
+      "_index-D72KJyoR.js",
+      "_iconBase-DWCrd3wG.js",
       "resources/js/app/pages/encoder/register/sections/preview-form-section.jsx",
-      "_CheckIcon-BvH0Y9Hk.js",
-      "_index-CU9QLh5w.js",
+      "_CheckIcon-Du2ffWkJ.js",
+      "_index-CmdSLLJA.js",
       "resources/js/app/pages/encoder/_sections/encoder-sidenav-sections.jsx",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js"
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_BellIcon-DwI8WMft.js"
     ]
   },
   "resources/js/app/pages/encoder/register/sections/first-form-section.jsx": {
-    "file": "assets/first-form-section-_sbrK9l2.js",
+    "file": "assets/first-form-section-CCA-o0Yp.js",
     "name": "first-form-section",
     "src": "resources/js/app/pages/encoder/register/sections/first-form-section.jsx",
     "isDynamicEntry": true,
@@ -1669,7 +1694,7 @@
     ]
   },
   "resources/js/app/pages/encoder/register/sections/preview-form-section.jsx": {
-    "file": "assets/preview-form-section-mrYKDBDB.js",
+    "file": "assets/preview-form-section-Ba9yMjUv.js",
     "name": "preview-form-section",
     "src": "resources/js/app/pages/encoder/register/sections/preview-form-section.jsx",
     "isDynamicEntry": true,
@@ -1678,7 +1703,7 @@
     ]
   },
   "resources/js/app/pages/encoder/register/sections/registration-stepper-section.jsx": {
-    "file": "assets/registration-stepper-section-DoA09EVZ.js",
+    "file": "assets/registration-stepper-section-DXAC-yk8.js",
     "name": "registration-stepper-section",
     "src": "resources/js/app/pages/encoder/register/sections/registration-stepper-section.jsx",
     "isDynamicEntry": true,
@@ -1688,7 +1713,7 @@
       "resources/js/app/pages/encoder/register/sections/second-form-section.jsx",
       "resources/js/app/pages/encoder/register/sections/third-form-section.jsx",
       "resources/js/app/pages/encoder/register/sections/preview-form-section.jsx",
-      "_CheckIcon-BvH0Y9Hk.js",
+      "_CheckIcon-Du2ffWkJ.js",
       "resources/js/app/pages/encoder/register/components/personal-information-component.jsx",
       "resources/js/app/pages/encoder/register/components/address-information-component.jsx",
       "resources/js/app/pages/encoder/register/components/education-component.jsx",
@@ -1699,12 +1724,12 @@
       "resources/js/app/pages/encoder/register/components/fishing-activity-component.jsx",
       "resources/js/app/pages/encoder/register/components/youth-involvement-component.jsx",
       "resources/js/app/pages/encoder/register/components/farm-land-component.jsx",
-      "_index-DglaUQ-I.js",
-      "_iconBase-CFwcon_-.js"
+      "_index-D72KJyoR.js",
+      "_iconBase-DWCrd3wG.js"
     ]
   },
   "resources/js/app/pages/encoder/register/sections/second-form-section.jsx": {
-    "file": "assets/second-form-section-81_uU-rG.js",
+    "file": "assets/second-form-section-iK8e0CJ6.js",
     "name": "second-form-section",
     "src": "resources/js/app/pages/encoder/register/sections/second-form-section.jsx",
     "isDynamicEntry": true,
@@ -1718,19 +1743,19 @@
     ]
   },
   "resources/js/app/pages/encoder/register/sections/third-form-section.jsx": {
-    "file": "assets/third-form-section-DVfT0fra.js",
+    "file": "assets/third-form-section-C44iYOUJ.js",
     "name": "third-form-section",
     "src": "resources/js/app/pages/encoder/register/sections/third-form-section.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/pages/encoder/register/components/farm-land-component.jsx",
-      "_index-DglaUQ-I.js",
-      "_iconBase-CFwcon_-.js"
+      "_index-D72KJyoR.js",
+      "_iconBase-DWCrd3wG.js"
     ]
   },
   "resources/js/app/pages/encoder/reports/components/active-agriworker-component.jsx": {
-    "file": "assets/active-agriworker-component-DKJ7czLP.js",
+    "file": "assets/active-agriworker-component-BgI6amVA.js",
     "name": "active-agriworker-component",
     "src": "resources/js/app/pages/encoder/reports/components/active-agriworker-component.jsx",
     "isDynamicEntry": true,
@@ -1739,7 +1764,7 @@
     ]
   },
   "resources/js/app/pages/encoder/reports/page.jsx": {
-    "file": "assets/page-Dal8Z077.js",
+    "file": "assets/page-akzan0Qp.js",
     "name": "page",
     "src": "resources/js/app/pages/encoder/reports/page.jsx",
     "isDynamicEntry": true,
@@ -1748,26 +1773,27 @@
       "resources/js/app/pages/encoder/reports/sections/general-report-section.jsx",
       "resources/js/app/pages/encoder/layout.jsx",
       "resources/js/app/pages/encoder/dashboard/sections/stats-section.jsx",
-      "_index-DglaUQ-I.js",
-      "_iconBase-CFwcon_-.js",
-      "_ArrowUpIcon-BxEq9EBA.js",
+      "_index-D72KJyoR.js",
+      "_iconBase-DWCrd3wG.js",
+      "_ArrowUpIcon-D2ElCtxH.js",
       "resources/js/app/pages/encoder/dashboard/components/gender-component.jsx",
-      "_react-apexcharts.min-C5J85x_d.js",
+      "_react-apexcharts.min-K0iMrf8u.js",
       "resources/js/app/pages/encoder/dashboard/components/age-bracket-component.jsx",
       "resources/js/app/pages/encoder/dashboard/components/income-component.jsx",
       "resources/js/app/pages/encoder/reports/components/active-agriworker-component.jsx",
       "resources/js/app/pages/encoder/dashboard/components/livelihood-component.jsx",
-      "_PrinterIcon-BkvtRvNY.js",
-      "_index-CU9QLh5w.js",
+      "_PrinterIcon-9X_zIROR.js",
+      "_index-CmdSLLJA.js",
       "resources/js/app/pages/encoder/_sections/encoder-sidenav-sections.jsx",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js"
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_BellIcon-DwI8WMft.js"
     ]
   },
   "resources/js/app/pages/encoder/reports/sections/general-report-section.jsx": {
-    "file": "assets/general-report-section-CLJtGZLv.js",
+    "file": "assets/general-report-section-C2qUMYlf.js",
     "name": "general-report-section",
     "src": "resources/js/app/pages/encoder/reports/sections/general-report-section.jsx",
     "isDynamicEntry": true,
@@ -1779,15 +1805,15 @@
       "resources/js/app/pages/encoder/dashboard/components/income-component.jsx",
       "resources/js/app/pages/encoder/reports/components/active-agriworker-component.jsx",
       "resources/js/app/pages/encoder/dashboard/components/livelihood-component.jsx",
-      "_PrinterIcon-BkvtRvNY.js",
-      "_index-DglaUQ-I.js",
-      "_iconBase-CFwcon_-.js",
-      "_ArrowUpIcon-BxEq9EBA.js",
-      "_react-apexcharts.min-C5J85x_d.js"
+      "_PrinterIcon-9X_zIROR.js",
+      "_index-D72KJyoR.js",
+      "_iconBase-DWCrd3wG.js",
+      "_ArrowUpIcon-D2ElCtxH.js",
+      "_react-apexcharts.min-K0iMrf8u.js"
     ]
   },
   "resources/js/app/pages/encoder/settings/page.jsx": {
-    "file": "assets/page-BQEdKJC4.js",
+    "file": "assets/page-2X_9wxna.js",
     "name": "page",
     "src": "resources/js/app/pages/encoder/settings/page.jsx",
     "isDynamicEntry": true,
@@ -1795,28 +1821,29 @@
       "resources/js/app.jsx",
       "resources/js/app/pages/encoder/settings/section/settings-screen-section.jsx",
       "resources/js/app/pages/encoder/layout.jsx",
-      "_ChevronDownIcon-B5SGH--g.js",
-      "_index-CU9QLh5w.js",
-      "_iconBase-CFwcon_-.js",
+      "_ChevronDownIcon-9fBmHbsX.js",
+      "_index-CmdSLLJA.js",
+      "_iconBase-DWCrd3wG.js",
       "resources/js/app/pages/encoder/_sections/encoder-sidenav-sections.jsx",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js"
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_BellIcon-DwI8WMft.js"
     ]
   },
   "resources/js/app/pages/encoder/settings/section/settings-screen-section.jsx": {
-    "file": "assets/settings-screen-section-Bi6MEIzO.js",
+    "file": "assets/settings-screen-section-BReJea4W.js",
     "name": "settings-screen-section",
     "src": "resources/js/app/pages/encoder/settings/section/settings-screen-section.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_ChevronDownIcon-B5SGH--g.js"
+      "_ChevronDownIcon-9fBmHbsX.js"
     ]
   },
   "resources/js/app/pages/encoder/verifier/page.jsx": {
-    "file": "assets/page-C31CgAVF.js",
+    "file": "assets/page-CVPChKIZ.js",
     "name": "page",
     "src": "resources/js/app/pages/encoder/verifier/page.jsx",
     "isDynamicEntry": true,
@@ -1824,46 +1851,47 @@
       "resources/js/app.jsx",
       "resources/js/app/pages/encoder/layout.jsx",
       "resources/js/app/pages/encoder/verifier/sections/verifier-table-section.jsx",
-      "_index-CU9QLh5w.js",
-      "_iconBase-CFwcon_-.js",
+      "_index-CmdSLLJA.js",
+      "_iconBase-DWCrd3wG.js",
       "resources/js/app/pages/encoder/_sections/encoder-sidenav-sections.jsx",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_BellIcon-DwI8WMft.js",
       "resources/js/app/pages/encoder/verifier/sections/add-verifier-section.jsx",
-      "_index-DglaUQ-I.js"
+      "_index-D72KJyoR.js"
     ]
   },
   "resources/js/app/pages/encoder/verifier/sections/add-verifier-section.jsx": {
-    "file": "assets/add-verifier-section-47pDwtx1.js",
+    "file": "assets/add-verifier-section-BO2QmJsz.js",
     "name": "add-verifier-section",
     "src": "resources/js/app/pages/encoder/verifier/sections/add-verifier-section.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-DglaUQ-I.js",
-      "_dialog-8YMUxH38.js",
-      "_iconBase-CFwcon_-.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_index-D72KJyoR.js",
+      "_dialog-uvQdSj7J.js",
+      "_iconBase-DWCrd3wG.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/encoder/verifier/sections/verifier-table-section.jsx": {
-    "file": "assets/verifier-table-section-CpwlhG-c.js",
+    "file": "assets/verifier-table-section-CobJe542.js",
     "name": "verifier-table-section",
     "src": "resources/js/app/pages/encoder/verifier/sections/verifier-table-section.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/pages/encoder/verifier/sections/add-verifier-section.jsx",
-      "_index-DglaUQ-I.js",
-      "_iconBase-CFwcon_-.js",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_index-D72KJyoR.js",
+      "_iconBase-DWCrd3wG.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/login/page.jsx": {
-    "file": "assets/page-XlXUbh8u.js",
+    "file": "assets/page-BFsieVZq.js",
     "name": "page",
     "src": "resources/js/app/pages/login/page.jsx",
     "isDynamicEntry": true,
@@ -1872,7 +1900,7 @@
     ]
   },
   "resources/js/app/pages/verifier/_sections/footer-section.jsx": {
-    "file": "assets/footer-section-BIDioqzq.js",
+    "file": "assets/footer-section-Rcj80uPL.js",
     "name": "footer-section",
     "src": "resources/js/app/pages/verifier/_sections/footer-section.jsx",
     "isDynamicEntry": true,
@@ -1881,57 +1909,57 @@
     ]
   },
   "resources/js/app/pages/verifier/_sections/verifier-sidenav-sections.jsx": {
-    "file": "assets/verifier-sidenav-sections-SEiMHVEK.js",
+    "file": "assets/verifier-sidenav-sections-BL119oEJ.js",
     "name": "verifier-sidenav-sections",
     "src": "resources/js/app/pages/verifier/_sections/verifier-sidenav-sections.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-CU9QLh5w.js",
-      "_dialog-8YMUxH38.js",
-      "_iconBase-CFwcon_-.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_index-CmdSLLJA.js",
+      "_dialog-uvQdSj7J.js",
+      "_iconBase-DWCrd3wG.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/verifier/beneficiary/components/beneficiary-table-component.jsx": {
-    "file": "assets/beneficiary-table-component-DAODPQnX.js",
+    "file": "assets/beneficiary-table-component-DLE-j_Gu.js",
     "name": "beneficiary-table-component",
     "src": "resources/js/app/pages/verifier/beneficiary/components/beneficiary-table-component.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/pages/verifier/beneficiary/components/filter-drawer-component.jsx",
-      "_FunnelIcon-DeZcPhNK.js",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_FunnelIcon-CEHX4Kut.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/verifier/beneficiary/components/filter-drawer-component.jsx": {
-    "file": "assets/filter-drawer-component-CLHY3Drk.js",
+    "file": "assets/filter-drawer-component-Dk3kraj1.js",
     "name": "filter-drawer-component",
     "src": "resources/js/app/pages/verifier/beneficiary/components/filter-drawer-component.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_FunnelIcon-DeZcPhNK.js",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_FunnelIcon-CEHX4Kut.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/verifier/beneficiary/components/filter-search-component.jsx": {
-    "file": "assets/filter-search-component-D9QlM_Hy.js",
+    "file": "assets/filter-search-component-BY90HWu6.js",
     "name": "filter-search-component",
     "src": "resources/js/app/pages/verifier/beneficiary/components/filter-search-component.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_popover-D7_u5k6h.js",
-      "_ChevronDownIcon-0jL-yGsE.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_popover-Btg-ToHN.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/verifier/beneficiary/page.jsx": {
-    "file": "assets/page-CD-3US4a.js",
+    "file": "assets/page-B317qKji.js",
     "name": "page",
     "src": "resources/js/app/pages/verifier/beneficiary/page.jsx",
     "isDynamicEntry": true,
@@ -1939,21 +1967,22 @@
       "resources/js/app.jsx",
       "resources/js/app/pages/verifier/beneficiary/sections/active-beneficiary-section.jsx",
       "resources/js/app/pages/verifier/layout.jsx",
-      "_personal-information-thunk-DklZMs7o.js",
+      "_personal-information-thunk-uk85eM8k.js",
       "resources/js/app/pages/verifier/beneficiary/components/beneficiary-table-component.jsx",
       "resources/js/app/pages/verifier/beneficiary/components/filter-drawer-component.jsx",
-      "_FunnelIcon-DeZcPhNK.js",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_index-CU9QLh5w.js",
-      "_iconBase-CFwcon_-.js",
+      "_FunnelIcon-CEHX4Kut.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_index-CmdSLLJA.js",
+      "_iconBase-DWCrd3wG.js",
       "resources/js/app/pages/verifier/_sections/verifier-sidenav-sections.jsx",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js"
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_BellIcon-DwI8WMft.js"
     ]
   },
   "resources/js/app/pages/verifier/beneficiary/sections/active-beneficiary-section.jsx": {
-    "file": "assets/active-beneficiary-section-grzUWvyE.js",
+    "file": "assets/active-beneficiary-section-BHicHn-d.js",
     "name": "active-beneficiary-section",
     "src": "resources/js/app/pages/verifier/beneficiary/sections/active-beneficiary-section.jsx",
     "isDynamicEntry": true,
@@ -1961,13 +1990,13 @@
       "resources/js/app.jsx",
       "resources/js/app/pages/verifier/beneficiary/components/beneficiary-table-component.jsx",
       "resources/js/app/pages/verifier/beneficiary/components/filter-drawer-component.jsx",
-      "_FunnelIcon-DeZcPhNK.js",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_FunnelIcon-CEHX4Kut.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/verifier/contact/page.jsx": {
-    "file": "assets/page-BNBRS0TM.js",
+    "file": "assets/page-DJWvUIL8.js",
     "name": "page",
     "src": "resources/js/app/pages/verifier/contact/page.jsx",
     "isDynamicEntry": true,
@@ -1975,17 +2004,18 @@
       "resources/js/app.jsx",
       "resources/js/app/pages/verifier/contact/sections/contact-section.jsx",
       "resources/js/app/pages/verifier/layout.jsx",
-      "_index-CU9QLh5w.js",
-      "_iconBase-CFwcon_-.js",
+      "_index-CmdSLLJA.js",
+      "_iconBase-DWCrd3wG.js",
       "resources/js/app/pages/verifier/_sections/verifier-sidenav-sections.jsx",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js"
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_BellIcon-DwI8WMft.js"
     ]
   },
   "resources/js/app/pages/verifier/contact/sections/contact-section.jsx": {
-    "file": "assets/contact-section-wUS9VP3H.js",
+    "file": "assets/contact-section-BvtPjMjl.js",
     "name": "contact-section",
     "src": "resources/js/app/pages/verifier/contact/sections/contact-section.jsx",
     "isDynamicEntry": true,
@@ -1994,67 +2024,67 @@
     ]
   },
   "resources/js/app/pages/verifier/dashboard/components/age-bracket-component.jsx": {
-    "file": "assets/age-bracket-component-By8T3JhA.js",
+    "file": "assets/age-bracket-component-C1KuoJ0s.js",
     "name": "age-bracket-component",
     "src": "resources/js/app/pages/verifier/dashboard/components/age-bracket-component.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-DglaUQ-I.js",
-      "_react-apexcharts.min-C5J85x_d.js",
-      "_iconBase-CFwcon_-.js"
+      "_index-D72KJyoR.js",
+      "_react-apexcharts.min-K0iMrf8u.js",
+      "_iconBase-DWCrd3wG.js"
     ]
   },
   "resources/js/app/pages/verifier/dashboard/components/gender-component.jsx": {
-    "file": "assets/gender-component-BwDjQS0b.js",
+    "file": "assets/gender-component-ueXm1Ql2.js",
     "name": "gender-component",
     "src": "resources/js/app/pages/verifier/dashboard/components/gender-component.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-DglaUQ-I.js",
-      "_react-apexcharts.min-C5J85x_d.js",
-      "_iconBase-CFwcon_-.js"
+      "_index-D72KJyoR.js",
+      "_react-apexcharts.min-K0iMrf8u.js",
+      "_iconBase-DWCrd3wG.js"
     ]
   },
   "resources/js/app/pages/verifier/dashboard/components/income-component.jsx": {
-    "file": "assets/income-component-C4gPJfyz.js",
+    "file": "assets/income-component-zdwCHZRP.js",
     "name": "income-component",
     "src": "resources/js/app/pages/verifier/dashboard/components/income-component.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-DglaUQ-I.js",
-      "_react-apexcharts.min-C5J85x_d.js",
-      "_iconBase-CFwcon_-.js"
+      "_index-D72KJyoR.js",
+      "_react-apexcharts.min-K0iMrf8u.js",
+      "_iconBase-DWCrd3wG.js"
     ]
   },
   "resources/js/app/pages/verifier/dashboard/components/livelihood-component.jsx": {
-    "file": "assets/livelihood-component-COgYtSgC.js",
+    "file": "assets/livelihood-component-DENX1T8a.js",
     "name": "livelihood-component",
     "src": "resources/js/app/pages/verifier/dashboard/components/livelihood-component.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-DglaUQ-I.js",
-      "_react-apexcharts.min-C5J85x_d.js",
-      "_iconBase-CFwcon_-.js"
+      "_index-D72KJyoR.js",
+      "_react-apexcharts.min-K0iMrf8u.js",
+      "_iconBase-DWCrd3wG.js"
     ]
   },
   "resources/js/app/pages/verifier/dashboard/components/organization-component.jsx": {
-    "file": "assets/organization-component-Csk3X8Np.js",
+    "file": "assets/organization-component-D-uZSHk-.js",
     "name": "organization-component",
     "src": "resources/js/app/pages/verifier/dashboard/components/organization-component.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-DglaUQ-I.js",
-      "_react-apexcharts.min-C5J85x_d.js",
-      "_iconBase-CFwcon_-.js"
+      "_index-D72KJyoR.js",
+      "_react-apexcharts.min-K0iMrf8u.js",
+      "_iconBase-DWCrd3wG.js"
     ]
   },
   "resources/js/app/pages/verifier/dashboard/page.jsx": {
-    "file": "assets/page-D3mU4xAd.js",
+    "file": "assets/page-B0T6am4Q.js",
     "name": "page",
     "src": "resources/js/app/pages/verifier/dashboard/page.jsx",
     "isDynamicEntry": true,
@@ -2063,25 +2093,26 @@
       "resources/js/app/pages/verifier/dashboard/sections/stats-section.jsx",
       "resources/js/app/pages/verifier/dashboard/sections/graph-section.jsx",
       "resources/js/app/pages/verifier/layout.jsx",
-      "_index-DglaUQ-I.js",
-      "_iconBase-CFwcon_-.js",
-      "_ArrowUpIcon-BxEq9EBA.js",
+      "_index-D72KJyoR.js",
+      "_iconBase-DWCrd3wG.js",
+      "_ArrowUpIcon-D2ElCtxH.js",
       "resources/js/app/pages/verifier/dashboard/components/gender-component.jsx",
-      "_react-apexcharts.min-C5J85x_d.js",
+      "_react-apexcharts.min-K0iMrf8u.js",
       "resources/js/app/pages/verifier/dashboard/components/age-bracket-component.jsx",
       "resources/js/app/pages/verifier/dashboard/components/income-component.jsx",
       "resources/js/app/pages/verifier/dashboard/components/organization-component.jsx",
       "resources/js/app/pages/verifier/dashboard/components/livelihood-component.jsx",
-      "_index-CU9QLh5w.js",
+      "_index-CmdSLLJA.js",
       "resources/js/app/pages/verifier/_sections/verifier-sidenav-sections.jsx",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js"
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_BellIcon-DwI8WMft.js"
     ]
   },
   "resources/js/app/pages/verifier/dashboard/sections/graph-section.jsx": {
-    "file": "assets/graph-section-Dzr8SSh4.js",
+    "file": "assets/graph-section-B3D1lq4P.js",
     "name": "graph-section",
     "src": "resources/js/app/pages/verifier/dashboard/sections/graph-section.jsx",
     "isDynamicEntry": true,
@@ -2092,47 +2123,48 @@
       "resources/js/app/pages/verifier/dashboard/components/income-component.jsx",
       "resources/js/app/pages/verifier/dashboard/components/organization-component.jsx",
       "resources/js/app/pages/verifier/dashboard/components/livelihood-component.jsx",
-      "_index-DglaUQ-I.js",
-      "_iconBase-CFwcon_-.js",
-      "_react-apexcharts.min-C5J85x_d.js"
+      "_index-D72KJyoR.js",
+      "_iconBase-DWCrd3wG.js",
+      "_react-apexcharts.min-K0iMrf8u.js"
     ]
   },
   "resources/js/app/pages/verifier/dashboard/sections/stats-section.jsx": {
-    "file": "assets/stats-section-RUjvP5ic.js",
+    "file": "assets/stats-section-SXaZEuef.js",
     "name": "stats-section",
     "src": "resources/js/app/pages/verifier/dashboard/sections/stats-section.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-DglaUQ-I.js",
-      "_ArrowUpIcon-BxEq9EBA.js",
-      "_iconBase-CFwcon_-.js"
+      "_index-D72KJyoR.js",
+      "_ArrowUpIcon-D2ElCtxH.js",
+      "_iconBase-DWCrd3wG.js"
     ]
   },
   "resources/js/app/pages/verifier/layout.jsx": {
-    "file": "assets/layout-2JvyE9RA.js",
+    "file": "assets/layout-BRV5MDOJ.js",
     "name": "layout",
     "src": "resources/js/app/pages/verifier/layout.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-CU9QLh5w.js",
+      "_index-CmdSLLJA.js",
       "resources/js/app/pages/verifier/_sections/verifier-sidenav-sections.jsx",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js",
-      "_iconBase-CFwcon_-.js",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_BellIcon-DwI8WMft.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_iconBase-DWCrd3wG.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/verifier/profile/page.jsx": {
-    "file": "assets/page-W32TK9jI.js",
+    "file": "assets/page-BWWFhZV1.js",
     "name": "page",
     "src": "resources/js/app/pages/verifier/profile/page.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_index-DglaUQ-I.js",
+      "_index-D72KJyoR.js",
       "resources/js/app/pages/verifier/profile/sections/profile-personal-info-section.jsx",
       "resources/js/app/pages/verifier/profile/sections/profile-address-info-section.jsx",
       "resources/js/app/pages/verifier/profile/sections/profile-education-info-section.jsx",
@@ -2140,21 +2172,22 @@
       "resources/js/app/pages/verifier/profile/sections/profile-farm-type-section.jsx",
       "resources/js/app/pages/verifier/profile/sections/profile-farmland-section.jsx",
       "resources/js/app/pages/verifier/layout.jsx",
-      "_personal-information-thunk-DklZMs7o.js",
+      "_personal-information-thunk-uk85eM8k.js",
       "_moment-C5S46NFB.js",
       "resources/js/app/pages/verifier/profile/sections/profile-verify-section.jsx",
-      "_iconBase-CFwcon_-.js",
-      "_index-CU9QLh5w.js",
+      "_iconBase-DWCrd3wG.js",
+      "_index-CmdSLLJA.js",
       "resources/js/app/pages/verifier/_sections/verifier-sidenav-sections.jsx",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js",
-      "_CheckIcon-BvH0Y9Hk.js"
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_BellIcon-DwI8WMft.js",
+      "_CheckIcon-Du2ffWkJ.js"
     ]
   },
   "resources/js/app/pages/verifier/profile/sections/profile-address-info-section.jsx": {
-    "file": "assets/profile-address-info-section-XyqCOc97.js",
+    "file": "assets/profile-address-info-section-COGsOiQ1.js",
     "name": "profile-address-info-section",
     "src": "resources/js/app/pages/verifier/profile/sections/profile-address-info-section.jsx",
     "isDynamicEntry": true,
@@ -2163,7 +2196,7 @@
     ]
   },
   "resources/js/app/pages/verifier/profile/sections/profile-education-info-section.jsx": {
-    "file": "assets/profile-education-info-section-DVUnHAij.js",
+    "file": "assets/profile-education-info-section-2tahIuyD.js",
     "name": "profile-education-info-section",
     "src": "resources/js/app/pages/verifier/profile/sections/profile-education-info-section.jsx",
     "isDynamicEntry": true,
@@ -2172,7 +2205,7 @@
     ]
   },
   "resources/js/app/pages/verifier/profile/sections/profile-farm-type-section.jsx": {
-    "file": "assets/profile-farm-type-section-jSlaGs8V.js",
+    "file": "assets/profile-farm-type-section-CzhP4PSd.js",
     "name": "profile-farm-type-section",
     "src": "resources/js/app/pages/verifier/profile/sections/profile-farm-type-section.jsx",
     "isDynamicEntry": true,
@@ -2181,7 +2214,7 @@
     ]
   },
   "resources/js/app/pages/verifier/profile/sections/profile-farmland-section.jsx": {
-    "file": "assets/profile-farmland-section-ti2oR1Vn.js",
+    "file": "assets/profile-farmland-section-BiOP7jYW.js",
     "name": "profile-farmland-section",
     "src": "resources/js/app/pages/verifier/profile/sections/profile-farmland-section.jsx",
     "isDynamicEntry": true,
@@ -2190,7 +2223,7 @@
     ]
   },
   "resources/js/app/pages/verifier/profile/sections/profile-government-info-section.jsx": {
-    "file": "assets/profile-government-info-section-OpXHdeq7.js",
+    "file": "assets/profile-government-info-section-BSn74i86.js",
     "name": "profile-government-info-section",
     "src": "resources/js/app/pages/verifier/profile/sections/profile-government-info-section.jsx",
     "isDynamicEntry": true,
@@ -2199,7 +2232,7 @@
     ]
   },
   "resources/js/app/pages/verifier/profile/sections/profile-personal-info-section.jsx": {
-    "file": "assets/profile-personal-info-section-DmLBzPTu.js",
+    "file": "assets/profile-personal-info-section-Drf6_HSy.js",
     "name": "profile-personal-info-section",
     "src": "resources/js/app/pages/verifier/profile/sections/profile-personal-info-section.jsx",
     "isDynamicEntry": true,
@@ -2208,20 +2241,20 @@
     ]
   },
   "resources/js/app/pages/verifier/profile/sections/profile-verify-section.jsx": {
-    "file": "assets/profile-verify-section-4r0r7Phu.js",
+    "file": "assets/profile-verify-section-CmmWHYKt.js",
     "name": "profile-verify-section",
     "src": "resources/js/app/pages/verifier/profile/sections/profile-verify-section.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_personal-information-thunk-DklZMs7o.js",
-      "_dialog-8YMUxH38.js",
-      "_CheckIcon-BvH0Y9Hk.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_personal-information-thunk-uk85eM8k.js",
+      "_dialog-uvQdSj7J.js",
+      "_CheckIcon-Du2ffWkJ.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/verifier/reports/components/active-agriworker-component.jsx": {
-    "file": "assets/active-agriworker-component-X97eCvmn.js",
+    "file": "assets/active-agriworker-component-DnPRtW7q.js",
     "name": "active-agriworker-component",
     "src": "resources/js/app/pages/verifier/reports/components/active-agriworker-component.jsx",
     "isDynamicEntry": true,
@@ -2230,7 +2263,7 @@
     ]
   },
   "resources/js/app/pages/verifier/reports/page.jsx": {
-    "file": "assets/page-mYvTz0U8.js",
+    "file": "assets/page-DXEQqu9f.js",
     "name": "page",
     "src": "resources/js/app/pages/verifier/reports/page.jsx",
     "isDynamicEntry": true,
@@ -2239,26 +2272,27 @@
       "resources/js/app/pages/verifier/reports/sections/general-report-section.jsx",
       "resources/js/app/pages/verifier/layout.jsx",
       "resources/js/app/pages/verifier/dashboard/sections/stats-section.jsx",
-      "_index-DglaUQ-I.js",
-      "_iconBase-CFwcon_-.js",
-      "_ArrowUpIcon-BxEq9EBA.js",
+      "_index-D72KJyoR.js",
+      "_iconBase-DWCrd3wG.js",
+      "_ArrowUpIcon-D2ElCtxH.js",
       "resources/js/app/pages/verifier/dashboard/components/gender-component.jsx",
-      "_react-apexcharts.min-C5J85x_d.js",
+      "_react-apexcharts.min-K0iMrf8u.js",
       "resources/js/app/pages/verifier/dashboard/components/age-bracket-component.jsx",
       "resources/js/app/pages/verifier/dashboard/components/income-component.jsx",
       "resources/js/app/pages/verifier/reports/components/active-agriworker-component.jsx",
       "resources/js/app/pages/verifier/dashboard/components/livelihood-component.jsx",
-      "_PrinterIcon-BkvtRvNY.js",
-      "_index-CU9QLh5w.js",
+      "_PrinterIcon-9X_zIROR.js",
+      "_index-CmdSLLJA.js",
       "resources/js/app/pages/verifier/_sections/verifier-sidenav-sections.jsx",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js"
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_BellIcon-DwI8WMft.js"
     ]
   },
   "resources/js/app/pages/verifier/reports/sections/general-report-section.jsx": {
-    "file": "assets/general-report-section-BhxeFFIG.js",
+    "file": "assets/general-report-section-DICeRNR4.js",
     "name": "general-report-section",
     "src": "resources/js/app/pages/verifier/reports/sections/general-report-section.jsx",
     "isDynamicEntry": true,
@@ -2270,15 +2304,15 @@
       "resources/js/app/pages/verifier/dashboard/components/income-component.jsx",
       "resources/js/app/pages/verifier/reports/components/active-agriworker-component.jsx",
       "resources/js/app/pages/verifier/dashboard/components/livelihood-component.jsx",
-      "_PrinterIcon-BkvtRvNY.js",
-      "_index-DglaUQ-I.js",
-      "_iconBase-CFwcon_-.js",
-      "_ArrowUpIcon-BxEq9EBA.js",
-      "_react-apexcharts.min-C5J85x_d.js"
+      "_PrinterIcon-9X_zIROR.js",
+      "_index-D72KJyoR.js",
+      "_iconBase-DWCrd3wG.js",
+      "_ArrowUpIcon-D2ElCtxH.js",
+      "_react-apexcharts.min-K0iMrf8u.js"
     ]
   },
   "resources/js/app/pages/verifier/settings/page.jsx": {
-    "file": "assets/page-BSBnml6E.js",
+    "file": "assets/page-BM3JpRf1.js",
     "name": "page",
     "src": "resources/js/app/pages/verifier/settings/page.jsx",
     "isDynamicEntry": true,
@@ -2286,40 +2320,41 @@
       "resources/js/app.jsx",
       "resources/js/app/pages/verifier/settings/section/settings-screen-section.jsx",
       "resources/js/app/pages/verifier/layout.jsx",
-      "_ChevronDownIcon-B5SGH--g.js",
-      "_index-CU9QLh5w.js",
-      "_iconBase-CFwcon_-.js",
+      "_ChevronDownIcon-9fBmHbsX.js",
+      "_index-CmdSLLJA.js",
+      "_iconBase-DWCrd3wG.js",
       "resources/js/app/pages/verifier/_sections/verifier-sidenav-sections.jsx",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js"
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_BellIcon-DwI8WMft.js"
     ]
   },
   "resources/js/app/pages/verifier/settings/section/settings-screen-section.jsx": {
-    "file": "assets/settings-screen-section-8yK3l6eQ.js",
+    "file": "assets/settings-screen-section-DdWmfvXg.js",
     "name": "settings-screen-section",
     "src": "resources/js/app/pages/verifier/settings/section/settings-screen-section.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_ChevronDownIcon-B5SGH--g.js"
+      "_ChevronDownIcon-9fBmHbsX.js"
     ]
   },
   "resources/js/app/pages/verifier/verify/components/filter-component-section.jsx": {
-    "file": "assets/filter-component-section-Cioyerof.js",
+    "file": "assets/filter-component-section-CzttG3-K.js",
     "name": "filter-component-section",
     "src": "resources/js/app/pages/verifier/verify/components/filter-component-section.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_FunnelIcon-DeZcPhNK.js",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_FunnelIcon-CEHX4Kut.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   },
   "resources/js/app/pages/verifier/verify/page.jsx": {
-    "file": "assets/page-CAae8dQ_.js",
+    "file": "assets/page-BA-PneL_.js",
     "name": "page",
     "src": "resources/js/app/pages/verifier/verify/page.jsx",
     "isDynamicEntry": true,
@@ -2327,28 +2362,29 @@
       "resources/js/app.jsx",
       "resources/js/app/pages/verifier/layout.jsx",
       "resources/js/app/pages/verifier/verify/sections/verify-beneficiary-section.jsx",
-      "_index-CU9QLh5w.js",
-      "_iconBase-CFwcon_-.js",
+      "_index-CmdSLLJA.js",
+      "_iconBase-DWCrd3wG.js",
       "resources/js/app/pages/verifier/_sections/verifier-sidenav-sections.jsx",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js",
-      "_MagnifyingGlassIcon-DPoQZbSh.js",
-      "_ChevronDownIcon-0jL-yGsE.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js",
+      "_MagnifyingGlassIcon-DEQ1oTVT.js",
+      "_ChevronDownIcon-GMnfO0Sw.js",
+      "_BellIcon-DwI8WMft.js",
       "resources/js/app/pages/verifier/verify/components/filter-component-section.jsx",
-      "_FunnelIcon-DeZcPhNK.js"
+      "_FunnelIcon-CEHX4Kut.js"
     ]
   },
   "resources/js/app/pages/verifier/verify/sections/verify-beneficiary-section.jsx": {
-    "file": "assets/verify-beneficiary-section-ChkzDpAg.js",
+    "file": "assets/verify-beneficiary-section-DjTha2ww.js",
     "name": "verify-beneficiary-section",
     "src": "resources/js/app/pages/verifier/verify/sections/verify-beneficiary-section.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/pages/verifier/verify/components/filter-component-section.jsx",
-      "_FunnelIcon-DeZcPhNK.js",
-      "_dialog-8YMUxH38.js",
-      "_use-tab-direction-DO4dDO86.js"
+      "_FunnelIcon-CEHX4Kut.js",
+      "_dialog-uvQdSj7J.js",
+      "_use-tab-direction-V9n5VUiI.js"
     ]
   }
 }
