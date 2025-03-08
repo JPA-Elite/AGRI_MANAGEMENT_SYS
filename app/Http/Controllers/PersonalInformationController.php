@@ -47,10 +47,16 @@ class PersonalInformationController extends Controller
     }
     public function index(Request $request)
     {
+        $user = Auth::user();
         $query = PersonalInformation::where('status', $request->status);
 
-        if ($request->has('search')) {
+        if ($user->role == 'Admin' && $request->has('search')) {
             $query->where('register_id', $request->search);
+        } else if ($user->role != 'Admin' && $request->has('search')) {
+            $query->where('register_id', '=', $request->search);
+            $query->where('barangay', '=', $user->brgy);
+        } if ($user->role != 'Admin' && !$request->has('search')) {
+            $query->where('barangay', '=', $user->brgy);
         }
 
         $res = $query->with([
