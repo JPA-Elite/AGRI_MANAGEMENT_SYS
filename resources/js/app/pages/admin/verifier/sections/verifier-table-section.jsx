@@ -1,25 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import AddVerifierSection from "./add-verifier-section";
+import { useSelector } from "react-redux";
 
 export default function VerifierTableSection() {
-    const [users, setUsers] = useState([]);
-    const [message, setMessage] = useState("");
-
-    useEffect(() => {
-        // Fetch the data when the component is mounted
-        const fetchUsers = async () => {
-            try {
-                const response = await axios.get("http://localhost:8000/api/verifier");
-                setUsers(response.data); // Store the fetched users
-            } catch (error) {
-                setMessage("Error fetching users.");
-                console.error(error);
-            }
-        };
-
-        fetchUsers();
-    }, []); // Empty dependency array ensures this effect runs once when the component mounts
+    const { users } = useSelector((store) => store.users);
+    // Empty dependency array ensures this effect runs once when the component mounts
 
     const addUser = (newUser) => {
         setUsers((prevUsers) => [...prevUsers, newUser]); // Add the new user to the users list
@@ -36,7 +22,7 @@ export default function VerifierTableSection() {
                         system.
                     </p>
                 </div>
-                <AddVerifierSection addUser={addUser}/>
+                <AddVerifierSection addUser={addUser} />
             </div>
 
             <div className="mt-8 flow-root">
@@ -84,57 +70,55 @@ export default function VerifierTableSection() {
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-200 bg-white">
-                            {users.length === 0 ? (
+                                {users?.data?.length === 0 ? (
                                     <tr>
                                         <td
                                             colSpan="7"
                                             className="whitespace-nowrap px-3 py-4 text-center text-sm text-gray-500"
                                         >
-                                           
                                             <span className="text-green-600 font-medium">
-                                            No records available.{" "}
+                                                No records available.{" "}
                                             </span>
-                                            
                                         </td>
                                     </tr>
                                 ) : (
-                                users.map((user) => (
-                                    <tr key={user.email}>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm uppercase text-gray-900">
-                                            {user.lastname},{" "}
-                                            {user.firstname}{" "}
-                                            {user.middlename}
-                                        </td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm uppercase text-gray-900">
-                                            {user.brgy}
-                                        </td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm uppercase text-gray-900">
-                                            <span className="inline-flex items-center rounded-full bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">
-                                                {user.role}
-                                            </span>
-                                        </td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
-                                            {user.email}
-                                        </td>
-                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
-                                            <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
-                                                {user.status}
-                                            </span>
-                                        </td>
-                                        <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                                            <a
-                                                href="#"
-                                                className="text-indigo-600 hover:text-indigo-900"
-                                            >
-                                                Change Status
-                                                <span className="sr-only">
-                                                    , {user.rsbsa}
+                                    users?.data?.map((user) => (
+                                        <tr key={user.email}>
+                                            <td className="whitespace-nowrap px-3 py-4 text-sm uppercase text-gray-900">
+                                                {user.lastname},{" "}
+                                                {user.firstname}{" "}
+                                                {user.middlename}
+                                            </td>
+                                            <td className="whitespace-nowrap px-3 py-4 text-sm uppercase text-gray-900">
+                                                {user.brgy}
+                                            </td>
+                                            <td className="whitespace-nowrap px-3 py-4 text-sm uppercase text-gray-900">
+                                                <span className="inline-flex items-center rounded-full bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">
+                                                    {user.role}
                                                 </span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                ))
-                            )}
+                                            </td>
+                                            <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
+                                                {user.email}
+                                            </td>
+                                            <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
+                                                <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
+                                                    {user.status}
+                                                </span>
+                                            </td>
+                                            <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
+                                                <a
+                                                    href="#"
+                                                    className="text-indigo-600 hover:text-indigo-900"
+                                                >
+                                                    Change Status
+                                                    <span className="sr-only">
+                                                        , {user.rsbsa}
+                                                    </span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    ))
+                                )}
                             </tbody>
                         </table>
                     </div>

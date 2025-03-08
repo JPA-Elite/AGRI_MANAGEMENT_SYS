@@ -9,6 +9,8 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import { FunnelIcon } from "@heroicons/react/20/solid";
 import { FaUserPlus } from "react-icons/fa6";
 import axios from "axios";
+import store from "@/app/store/store";
+import { get_users_thunk } from "@/app/redux/user-thunk";
 
 export default function AddVerifierSection({addUser}) {
     const [open, setOpen] = useState(false);
@@ -57,7 +59,7 @@ export default function AddVerifierSection({addUser}) {
             );
 
             setMessage(response.data.message);
-            addUser(response.data.user);
+            store.dispatch(get_users_thunk())
             setFormData({
                 firstname: "",
                 middlename: "",

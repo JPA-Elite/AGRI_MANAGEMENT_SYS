@@ -69,7 +69,7 @@ const teams = [
         name: "Account Management",
         icon: FcButtingIn,
         current: false,
-        children: [{ name: "Accounts List", href: "/administrator/accounts", icon: FcList }],
+        children: [{ name: "Accounts List", href: "/administrator/accounts?role=admin", icon: FcList }],
     },
     {
         id: 2,
@@ -78,7 +78,7 @@ const teams = [
         current: false,
         children: [
             { name: "LGU Profile", href: "/administrator/lgu-profile", icon: FcList },
-            { name: "Brgy.Verifier", href: "/administrator/verifier", icon: FcList },
+            { name: "Brgy.Verifier", href: "/administrator/verifier?role=verifier", icon: FcList },
             { name: "Organization", href: "/administrator/organization", icon: FcList },
         ],
     },

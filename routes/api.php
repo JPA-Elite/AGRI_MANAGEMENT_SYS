@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FarmProfileController;
@@ -45,5 +46,6 @@ Route::resource('parcel', ParcelController::class);
 Route::resource('personal_information', PersonalInformationController::class);
 Route::post('/verify_beneficiary', [PersonalInformationController::class, 'verify_beneficiary']);
 Route::resource('users', UserController::class);
+Route::resource('accounts', AccountController::class);
 Route::resource('verifier', VerifierController::class);
 Route::post('/login', [AuthController::class, 'login']);

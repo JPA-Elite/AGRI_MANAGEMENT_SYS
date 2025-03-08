@@ -1,1 +1,0 @@
-import{j as i}from"./app-DT4WG5B-.js";import r from"./beneficiary-table-component-FwFHY3HY.js";import"./filter-drawer-component-CuCfmUNd.js";import"./FunnelIcon-Bo93HpaH.js";import"./dialog-IDB-LFiB.js";import"./use-tab-direction-DnLSekKR.js";function a(){return i.jsx("div",{children:i.jsx(r,{})})}export{a as default};

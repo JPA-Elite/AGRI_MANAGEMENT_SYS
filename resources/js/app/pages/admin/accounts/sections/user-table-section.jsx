@@ -1,26 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import AddUserSection from "./add-user-section";
+import { useSelector } from "react-redux";
 
 export default function UserTableSection() {
-    const [users, setUsers] = useState([]);
     const [message, setMessage] = useState("");
-
-    useEffect(() => {
-        // Fetch the data when the component is mounted
-        const fetchUsers = async () => {
-            try {
-                const response = await axios.get("http://localhost:8000/api/users");
-                setUsers(response.data); // Store the fetched users
-            } catch (error) {
-                setMessage("Error fetching users.");
-                console.error(error);
-            }
-        };
-
-        fetchUsers();
-    }, []); // Empty dependency array ensures this effect runs once when the component mounts
-
+    const {users}=useSelector((store)=>store.users)
+    console.log('users',users.data)
+  
     const addUser = (newUser) => {
         setUsers((prevUsers) => [...prevUsers, newUser]); // Add the new user to the users list
     };
@@ -89,7 +76,7 @@ export default function UserTableSection() {
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-200 bg-white">
-                                {users.length === 0 ? (
+                                {users?.data?.length === 0 ? (
                                     <tr>
                                         <td
                                             colSpan="7"
@@ -103,7 +90,7 @@ export default function UserTableSection() {
                                         </td>
                                     </tr>
                                 ) : (
-                                    users.map((user) => (
+                                    users?.data?.map((user) => (
                                         <tr key={user.email}>
                                             <td className="whitespace-nowrap px-3 py-4 text-sm uppercase text-gray-900">
                                                 {user.lastname}

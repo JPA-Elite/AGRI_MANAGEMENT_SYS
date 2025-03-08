@@ -8,6 +8,8 @@ import {
 } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { FaUserPlus } from "react-icons/fa6";
+import store from "@/app/store/store";
+import { get_users_thunk } from "@/app/redux/user-thunk";
 
 export default function AddUserSection({ addUser }) {
     const [open, setOpen] = useState(false);
@@ -68,6 +70,7 @@ export default function AddUserSection({ addUser }) {
             });
 
             setOpen(false);
+            store.dispatch(get_users_thunk())
         } catch (error) {
             setMessage("Error saving user. Check console for details.");
             console.error(error.response?.data || error.message);
