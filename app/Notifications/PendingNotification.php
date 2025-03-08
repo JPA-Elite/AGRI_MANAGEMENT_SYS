@@ -10,8 +10,10 @@ use Illuminate\Notifications\Notification;
 class PendingNotification extends Notification
 {
     use Queueable;
+
     protected $user;
     protected $request;
+
     /**
      * Create a new notification instance.
      */
@@ -36,18 +38,31 @@ class PendingNotification extends Notification
      */
     public function toMail(object $notifiable): MailMessage
     {
+        $beneficiary = $this->request['personal_info'] ?? [];
+        $address = $this->request['address_info'] ?? [];
+
+        $beneficiaryName = trim(
+            ($beneficiary['firstname'] ?? '') . ' ' . ($beneficiary['middlename'] ?? '') . ' ' . ($beneficiary['lastname'] ?? '')
+        );
+
+        $beneficiaryAddress = trim(
+            ($address['barangay'] ?? '') . ' ' . ($address['street_address_2'] ?? '')
+        );
+
+        $verificationUrl = url('https://rsbsa-sys.site/verifier/beneficiary?status=pending&search=' . ($this->request['register_id'] ?? ''));
+
         return (new MailMessage)
-            ->subject('Subject: Verification Request for Newly Registered Beneficiary')
-            ->line('Dear ' . ' ' . $this->user->firstname . ',')
+            ->subject('Verification Request for Newly Registered Beneficiary')
+            ->greeting('Dear ' . $this->user->firstname . ',')
             ->line('I hope this message finds you well.')
-            ->line('We would like to inform you that a new beneficiary has been successfully registered. Kindly verify the following details:')
-            ->line('Name of Beneficiary: ' . $this->request['personal_info']['firstname'] . ' ' . $this->request['personal_info']['middlename'] . ' ' . $this->request['personal_info']['lastname'])
-            ->line('Address of Beneficiary: ' . $this->request['address_info']['barangay'] . ' ' . $this->request['address_info']['street_address_2'])
-            ->line('To confirm the accuracy of the information, please visit the following link for further verification:')
-            ->line('Should you need any further details or assistance, please feel free to contact us.')
+            ->line('A new beneficiary has been successfully registered. Please verify the following details:')
+            ->line('**Name of Beneficiary:** ' . $beneficiaryName)
+            ->line('**Address of Beneficiary:** ' . $beneficiaryAddress)
+            ->line('To confirm the accuracy of the information, please visit the link below for verification.')
+            ->action('Open Pending Application', $verificationUrl)
+            ->line('If you need any further details or assistance, please feel free to contact us.')
             ->line('Thank you for your prompt attention to this matter.')
-            ->action('Open Pending Application', url('https://rsbsa-sys.site/verifier/beneficiary?status=pending&search=' . $this->request['register_id']))
-            ->line('Best regards!');
+            ->salutation('Best regards!');
     }
 
     /**
@@ -57,8 +72,6 @@ class PendingNotification extends Notification
      */
     public function toArray(object $notifiable): array
     {
-        return [
-            //
-        ];
+        return [];
     }
 }
