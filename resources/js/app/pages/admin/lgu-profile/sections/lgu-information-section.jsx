@@ -28,14 +28,13 @@ export default function LguInformationSection({ id }) {
         city: "Vallehermoso",
         province: "Negros Oriental",
         region: null,
-        lgu_user_id: id,
     });
-
     useEffect(() => {
         setForm({
             ...profile,
             file: profile.logo,
             region: "Region VII",
+            lgu_user_id: id,
         });
     }, [profile.id ?? 0]);
 
