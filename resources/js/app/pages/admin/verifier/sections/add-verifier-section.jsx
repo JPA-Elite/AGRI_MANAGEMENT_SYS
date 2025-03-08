@@ -41,7 +41,7 @@ export default function AddVerifierSection({addUser}) {
 
         try {
             const response = await axios.post(
-                "http://localhost:8000/api/users",
+                "/api/users",
                 {
                     firstname: formData.firstname,
                     middlename: formData.middlename,

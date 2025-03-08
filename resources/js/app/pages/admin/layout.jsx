@@ -53,15 +53,15 @@ const navigation = [
             },
         ],
     },
-    {
-        name: "Report Section",
-        icon: FcComboChart,
-        current: false,
-        children: [
-            { name: "General Report", href: "/administrator/reports?status=reports", icon: FcList },
-            { name: "Batch Printing", href: "/administrator/printing?status=printing", icon: FcList },
-        ],
-    },
+    // {
+    //     name: "Report Section",
+    //     icon: FcComboChart,
+    //     current: false,
+    //     children: [
+    //         { name: "General Report", href: "/administrator/reports?status=reports", icon: FcList },
+    //         { name: "Batch Printing", href: "/administrator/printing?status=printing", icon: FcList },
+    //     ],
+    // },
 ];
 const teams = [
     {
