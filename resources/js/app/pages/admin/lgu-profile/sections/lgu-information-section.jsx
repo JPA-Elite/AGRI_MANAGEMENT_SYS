@@ -20,72 +20,63 @@ import {
 export default function LguInformationSection({ id }) {
     const [loading, setLoading] = useState(false);
     const { profile } = useSelector((store) => store.lgu_profile);
-    const [address, setAddress] = useState({
-        region: [],
-        province: [],
-    });
+    const [address, setAddress] = useState({});
     const [form, setForm] = useState({
-        city: "Vallehermoso",
-        province: "Negros Oriental",
+        city: "",
+        province: "",
         region: null,
     });
+console.log('addressaddressaddress',address)
     useEffect(() => {
-        setForm({
+        setForm((prevForm) => ({
+            ...prevForm,
             ...profile,
             file: profile.logo,
-            region: "Region VII",
             lgu_user_id: id,
-        });
-    }, [profile.id ?? 0]);
+        }));
+    }, [profile]); // Use profile instead of profile.id
 
     useEffect(() => {
         regions().then((region) =>
-            setAddress({
-                ...address,
+            setAddress((prevAddress) => ({
+                ...prevAddress,
                 region,
-            })
+            }))
         );
-    }, []);
+    }, []); // Correctly fetching regions only once
 
-    console.log("adddress", address);
-    console.log("form", form);
     useEffect(() => {
         if (form?.region_code) {
             provinces(form?.region_code).then((province) =>
-                setAddress({
-                    ...address,
+                setAddress((prevAddress) => ({
+                    ...prevAddress,
                     province,
-                })
+                }))
             );
         }
-    }, [form?.region_code ?? ""]);
+    }, [form?.region_code]); // Removed unnecessary default value
 
     useEffect(() => {
         if (form?.province_code) {
             cities(form?.province_code).then((cities) =>
-                setAddress({
-                    ...address,
+                setAddress((prevAddress) => ({
+                    ...prevAddress,
                     cities,
-                })
+                }))
             );
         }
-    }, [form?.province_code ?? ""]);
+    }, [form?.province_code]); // Removed unnecessary default value
 
     useEffect(() => {
         if (form?.city_code) {
             barangays(form?.city_code).then((barangay) =>
-                setAddress({
-                    ...address,
+                setAddress((prevAddress) => ({
+                    ...prevAddress,
                     barangay,
-                })
+                }))
             );
         }
-    }, [form?.city_code ?? ""]);
-    console.log("dddddddddd", address);
-    // provinceByName("Rizal").then((province) => console.log(province.province_code));
-    // cities(form.province_code).then((city) => console.log('waaaaaaaaaa',city));
-
-    // barangays("052011").then((barangays) => console.log(barangays));
+    }, [form?.city_code]); // Removed unnecessary default value
 
     async function update_profile() {
         setLoading(true);
@@ -99,6 +90,10 @@ export default function LguInformationSection({ id }) {
             fd.append("region", form.region);
             fd.append("contact", form.contact);
             fd.append("email", form.email);
+            fd.append("brgy_code", form.brgy_code);
+            fd.append("city_code", form.city_code);
+            fd.append("province_code", form.province_code);
+            fd.append("region_code", form.region_code);
             fd.append(
                 "municipal_agricultural_office",
                 form.municipal_agricultural_office
@@ -147,17 +142,20 @@ export default function LguInformationSection({ id }) {
                                 </label>
 
                                 <select
-                                    id="region"
                                     name="region"
-                                    onChange={(e) =>
+                                    value={form.region}
+                                    onChange={(e) => {
+                                        const selectedOption =
+                                            e.target.options[
+                                                e.target.selectedIndex
+                                            ];
                                         setForm({
                                             ...form,
-                                            [e.target.name]:
-                                                e.target.value.split(",")[0],
+                                            [e.target.name]: e.target.value,
                                             region_code:
-                                                e.target.value.split(",")[1],
-                                        })
-                                    }
+                                                selectedOption.dataset.code, // Correct way to get custom attributes
+                                        });
+                                    }}
                                     className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                                 >
                                     <option value="" disabled selected>
@@ -168,7 +166,8 @@ export default function LguInformationSection({ id }) {
                                         return (
                                             <option
                                                 key={i}
-                                                value={`${res.region_name},${res.region_code}`}
+                                                data-code={res.region_code}
+                                                value={res.region_name}
                                             >
                                                 {res.region_name}
                                             </option>
@@ -188,31 +187,34 @@ export default function LguInformationSection({ id }) {
                                 <select
                                     id="province"
                                     name="province"
-                                    onChange={(e) =>
+                                    value={form.province}
+                                    onChange={(e) => {
+                                        const selectedOption =
+                                            e.target.options[
+                                                e.target.selectedIndex
+                                            ];
                                         setForm({
                                             ...form,
-                                            [e.target.name]:
-                                                e.target.value.split(",")[0],
+                                            province: selectedOption.value, // Province name
                                             province_code:
-                                                e.target.value.split(",")[1],
-                                        })
-                                    }
+                                                selectedOption.dataset.code, // Province code
+                                        });
+                                    }}
                                     className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                                 >
-                                    <option value="" disabled selected>
+                                    <option value="" selected disabled>
                                         -- Select a Province --
                                     </option>
 
-                                    {address?.province?.map((res, i) => {
-                                        return (
-                                            <option
-                                                key={i}
-                                                value={`${res.province_name},${res.province_code}`}
-                                            >
-                                                {res.province_name}
-                                            </option>
-                                        );
-                                    })}
+                                    {address?.province?.map((res, i) => (
+                                        <option
+                                            key={i}
+                                            value={res.province_name}
+                                            data-code={res.province_code}
+                                        >
+                                            {res.province_name}
+                                        </option>
+                                    ))}
                                 </select>
                             </div>
                             <div className="sm:cols-span-6">
@@ -226,31 +228,34 @@ export default function LguInformationSection({ id }) {
                                 <select
                                     id="city"
                                     name="city"
-                                    onChange={(e) =>
+                                    value={form.city}
+                                    onChange={(e) => {
+                                        const selectedOption =
+                                            e.target.options[
+                                                e.target.selectedIndex
+                                            ];
                                         setForm({
                                             ...form,
-                                            [e.target.name]:
-                                                e.target.value.split(",")[0],
+                                            city: selectedOption.value, // City name
                                             city_code:
-                                                e.target.value.split(",")[1],
-                                        })
-                                    }
+                                                selectedOption.dataset.code, // City code
+                                        });
+                                    }}
                                     className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                                 >
-                                    <option value="" disabled selected>
-                                        -- Select a Province --
+                                    <option value="" selected disabled>
+                                        -- Select a City --
                                     </option>
 
-                                    {address?.cities?.map((res, i) => {
-                                        return (
-                                            <option
-                                                key={i}
-                                                value={`${res.city_name},${res.city_code}`}
-                                            >
-                                                {res.city_name}
-                                            </option>
-                                        );
-                                    })}
+                                    {address?.cities?.map((res, i) => (
+                                        <option
+                                            key={i}
+                                            value={res.city_name}
+                                            data-code={res.city_code}
+                                        >
+                                            {res.city_name}
+                                        </option>
+                                    ))}
                                 </select>
                             </div>
 
@@ -261,31 +266,34 @@ export default function LguInformationSection({ id }) {
                                 <select
                                     id="barangay"
                                     name="barangay"
-                                    onChange={(e) =>
+                                    value={form.barangay}
+                                    onChange={(e) => {
+                                        const selectedOption =
+                                            e.target.options[
+                                                e.target.selectedIndex
+                                            ];
                                         setForm({
                                             ...form,
-                                            [e.target.name]:
-                                                e.target.value.split(",")[0],
+                                            barangay: selectedOption.value, // Barangay name
                                             brgy_code:
-                                                e.target.value.split(",")[1],
-                                        })
-                                    }
+                                                selectedOption.dataset.code, // Barangay code
+                                        });
+                                    }}
                                     className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                                 >
-                                    <option value="" disabled selected>
-                                        -- Select a Province --
+                                    <option value="" selected disabled>
+                                        -- Select a Barangay --
                                     </option>
 
-                                    {address?.barangay?.map((res, i) => {
-                                        return (
-                                            <option
-                                                key={i}
-                                                value={`${res.brgy_name},${res.brgy_code}`}
-                                            >
-                                                {res.brgy_name}
-                                            </option>
-                                        );
-                                    })}
+                                    {address?.barangay?.map((res, i) => (
+                                        <option
+                                            key={i}
+                                            value={res.brgy_name}
+                                            data-code={res.brgy_code}
+                                        >
+                                            {res.brgy_name}
+                                        </option>
+                                    ))}
                                 </select>
                             </div>
                             <div className="sm:cols-span-6">

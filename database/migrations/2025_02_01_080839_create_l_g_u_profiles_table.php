@@ -16,9 +16,13 @@ return new class extends Migration
             $table->string('lgu_user_id')->nullable();
             $table->string('address')->nullable();
             $table->string('barangay')->nullable();
+            $table->string('brgy_code')->nullable();
             $table->string('city')->nullable();
+            $table->string('city_code')->nullable();
             $table->string('province')->nullable();
+            $table->string('province_code')->nullable();
             $table->string('region')->nullable();
+            $table->string('region_code')->nullable();
             $table->string('contact')->nullable(); // LGU contact number
             $table->string('email')->nullable(); // LGU email address
             $table->string('municipal_agricultural_office')->nullable(); // Name of the municipal agricultural office

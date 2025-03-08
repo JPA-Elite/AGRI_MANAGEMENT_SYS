@@ -27,15 +27,21 @@ class LGUProfileController extends Controller
             $url = Storage::disk('s3')->url($path);
         }
 
+        // Merge the logo URL if it's available
+        if ($url) {
+            $validatedData['logo'] = $url;
+        }
+
         LGUProfile::updateOrCreate(
             ['lgu_user_id' => $validatedData['lgu_user_id']],
-            array_merge($validatedData, ['logo' => $url])
+            $validatedData
         );
 
         return response()->json([
             'status' => 'success',
         ], 200);
     }
+
 
 
     public function show($id)
