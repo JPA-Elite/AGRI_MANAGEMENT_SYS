@@ -54,6 +54,7 @@ class DeclinedNotification extends Notification
         $url = url('https://rsbsa-sys.site/administrator/beneficiary?status=declined&search=' . $this->beneficiary->register_id);
 
         return (new MailMessage)
+            ->line('![Logo](https://rsbsa-sys.site/images/DOA.png)')
             ->subject('Beneficiary Verification Declined')
             ->line('This is to inform you that the following beneficiary has been declined:')
             ->line('**Beneficiary Name:** ' . $beneficiaryName)

@@ -52,6 +52,7 @@ class PendingNotification extends Notification
         $verificationUrl = url('https://rsbsa-sys.site/verifier/beneficiary?status=pending&search=' . ($this->request['register_id'] ?? ''));
 
         return (new MailMessage)
+            ->line('![Logo](https://rsbsa-sys.site/images/DOA.png)')
             ->subject('Verification Request for Newly Registered Beneficiary')
             ->greeting('Dear ' . $this->user->firstname . ',')
             ->line('I hope this message finds you well.')
