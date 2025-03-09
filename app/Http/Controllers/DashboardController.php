@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FarmProfile;
+use App\Models\Household;
 use App\Models\PersonalInformation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -36,6 +38,20 @@ class DashboardController extends Controller
 
         $above_60 = PersonalInformation::where('dob', '<=', Carbon::now()->subYears(60)->toDateString())->count();
 
+
+        $fisherfolk = FarmProfile::where('main_livelihood', '=', 'Fisherfolk')->count();
+        $farmworker = FarmProfile::where('main_livelihood', '=', 'FarmWorker')->count();
+        $laborer = FarmProfile::where('main_livelihood', '=', 'Farm-Workers/Laborer')->count();
+        $agri_youth = FarmProfile::where('main_livelihood', '=', 'Agri-Youth')->count();
+
+
+        $income_below_5k = Household::whereRaw('(annual_income / 12) < ?', [5000])->count();
+        $income_5k = Household::whereRaw('(annual_income / 12) BETWEEN ? AND ?', [5000, 10999])->count();
+        $income_11k = Household::whereRaw('(annual_income / 12) BETWEEN ? AND ?', [11000, 20999])->count();
+        $income_21k = Household::whereRaw('(annual_income / 12) BETWEEN ? AND ?', [21000, 30999])->count();
+        $income_31k = Household::whereRaw('(annual_income / 12) BETWEEN ? AND ?', [31000, 40999])->count();
+        $income_above = Household::whereRaw('(annual_income / 12) > ?', [40000])->count();
+
         return response()->json([
             'total_farmer' =>  $total_farmer,
             'total_workers' => $total_workers,
@@ -47,6 +63,16 @@ class DashboardController extends Controller
             'twentyfive_39' => $twentyfive_39,
             'forty_59' => $forty_59,
             'above_60' => $above_60,
+            'fisherfolk' => $fisherfolk,
+            'farmworker' => $farmworker,
+            'laborer' => $laborer,
+            'agri_youth' => $agri_youth,
+            'income_below_5k' => $income_below_5k,
+            'income_5k' => $income_5k,
+            'income_11k' => $income_11k,
+            'income_21k' => $income_21k,
+            'income_31k' => $income_31k,
+            'income_above' => $income_above,
         ], 200);
     }
 }

@@ -1,8 +1,10 @@
 import React from "react";
 import { FaMoneyBillTrendUp } from "react-icons/fa6";
 import ApexCharts from "react-apexcharts";
+import { useSelector } from "react-redux";
 
 export default function IncomeComponent() {
+    const { dashboard } = useSelector((state) => state.app)
     const options = {
         chart: {
             id: "bar-chart",
@@ -45,9 +47,10 @@ export default function IncomeComponent() {
     const series = [
         {
             name: "Monthly Income Count",
-            data: [182, 54, 90, 95, 62, 64], // Data corresponding to each category
+            data: [dashboard?.income_below_5k, dashboard?.income_5k, dashboard?.income_11k, dashboard?.income_21k, dashboard?.income_31k, dashboard?.income_above],
         },
     ];
+
     return (
         <div className="sm:col-span-2">
             <div className="bg-gray-200/20 shadow-md p-4 gap-4">
