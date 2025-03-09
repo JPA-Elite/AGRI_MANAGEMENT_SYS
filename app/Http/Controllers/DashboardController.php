@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\FarmProfile;
+use App\Models\GovernmentAffiliation;
 use App\Models\Household;
+use App\Models\Organization;
 use App\Models\PersonalInformation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -52,6 +54,17 @@ class DashboardController extends Controller
         $income_31k = Household::whereRaw('(annual_income / 12) BETWEEN ? AND ?', [31000, 40999])->count();
         $income_above = Household::whereRaw('(annual_income / 12) > ?', [40000])->count();
 
+        $top_organizations = Organization::join('government_affiliations', 'organizations.organization_name', '=', 'government_affiliations.farmers_association_name')
+            ->select('organizations.organization_name', \DB::raw('COUNT(government_affiliations.id) as member_count'))
+            ->groupBy('organizations.organization_name')
+            ->orderByDesc('member_count')
+            ->limit(5)
+            ->get();
+
+        // Calculate the total number of members in the top 5 organizations
+        $total_top_5_members = $top_organizations->sum('member_count');
+
+
         return response()->json([
             'total_farmer' =>  $total_farmer,
             'total_workers' => $total_workers,
@@ -73,6 +86,8 @@ class DashboardController extends Controller
             'income_21k' => $income_21k,
             'income_31k' => $income_31k,
             'income_above' => $income_above,
+            'top_organizations' => $top_organizations,
+            'total_top_5_members' => $total_top_5_members,
         ], 200);
     }
 }
