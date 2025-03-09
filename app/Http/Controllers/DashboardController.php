@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\PersonalInformation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class DashboardController extends Controller
 {
     public function admin_dashboard()
     {
-
         $user = Auth::user();
 
         $total_farmer = PersonalInformation::where('status', 'Approved')->count();
@@ -19,9 +19,22 @@ class DashboardController extends Controller
         $total_agri_youth = PersonalInformation::where('status', '=', 'Declined')->count();
         $total_male = PersonalInformation::where('gender', '=', 'male')->count();
         $total_female = PersonalInformation::where('gender', '=', 'female')->count();
-        $age_bracket = PersonalInformation::where('status', '=', 'Declined')->count();
-        $salary = PersonalInformation::where('status', '=', 'Declined')->count();
-        $organization = PersonalInformation::where('status', '=', 'Declined')->count();
+        $eighteen_24 = PersonalInformation::whereBetween('dob', [
+            Carbon::now()->subYears(24)->toDateString(),
+            Carbon::now()->subYears(18)->toDateString(),
+        ])->count();
+
+        $twentyfive_39 = PersonalInformation::whereBetween('dob', [
+            Carbon::now()->subYears(39)->toDateString(),
+            Carbon::now()->subYears(25)->toDateString(),
+        ])->count();
+
+        $forty_59 = PersonalInformation::whereBetween('dob', [
+            Carbon::now()->subYears(59)->toDateString(),
+            Carbon::now()->subYears(40)->toDateString(),
+        ])->count();
+
+        $above_60 = PersonalInformation::where('dob', '<=', Carbon::now()->subYears(60)->toDateString())->count();
 
         return response()->json([
             'total_farmer' =>  $total_farmer,
@@ -30,9 +43,10 @@ class DashboardController extends Controller
             'total_agri_youth' => $total_agri_youth,
             'total_male' => $total_male,
             'total_female' => $total_female,
-            'age_bracket' => $age_bracket,
-            'salary' => $salary,
-            'organization' => $organization,
+            'eighteen_24' => $eighteen_24,
+            'twentyfive_39' => $twentyfive_39,
+            'forty_59' => $forty_59,
+            'above_60' => $above_60,
         ], 200);
     }
 }

@@ -1,16 +1,33 @@
 import React from "react";
 import { FaArrowUp91 } from "react-icons/fa6";
 import ApexCharts from "react-apexcharts";
+import { useSelector } from "react-redux";
 
 export default function AgeBracketComponent() {
+    const { dashboard } = useSelector((state) => state.app);
+
+    const eighteen_24 = dashboard?.eighteen_24 || 0;
+    const twentyfive_39 = dashboard?.twentyfive_39 || 0;
+    const forty_59 = dashboard?.forty_59 || 0;
+    const above_60 = dashboard?.above_60 || 0;
+
+    const labels = [
+        `18-24: ${eighteen_24}`,
+        `25-39: ${twentyfive_39}`,
+        `40-59: ${forty_59}`,
+        `60 and Above: ${above_60}`,
+    ];
+
+    const series = [eighteen_24, twentyfive_39, forty_59, above_60];
+
     const options = {
         chart: {
             id: "donut-chart",
             toolbar: {
-                show: false, // Hide the toolbar
+                show: false,
             },
         },
-        labels: ["18-24: 120", "25-39: 503", "40-59: 462", "60 and Above: 210"], // Labels for the slices
+        labels: labels,
         title: {
             text: "Age Percentage",
             align: "center",
@@ -40,7 +57,7 @@ export default function AgeBracketComponent() {
         ],
     };
 
-    const series = [120, 503, 462, 210];
+
     return (
         <div className="sm:col-span-2">
             <div className="bg-gray-200/20 shadow-md p-4 gap-4">
