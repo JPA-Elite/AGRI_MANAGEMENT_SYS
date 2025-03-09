@@ -4,39 +4,39 @@ import { FaChildReaching, FaFishFins, FaPersonDigging, FaWheatAwn } from "react-
 import { useSelector } from "react-redux";
 
 export default function StatsSection() {
-    const {dashboard}=useSelector((store)=>store.app)
+    const { dashboard } = useSelector((store) => store.app)
     const stats = [
         {
             id: 1,
             name: "Total No. of Farmers",
-            stat: dashboard?.total_farmer??0,
+            stat: dashboard?.farmerWorker ?? 0,
             icon: FaWheatAwn,
-            change: "122",
-            changeType: "increase",
+            // change: "122",
+            // changeType: "increase",
         },
         {
             id: 2,
             name: "Total No. of Farmworkers/Laborer",
-            stat: dashboard?.total_workers??0,
+            stat: dashboard?.laborer ?? 0,
             icon: FaPersonDigging,
-            change: "5.4%",
-            changeType: "increase",
+            // change: "5.4%",
+            // changeType: "increase",
         },
         {
             id: 3,
             name: "Total No. of Fisherfolks",
-            stat: dashboard?.total_fisherfolks??0,
+            stat: dashboard?.fisherfolk ?? 0,
             icon: FaFishFins,
-            change: "3.2%",
-            changeType: "decrease",
+            // change: "3.2%",
+            // changeType: "decrease",
         },
         {
             id: 4,
             name: "Total No. of Agri-Youth",
-            stat: dashboard?.total_agri_youth??0,
+            stat: dashboard?.agri_youth ?? 0,
             icon: FaChildReaching,
-            change: "3.2%",
-            changeType: "decrease",
+            // change: "3.2%",
+            // changeType: "decrease",
         },
     ];
 
@@ -66,7 +66,7 @@ export default function StatsSection() {
                             <p className="text-2xl font-semibold text-gray-900">
                                 {item.stat}
                             </p>
-                            <p
+                            {/* <p
                                 className={classNames(
                                     item.changeType === "increase"
                                         ? "text-green-600"
@@ -94,7 +94,7 @@ export default function StatsSection() {
                                     by{" "}
                                 </span>
                                 {item.change}
-                            </p>
+                            </p> */}
                         </div>
                     </div>
                 ))}

@@ -16,6 +16,6 @@ class Organization extends Model
 
     public function government_affiliation(): HasMany
     {
-        return $this->hasMany(GovernmentAffiliation::class, 'farmers_asssocation_name', 'organization_name');
+        return $this->hasMany(GovernmentAffiliation::class, 'farmers_asssocation_name', 'organization_name')->with('personal_information');
     }
 }

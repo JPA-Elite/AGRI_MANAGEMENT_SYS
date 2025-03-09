@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Household extends Model
 {
@@ -17,4 +18,9 @@ class Household extends Model
         'female_members',
         'annual_income',
     ];
+
+    public function personal_information(): HasOne
+    {
+        return $this->hasOne(PersonalInformation::class, 'register_id', 'register_id');
+    }
 }

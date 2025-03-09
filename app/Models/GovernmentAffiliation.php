@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class GovernmentAffiliation extends Model
 {
@@ -20,4 +21,9 @@ class GovernmentAffiliation extends Model
         'farmers_association',
         'farmers_association_name',
     ];
+
+    public function personal_information(): HasOne
+    {
+        return $this->hasOne(PersonalInformation::class, 'register_id', 'register_id');
+    }
 }
