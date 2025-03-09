@@ -42,8 +42,20 @@ Route::middleware('auth:sanctum')->prefix('administrator')->group(function () {
         return Inertia::render('admin/beneficiary/page');
     });
 
+    Route::get('assistance', function () {
+        return Inertia::render('admin/assistance/page');
+    });
+
+    Route::get('assistance-details', function () {
+        return Inertia::render('admin/assistance-details/page');
+    });
+
     Route::get('reports', function () {
         return Inertia::render('admin/reports/page');
+    });
+
+    Route::get('brgy-reports', function () {
+        return Inertia::render('admin/brgy-reports/page');
     });
 
     Route::prefix('accounts')->group(function () {

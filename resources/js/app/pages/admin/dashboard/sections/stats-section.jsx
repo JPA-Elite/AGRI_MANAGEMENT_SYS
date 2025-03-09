@@ -1,5 +1,4 @@
 import React from "react";
-import { ArrowDownIcon, ArrowUpIcon } from "@heroicons/react/20/solid";
 import { FaChildReaching, FaFishFins, FaPersonDigging, FaWheatAwn } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 

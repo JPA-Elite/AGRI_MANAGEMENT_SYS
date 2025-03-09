@@ -17,6 +17,7 @@ import {
     FcDataConfiguration,
     FcHome,
     FcList,
+    FcMoneyTransfer,
 } from "react-icons/fc";
 
 import {
@@ -61,15 +62,16 @@ const navigation = [
             },
         ],
     },
-    // {
-    //     name: "Report Section",
-    //     icon: FcComboChart,
-    //     current: false,
-    //     children: [
-    //         { name: "General Report", href: "/administrator/reports?status=reports", icon: FcList },
-    //         { name: "Batch Printing", href: "/administrator/printing?status=printing", icon: FcList },
-    //     ],
-    // },
+    { name: "Assistance Section", href: "/administrator/assistance", icon: FcMoneyTransfer, current: false },
+    {
+        name: "Report Section",
+        icon: FcComboChart,
+        current: false,
+        children: [
+            { name: "General Report", href: "/administrator/reports?status=reports", icon: FcList },
+            { name: "Barangay Report", href: "/administrator/brgy-reports?brgy=poblacion", icon: FcList },
+        ],
+    },
 ];
 const teams = [
     {
