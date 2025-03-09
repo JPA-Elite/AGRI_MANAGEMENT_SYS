@@ -42,24 +42,24 @@ class DashboardController extends Controller
         $above_60 = PersonalInformation::where('dob', '<=', Carbon::now()->subYears(60)->toDateString())->where('status', 'active')->count();
 
 
-        $fisherfolk = FarmProfile::where('main_livelihood', 'Fisherfolk')->whereHas('personal_information', function ($query) {
-            $query->where('status', 'active');
+        $fisherfolk = PersonalInformation::where('status', 'active')->whereHas('farm_profiles', function ($query) {
+            $query->where('main_livelihood', 'Fisherfolk');
         })->count();
-        $farmworker = FarmProfile::where('main_livelihood', 'FarmWorker')
-            ->whereHas('personal_information', function ($query) {
-                $query->where('status', 'active');
+        $farmworker = PersonalInformation::where('status', 'active')
+            ->whereHas('farm_profiles', function ($query) {
+                $query->where('main_livelihood', 'FarmWorker');
             })
             ->count();
 
-        $laborer = FarmProfile::where('main_livelihood', 'Farm-Workers/Laborer')
-            ->whereHas('personal_information', function ($query) {
-                $query->where('status', 'active');
+        $laborer = PersonalInformation::where('status', 'active')
+            ->whereHas('farm_profiles', function ($query) {
+                $query->where('main_livelihood', 'Farm-Workers/Laborer');
             })
             ->count();
 
-        $agri_youth = FarmProfile::where('main_livelihood', 'Agri-Youth')
-            ->whereHas('personal_information', function ($query) {
-                $query->where('status', 'active');
+        $agri_youth = PersonalInformation::where('status', 'active')
+            ->whereHas('farm_profiles', function ($query) {
+                $query->where('main_livelihood', 'Agri-Youth');
             })
             ->count();
 
