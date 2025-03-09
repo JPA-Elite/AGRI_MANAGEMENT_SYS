@@ -206,17 +206,17 @@ export default function AddressInformationComponent() {
                         </div>
                     </div>
 
-                    <div className="sm:col-span-4">
+                    <div className="sm:col-span-4 mt-2">
                         <label
                             htmlFor="region"
                             className="block text-sm/6 font-medium text-gray-900"
                         >
                             Region
                         </label>
-                        <div className="mt-2">
-                            <select
-                                id="region"
-                                name="Region"
+                        <input
+                                id="Province"
+                                name="province"
+                                type="text"
                                 value={
                                     personal_information?.address_info
                                         ?.region ?? ""
@@ -233,74 +233,8 @@ export default function AddressInformationComponent() {
                                         })
                                     )
                                 }
-                                className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
-                            >
-                                <option value="" disabled selected>
-                                    -- Select a Region --
-                                </option>
-
-                                <optgroup label="Luzon">
-                                    <option value="ncr">
-                                        National Capital Region (NCR)
-                                    </option>
-                                    <option value="car">
-                                        Cordillera Administrative Region (CAR)
-                                    </option>
-                                    <option value="Region I">
-                                        Ilocos Region (Region I)
-                                    </option>
-                                    <option value="Region II">
-                                        Cagayan Valley (Region II)
-                                    </option>
-                                    <option value="Region III">
-                                        Central Luzon (Region III)
-                                    </option>
-                                    <option value="Region IV-A">
-                                        CALABARZON (Region IV-A)
-                                    </option>
-                                    <option value="Region IV-B">
-                                        MIMAROPA (Region IV-B)
-                                    </option>
-                                    <option value="Region V">
-                                        Bicol Region (Region V)
-                                    </option>
-                                </optgroup>
-
-                                <optgroup label="Visayas">
-                                    <option value="Region VI">
-                                        Western Visayas (Region VI)
-                                    </option>
-                                    <option value="Region VII">
-                                        Central Visayas (Region VII)
-                                    </option>
-                                    <option value="Region VIII">
-                                        Eastern Visayas (Region VIII)
-                                    </option>
-                                </optgroup>
-
-                                <optgroup label="Mindanao">
-                                    <option value="Region IX">
-                                        Zamboanga Peninsula (Region IX)
-                                    </option>
-                                    <option value="Region X">
-                                        Northern Mindanao (Region X)
-                                    </option>
-                                    <option value="Region XI">
-                                        Davao Region (Region XI)
-                                    </option>
-                                    <option value="Region XII">
-                                        SOCCSKSARGEN (Region XII)
-                                    </option>
-                                    <option value="Region XIII">
-                                        Caraga (Region XIII)
-                                    </option>
-                                    <option value="barmm">
-                                        Bangsamoro Autonomous Region in Muslim
-                                        Mindanao (BARMM)
-                                    </option>
-                                </optgroup>
-                            </select>
-                        </div>
+                                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
+                            />
                     </div>
                 </div>
             </div>
