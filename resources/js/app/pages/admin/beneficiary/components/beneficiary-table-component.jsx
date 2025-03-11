@@ -5,9 +5,10 @@ import { Link } from "@inertiajs/react";
 import { useSelector } from "react-redux";
 
 export default function BenefeciaryTableComponent() {
-    
-    const {personal_informations}=useSelector((store)=>store.personal_information)
-    console.log('personal_informations',personal_informations)
+    const { personal_informations } = useSelector(
+        (store) => store.personal_information
+    );
+    console.log("personal_informations", personal_informations);
     return (
         <div className="px-4 sm:px-6 lg:px-8 mt-8">
             <div className="sm:flex sm:items-center">
@@ -32,7 +33,7 @@ export default function BenefeciaryTableComponent() {
                     </a>
                 </div>
             </div>
-            <FilterDrawerComponent/>
+            <FilterDrawerComponent />
             <div className="mt-8 flow-root">
                 <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
@@ -114,9 +115,9 @@ export default function BenefeciaryTableComponent() {
                                             {person.middlename}
                                         </td>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
-                                            {person.livelihood}
                                             <p className="text-gray-500 italic">
-                                                {person.organization}
+                                                {person?.farm_profile
+                                                    ?.main_livelihood ?? "N/A"}
                                             </p>
                                         </td>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">

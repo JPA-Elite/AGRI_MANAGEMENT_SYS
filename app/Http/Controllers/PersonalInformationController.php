@@ -65,7 +65,8 @@ class PersonalInformationController extends Controller
             'household',
             'land_farmers',
             'parcels',
-            'parcel_components'
+            'parcel_components',
+            'farm_profile'
         ])->get();
 
         return response()->json([

@@ -31,7 +31,7 @@ console.log('personal_information',personal_information)
                                 <div className="grid grid-cols-1 gap-x-10 gap-y-8 p-4 sm:grid-cols-12 items-center border-4 border-gray-200">
                                     <div className="sm:col-span-4">
                                         <img
-                                            src="/images/doa.png"
+                                            src="/images/DOA.png"
                                             alt=""
                                             className="h-28 w-28 ml-12 float-right"
                                         />
