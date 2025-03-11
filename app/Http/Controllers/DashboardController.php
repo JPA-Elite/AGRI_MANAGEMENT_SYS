@@ -47,7 +47,7 @@ class DashboardController extends Controller
         })->count();
         $farmworker = PersonalInformation::where('status', 'active')
             ->whereHas('farm_profiles', function ($query) {
-                $query->where('main_livelihood', 'FarmWorker');
+                $query->where('main_livelihood', 'Farmer');
             })
             ->count();
 
@@ -59,7 +59,7 @@ class DashboardController extends Controller
 
         $agri_youth = PersonalInformation::where('status', 'active')
             ->whereHas('farm_profiles', function ($query) {
-                $query->where('main_livelihood', 'Agri-Youth');
+                $query->where('main_livelihood', 'Agri Youth');
             })
             ->count();
 

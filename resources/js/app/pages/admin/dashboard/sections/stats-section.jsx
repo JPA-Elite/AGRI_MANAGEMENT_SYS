@@ -8,7 +8,7 @@ export default function StatsSection() {
         {
             id: 1,
             name: "Total No. of Farmers",
-            stat: dashboard?.farmerWorker ?? 0,
+            stat: dashboard?.farmworker ?? 0,
             icon: FaWheatAwn,
             // change: "122",
             // changeType: "increase",
