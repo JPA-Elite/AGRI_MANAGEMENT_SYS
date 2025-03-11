@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import {
     Dialog,
@@ -10,23 +10,26 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import { FaMoneyBillWheat } from "react-icons/fa6";
 import store from "@/app/store/store";
 import { get_users_thunk } from "@/app/redux/user-thunk";
+import {
+    get_cash_assistance_thunk,
+    store_cash_assistance_thunk,
+} from "@/app/redux/cash-assistance-thunk";
+import Swal from "sweetalert2";
 
 export default function AddAssistanceSection() {
     const [open, setOpen] = useState(false);
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
-        firstname: "",
-        middlename: "",
-        lastname: "",
-        suffix: "",
-        role: "",
-        email: "",
-        password: "",
-        password2: "",
-        status: "Active",
+        name: "",
+        sponsor: "",
+        date: "",
+        location: "",
+        description: "",
+        livelihoods: [],
     });
 
     const [message, setMessage] = useState("");
+ 
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -41,32 +44,25 @@ export default function AddAssistanceSection() {
         }
         setLoading(true);
         try {
-            const response = await axios.post("/api/users", {
-                firstname: formData.firstname,
-                middlename: formData.middlename,
-                lastname: formData.lastname,
-                suffix: formData.suffix,
-                role: formData.role,
-                email: formData.email,
-                password: formData.password,
-                password_confirmation: formData.password2,
-                status: formData.status,
-            });
-            await store.dispatch(get_users_thunk());
+            await store.dispatch(store_cash_assistance_thunk(formData));
+            await store.dispatch(get_cash_assistance_thunk());
             setLoading(false);
-            setMessage(response.data.message);
             setFormData({
-                firstname: "",
-                middlename: "",
-                lastname: "",
-                suffix: "",
-                role: "",
-                email: "",
-                password: "",
-                password2: "",
-                status: "Active",
+                name: "",
+                sponsor: "",
+                date: "",
+                location: "",
+                description: "",
+                livelihoods: [],
             });
 
+            await Swal.fire({
+                title: "Success!",
+                text: `Cash Assistance Event Created.`,
+                icon: "success",
+                showConfirmButton: false,
+                timer: 1500,
+            });
             setOpen(false);
         } catch (error) {
             setLoading(false);
@@ -147,12 +143,12 @@ export default function AddAssistanceSection() {
 
                                                     <div className="sm:col-span-12">
                                                         <input
-                                                            name="cash_assistance"
+                                                            name="name"
                                                             type="text"
                                                             placeholder="Cash Assistance Name"
-                                                            autoComplete="cash_assistance"
+                                                            autoComplete="name"
                                                             value={
-                                                                formData.cash_assistance
+                                                                formData.name
                                                             }
                                                             onChange={
                                                                 handleChange
@@ -162,10 +158,10 @@ export default function AddAssistanceSection() {
                                                     </div>
                                                     <div className="sm:col-span-12">
                                                         <input
-                                                            name="sponsor"
                                                             type="text"
                                                             placeholder="Sponsor Name"
                                                             autoComplete="sponsor"
+                                                            name="sponsor"
                                                             value={
                                                                 formData.sponsor
                                                             }
@@ -177,11 +173,11 @@ export default function AddAssistanceSection() {
                                                     </div>
                                                     <div className="sm:col-span-12">
                                                         <input
-                                                            name="event_date"
+                                                            name="date"
                                                             type="datetime-local"
-                                                            autoComplete="event_date"
+                                                            autoComplete="date"
                                                             value={
-                                                                formData.event_date
+                                                                formData.date
                                                             }
                                                             onChange={
                                                                 handleChange
@@ -191,12 +187,12 @@ export default function AddAssistanceSection() {
                                                     </div>
                                                     <div className="sm:col-span-12">
                                                         <input
-                                                            name="event_location"
+                                                            name="location"
                                                             type="text"
                                                             placeholder="Event Location"
-                                                            autoComplete="event_location"
+                                                            autoComplete="location"
                                                             value={
-                                                                formData.event_location
+                                                                formData.location
                                                             }
                                                             onChange={
                                                                 handleChange
@@ -206,8 +202,11 @@ export default function AddAssistanceSection() {
                                                     </div>
                                                     <div className="sm:col-span-12">
                                                         <textarea
-                                                            id="about"
-                                                            name="about"
+                                                            id="description"
+                                                            name="description"
+                                                            onChange={
+                                                                handleChange
+                                                            }
                                                             rows={8}
                                                             placeholder="Assistance Description"
                                                             className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
@@ -226,6 +225,36 @@ export default function AddAssistanceSection() {
                                                                     id="farmer"
                                                                     name="role"
                                                                     value="Farmer"
+                                                                    onChange={(
+                                                                        e
+                                                                    ) => {
+                                                                        setFormData(
+                                                                            (
+                                                                                prev
+                                                                            ) => ({
+                                                                                ...prev,
+                                                                                livelihoods:
+                                                                                    e
+                                                                                        .target
+                                                                                        .checked
+                                                                                        ? [
+                                                                                              ...prev.livelihoods,
+                                                                                              e
+                                                                                                  .target
+                                                                                                  .value,
+                                                                                          ] // Add if checked
+                                                                                        : prev.livelihoods.filter(
+                                                                                              (
+                                                                                                  item
+                                                                                              ) =>
+                                                                                                  item !==
+                                                                                                  e
+                                                                                                      .target
+                                                                                                      .value
+                                                                                          ), // Remove if unchecked
+                                                                            })
+                                                                        );
+                                                                    }}
                                                                     class="h-4 w-4 text-green-600 border-gray-300 rounded"
                                                                 />
                                                                 <label
@@ -242,6 +271,36 @@ export default function AddAssistanceSection() {
                                                                     id="farmworker"
                                                                     name="role"
                                                                     value="Farmworker/Laborer"
+                                                                    onChange={(
+                                                                        e
+                                                                    ) => {
+                                                                        setFormData(
+                                                                            (
+                                                                                prev
+                                                                            ) => ({
+                                                                                ...prev,
+                                                                                livelihoods:
+                                                                                    e
+                                                                                        .target
+                                                                                        .checked
+                                                                                        ? [
+                                                                                              ...prev.livelihoods,
+                                                                                              e
+                                                                                                  .target
+                                                                                                  .value,
+                                                                                          ] // Add if checked
+                                                                                        : prev.livelihoods.filter(
+                                                                                              (
+                                                                                                  item
+                                                                                              ) =>
+                                                                                                  item !==
+                                                                                                  e
+                                                                                                      .target
+                                                                                                      .value
+                                                                                          ), // Remove if unchecked
+                                                                            })
+                                                                        );
+                                                                    }}
                                                                     class="h-4 w-4 text-green-600 border-gray-300 rounded"
                                                                 />
                                                                 <label
@@ -257,6 +316,36 @@ export default function AddAssistanceSection() {
                                                                     type="checkbox"
                                                                     id="fisherfolk"
                                                                     name="role"
+                                                                    onChange={(
+                                                                        e
+                                                                    ) => {
+                                                                        setFormData(
+                                                                            (
+                                                                                prev
+                                                                            ) => ({
+                                                                                ...prev,
+                                                                                livelihoods:
+                                                                                    e
+                                                                                        .target
+                                                                                        .checked
+                                                                                        ? [
+                                                                                              ...prev.livelihoods,
+                                                                                              e
+                                                                                                  .target
+                                                                                                  .value,
+                                                                                          ] // Add if checked
+                                                                                        : prev.livelihoods.filter(
+                                                                                              (
+                                                                                                  item
+                                                                                              ) =>
+                                                                                                  item !==
+                                                                                                  e
+                                                                                                      .target
+                                                                                                      .value
+                                                                                          ), // Remove if unchecked
+                                                                            })
+                                                                        );
+                                                                    }}
                                                                     value="Fisherfolk"
                                                                     class="h-4 w-4 text-green-600 border-gray-300 rounded"
                                                                 />
@@ -273,6 +362,36 @@ export default function AddAssistanceSection() {
                                                                     type="checkbox"
                                                                     id="agriYouth"
                                                                     name="role"
+                                                                    onChange={(
+                                                                        e
+                                                                    ) => {
+                                                                        setFormData(
+                                                                            (
+                                                                                prev
+                                                                            ) => ({
+                                                                                ...prev,
+                                                                                livelihoods:
+                                                                                    e
+                                                                                        .target
+                                                                                        .checked
+                                                                                        ? [
+                                                                                              ...prev.livelihoods,
+                                                                                              e
+                                                                                                  .target
+                                                                                                  .value,
+                                                                                          ] // Add if checked
+                                                                                        : prev.livelihoods.filter(
+                                                                                              (
+                                                                                                  item
+                                                                                              ) =>
+                                                                                                  item !==
+                                                                                                  e
+                                                                                                      .target
+                                                                                                      .value
+                                                                                          ), // Remove if unchecked
+                                                                            })
+                                                                        );
+                                                                    }}
                                                                     value="Agri Youth"
                                                                     class="h-4 w-4 text-green-600 border-gray-300 rounded"
                                                                 />

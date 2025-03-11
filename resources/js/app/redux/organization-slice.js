@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const organizationSlice = createSlice({
     name: "organizations",
     initialState: {
-        organizations: 0,
+        organizations: [],
     },
     reducers: {
         setOrganizations: (state, action) => {

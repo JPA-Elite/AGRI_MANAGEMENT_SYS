@@ -4,16 +4,7 @@ import { useSelector } from "react-redux";
 
 export default function OrganizationTableSection() {
     const { organizations } = useSelector((store) => store.organization);
-    const people = [
-        {
-            organization: "Vallehermoso Farmers Association",
-            status: "Active",
-        },
-        {
-            organization: "Samahan ng Mangingisda ng PU-AN",
-            status: "Inactive",
-        },
-    ];
+console.log('organizations',organizations)
     return (
         <div className="px-4 sm:px-6 lg:px-8">
             <div className="sm:flex sm:items-center">
@@ -56,7 +47,7 @@ export default function OrganizationTableSection() {
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-200 bg-white">
-                                {organizations?.data?.map((person) => (
+                                {organizations?.map((person) => (
                                     <tr key={person.email}>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm uppercase text-gray-900">
                                             {person.organization_name}

@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
 import AddAssistanceSection from "./add-assistance-section";
+import { useSelector } from "react-redux";
+import moment from "moment";
+import { Link } from "@inertiajs/react";
+import UpdateAssistanceSection from "./update-assistance-section";
 
 export default function AssistanceTableSection() {
+    const { cash_assistances } = useSelector((store) => store.cash_assistance);
+    console.log("cash_assistances", cash_assistances);
     return (
         <div className="px-4 sm:px-6 lg:px-8">
             <div className="sm:flex sm:items-center">
@@ -10,7 +16,8 @@ export default function AssistanceTableSection() {
                         Cash Assistance Records
                     </h1>
                     <p className="mt-2 text-sm text-gray-700">
-                        A list of all the active Assistance Program in the system.
+                        A list of all the active Assistance Program in the
+                        system.
                     </p>
                 </div>
                 <AddAssistanceSection />
@@ -51,12 +58,12 @@ export default function AssistanceTableSection() {
                                     >
                                         Event Location
                                     </th>
-                                    <th
+                                    {/* <th
                                         scope="col"
                                         className="px-3 py-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500"
                                     >
                                         Status
-                                    </th>
+                                    </th> */}
                                     <th
                                         scope="col"
                                         className="relative py-3 pl-3 pr-4 sm:pr-0"
@@ -66,59 +73,69 @@ export default function AssistanceTableSection() {
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-200 bg-white">
-                                {/* {users?.data?.length === 0 ? (
-                                    <tr>
-                                        <td
-                                            colSpan="7"
-                                            className="whitespace-nowrap px-3 py-4 text-center text-sm text-gray-500"
-                                        >
-                                           
-                                            <span className="text-green-600 font-medium">
-                                            No records available.{" "}
-                                            </span>
-                                            
-                                        </td>
-                                    </tr>
-                                ) : ( */}
-                                {/* users?.data?.map((user) => ( */}
-                                <tr key="">
-                                    <td className="whitespace-nowrap px-3 py-4 text-sm uppercase text-gray-900">
-                                        Agricultural Assistance
-                                    </td>
-                                    <td className="whitespace-nowrap px-3 py-4 text-sm uppercase text-gray-900">
-                                    Rice Farmer Financial Assistance (RFFA)
-                                    </td>
-                                    <td className="whitespace-nowrap px-3 py-4 text-sm uppercase text-gray-900">
-                                        <div className="flex flex-col">
-                                            <span className="inline-flex items-center rounded-full bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-green-600/20 ring-inset mb-1">
-                                                Farmers
-                                            </span>
-                                            <span className="inline-flex items-center rounded-full bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-green-600/20 ring-inset mb-1">
-                                                Farm Owners
-                                            </span>
-                                        </div>
-                                    </td>
+                                {cash_assistances?.map((res, i) => {
+                                    return (
+                                        <tr key={i}>
+                                            <td className="whitespace-nowrap px-3 py-4 text-sm uppercase text-gray-900">
+                                                {res.name}
+                                            </td>
+                                            <td className="whitespace-nowrap px-3 py-4 text-sm uppercase text-gray-900">
+                                                {res.sponsor}
+                                            </td>
+                                            <td className="whitespace-nowrap px-3 py-4 text-sm uppercase text-gray-900">
+                                                <div className="flex flex-col">
+                                                    {res?.livelihoods?.map(
+                                                        (result, ii) => {
+                                                            return (
+                                                                <span
+                                                                    key={ii}
+                                                                    className="inline-flex items-center rounded-full bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-green-600/20 ring-inset mb-1"
+                                                                >
+                                                                    {
+                                                                        result.name
+                                                                    }
+                                                                </span>
+                                                            );
+                                                        }
+                                                    )}
+                                                </div>
+                                            </td>
 
-                                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
-                                        March 30, 2025 - 08:00 AM
-                                    </td>
-                                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
-                                        La Playa Resort, Brgy. Poblacion
-                                    </td>
-                                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
-                                        <span className="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-700 ring-1 ring-inset ring-yellow-600/20">
-                                            Upcoming
-                                        </span>
-                                    </td>
-                                    <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                                        <a
-                                            href="./assistance-details"
-                                            className="text-indigo-600 hover:text-indigo-900"
-                                        >
-                                            View Details
-                                        </a>
-                                    </td>
-                                </tr>
+                                            <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
+                                                {moment(res.date).format("LLL")}
+                                            </td>
+                                            <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
+                                                {res.location}
+                                            </td>
+                                            {/* <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
+                                                <span className="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-700 ring-1 ring-inset ring-yellow-600/20">
+                                                    Upcoming
+                                                </span>
+                                            </td> */}
+                                            <td className="flex items-center justify-center gap-3 whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
+                                                <UpdateAssistanceSection
+                                                    data={res}
+                                                />
+                                                {/* <Link
+                                                    href={
+                                                        "/administrator/assistance/" +
+                                                        res.id
+                                                    }
+                                                    className="text-indigo-600 hover:text-indigo-900"
+                                                >
+                                                    View Details
+                                                </Link> */}
+                                                <Link
+                                                    href={"/administrator/assistance/" + res.id}
+                                                    className="block rounded-md bg-blue-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                                                >
+                                                    View Details
+                                                </Link>
+                                            </td>
+                                        </tr>
+                                    );
+                                })}
+
                                 {/* ))
                                 )} */}
                             </tbody>

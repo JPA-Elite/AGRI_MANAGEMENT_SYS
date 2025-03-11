@@ -437,7 +437,7 @@ export default function AdminSidenavSection({
                             </li>
                             <li className="mt-auto">
                                 <Link
-                                    href="./settings"
+                                    href="/administrator/settings"
                                     className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-600 hover:bg-green-600 hover:text-white"
                                 >
                                     <FcServices

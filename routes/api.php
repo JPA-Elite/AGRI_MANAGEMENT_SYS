@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CashAssistanceEventController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FarmProfileController;
 use App\Http\Controllers\GovernmentAffiliationController;
@@ -50,4 +51,5 @@ Route::post('/verify_beneficiary', [PersonalInformationController::class, 'verif
 Route::resource('users', UserController::class);
 Route::resource('accounts', AccountController::class);
 Route::resource('verifier', VerifierController::class);
+Route::resource('cash_assistance_event', CashAssistanceEventController::class);
 Route::post('/login', [AuthController::class, 'login']);

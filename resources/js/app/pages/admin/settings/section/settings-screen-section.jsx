@@ -1,11 +1,37 @@
 import React from "react";
 import { ChevronDownIcon } from "@heroicons/react/16/solid";
+import UpdatePasswordForm from "@/Pages/Profile/Partials/UpdatePasswordForm";
+import DeleteUserForm from "@/Pages/Profile/Partials/DeleteUserForm";
+import UpdateProfileInformationForm from "@/Pages/Profile/Partials/UpdateProfileInformationForm";
 
-export default function SettingsScreenSection() {
+export default function SettingsScreenSection({
+    auth,
+    mustVerifyEmail,
+    status,
+}) {
     return (
         <div>
             <main>
-                <div className="divide-y divide-gray-500/30">
+                <div className="py-12">
+                    <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
+                        <div className="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
+                            <UpdateProfileInformationForm
+                                mustVerifyEmail={mustVerifyEmail}
+                                status={status}
+                                className="max-w-xl"
+                            />
+                        </div>
+
+                        <div className="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
+                            <UpdatePasswordForm className="max-w-xl" />
+                        </div>
+
+                        {/* <div className="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
+                            <DeleteUserForm className="max-w-xl" />
+                        </div> */}
+                    </div>
+                </div>
+                {/* <div className="divide-y divide-gray-500/30">
                     <div className="grid max-w-full grid-cols-1 gap-x-8 gap-y-10 px-4 py-16 sm:px-6 md:grid-cols-3 lg:px-12">
                         <div>
                             <h2 className="text-base/7 font-semibold text-gray-900">
@@ -182,7 +208,7 @@ export default function SettingsScreenSection() {
                             </div>
                         </form>
                     </div>
-                </div>
+                </div> */}
             </main>
         </div>
     );

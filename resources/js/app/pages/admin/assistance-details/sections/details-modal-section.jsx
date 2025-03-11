@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import {
     Dialog,
@@ -10,24 +10,27 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import { FaMoneyBillWheat } from "react-icons/fa6";
 import store from "@/app/store/store";
 import { get_users_thunk } from "@/app/redux/user-thunk";
+import { useSelector } from "react-redux";
 
 export default function DetailsModalSection() {
     const [open, setOpen] = useState(false);
     const [loading, setLoading] = useState(false);
-    const [formData, setFormData] = useState({
-        firstname: "",
-        middlename: "",
-        lastname: "",
-        suffix: "",
-        role: "",
-        email: "",
-        password: "",
-        password2: "",
-        status: "Active",
-    });
 
+    const { cash_assistance } = useSelector((store) => store.cash_assistance);
+    const [formData, setFormData] = useState({
+        name: "",
+        sponsor: "",
+        date: "",
+        location: "",
+        description: "",
+        livelihoods: [],
+    });
+    console.log("cash_assistance", cash_assistance);
     const [message, setMessage] = useState("");
 
+    useEffect(() => {
+        setFormData(cash_assistance);
+    }, [cash_assistance?.name??""]);
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
@@ -94,19 +97,19 @@ export default function DetailsModalSection() {
                                 )}
                                 <h3 className="text-base font-medium text-gray-500 pt-3">
                                     Assistance Information
-                                    <span className="inline-flex items-center rounded-full bg-yellow-50 px-2 py-1 float-end text-xs font-medium text-yellow-800 ring-1 ring-yellow-600/20 ring-inset">
+                                    {/* <span className="inline-flex items-center rounded-full bg-yellow-50 px-2 py-1 float-end text-xs font-medium text-yellow-800 ring-1 ring-yellow-600/20 ring-inset">
                                         Upcoming
-                                    </span>
+                                    </span> */}
                                 </h3>
                             </div>
 
                             <div className="sm:col-span-12">
                                 <input
-                                    name="cash_assistance"
+                                    name="name"
                                     type="text"
                                     placeholder="Cash Assistance Name"
                                     autoComplete="cash_assistance"
-                                    value={formData.cash_assistance}
+                                    value={formData.name}
                                     onChange={handleChange}
                                     className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                                 />
@@ -124,33 +127,33 @@ export default function DetailsModalSection() {
                             </div>
                             <div className="sm:col-span-12">
                                 <input
-                                    name="event_date"
+                                    name="date"
                                     type="datetime-local"
                                     autoComplete="event_date"
-                                    value={formData.event_date}
+                                    value={formData.date}
                                     onChange={handleChange}
                                     className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                                 />
                             </div>
                             <div className="sm:col-span-12">
                                 <input
-                                    name="event_location"
+                                    name="location"
                                     type="text"
                                     placeholder="Event Location"
                                     autoComplete="event_location"
-                                    value={formData.event_location}
+                                    value={formData.location}
                                     onChange={handleChange}
                                     className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                                 />
                             </div>
                             <div className="sm:col-span-12">
                                 <textarea
-                                    id="about"
-                                    name="about"
+                                    id="description"
+                                    name="description"
                                     rows={8}
                                     placeholder="Assistance Description"
                                     className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
-                                    defaultValue={""}
+                                    value={formData.description}
                                 />
                             </div>
                             <div className="sm:col-span-12">
@@ -159,7 +162,27 @@ export default function DetailsModalSection() {
                                     Main Livelihood
                                 </h3>
                                 <div class="space-y-4">
-                                    <div class="flex items-center">
+                                   
+
+                                   <div className="flex gap-3">
+                                   {formData?.livelihoods?.map(
+                                                        (result, ii) => {
+                                                            return (
+                                                                <span
+                                                                    key={ii}
+                                                                    className="inline-flex items-center rounded-full bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-green-600/20 ring-inset mb-1"
+                                                                >
+                                                                    {
+                                                                        result.name
+                                                                    }
+                                                                </span>
+                                                            );
+                                                        }
+                                                    )}
+                                   </div>
+                                    {/* 
+                                    
+                                     <div class="flex items-center">
                                         <input
                                             type="checkbox"
                                             id="farmer"
@@ -174,7 +197,6 @@ export default function DetailsModalSection() {
                                             Farmer
                                         </label>
                                     </div>
-
                                     <div class="flex items-center">
                                         <input
                                             type="checkbox"
@@ -221,7 +243,7 @@ export default function DetailsModalSection() {
                                         >
                                             Agri Youth
                                         </label>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
 
