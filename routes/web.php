@@ -51,7 +51,7 @@ Route::middleware('auth:sanctum')->prefix('administrator')->group(function () {
     });
 
     Route::get('reports', function () {
-        return Inertia::render('admin/reports/page');
+        return Inertia::render('admin/dashboard/page');
     });
 
     Route::get('reports/brgy', function () {

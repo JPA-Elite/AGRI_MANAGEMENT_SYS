@@ -69,7 +69,7 @@ const navigation = [
         current: false,
         children: [
             { name: "General Report", href: "/administrator/reports?status=reports", icon: FcList },
-            { name: "Barangay Report", href: "/administrator/reports/brgy", icon: FcList },
+            { name: "Barangay Report", href: "/administrator/reports/brgy?search=Bairan", icon: FcList },
         ],
     },
 ];
