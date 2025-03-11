@@ -45,6 +45,12 @@ class PersonalInformation extends Model
     {
         return $this->hasMany(FarmProfile::class,'register_id','register_id');
     }
+    public function farm_profile(): HasOne
+    {
+        return $this->hasOne(FarmProfile::class,'register_id','register_id');
+    }
+
+    
 
     public function government_affiliation(): HasOne
     {

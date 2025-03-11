@@ -1,43 +1,19 @@
+import moment from 'moment';
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 export default function BrgyActiveAgriworkerComponent() {
-    const people = [
-        {
-            register: "2023-074624000-00663",
-            register_date: "July 24, 2023",
-            lastname: "Soon",
-            firstname: "Jose Dary",
-            middlename: "Ybalez",
-            livelihood: "Fisherfolk",
-            kind: "Fishing Capture",
-            organization: "Macapso Anglers Association",
-            gender: "Male",
-            civil: "Married",
-            status: "Active",
-            brgy: "Macapso",
-        },
-        {
-            register: "2023-074624000-00659",
-            register_date: "December 24, 2023",
-            lastname: "Cristobal",
-            firstname: "Jose Marie Juancho",
-            middlename: "Camingao",
-            livelihood: "Fisherfolk",
-            kind: "Fishing Capture",
-            organization: "Macapso Anglers Association",
-            gender: "Male",
-            civil: "Single",
-            status: "Active",
-            brgy: "Macapso",
-        },
-    ];
+    
+    const { dashboard } = useSelector((store) => store.app)
+    console.log('dashboard',dashboard?.active_beneficiary)
+   
 
     return (
         <div className="px-4 sm:px-6 lg:px-8 mt-8">
             <div className="sm:flex sm:items-center">
                 <div className="sm:flex-auto">
                     <h1 className="text-base font-semibold text-gray-900">
-                        Active Agri-Workers
+                        Active Beneficiary
                     </h1>
                     <p className="mt-2 text-sm text-gray-700">
                         A list of all the active beneficiaries in the system
@@ -103,16 +79,16 @@ export default function BrgyActiveAgriworkerComponent() {
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-200 bg-white">
-                                {people.map((person, index) => (
+                                {dashboard?.active_beneficiary?.map((person, index) => (
                                     <tr
                                         key={index}
                                         className="print:break-inside-avoid print:page-break-after-always"
                                     >
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900 print:whitespace-normal">
-                                            {person.register}
+                                            {person.register_id}
                                         </td>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900 print:whitespace-normal">
-                                            {person.register_date}
+                                            {moment(person.created_at).format('LLL')}
                                         </td>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm uppercase text-gray-900 print:whitespace-normal">
                                             {person.lastname}, {person.firstname} {person.middlename}
@@ -124,9 +100,9 @@ export default function BrgyActiveAgriworkerComponent() {
                                             {person.civil}
                                         </td>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900 print:whitespace-normal">
-                                            {person.livelihood} - {person.kind}
+                                       
                                             <p className="text-gray-500 italic print:text-black">
-                                                {person.organization}
+                                                {person?.farm_profile?.main_livelihood??'N/A'}
                                             </p>
                                         </td>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900 print:whitespace-normal">
@@ -135,7 +111,7 @@ export default function BrgyActiveAgriworkerComponent() {
                                             </span>
                                         </td>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm uppercase text-gray-900 print:whitespace-normal">
-                                            {person.brgy}
+                                            {person.barangay}
                                         </td>
                                     </tr>
                                 ))}

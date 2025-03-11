@@ -71,10 +71,10 @@ export default function BrgyReportSection() {
                 <AgeBracketComponent />
                 <LivelihoodComponent />
                 <IncomeComponent />
-            </div>
-            <BrgyActiveAgriworkerComponent /> */}
+            </div>*/}
             <StatsSection />
             <GraphSection />
+            <BrgyActiveAgriworkerComponent /> 
         </div>
     );
 }

@@ -19,7 +19,7 @@ class DashboardController extends Controller
         $barangay = $request->search;
 
         // Queries with optional barangay filtering
-        $total_farmer_query = PersonalInformation::where('status', 'Approved');
+        $total_farmer_query = PersonalInformation::where('status', 'Active');
         $total_workers_query = PersonalInformation::where('status', 'Pending');
         $total_fisherfolks_query = PersonalInformation::where('status', 'Declined');
         $total_agri_youth_query = PersonalInformation::where('status', 'Declined');
@@ -170,6 +170,7 @@ class DashboardController extends Controller
 
 
         return response()->json([
+            'active_beneficiary'=>$total_farmer_query->with(['farm_profile'])->get(),
             'total_farmer' =>  $total_farmer,
             'total_workers' => $total_workers,
             'total_fisherfolks' => $total_fisherfolks,
