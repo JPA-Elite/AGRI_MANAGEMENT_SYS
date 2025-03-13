@@ -1,10 +1,13 @@
+import { setPersonalInformation } from "@/app/redux/personal-information-slice";
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function ProfileGovernmentInfoSection() {
     const { personal_information } = useSelector(
         (store) => store.personal_information
     );
+    const dispatch = useDispatch();
+
     const [isIndigenous, setIsIndigenous] = useState(true);
     const [isGovernment, setIsGovernment] = useState(true);
     const [isCooperative, setIsCooperative] = useState(true);
@@ -27,14 +30,25 @@ export default function ProfileGovernmentInfoSection() {
                         <div className="mt-2">
                             <div className="flex items-center gap-x-3 mb-3">
                                 <input
-                                    disabled
-                                    name="pwd"
+                                    name="PWD"
                                     type="radio"
                                     value="YES"
                                     checked={
                                         personal_information
                                             ?.government_affiliation?.PWD ==
                                         "YES"
+                                    }
+                                    onChange={(e) =>
+                                        dispatch(
+                                            setPersonalInformation({
+                                                ...personal_information,
+                                                government_affiliation: {
+                                                    ...personal_information.government_affiliation, // Spread the existing home_address fields
+                                                    [e.target.name]:
+                                                        e.target.value, // Dynamically set the updated field
+                                                },
+                                            })
+                                        )
                                     }
                                     className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-600 checked:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
                                 />
@@ -47,13 +61,24 @@ export default function ProfileGovernmentInfoSection() {
                             </div>
                             <div className="flex items-center gap-x-3">
                                 <input
-                                    disabled
                                     checked={
                                         personal_information
                                             ?.government_affiliation?.PWD ==
                                         "NO"
                                     }
-                                    name="pwd"
+                                    onChange={(e) =>
+                                        dispatch(
+                                            setPersonalInformation({
+                                                ...personal_information,
+                                                government_affiliation: {
+                                                    ...personal_information.government_affiliation, // Spread the existing home_address fields
+                                                    [e.target.name]:
+                                                        e.target.value, // Dynamically set the updated field
+                                                },
+                                            })
+                                        )
+                                    }
+                                    name="PWD"
                                     type="radio"
                                     value="NO"
                                     className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-600 checked:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
@@ -78,14 +103,25 @@ export default function ProfileGovernmentInfoSection() {
                         <div className="mt-2">
                             <div className="flex items-center gap-x-3 mb-3">
                                 <input
-                                    disabled
-                                    name="4ps"
+                                    name="4Ps"
                                     type="radio"
                                     checked={
                                         personal_information
                                             ?.government_affiliation?.[
                                             "4Ps"
                                         ] === "YES"
+                                    }
+                                    onChange={(e) =>
+                                        dispatch(
+                                            setPersonalInformation({
+                                                ...personal_information,
+                                                government_affiliation: {
+                                                    ...personal_information.government_affiliation, // Spread the existing home_address fields
+                                                    [e.target.name]:
+                                                        e.target.value, // Dynamically set the updated field
+                                                },
+                                            })
+                                        )
                                     }
                                     value="YES"
                                     className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-600 checked:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
@@ -99,14 +135,25 @@ export default function ProfileGovernmentInfoSection() {
                             </div>
                             <div className="flex items-center gap-x-3">
                                 <input
-                                    disabled
                                     checked={
                                         personal_information
                                             ?.government_affiliation?.[
                                             "4Ps"
                                         ] === "NO"
                                     }
-                                    name="4ps"
+                                    onChange={(e) =>
+                                        dispatch(
+                                            setPersonalInformation({
+                                                ...personal_information,
+                                                government_affiliation: {
+                                                    ...personal_information.government_affiliation, // Spread the existing home_address fields
+                                                    [e.target.name]:
+                                                        e.target.value, // Dynamically set the updated field
+                                                },
+                                            })
+                                        )
+                                    }
+                                    name="4Ps"
                                     type="radio"
                                     value="NO"
                                     className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-600 checked:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
@@ -131,14 +178,25 @@ export default function ProfileGovernmentInfoSection() {
                         <div className="mt-2">
                             <div className="flex items-center gap-x-3 mb-3">
                                 <input
-                                    disabled
-                                    name="indigenous"
+                                    name="indigenous_group"
                                     type="radio"
                                     value="YES"
                                     checked={
                                         personal_information
                                             ?.government_affiliation
                                             ?.indigenous_group === "YES"
+                                    }
+                                    onChange={(e) =>
+                                        dispatch(
+                                            setPersonalInformation({
+                                                ...personal_information,
+                                                government_affiliation: {
+                                                    ...personal_information.government_affiliation, // Spread the existing home_address fields
+                                                    [e.target.name]:
+                                                        e.target.value, // Dynamically set the updated field
+                                                },
+                                            })
+                                        )
                                     }
                                     onClick={() => setIsIndigenous(false)}
                                     className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-600 checked:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
@@ -152,13 +210,24 @@ export default function ProfileGovernmentInfoSection() {
                             </div>
                             <div className="flex items-center gap-x-3">
                                 <input
-                                    disabled
                                     checked={
                                         personal_information
                                             ?.government_affiliation
                                             ?.indigenous_group === "NO"
                                     }
-                                    name="indigenous"
+                                    onChange={(e) =>
+                                        dispatch(
+                                            setPersonalInformation({
+                                                ...personal_information,
+                                                government_affiliation: {
+                                                    ...personal_information.government_affiliation, // Spread the existing home_address fields
+                                                    [e.target.name]:
+                                                        e.target.value, // Dynamically set the updated field
+                                                },
+                                            })
+                                        )
+                                    }
+                                    name="indigenous_group"
                                     type="radio"
                                     value="NO"
                                     onClick={() => setIsIndigenous(true)}
@@ -175,13 +244,24 @@ export default function ProfileGovernmentInfoSection() {
                                 ?.indigenous_group === "YES" && (
                                 <>
                                     <input
-                                        disabled
-                                        name="indigent_specify"
+                                        name="indigenous_group_name"
                                         type="text"
                                         value={
                                             personal_information
                                                 ?.government_affiliation
                                                 ?.indigenous_group_name
+                                        }
+                                        onChange={(e) =>
+                                            dispatch(
+                                                setPersonalInformation({
+                                                    ...personal_information,
+                                                    government_affiliation: {
+                                                        ...personal_information.government_affiliation, // Spread the existing home_address fields
+                                                        [e.target.name]:
+                                                            e.target.value, // Dynamically set the updated field
+                                                    },
+                                                })
+                                            )
                                         }
                                         placeholder="If YES, Please Specify"
                                         className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 mt-4 sm:text-sm/6"
@@ -204,12 +284,22 @@ export default function ProfileGovernmentInfoSection() {
                     <div className="mt-2">
                         <div className="flex items-center gap-x-3 mb-3">
                             <input
-                                disabled
                                 checked={
                                     personal_information?.government_affiliation
                                         ?.government_id === "YES"
                                 }
-                                name="gov_id"
+                                onChange={(e) =>
+                                    dispatch(
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            government_affiliation: {
+                                                ...personal_information.government_affiliation, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
+                                        })
+                                    )
+                                }
+                                name="government_id"
                                 type="radio"
                                 value="YES"
                                 onClick={() => setIsGovernment(false)}
@@ -224,12 +314,22 @@ export default function ProfileGovernmentInfoSection() {
                         </div>
                         <div className="flex items-center gap-x-3">
                             <input
-                                disabled
-                                name="gov_id"
+                                name="government_id"
                                 type="radio"
                                 checked={
                                     personal_information?.government_affiliation
                                         ?.government_id === "NO"
+                                }
+                                onChange={(e) =>
+                                    dispatch(
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            government_affiliation: {
+                                                ...personal_information.government_affiliation, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
+                                        })
+                                    )
                                 }
                                 value="NO"
                                 onClick={() => setIsGovernment(true)}
@@ -246,12 +346,23 @@ export default function ProfileGovernmentInfoSection() {
                             ?.government_id === "YES" && (
                             <>
                                 <input
-                                    disabled
-                                    name="gov_type"
+                                    name="government_id_type"
                                     value={
                                         personal_information
                                             ?.government_affiliation
                                             ?.government_id_type
+                                    }
+                                    onChange={(e) =>
+                                        dispatch(
+                                            setPersonalInformation({
+                                                ...personal_information,
+                                                government_affiliation: {
+                                                    ...personal_information.government_affiliation, // Spread the existing home_address fields
+                                                    [e.target.name]:
+                                                        e.target.value, // Dynamically set the updated field
+                                                },
+                                            })
+                                        )
                                     }
                                     type="text"
                                     placeholder="If YES, Please Specify ID Type"
@@ -259,12 +370,23 @@ export default function ProfileGovernmentInfoSection() {
                                 />
 
                                 <input
-                                    disabled
-                                    name="gov_number"
+                                    name="government_id_number"
                                     value={
                                         personal_information
                                             ?.government_affiliation
                                             ?.government_id_number
+                                    }
+                                    onChange={(e) =>
+                                        dispatch(
+                                            setPersonalInformation({
+                                                ...personal_information,
+                                                government_affiliation: {
+                                                    ...personal_information.government_affiliation, // Spread the existing home_address fields
+                                                    [e.target.name]:
+                                                        e.target.value, // Dynamically set the updated field
+                                                },
+                                            })
+                                        )
                                     }
                                     type="text"
                                     placeholder="ID Number"
@@ -285,13 +407,23 @@ export default function ProfileGovernmentInfoSection() {
                     <div className="mt-2">
                         <div className="flex items-center gap-x-3 mb-3">
                             <input
-                                disabled
-                                name="farm_assoc"
+                                name="farmers_association"
                                 type="radio"
                                 value="YES"
                                 checked={
                                     personal_information?.government_affiliation
                                         ?.farmers_association == "YES"
+                                }
+                                onChange={(e) =>
+                                    dispatch(
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            government_affiliation: {
+                                                ...personal_information.government_affiliation, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
+                                        })
+                                    )
                                 }
                                 onClick={() => setIsCooperative(false)}
                                 className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-600 checked:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
@@ -305,12 +437,22 @@ export default function ProfileGovernmentInfoSection() {
                         </div>
                         <div className="flex items-center gap-x-3">
                             <input
-                                disabled
                                 checked={
                                     personal_information?.government_affiliation
                                         ?.farmers_association == "NO"
                                 }
-                                name="farm_assoc"
+                                onChange={(e) =>
+                                    dispatch(
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            government_affiliation: {
+                                                ...personal_information.government_affiliation, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
+                                        })
+                                    )
+                                }
+                                name="farmers_association"
                                 type="radio"
                                 value="NO"
                                 onClick={() => setIsCooperative(true)}
@@ -324,14 +466,28 @@ export default function ProfileGovernmentInfoSection() {
                             </label>
                         </div>
                         {personal_information?.government_affiliation
-                                        ?.farmers_association == "YES" && (
+                            ?.farmers_association == "YES" && (
                             <>
                                 <input
-                                    disabled
-                                    name="farmassoc_name"
+                                    onChange={(e) =>
+                                        dispatch(
+                                            setPersonalInformation({
+                                                ...personal_information,
+                                                government_affiliation: {
+                                                    ...personal_information.government_affiliation, // Spread the existing home_address fields
+                                                    [e.target.name]:
+                                                        e.target.value, // Dynamically set the updated field
+                                                },
+                                            })
+                                        )
+                                    }
+                                    name="farmers_association_name"
                                     type="text"
-                                    value={personal_information?.government_affiliation
-                                        ?.farmers_association_name }
+                                    value={
+                                        personal_information
+                                            ?.government_affiliation
+                                            ?.farmers_association_name
+                                    }
                                     placeholder="If YES, Please Specify"
                                     className="block w-1/2 rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 mt-4 sm:text-sm/6"
                                 />

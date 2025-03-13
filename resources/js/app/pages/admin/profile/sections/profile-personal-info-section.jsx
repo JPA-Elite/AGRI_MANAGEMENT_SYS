@@ -1,10 +1,14 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import { setPersonalInformation } from "@/app/redux/personal-information-slice";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function ProfilePersonalInfoSection() {
     const { personal_information } = useSelector(
         (store) => store.personal_information
     );
+    const dispatch = useDispatch();
+    console.log("personal_information", personal_information);
+
     return (
         <div>
             <div className="border-b border-gray-900/10 pb-12">
@@ -24,11 +28,24 @@ export default function ProfilePersonalInfoSection() {
                         </label>
                         <div className="mt-2">
                             <input
-                                value={personal_information?.dob ?? ""}
-                                disabled
                                 id="dob"
                                 name="dob"
-                                type="text"
+                                type="date"
+                                defaultValue={
+                                    personal_information?.personal_info?.dob ??
+                                    ""
+                                }
+                                onChange={(e) =>
+                                    dispatch(
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            personal_info: {
+                                                ...personal_information.personal_info, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
+                                        })
+                                    )
+                                }
                                 className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                             />
                         </div>
@@ -43,11 +60,24 @@ export default function ProfilePersonalInfoSection() {
                         </label>
                         <div className="mt-2">
                             <input
-                                disabled
                                 id="pob"
                                 name="pob"
                                 type="text"
-                                value={personal_information?.pob ?? ""}
+                                defaultValue={
+                                    personal_information?.personal_info?.pob ??
+                                    ""
+                                }
+                                onChange={(e) =>
+                                    dispatch(
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            personal_info: {
+                                                ...personal_information.personal_info, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
+                                        })
+                                    )
+                                }
                                 className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                             />
                         </div>
@@ -62,11 +92,24 @@ export default function ProfilePersonalInfoSection() {
                         </label>
                         <div className="mt-2">
                             <input
-                                disabled
                                 id="religion"
                                 name="religion"
                                 type="text"
-                                value={personal_information?.religion ?? ""}
+                                defaultValue={
+                                    personal_information?.personal_info
+                                        ?.religion ?? ""
+                                }
+                                onChange={(e) =>
+                                    dispatch(
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            personal_info: {
+                                                ...personal_information.personal_info, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
+                                        })
+                                    )
+                                }
                                 className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                             />
                         </div>
@@ -82,14 +125,25 @@ export default function ProfilePersonalInfoSection() {
                         <div className="mt-2 grid grid-cols-1">
                             <div className="flex justify-items-center gap-x-3">
                                 <input
-                                    disabled
                                     checked={
-                                        (personal_information?.gender ?? "") ==
-                                        "male"
+                                        (personal_information?.personal_info
+                                            ?.gender ?? "") == "male"
+                                    }
+                                    value="male"
+                                    onChange={(e) =>
+                                        dispatch(
+                                            setPersonalInformation({
+                                                ...personal_information,
+                                                personal_info: {
+                                                    ...personal_information.personal_info, // Spread the existing home_address fields
+                                                    [e.target.name]:
+                                                        e.target.value, // Dynamically set the updated field
+                                                },
+                                            })
+                                        )
                                     }
                                     name="gender"
                                     type="radio"
-                                    value="MALE"
                                     className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-500 checked:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
                                 />
                                 <label
@@ -98,16 +152,26 @@ export default function ProfilePersonalInfoSection() {
                                 >
                                     MALE
                                 </label>
-
                                 <input
-                                    disabled
+                                    value="female"
                                     checked={
-                                        (personal_information?.gender ?? "") ==
-                                        "female"
+                                        (personal_information?.personal_info
+                                            ?.gender ?? "") == "female"
+                                    }
+                                    onChange={(e) =>
+                                        dispatch(
+                                            setPersonalInformation({
+                                                ...personal_information,
+                                                personal_info: {
+                                                    ...personal_information.personal_info, // Spread the existing home_address fields
+                                                    [e.target.name]:
+                                                        e.target.value, // Dynamically set the updated field
+                                                },
+                                            })
+                                        )
                                     }
                                     name="gender"
                                     type="radio"
-                                    value="FEMALE"
                                     className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-500 checked:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
                                 />
                                 <label
@@ -131,8 +195,21 @@ export default function ProfilePersonalInfoSection() {
                             <select
                                 id="civil"
                                 name="civil"
-                                value={personal_information?.civil ?? ""}
-                                disabled
+                                value={
+                                    personal_information?.personal_info
+                                        ?.civil ?? ""
+                                }
+                                onChange={(e) =>
+                                    dispatch(
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            personal_info: {
+                                                ...personal_information.personal_info, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
+                                        })
+                                    )
+                                }
                                 className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                             >
                                 <option></option>
@@ -153,11 +230,24 @@ export default function ProfilePersonalInfoSection() {
                         </label>
                         <div className="mt-2">
                             <input
-                                disabled
                                 id="mobile"
                                 name="mobile"
                                 type="text"
-                                value={personal_information?.mobile ?? ""}
+                                value={
+                                    personal_information?.personal_info
+                                        ?.mobile ?? ""
+                                }
+                                onChange={(e) =>
+                                    dispatch(
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            personal_info: {
+                                                ...personal_information.personal_info, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
+                                        })
+                                    )
+                                }
                                 className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                             />
                         </div>
@@ -172,11 +262,24 @@ export default function ProfilePersonalInfoSection() {
                         </label>
                         <div className="mt-2">
                             <input
-                                disabled
-                                id="telephone"
-                                name="telephone"
+                                id="landline"
+                                name="landline"
                                 type="text"
-                                value={personal_information?.landline ?? "N/A"}
+                                value={
+                                    personal_information?.personal_info
+                                        ?.landline ?? ""
+                                }
+                                onChange={(e) =>
+                                    dispatch(
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            personal_info: {
+                                                ...personal_information.personal_info, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
+                                        })
+                                    )
+                                }
                                 className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                             />
                         </div>
@@ -191,13 +294,23 @@ export default function ProfilePersonalInfoSection() {
                         </label>
                         <div className="mt-2">
                             <input
-                                disabled
                                 id="contact_person"
                                 name="contact_person"
                                 type="text"
                                 value={
-                                    personal_information?.contact_person ??
-                                    "N/A"
+                                    personal_information?.personal_info
+                                        ?.contact_person ?? ""
+                                }
+                                onChange={(e) =>
+                                    dispatch(
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            personal_info: {
+                                                ...personal_information.personal_info, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
+                                        })
+                                    )
                                 }
                                 className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                             />
@@ -213,13 +326,23 @@ export default function ProfilePersonalInfoSection() {
                         </label>
                         <div className="mt-2">
                             <input
-                                disabled
-                                id="contact_mobile"
-                                name="contact_mobile"
+                                id="contact_person_mobile"
+                                name="contact_person_mobile"
                                 type="text"
                                 value={
-                                    personal_information?.contact_person_mobile ??
-                                    "N/A"
+                                    personal_information?.personal_info
+                                        ?.contact_person_mobile ?? ""
+                                }
+                                onChange={(e) =>
+                                    dispatch(
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            personal_info: {
+                                                ...personal_information.personal_info, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
+                                        })
+                                    )
                                 }
                                 className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                             />
@@ -236,13 +359,26 @@ export default function ProfilePersonalInfoSection() {
                         <div className="mt-2 grid grid-cols-1">
                             <div className="flex justify-items-center gap-x-3">
                                 <input
-                                    disabled
                                     checked={
                                         personal_information?.household
                                             ?.household_head == "YES"
                                     }
-                                    id="householdhead"
-                                    name="householdhead"
+                                    id="household_head"
+                                    name="household_head"
+                                    onChange={(e) =>
+                                        dispatch(
+                                            dispatch(
+                                                setPersonalInformation({
+                                                    ...personal_information,
+                                                    household: {
+                                                        ...personal_information.household, // Spread the existing home_address fields
+                                                        [e.target.name]:
+                                                            e.target.value, // Dynamically set the updated field
+                                                    },
+                                                })
+                                            )
+                                        )
+                                    }
                                     type="radio"
                                     value="YES"
                                     className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-500 checked:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
@@ -255,12 +391,25 @@ export default function ProfilePersonalInfoSection() {
                                 </label>
 
                                 <input
-                                    disabled
-                                    id="householdhead"
-                                    name="householdhead"
+                                    id="household_head"
+                                    name="household_head"
                                     checked={
                                         personal_information?.household
                                             ?.household_head == "NO"
+                                    }
+                                    onChange={(e) =>
+                                        dispatch(
+                                            dispatch(
+                                                setPersonalInformation({
+                                                    ...personal_information,
+                                                    household: {
+                                                        ...personal_information.household, // Spread the existing home_address fields
+                                                        [e.target.name]:
+                                                            e.target.value, // Dynamically set the updated field
+                                                    },
+                                                })
+                                            )
+                                        )
                                     }
                                     type="radio"
                                     value="NO"
@@ -286,9 +435,21 @@ export default function ProfilePersonalInfoSection() {
                         <input
                             value={
                                 personal_information?.household
-                                ?.household_members ?? "N/A"
+                                    ?.household_members ?? "0"
                             }
-                            disabled
+                            onChange={(e) =>
+                                dispatch(
+                                    dispatch(
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            household: {
+                                                ...personal_information.household, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
+                                        })
+                                    )
+                                )
+                            }
                             name="household_members"
                             type="number"
                             className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
@@ -303,12 +464,24 @@ export default function ProfilePersonalInfoSection() {
                             No. of Male household members
                         </label>
                         <input
-                            disabled
                             name="male_members"
                             type="number"
                             value={
-                                personal_information?.household
-                                ?.male_members ?? "0"
+                                personal_information?.household?.male_members ??
+                                "0"
+                            }
+                            onChange={(e) =>
+                                dispatch(
+                                    dispatch(
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            household: {
+                                                ...personal_information.household, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
+                                        })
+                                    )
+                                )
                             }
                             className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                         />
@@ -322,11 +495,23 @@ export default function ProfilePersonalInfoSection() {
                             No. of Female household members
                         </label>
                         <input
-                            disabled
                             name="female_members"
                             value={
                                 personal_information?.household
-                                ?.female_members ?? "0"
+                                    ?.female_members ?? "0"
+                            }
+                            onChange={(e) =>
+                                dispatch(
+                                    dispatch(
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            household: {
+                                                ...personal_information.household, // Spread the existing home_address fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
+                                        })
+                                    )
+                                )
                             }
                             type="number"
                             className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"

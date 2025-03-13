@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AdminLayout from "../layout";
 import { FaFilePen, FaPrint, FaRegFilePdf } from "react-icons/fa6";
 import ProfilePersonalInfoSection from "./sections/profile-personal-info-section";
@@ -7,20 +7,43 @@ import ProfileEducationInfoSection from "./sections/profile-education-info-secti
 import ProfileGovernmentInfoSection from "./sections/profile-government-info-section";
 import ProfileFarmTypeSection from "./sections/profile-farm-type-section";
 import ProfileFarmlandSection from "./sections/profile-farmland-section";
-import { get_personal_information_by_id_thunk } from "@/app/redux/personal-information-thunk";
+import {
+    get_personal_information_by_id_thunk,
+    update_personal_information_thunk,
+} from "@/app/redux/personal-information-thunk";
 import store from "@/app/store/store";
 import { useSelector } from "react-redux";
 import moment from "moment";
+import Swal from "sweetalert2";
 
 export default function ProfilePage() {
     const id = window.location.pathname.split("/")[3];
+    const [loading, setLoading] = useState(false);
     const { personal_information } = useSelector(
         (store) => store.personal_information
     );
     useEffect(() => {
         store.dispatch(get_personal_information_by_id_thunk(id));
     }, []);
-console.log('personal_information',personal_information)
+
+    async function update_handler() {
+        setLoading(true);
+        try {
+            await store.dispatch(
+                update_personal_information_thunk(personal_information)
+            );
+            await Swal.fire({
+                title: "Success!",
+                text: `Updated Successfully.`,
+                icon: "success",
+                showConfirmButton: false,
+                timer: 1500,
+            });
+            setLoading(false);
+        } catch (error) {
+            setLoading(false);
+        }
+    }
     return (
         <AdminLayout>
             <div className="overflow-hidden bg-gray-200 shadow-xl sm:rounded-lg">
@@ -28,32 +51,63 @@ console.log('personal_information',personal_information)
                     <div className="overflow-hidden bg-white shadow sm:rounded-sm">
                         <div className="px-2 py-5 sm:p-4">
                             <header>
-                                <div className="grid grid-cols-1 gap-x-10 gap-y-8 p-4 sm:grid-cols-12 items-center border-4 border-gray-200">
-                                    <div className="sm:col-span-4">
+                                <div className="flex w-full items-center p-4  border-4 border-gray-200">
+                                    <div className="flex-none">
                                         <img
                                             src="/images/DOA.png"
                                             alt=""
-                                            className="h-28 w-28 ml-12 float-right"
+                                            className="h-28 w-28 ml-12 "
                                         />
                                     </div>
-                                    <div className="sm:col-span-8">
-                                        <h2 className="text-3xl font-extrabold text-gray-700">
-                                            {personal_information == "male"
-                                                ? "Mr."
-                                                : "Ms./Mrs."}
-                                            &nbsp;
-                                            {personal_information.firstname}
-                                            &nbsp;{" "}
-                                            {personal_information.middlename}
-                                            &nbsp;
-                                            {personal_information.lastname}
-                                        </h2>
-                                        <p className="text-lg font-medium text-gray-700 italic">
-                                            {personal_information.register_id}
-                                        </p>
-                                        <p className="text-md font-medium text-gray-400 italic">
-                                            Registered since {moment(personal_information.created_at).format('LL')}
-                                        </p>
+                                    <div className="flex-1 flex items-center justify-center">
+                                        <div className="flex flex-col items-center justify-center">
+                                            <h2 className="text-3xl w-full font-extrabold text-gray-700">
+                                                {personal_information?.gender ==
+                                                "male"
+                                                    ? "Mr."
+                                                    : "Ms./Mrs."}
+                                                &nbsp;
+                                                {
+                                                    personal_information
+                                                        ?.personal_info
+                                                        ?.firstname
+                                                }
+                                                &nbsp;{" "}
+                                                {
+                                                    personal_information
+                                                        ?.personal_info
+                                                        ?.middlename
+                                                }
+                                                &nbsp;
+                                                {
+                                                    personal_information
+                                                        ?.personal_info
+                                                        ?.lastname
+                                                }
+                                            </h2>
+                                            <p className="text-lg font-medium text-gray-700 italic">
+                                                {
+                                                    personal_information
+                                                        ?.personal_info
+                                                        ?.register_id
+                                                }
+                                            </p>
+                                            <p className="text-md font-medium text-gray-400 italic">
+                                                Registered since{" "}
+                                                {moment(
+                                                    personal_information
+                                                        ?.personal_info
+                                                        ?.created_at
+                                                ).format("LL")}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="flex-none">
+                                        <img
+                                            src="/images/valle.png"
+                                            alt=""
+                                            className="h-28 w-28 ml-12 float-right"
+                                        />
                                     </div>
                                 </div>
                             </header>
@@ -63,25 +117,29 @@ console.log('personal_information',personal_information)
                                     <span className="isolate inline-flex rounded-md shadow-sm">
                                         <button
                                             type="button"
+                                            disabled={loading}
+                                            onClick={update_handler}
                                             className="relative inline-flex items-center rounded-l-md bg-white px-6 py-3 text-lg font-semibold text-gray-600 ring-1 ring-inset ring-gray-300 hover:bg-green-200 focus:z-10"
                                         >
                                             <FaFilePen className="size-5 mr-2 text-green-600" />
-                                            Edit
+
+                                            {loading ? "Loading..." : "Save Profile"}
                                         </button>
-                                        <button
+                                        {/* <button
                                             type="button"
                                             className="relative -ml-px inline-flex items-center bg-white px-6 py-3 text-lg font-semibold text-gray-600 ring-1 ring-inset ring-gray-300 hover:bg-green-200 focus:z-10"
                                         >
                                             <FaPrint className="size-5 mr-2 text-green-600" />
                                             Print Form
-                                        </button>
-                                        <button
-                                            type="button"
+                                        </button> */}
+                                        <a
+                                            target="_blank"
+                                            href={`/administrator/profile/${id}/pdf`}
                                             className="relative -ml-px inline-flex items-center rounded-r-md bg-white px-6 py-3 text-lg font-semibold text-gray-600 ring-1 ring-inset ring-gray-300 hover:bg-green-200 focus:z-10"
                                         >
                                             <FaRegFilePdf className="size-5 mr-2 text-green-600" />
                                             Export to PDF
-                                        </button>
+                                        </a>
                                     </span>
                                 </div>
                                 <hr />

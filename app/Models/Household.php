@@ -17,6 +17,7 @@ class Household extends Model
         'male_members',
         'female_members',
         'annual_income',
+        'household_members'
     ];
 
     public function personal_information(): HasOne

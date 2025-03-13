@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -93,6 +94,10 @@ Route::middleware('auth:sanctum')->prefix('administrator')->group(function () {
 
     Route::get('profile/{id}', function () {
         return Inertia::render('admin/profile/page');
+    });
+    Route::get('profile/{id}/pdf', function () {
+        
+        return Inertia::render('admin/profile/pdf/page');
     });
 });
 

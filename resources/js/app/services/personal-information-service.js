@@ -22,7 +22,7 @@ export async function delete_personal_information_service(id) {
 }
 
 export async function update_personal_information_service(data) {
-    const res = await axios.update(`/api/personal_information/${data.id}`,data);
+    const res = await axios.put(`/api/personal_information/${data.id}`,data);
     return res;
 }
 
