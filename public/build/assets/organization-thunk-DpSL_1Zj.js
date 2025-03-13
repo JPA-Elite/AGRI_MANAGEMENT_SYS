@@ -1,1 +1,0 @@
-import{a as i,o}from"./app-BYYi_-hT.js";async function r(){return(await i.get("/api/organization")).data}async function s(t){return await i.post("/api/organization",t)}function g(){return async function(t,n){const a=await r();return t(o.actions.setOrganizations(a)),a.data}}function u(t){return async function(n,a){return(await s(t)).data}}export{g,u as s};

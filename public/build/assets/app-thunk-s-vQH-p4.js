@@ -1,0 +1,1 @@
+import{a as n,b as s}from"./app-BPd7zEpp.js";async function r(){return await n.get("/api/admin_dashboard"+window.location.search)}function i(){return async function(a,e){const t=await r();return a(s.actions.setDashboard(t.data)),t.data}}export{i as g};

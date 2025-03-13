@@ -53,7 +53,11 @@ const styles = StyleSheet.create({
     },
 });
 
-export default function FarmProfile() {
+export default function FarmProfile({ data }) {
+    let farm_profiles = "";
+    if (data?.farm_profiles) {
+        farm_profiles = data?.farm_profiles[0];
+    }
     return (
         <>
             <View style={styles.section}>
@@ -96,7 +100,9 @@ export default function FarmProfile() {
                             marginTop: 5,
                         }}
                     >
-                        <Text style={{ fontSize: 9 }}>aaaa</Text>
+                        <Text style={{ fontSize: 9 }}>
+                            {farm_profiles?.main_livelihood}
+                        </Text>
                     </View>
                 </View>
                 <View
@@ -136,7 +142,23 @@ export default function FarmProfile() {
                                     marginTop: 10,
                                 }}
                             >
-                                <Text style={{ fontSize: 11 }}>aaaa</Text>
+                                <View
+                                    style={{
+                                        fontSize: 11,
+                                        display: "flex",
+                                        flexDirection: "row",
+                                    }}
+                                >
+                                    {farm_profiles?.main_livelihood ==
+                                        "Farmers" &&
+                                        data?.farm_profiles?.map((res, i) => {
+                                            return (
+                                                <Text key={i}>
+                                                    {res.farm_activity},
+                                                </Text>
+                                            );
+                                        })}
+                                </View>
                                 <View
                                     style={{
                                         borderTop: "1px solid back",
@@ -182,7 +204,17 @@ export default function FarmProfile() {
                                     marginTop: 10,
                                 }}
                             >
-                                <Text style={{ fontSize: 11 }}>aaaa</Text>
+                                <Text style={{ fontSize: 11 }}>
+                                    {farm_profiles?.main_livelihood ==
+                                        "FarmWorkers" &&
+                                        data?.farm_profiles?.map((res, i) => {
+                                            return (
+                                                <Text key={i}>
+                                                    {res.farm_activity},
+                                                </Text>
+                                            );
+                                        })}
+                                </Text>
                                 <View
                                     style={{
                                         borderTop: "1px solid back",
@@ -227,7 +259,17 @@ export default function FarmProfile() {
                                     marginTop: 10,
                                 }}
                             >
-                                <Text style={{ fontSize: 11 }}>aaaa</Text>
+                                <Text style={{ fontSize: 11 }}>
+                                    {farm_profiles?.main_livelihood ==
+                                        "Fisherfolk" &&
+                                        data?.farm_profiles?.map((res, i) => {
+                                            return (
+                                                <Text key={i}>
+                                                    {res.farm_activity},
+                                                </Text>
+                                            );
+                                        })}
+                                </Text>
                                 <View
                                     style={{
                                         borderTop: "1px solid back",
@@ -272,7 +314,17 @@ export default function FarmProfile() {
                                     marginTop: 10,
                                 }}
                             >
-                                <Text style={{ fontSize: 11 }}>aaaa</Text>
+                                <Text style={{ fontSize: 11 }}>
+                                    {farm_profiles?.main_livelihood ==
+                                        "Agri Youth" &&
+                                        data?.farm_profiles?.map((res, i) => {
+                                            return (
+                                                <Text key={i}>
+                                                    {res.farm_activity},
+                                                </Text>
+                                            );
+                                        })}
+                                </Text>
                                 <View
                                     style={{
                                         borderTop: "1px solid back",
@@ -298,18 +350,18 @@ export default function FarmProfile() {
                         justifyContent: "center",
                         flexDirection: "row",
                         width: "100%",
-                        padding:3
+                        padding: 3,
                     }}
                 >
                     <Text
-                            style={{
-                                fontSize: 10,
-                                width: "100%",
-                                fontWeight:'bold'
-                            }}
-                        >
-                            Gross Annual Income Last Year:
-                        </Text>
+                        style={{
+                            fontSize: 10,
+                            width: "100%",
+                            fontWeight: "bold",
+                        }}
+                    >
+                        Gross Annual Income Last Year:
+                    </Text>
                     <View
                         style={{
                             width: "100%",
@@ -323,7 +375,7 @@ export default function FarmProfile() {
                                 width: "20%",
                             }}
                         >
-                           Farming:
+                            Farming:
                         </Text>
                         <View
                             style={{
