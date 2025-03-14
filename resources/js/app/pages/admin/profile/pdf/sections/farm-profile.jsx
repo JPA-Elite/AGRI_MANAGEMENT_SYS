@@ -170,7 +170,7 @@ export default function FarmProfile({ data }) {
                                     }}
                                 >
                                     <Text style={{ fontSize: 9 }}>
-                                        FARMING ACTIVITY
+                                       Type of farming activity
                                     </Text>
                                 </View>
                             </View>
@@ -226,7 +226,7 @@ export default function FarmProfile({ data }) {
                                     }}
                                 >
                                     <Text style={{ fontSize: 9 }}>
-                                        FARMING ACTIVITY
+                                       Kind of Work
                                     </Text>
                                 </View>
                             </View>

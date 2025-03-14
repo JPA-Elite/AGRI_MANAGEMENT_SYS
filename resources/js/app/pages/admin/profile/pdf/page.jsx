@@ -17,6 +17,7 @@ import Address from "./sections/address";
 import PersonalASection from "./sections/personal-a-section";
 import PersonalBSection from "./sections/personal-b-section";
 import FarmProfile from "./sections/farm-profile";
+import ClientCopy from "./sections/client-copy";
 
 // Define styles
 const styles = StyleSheet.create({
@@ -144,6 +145,8 @@ console.log('personal_information',personal_information)
                             </View>
                         </View>
                         <FarmProfile data={personal_information} />
+                        <ClientCopy 
+                        />
                     </View>
                 </Page>
             </Document>

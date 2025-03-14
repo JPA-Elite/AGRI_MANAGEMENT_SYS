@@ -65,7 +65,6 @@ export default function PersonalBSection({data}) {
                         justifyContent: "space-evenly",
                         gap: ".5rem",
                         width: "100%",
-                        borderTop: 2,
                         padding: 10,
                     }}
                 >
