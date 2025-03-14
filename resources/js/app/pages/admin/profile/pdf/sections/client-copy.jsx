@@ -9,7 +9,7 @@ import {
     Image,
 } from "@react-pdf/renderer";
 
-export default function ClientCopy() {
+export default function ClientCopy({data}) {
     return (
         <View
             style={{
@@ -71,7 +71,7 @@ export default function ClientCopy() {
                             justifyContent: "center",
                         }}
                     >
-                        <Text style={{ fontSize: 9 }}>aaaa</Text>
+                        <Text style={{ fontSize: 9 }}> {data?.personal_info?.register_id ?? ""}</Text>
                     </View>
                 </View>
                 <View
@@ -89,7 +89,7 @@ export default function ClientCopy() {
                             justifyContent: "center",
                         }}
                     >
-                        <Text style={{ fontSize: 11 }}>aaaa</Text>
+                        <Text style={{ fontSize: 11 }}> {data?.personal_info?.lastname ?? ""}</Text>
                         <View
                             style={{
                                 borderTop: "1px solid back",
@@ -112,7 +112,7 @@ export default function ClientCopy() {
                             justifyContent: "center",
                         }}
                     >
-                        <Text style={{ fontSize: 11 }}>aaaa</Text>
+                        <Text style={{ fontSize: 11 }}> {data?.personal_info?.firstname ?? ""}</Text>
                         <View
                             style={{
                                 borderTop: "1px solid back",
@@ -143,7 +143,7 @@ export default function ClientCopy() {
                             justifyContent: "center",
                         }}
                     >
-                        <Text style={{ fontSize: 11 }}>aaaa</Text>
+                        <Text style={{ fontSize: 11 }}> {data?.personal_info?.middlename ?? ""}</Text>
                         <View
                             style={{
                                 borderTop: "1px solid back",
@@ -166,7 +166,7 @@ export default function ClientCopy() {
                             justifyContent: "center",
                         }}
                     >
-                        <Text style={{ fontSize: 11 }}>aaaa</Text>
+                        <Text style={{ fontSize: 11 }}> {data?.personal_info?.suffix ?? ""}</Text>
                         <View
                             style={{
                                 borderTop: "1px solid back",

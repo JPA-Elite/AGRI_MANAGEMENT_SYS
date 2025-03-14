@@ -146,6 +146,7 @@ console.log('personal_information',personal_information)
                         </View>
                         <FarmProfile data={personal_information} />
                         <ClientCopy 
+                         data={personal_information} 
                         />
                     </View>
                 </Page>
