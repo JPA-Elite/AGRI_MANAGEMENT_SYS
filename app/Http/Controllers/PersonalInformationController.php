@@ -103,7 +103,6 @@ class PersonalInformationController extends Controller
             'province' => $request->address_info['province'] ?? null,
             'region' => $request->address_info['region'] ?? null,
             'highest_education' => $request->education['highest_education'] ?? null,
-            'status' => $request->personal_info['status'] ?? null,
             'avatar' => $request->personal_info['avatar'] ?? null,
             'verifier' => $request->personal_info['verifier'] ?? null,
             'register_date' => $request->personal_info['register_date'] ?? null,
