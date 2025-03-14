@@ -33,7 +33,7 @@ export default function ClientCopy() {
                     textAlign: "center",
                     fontWeight: "bold",
                     fontSize: 12,
-                    marginBottom:5,
+                    marginBottom: 5,
                 }}
             >
                 ENROLLMENT CLIENT'S COPY
@@ -49,7 +49,7 @@ export default function ClientCopy() {
                         display: "flex",
                         flexDirection: "row",
                         marginTop: 5,
-                        marginBottom:5,
+                        marginBottom: 5,
                         justifyContent: "space-evenly",
                     }}
                 >
@@ -57,6 +57,7 @@ export default function ClientCopy() {
                         style={{
                             fontSize: 11,
                             width: "20%",
+                            fontWeight: "bold",
                         }}
                     >
                         Reference Number:
@@ -78,7 +79,7 @@ export default function ClientCopy() {
                         display: "flex",
                         flexDirection: "row",
                         justifyContent: "space-evenly",
-                        marginBottom:5,
+                        marginBottom: 5,
                     }}
                 >
                     <View
@@ -99,7 +100,9 @@ export default function ClientCopy() {
                                 marginTop: 2,
                             }}
                         >
-                            <Text style={{ fontSize: 9 }}>SURNAME</Text>
+                            <Text style={{ fontSize: 9, fontWeight: "bold" }}>
+                                SURNAME
+                            </Text>
                         </View>
                     </View>
                     <View
@@ -120,7 +123,9 @@ export default function ClientCopy() {
                                 marginTop: 2,
                             }}
                         >
-                            <Text style={{ fontSize: 9 }}>FIRST NAME</Text>
+                            <Text style={{ fontSize: 9, fontWeight: "bold" }}>
+                                FIRST NAME
+                            </Text>
                         </View>
                     </View>
                 </View>
@@ -149,7 +154,9 @@ export default function ClientCopy() {
                                 marginTop: 2,
                             }}
                         >
-                            <Text style={{ fontSize: 9 }}>SURNAME</Text>
+                            <Text style={{ fontSize: 9, fontWeight: "bold" }}>
+                                MIDDLE NAME
+                            </Text>
                         </View>
                     </View>
                     <View
@@ -170,7 +177,9 @@ export default function ClientCopy() {
                                 marginTop: 2,
                             }}
                         >
-                            <Text style={{ fontSize: 9 }}>EXTENSION NAME</Text>
+                            <Text style={{ fontSize: 9, fontWeight: "bold" }}>
+                                EXTENSION NAME
+                            </Text>
                         </View>
                     </View>
                 </View>
