@@ -106,6 +106,7 @@ class PersonalInformationController extends Controller
             'avatar' => $request->personal_info['avatar'] ?? null,
             'verifier' => $request->personal_info['verifier'] ?? null,
             'register_date' => $request->personal_info['register_date'] ?? null,
+            'status' => 'pending'
         ]);
 
         Household::create([
@@ -234,11 +235,9 @@ class PersonalInformationController extends Controller
             'province' => $request->personal_info['province'] ?? null,
             'region' => $request->personal_info['region'] ?? null,
             'highest_education' => $request->personal_info['highest_education'] ?? null,
-            'status' => $request->personal_info['status'] ?? null,
             'avatar' => $request->personal_info['avatar'] ?? null,
             'verifier' => $request->personal_info['verifier'] ?? null,
             'register_date' => $request->personal_info['register_date'] ?? null,
-            'status' => 'pending'
         ]);
 
         Household::where('register_id', $request->household['register_id'])->update([
