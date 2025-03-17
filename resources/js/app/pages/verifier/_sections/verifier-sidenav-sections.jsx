@@ -15,10 +15,11 @@ export default function VerifierSidenavSection({
     const params = new URLSearchParams(window.location.search);
     const isOpen = window.location.pathname.split("/")[2];
     const isActive = params.get("status");
+
     useEffect(() => {
         setExpanded((prev) => ({
             ...prev,
-            "Beneficiary Section": isOpen == "beneficiary",
+            "Beneficiary Section": true,
             "Report Section": isOpen == "reports",
             "Account Management": isOpen == "accounts",
         }));
@@ -328,7 +329,7 @@ export default function VerifierSidenavSection({
                                     ))}
                                 </ul>
                             </li>
-                            <li>
+                            {/* <li>
                                 <div className="text-xs font-semibold leading-6 text-gray-600">
                                     My Team
                                 </div>
@@ -415,10 +416,10 @@ export default function VerifierSidenavSection({
                                         </li>
                                     ))}
                                 </ul>
-                            </li>
+                            </li> */}
                             <li className="mt-auto">
                                 <Link
-                                    href="./settings"
+                                    href="/verifier/settings"
                                     className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-600 hover:bg-green-600 hover:text-white"
                                 >
                                     <FcServices

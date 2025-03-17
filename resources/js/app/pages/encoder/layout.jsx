@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu } from "@headlessui/react";
+import { Bars3Icon, BellIcon } from "@heroicons/react/24/outline";
 import {
-    Bars3Icon,
-    BellIcon,
-} from "@heroicons/react/24/outline";
-import { FcAssistant, FcButtingIn, FcComboChart, FcConferenceCall, FcDataConfiguration, FcHome, FcList } from "react-icons/fc";
+    FcAssistant,
+    FcButtingIn,
+    FcComboChart,
+    FcConferenceCall,
+    FcDataConfiguration,
+    FcHome,
+    FcList,
+} from "react-icons/fc";
 
 import {
     ChevronDownIcon,
@@ -12,6 +17,10 @@ import {
 } from "@heroicons/react/20/solid";
 import AdminSidenavSection from "./_sections/encoder-sidenav-sections";
 import EncoderSidenavSection from "./_sections/encoder-sidenav-sections";
+import store from "@/app/store/store";
+import { get_user_thunk } from "@/app/redux/user-thunk";
+import { useSelector } from "react-redux";
+import { Link } from "@inertiajs/react";
 
 const navigation = [
     { name: "Dashboard", href: "./dashboard", icon: FcHome, current: false },
@@ -22,29 +31,34 @@ const navigation = [
         children: [
             {
                 name: "Register Beneficiary",
-                href: "./register",
+                href: "/encoder/register?status=register",
+                icon: FcList,
+            },
+            {
+                name: "Pending Beneficiary",
+                href: "/encoder/beneficiary?status=pending",
                 icon: FcList,
             },
             {
                 name: "Active Beneficiary",
-                href: "./beneficiary?status=active",
+                href: "/encoder/beneficiary?status=active",
                 icon: FcList,
             },
             {
                 name: "Inactive Beneficiary",
-                href: "./beneficiary?status=inactive",
+                href: "/encoder/beneficiary?status=inactive",
                 icon: FcList,
             },
         ],
     },
-    {
-        name: "Report Section",
-        icon: FcComboChart,
-        current: false,
-        children: [
-            { name: "General Report", href: "./reports", icon: FcList },
-        ],
-    },
+    // {
+    //     name: "Report Section",
+    //     icon: FcComboChart,
+    //     current: false,
+    //     children: [
+    //         { name: "General Report", href: "./reports", icon: FcList },
+    //     ],
+    // },
 ];
 const teams = [
     {
@@ -84,6 +98,10 @@ function classNames(...classes) {
 export default function EncoderLayout({ children }) {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [expanded, setExpanded] = useState({});
+    const {user}=useSelector((store)=>store.app)
+    useEffect(() => {
+        store.dispatch(get_user_thunk());
+    }, []);
 
     const toggleExpand = (name) => {
         setExpanded((prev) => ({
@@ -93,11 +111,9 @@ export default function EncoderLayout({ children }) {
     };
     return (
         <div>
-     
-
             {/* Static sidebar for desktop */}
             <EncoderSidenavSection
-            setSidebarOpen={setSidebarOpen}
+                setSidebarOpen={setSidebarOpen}
                 navigation={navigation}
                 classNames={classNames}
                 teams={teams}
@@ -143,7 +159,7 @@ export default function EncoderLayout({ children }) {
                             />
                         </form>
                         <div className="flex items-center gap-x-4 lg:gap-x-6">
-                            <button
+                            {/* <button
                                 type="button"
                                 className="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500"
                             >
@@ -154,7 +170,7 @@ export default function EncoderLayout({ children }) {
                                     aria-hidden="true"
                                     className="h-6 w-6"
                                 />
-                            </button>
+                            </button> */}
 
                             {/* Separator */}
                             <div
@@ -165,20 +181,20 @@ export default function EncoderLayout({ children }) {
                             {/* Profile dropdown */}
                             <Menu as="div" className="relative">
                                 <Menu.Button className="-m-1.5 flex items-center p-1.5">
-                                    <span className="sr-only">
+                                    {/* <span className="sr-only">
                                         Open user menu
                                     </span>
                                     <img
                                         alt=""
                                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                         className="h-8 w-8 rounded-full bg-gray-50"
-                                    />
+                                    /> */}
                                     <span className="hidden lg:flex lg:items-center">
                                         <span
                                             aria-hidden="true"
                                             className="ml-4 text-sm font-semibold leading-6 text-gray-900"
                                         >
-                                            Tom Cook
+                                            {user?.firstname}   {user?.lastname}
                                         </span>
                                         <ChevronDownIcon
                                             aria-hidden="true"
@@ -190,16 +206,14 @@ export default function EncoderLayout({ children }) {
                                     transition
                                     className="absolute right-0 z-10 mt-2.5 w-32 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
                                 >
-                                    {userNavigation.map((item) => (
-                                        <Menu.Item key={item.name}>
-                                            <a
-                                                href={item.href}
-                                                className="block px-3 py-1 text-sm leading-6 text-gray-900 data-[focus]:bg-gray-50"
-                                            >
-                                                {item.name}
-                                            </a>
-                                        </Menu.Item>
-                                    ))}
+                                    <Link
+                                        method="post"
+                                        href={route("logout")}
+                                        as="button"
+                                        className=" flex w-full px-3 py-1 text-sm leading-6 text-gray-900 data-[focus]:bg-gray-50"
+                                    >
+                                        Sign Out
+                                    </Link>
                                 </Menu.Items>
                             </Menu>
                         </div>

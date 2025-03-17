@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import StatsSection from "./sections/stats-section";
 import GraphSection from "./sections/graph-section";
 import VerifierLayout from "../layout";
+import { get_verifier_dashboard_thunk } from "@/app/redux/app-thunk";
+import store from "@/app/store/store";
 
 const currentDate = new Date().toLocaleDateString('en-US', {
   year: 'numeric',    // Full year (e.g., 2025)
@@ -14,6 +16,10 @@ function classNames(...classes) {
 }
 
 export default function AdminDashboardPage() {
+
+    useEffect(()=>{
+        store.dispatch(get_verifier_dashboard_thunk())
+    },[])
     return (
         <VerifierLayout>
             <h3 className="text-base font-semibold text-gray-900">

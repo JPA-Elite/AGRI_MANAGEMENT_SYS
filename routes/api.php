@@ -38,6 +38,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::get('/admin_dashboard', [DashboardController::class, 'admin_dashboard']);
+Route::get('/verifier_dashboard', [DashboardController::class, 'verifier_dashboard']);
 Route::resource('farm_profile', FarmProfileController::class);
 Route::resource('government_affiliation', GovernmentAffiliationController::class);
 Route::resource('household', HouseholdController::class);

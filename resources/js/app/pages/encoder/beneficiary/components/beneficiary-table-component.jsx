@@ -1,32 +1,17 @@
 import { UserPlusIcon } from "@heroicons/react/24/outline";
 import React from "react";
 import FilterDrawerComponent from "./filter-drawer-component";
+import { Link } from "@inertiajs/react";
+import { useSelector } from "react-redux";
 
 export default function BenefeciaryTableComponent() {
-    const people = [
-        {
-            rsbsa: "2023-074624000-00663",
-            register: "2023-074624000-00663",
-            lastname: "Soon",
-            firstname: "Jose Dary",
-            middlename: "Ybalez",
-            livelihood: "Fisherfolk",
-            organization: "Macapso Anglers Association",
-            status: "Active",
-            brgy: "Macapso",
-        },
-        {
-            rsbsa: "2023-074624000-00659",
-            register: "2023-074624000-00659",
-            lastname: "Cristobal",
-            firstname: "Jose Marie Juancho",
-            middlename: "Camingao",
-            livelihood: "Fisherfolk",
-            organization: "Macapso Anglers Association",
-            status: "Active",
-            brgy: "Macapso",
-        },
-    ];
+    const { personal_informations } = useSelector(
+        (store) => store.personal_information
+    );
+    const { user } = useSelector(
+        (store) => store.app
+    );
+    console.log("user", user.role);
     return (
         <div className="px-4 sm:px-6 lg:px-8 mt-8">
             <div className="sm:flex sm:items-center">
@@ -40,18 +25,18 @@ export default function BenefeciaryTableComponent() {
                         fullname, association and livelihood.
                     </p>
                 </div>
-                <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
+                {/* <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
                     <a
-                        href="./register"
+                        href="/administrator/beneficiary/register?status=register"
                         type="button"
                         className="block justify-items-center rounded-md bg-green-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
                     >
                         <UserPlusIcon className="size-4" />
                         Register Benefeciary
                     </a>
-                </div>
+                </div> */}
             </div>
-            <FilterDrawerComponent/>
+            {/* <FilterDrawerComponent /> */}
             <div className="mt-8 flow-root">
                 <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
@@ -115,13 +100,13 @@ export default function BenefeciaryTableComponent() {
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-200 bg-white">
-                                {people.map((person) => (
+                                {personal_informations?.map((person) => (
                                     <tr key={person.email}>
                                         <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
-                                            {person.rsbsa}
+                                            {person.register_id}
                                         </td>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
-                                            {person.register}
+                                            {person.id}
                                         </td>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm uppercase text-gray-900">
                                             {person.lastname}
@@ -133,9 +118,9 @@ export default function BenefeciaryTableComponent() {
                                             {person.middlename}
                                         </td>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
-                                            {person.livelihood}
                                             <p className="text-gray-500 italic">
-                                                {person.organization}
+                                                {person?.farm_profile
+                                                    ?.main_livelihood ?? "N/A"}
                                             </p>
                                         </td>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
@@ -144,18 +129,18 @@ export default function BenefeciaryTableComponent() {
                                             </span>
                                         </td>
                                         <td className="whitespace-nowrap px-3 py-4 text-sm uppercase text-gray-900">
-                                            {person.brgy}
+                                            {person.barangay}
                                         </td>
                                         <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                                            <a
-                                                href="./profile"
+                                            <Link
+                                                href={`/administrator/profile/${person.id}`}
                                                 className="text-indigo-600 hover:text-indigo-900"
                                             >
                                                 View Profile
                                                 <span className="sr-only">
                                                     , {person.rsbsa}
                                                 </span>
-                                            </a>
+                                            </Link>
                                         </td>
                                     </tr>
                                 ))}

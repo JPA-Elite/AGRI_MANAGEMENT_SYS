@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu } from "@headlessui/react";
 import { Bars3Icon, BellIcon } from "@heroicons/react/24/outline";
 import {
@@ -18,6 +18,9 @@ import {
 import AdminSidenavSection from "./_sections/verifier-sidenav-sections";
 import VerifierSidenavSection from "./_sections/verifier-sidenav-sections";
 import { Link } from "@inertiajs/react";
+import store from "@/app/store/store";
+import { get_user_thunk } from "@/app/redux/user-thunk";
+import { useSelector } from "react-redux";
 
 const navigation = [
     { name: "Dashboard", href: "./dashboard", icon: FcHome, current: false },
@@ -48,12 +51,12 @@ const navigation = [
             },
         ],
     },
-    {
-        name: "Report Section",
-        icon: FcComboChart,
-        current: false,
-        children: [{ name: "General Report", href: "./reports", icon: FcList }],
-    },
+    // {
+    //     name: "Report Section",
+    //     icon: FcComboChart,
+    //     current: false,
+    //     children: [{ name: "General Report", href: "./reports", icon: FcList }],
+    // },
 ];
 const teams = [
     {
@@ -83,13 +86,18 @@ function classNames(...classes) {
 export default function VerifierLayout({ children }) {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [expanded, setExpanded] = useState({});
-
+    const {user}=useSelector((store)=>store.app)
+      useEffect(() => {
+         store.dispatch(get_user_thunk())
+        }, [])
     const toggleExpand = (name) => {
         setExpanded((prev) => ({
             ...prev,
             [name]: !prev[name],
         }));
     };
+
+    console.log('user',user)
     return (
         <div>
             {/* Static sidebar for desktop */}
@@ -140,7 +148,7 @@ export default function VerifierLayout({ children }) {
                             />
                         </form>
                         <div className="flex items-center gap-x-4 lg:gap-x-6">
-                            <button
+                            {/* <button
                                 type="button"
                                 className="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500"
                             >
@@ -151,7 +159,7 @@ export default function VerifierLayout({ children }) {
                                     aria-hidden="true"
                                     className="h-6 w-6"
                                 />
-                            </button>
+                            </button> */}
 
                             {/* Separator */}
                             <div
@@ -162,20 +170,20 @@ export default function VerifierLayout({ children }) {
                             {/* Profile dropdown */}
                             <Menu as="div" className="relative">
                                 <Menu.Button className="-m-1.5 flex items-center p-1.5">
-                                    <span className="sr-only">
+                                    {/* <span className="sr-only">
                                         Open user menu
                                     </span>
                                     <img
                                         alt=""
                                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                         className="h-8 w-8 rounded-full bg-gray-50"
-                                    />
+                                    /> */}
                                     <span className="hidden lg:flex lg:items-center">
                                         <span
                                             aria-hidden="true"
                                             className="ml-4 text-sm font-semibold leading-6 text-gray-900"
                                         >
-                                            Tom Cook
+                                          {user.firstname}  {user.lastname}
                                         </span>
                                         <ChevronDownIcon
                                             aria-hidden="true"

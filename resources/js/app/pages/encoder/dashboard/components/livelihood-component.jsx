@@ -1,8 +1,11 @@
 import React from "react";
 import { FaPersonDigging } from "react-icons/fa6";
 import ApexCharts from "react-apexcharts";
+import { useSelector } from "react-redux";
 
 export default function LivelihoodComponent() {
+
+    const { dashboard } = useSelector((state) => state.app)
     const options = {
         chart: {
             id: "bar-chart",
@@ -43,7 +46,7 @@ export default function LivelihoodComponent() {
     const series = [
         {
             name: "Main Livelihood Count",
-            data: [182, 128, 90, 32], // Data corresponding to each category
+            data: [dashboard?.farmerWorker ?? 0, dashboard?.fisherfolk ?? 0, dashboard?.laborer ?? 0, dashboard?.agri_youth ?? 0], // Data corresponding to each category
         },
     ];
     return (

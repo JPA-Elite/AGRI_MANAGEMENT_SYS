@@ -13,7 +13,7 @@ import { get_users_thunk } from "@/app/redux/user-thunk";
 
 export default function AddUserSection() {
     const [open, setOpen] = useState(false);
-    const [loading,setLoading]=useState(false)
+    const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
         firstname: "",
         middlename: "",
@@ -39,23 +39,22 @@ export default function AddUserSection() {
             setMessage("Passwords do not match.");
             return;
         }
-        setLoading(true)
+        setLoading(true);
         try {
-            const response = await axios.post("/api/users",
-                {
-                    firstname: formData.firstname,
-                    middlename: formData.middlename,
-                    lastname: formData.lastname,
-                    suffix: formData.suffix,
-                    role: formData.role,
-                    email: formData.email,
-                    password: formData.password,
-                    password_confirmation: formData.password2,
-                    status: formData.status,
-                }
-            );
-            await store.dispatch(get_users_thunk())
-            setLoading(false)
+            const response = await axios.post("/api/users", {
+                firstname: formData.firstname,
+                middlename: formData.middlename,
+                lastname: formData.lastname,
+                suffix: formData.suffix,
+                role: formData.role,
+                email: formData.email,
+                password: formData.password,
+                password_confirmation: formData.password2,
+                status: formData.status,
+                brgy: formData.brgy,
+            });
+            await store.dispatch(get_users_thunk());
+            setLoading(false);
             setMessage(response.data.message);
             setFormData({
                 firstname: "",
@@ -71,7 +70,7 @@ export default function AddUserSection() {
 
             setOpen(false);
         } catch (error) {
-            setLoading(false)
+            setLoading(false);
         }
     };
 
@@ -243,7 +242,69 @@ export default function AddUserSection() {
                                                             </option>
                                                         </select>
                                                     </div>
-
+                                                    <select
+                                                        id="brgy"
+                                                        name="brgy"
+                                                        placeholder="Barangay"
+                                                        value={formData?.brgy}
+                                                        onChange={handleChange}
+                                                        className=" w-96 appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
+                                                    >
+                                                        <option
+                                                            value=""
+                                                            disabled
+                                                            selected
+                                                        >
+                                                            -- Select a Barangay
+                                                            --
+                                                        </option>
+                                                        <option value="Bairan">
+                                                            Bairan
+                                                        </option>
+                                                        <option value="Bagawines">
+                                                            Bagawines
+                                                        </option>
+                                                        <option value="Cabulihan">
+                                                            Cabulihan
+                                                        </option>
+                                                        <option value="Don Esperidion Villegas">
+                                                            Don Esperidion
+                                                            Villegas
+                                                        </option>
+                                                        <option value="Guba">
+                                                            Guba
+                                                        </option>
+                                                        <option value="Macapso">
+                                                            Macapso
+                                                        </option>
+                                                        <option value="Maglahos">
+                                                            Maglahos
+                                                        </option>
+                                                        <option value="Malangsa">
+                                                            Malangsa
+                                                        </option>
+                                                        <option value="Molobolo">
+                                                            Molobolo
+                                                        </option>
+                                                        <option value="Pinocawan">
+                                                            Pinocawan
+                                                        </option>
+                                                        <option value="Poblacion">
+                                                            Poblacion
+                                                        </option>
+                                                        <option value="Puan">
+                                                            Puan
+                                                        </option>
+                                                        <option value="Tabon">
+                                                            Tabon
+                                                        </option>
+                                                        <option value="Tagbino">
+                                                            Tagbino
+                                                        </option>
+                                                        <option value="Ulay">
+                                                            Ulay
+                                                        </option>
+                                                    </select>
                                                     <div className="sm:col-span-12">
                                                         <hr />
                                                         <h3 className="text-base font-medium text-gray-500 pt-3">
@@ -322,11 +383,13 @@ export default function AddUserSection() {
                                                     Cancel
                                                 </button>
                                                 <button
-                                                disabled={loading}
+                                                    disabled={loading}
                                                     type="submit"
                                                     className="ml-4 inline-flex justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500"
                                                 >
-                                                   {loading?"Loading...":"Save"} 
+                                                    {loading
+                                                        ? "Loading..."
+                                                        : "Save"}
                                                 </button>
                                             </div>
                                         </form>

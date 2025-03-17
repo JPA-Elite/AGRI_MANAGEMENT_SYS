@@ -75,7 +75,7 @@ Route::middleware('auth:sanctum')->prefix('administrator')->group(function () {
         });
 
         Route::get('verifier', function () {
-            return Inertia::render('admin/verifier/page');
+            return Inertia::render('admin/accounts/page');
         });
 
         Route::get('organization', function () {
@@ -96,41 +96,48 @@ Route::middleware('auth:sanctum')->prefix('administrator')->group(function () {
         return Inertia::render('admin/profile/page');
     });
     Route::get('profile/{id}/pdf', function () {
-        
+
         return Inertia::render('admin/profile/pdf/page');
     });
 });
 
 
-Route::get('/verifier/dashboard', function () {
-    return Inertia::render('verifier/dashboard/page');
+Route::middleware('auth:sanctum')->prefix('verifier')->group(function () {
+    Route::get('dashboard', function () {
+        return Inertia::render('verifier/dashboard/page');
+    });
+
+    Route::get('beneficiary', function () {
+        return Inertia::render('verifier/beneficiary/page');
+    });
+
+    Route::get('beneficiary/{id}', function () {
+        return Inertia::render('verifier/profile/page');
+    });
+
+    Route::get('reports', function () {
+        return Inertia::render('verifier/reports/page');
+    });
+
+    Route::get('contact', function () {
+        return Inertia::render('verifier/contact/page');
+    });
+
+    Route::get('settings', function () {
+        return Inertia::render('verifier/settings/page');
+    });
+
+   
+    Route::get('profile/{id}', function () {
+        return Inertia::render('verifier/profile/page');
+    });
+    Route::get('profile/{id}/pdf', function () {
+
+        return Inertia::render('verifier/profile/pdf/page');
+    });
 });
 
-Route::get('/verifier/beneficiary', function () {
-    return Inertia::render('verifier/beneficiary/page');
-});
-
-Route::get('/verifier/beneficiary/{id}', function () {
-    return Inertia::render('verifier/profile/page');
-});
-
-Route::get('/verifier/reports', function () {
-    return Inertia::render('verifier/reports/page');
-});
-
-Route::get('/verifier/contact', function () {
-    return Inertia::render('verifier/contact/page');
-});
-
-Route::get('/verifier/settings', function () {
-    return Inertia::render('verifier/settings/page');
-});
-
-Route::get('/verifier/profile', function () {
-    return Inertia::render('verifier/profile/page');
-});
-
-// Route::get('/verifier/verify', function () {
+// Route::get('verify', function () {
 //     return Inertia::render('verifier/verify/page');
 // });
 
@@ -163,7 +170,7 @@ Route::get('/encoder/lgu-profile', function () {
 });
 
 Route::get('/encoder/verifier', function () {
-    return Inertia::render('encoder/verifier/page');
+    return Inertia::render('encoderpage');
 });
 
 Route::get('/encoder/organization', function () {

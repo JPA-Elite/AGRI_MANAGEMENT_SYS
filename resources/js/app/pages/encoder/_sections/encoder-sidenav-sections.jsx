@@ -1,11 +1,29 @@
 import { Cog6ToothIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "@inertiajs/react";
-import React, { useState } from "react";
-import { Dialog, Transition } from "@headlessui/react";
+import React, { useEffect, useState } from "react";
+import { Dialog, Menu, Transition } from "@headlessui/react";
 import { FcServices } from "react-icons/fc";
 
-export default function EncoderSidenavSection({ navigation, classNames, teams,setSidebarOpen,sidebarOpen }) {
+export default function VerifierSidenavSection({
+    navigation,
+    classNames,
+    teams,
+    setSidebarOpen,
+    sidebarOpen,
+}) {
     const [expanded, setExpanded] = useState({}); // To manage expanded state of items with children
+    const params = new URLSearchParams(window.location.search);
+    const isOpen = window.location.pathname.split("/")[2];
+    const isActive = params.get("status");
+
+    useEffect(() => {
+        setExpanded((prev) => ({
+            ...prev,
+            "Beneficiary Section": true,
+            "Report Section": isOpen == "reports",
+            "Account Management": isOpen == "accounts",
+        }));
+    }, []);
 
     const toggleExpand = (name) => {
         setExpanded((prev) => ({
@@ -16,7 +34,7 @@ export default function EncoderSidenavSection({ navigation, classNames, teams,se
 
     return (
         <>
-               <Dialog
+            <Dialog
                 open={sidebarOpen}
                 onClose={setSidebarOpen}
                 className="relative z-50 lg:hidden"
@@ -175,9 +193,9 @@ export default function EncoderSidenavSection({ navigation, classNames, teams,se
                                                         )}
                                                     >
                                                         <team.icon
-                                                                aria-hidden="true"
-                                                                className="h-6 w-6 shrink-0"
-                                                            />
+                                                            aria-hidden="true"
+                                                            className="h-6 w-6 shrink-0"
+                                                        />
                                                         <span className="truncate">
                                                             {team.name}
                                                         </span>
@@ -234,7 +252,7 @@ export default function EncoderSidenavSection({ navigation, classNames, teams,se
                                                             "group flex cursor-pointer gap-x-3 rounded-md p-2 text-sm font-semibold leading-6",
                                                             expanded[item.name]
                                                                 ? "text-gray-800 bg-white-800"
-                                                                : "text-gray-600 hover:bg-green-600 hover:text-white"
+                                                                : ` text-gray-600 hover:bg-green-600 hover:text-white `
                                                         )}
                                                     >
                                                         <item.icon
@@ -251,28 +269,41 @@ export default function EncoderSidenavSection({ navigation, classNames, teams,se
                                                     {expanded[item.name] && (
                                                         <ul className="ml-6 mt-1 space-y-1">
                                                             {item.children.map(
-                                                                (child) => (
-                                                                    <Link
-                                                                        key={
-                                                                            child.name
-                                                                        }
-                                                                    >
+                                                                (child) => {
+                                                                    const path =
+                                                                        child.href;
+                                                                    return (
                                                                         <Link
-                                                                            href={
-                                                                                child.href
-                                                                            }
-                                                                            className="flex items-center text-gray-600 hover:text-white hover:bg-green-600 rounded-md px-2 py-1 text-sm font-semibold leading-6"
-                                                                        >
-                                                                            <child.icon
-                                                                                aria-hidden="true"
-                                                                                className="h-3 w-3 shrink-0 mr-2"
-                                                                            />
-                                                                            {
+                                                                            key={
                                                                                 child.name
                                                                             }
+                                                                        >
+                                                                            <Link
+                                                                                href={
+                                                                                    child.href
+                                                                                }
+                                                                                className={`
+                                                                            ${
+                                                                                path.split(
+                                                                                    "="
+                                                                                )[1] ===
+                                                                                isActive
+                                                                                    ? "bg-green-600 text-white"
+                                                                                    : ""
+                                                                            }
+                                                                            flex items-center text-gray-600 hover:text-white hover:bg-green-600 rounded-md px-2 py-1 text-sm font-semibold leading-6`}
+                                                                            >
+                                                                                <child.icon
+                                                                                    aria-hidden="true"
+                                                                                    className="h-3 w-3 shrink-0 mr-2"
+                                                                                />
+                                                                                {
+                                                                                    child.name
+                                                                                }
+                                                                            </Link>
                                                                         </Link>
-                                                                    </Link>
-                                                                )
+                                                                    );
+                                                                }
                                                             )}
                                                         </ul>
                                                     )}
@@ -298,7 +329,7 @@ export default function EncoderSidenavSection({ navigation, classNames, teams,se
                                     ))}
                                 </ul>
                             </li>
-                            <li>
+                            {/* <li>
                                 <div className="text-xs font-semibold leading-6 text-gray-600">
                                     My Team
                                 </div>
@@ -329,7 +360,9 @@ export default function EncoderSidenavSection({ navigation, classNames, teams,se
                                                         />
                                                         {teams.name}
                                                         <span className="ml-auto">
-                                                            {expanded[teams.name]
+                                                            {expanded[
+                                                                teams.name
+                                                            ]
                                                                 ? "-"
                                                                 : "+"}
                                                         </span>
@@ -383,13 +416,13 @@ export default function EncoderSidenavSection({ navigation, classNames, teams,se
                                         </li>
                                     ))}
                                 </ul>
-                            </li>
+                            </li> */}
                             <li className="mt-auto">
                                 <Link
                                     href="./settings"
                                     className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-600 hover:bg-green-600 hover:text-white"
                                 >
-                                    <FcServices 
+                                    <FcServices
                                         aria-hidden="true"
                                         className="h-6 w-6 shrink-0"
                                     />

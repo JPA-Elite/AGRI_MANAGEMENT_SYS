@@ -235,7 +235,7 @@ export default function AdminLayout({ children }) {
                                             </a>
                                         </Menu.Item>
                                     ))} */}
-                                    <Menu.Item>
+                                    {/* <Menu.Item>
                                         <a
                                             onClick={()=>router.visit(
                                                 "/administrator/profile"
@@ -244,7 +244,7 @@ export default function AdminLayout({ children }) {
                                         >
                                           Profile
                                         </a>
-                                    </Menu.Item>
+                                    </Menu.Item> */}
                                     <Menu.Item>
                                         <Link
                                             method="post"

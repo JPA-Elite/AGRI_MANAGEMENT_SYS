@@ -1,8 +1,11 @@
 import React from "react";
 import { FaPerson, FaPersonDress, FaPersonHalfDress } from "react-icons/fa6";
 import ApexCharts from "react-apexcharts";
+import { useSelector } from "react-redux";
 
 export default function GenderComponent() {
+
+    const { dashboard } = useSelector((store) => store.app)
     const options = {
         chart: {
             id: "bar-chart",
@@ -38,9 +41,11 @@ export default function GenderComponent() {
     const series = [
         {
             name: "Gender Count",
-            data: [865, 430], // Data corresponding to each category
+            data: [dashboard?.total_male ?? 0, dashboard?.total_female ?? 0], // Data corresponding to each category
         },
     ];
+
+    console.log('dashboard', dashboard)
 
     return (
         <div className="sm:col-span-2">
@@ -61,31 +66,31 @@ export default function GenderComponent() {
                     />
                 </div>
                 <div className="sm:col-span-2">
-                <div className="flex flex-row gap-3">
-                    <div className="divide-y divide-gray-200 overflow-hidden w-full rounded-lg bg-white shadow">
-                        <div className="flex flex-row px-4 py-5 sm:px-6 bg-green-500">
-                        <FaPerson className="text-white size-6"/>
-                        <h3 className="text-base text-white font-medium">MALE</h3>
+                    <div className="flex flex-row gap-3">
+                        <div className="divide-y divide-gray-200 overflow-hidden w-full rounded-lg bg-white shadow">
+                            <div className="flex flex-row px-4 py-5 sm:px-6 bg-green-500">
+                                <FaPerson className="text-white size-6" />
+                                <h3 className="text-base text-white font-medium">MALE</h3>
+                            </div>
+                            <div className="px-4 py-5 sm:p-6 bg-green-300">
+                                <h2 className="text-3xl font-medium text-center text-gray-700">{dashboard?.total_male ?? 0}</h2>
+                            </div>
                         </div>
-                        <div className="px-4 py-5 sm:p-6 bg-green-300">
-                            <h2 className="text-3xl font-medium text-center text-gray-700">865</h2>
-                        </div>
-                    </div>
 
-                    <div className="divide-y divide-gray-200 overflow-hidden w-full rounded-lg bg-white shadow">
-                        <div className="flex flex-row px-4 py-5 sm:px-6 bg-green-500">
-                            <FaPersonDress className="text-white size-6"/>
-                            <h3 className="text-base text-white font-medium">FEMALE</h3>
+                        <div className="divide-y divide-gray-200 overflow-hidden w-full rounded-lg bg-white shadow">
+                            <div className="flex flex-row px-4 py-5 sm:px-6 bg-green-500">
+                                <FaPersonDress className="text-white size-6" />
+                                <h3 className="text-base text-white font-medium">FEMALE</h3>
+                            </div>
+                            <div className="px-4 py-5 sm:p-6 bg-green-300">
+                                <h2 className="text-3xl font-medium text-center text-gray-700">{dashboard?.total_female ?? 0}</h2>
+                            </div>
                         </div>
-                        <div className="px-4 py-5 sm:p-6 bg-green-300">
-                        <h2 className="text-3xl font-medium text-center text-gray-700">430</h2>
-                        </div>
-                    </div>
 
-                    
+
+                    </div>
                 </div>
-                </div>
-                
+
             </div>
         </div>
     );

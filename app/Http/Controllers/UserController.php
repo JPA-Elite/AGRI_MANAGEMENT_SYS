@@ -19,15 +19,16 @@ class UserController extends Controller
     {
         // Validate incoming request
         $validator = Validator::make($request->all(), [
-            'firstname' => 'required|string|max:255',
-            'middlename' => 'nullable|string|max:255',
-            'lastname' => 'required|string|max:255',
-            'suffix' => 'nullable|string|max:10',
+            'firstname' => 'required',
+            'middlename' => 'nullable',
+            'lastname' => 'required',
+            'suffix' => 'nullable',
             'email' => 'required|email|unique:users,email',
             'role' => 'required|string',
             'brgy' => 'nullable|string',
             'password' => 'required|min:6|confirmed',
-            'status' => 'required|string|max:10',
+            'status' => 'required',
+            'brgy' => 'required',
         ]);
 
         if ($validator->fails()) {

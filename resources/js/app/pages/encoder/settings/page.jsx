@@ -1,11 +1,11 @@
 import React from 'react'
+import AdminLayout from '../layout'
 import SettingsScreenSection from './section/settings-screen-section'
-import EncoderLayout from '../layout'
 
 export default function SettingsPage() {
   return (
-    <EncoderLayout>
+    <AdminLayout>
         <SettingsScreenSection/>
-    </EncoderLayout>
+    </AdminLayout>
   )
 }
