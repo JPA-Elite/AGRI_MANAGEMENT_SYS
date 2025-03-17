@@ -4,18 +4,20 @@ import FirstFormSection from "./first-form-section";
 import SecondFormSection from "./second-form-section";
 import ThirdFormSection from "./third-form-section";
 import PreviewFormSection from "./preview-form-section";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import store from "@/app/store/store";
 import { store_personal_information_thunk } from "@/app/redux/personal-information-thunk";
 import { router } from "@inertiajs/react";
 import moment from "moment";
+import { setPersonalInformation } from "@/app/redux/personal-information-slice";
 
 export default function RegistrationStepperSection() {
     const [currentStep, setCurrentStep] = useState(1); // Set the first step as current (1-based index)
     const { personal_information } = useSelector(
         (store) => store.personal_information
     );
-  
+    const dispatch = useDispatch();
+
     const [loading, setLoading] = useState(false);
     const steps = [
         { id: "01", name: "Personal Information", description: "Completed" },
@@ -80,10 +82,16 @@ export default function RegistrationStepperSection() {
             await store.dispatch(
                 store_personal_information_thunk({
                     ...personal_information,
-                    register_id: moment().format("MDDYYYYHHmmss")
+                    register_id: moment().format("MDDYYYYHHmmss"),
                 })
             );
             setLoading(false);
+            dispatch(
+                setPersonalInformation({
+                    land_farmers: [{ name: "" }],
+                    parcels: [{}],
+                })
+            );
             router.visit("/administrator/beneficiary/register?status=register");
         } catch (error) {
             console.log("error", error);

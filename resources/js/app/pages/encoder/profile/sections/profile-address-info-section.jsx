@@ -1,13 +1,21 @@
+import { setPersonalInformation } from "@/app/redux/personal-information-slice";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function ProfileAddressInfoSection() {
+    const { personal_information } = useSelector(
+        (store) => store.personal_information
+    );
+
+    const dispatch = useDispatch();
+
     return (
         <div className="border-b border-gray-900/10 pb-12">
             <h2 className="text-xl/7 font-semibold text-gray-900 mt-3">
-                    <span className="block w-full rounded-full bg-gray-200 px-4 py-2">
-                        II. Address Information
-                    </span>
-                </h2>
+                <span className="block w-full rounded-full bg-gray-200 px-4 py-2">
+                    II. Address Information
+                </span>
+            </h2>
 
             <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-12">
                 <div className="col-span-4">
@@ -19,11 +27,24 @@ export default function ProfileAddressInfoSection() {
                     </label>
                     <div className="mt-2">
                         <input
-                        disabled
                             id="street_address"
                             name="street_address"
                             type="text"
-                            value="Purok Pine-Tree"
+                            value={
+                                personal_information?.personal_info
+                                    ?.street_address ?? ""
+                            }
+                            onChange={(e) =>
+                                dispatch(
+                                    setPersonalInformation({
+                                        ...personal_information,
+                                        personal_info: {
+                                            ...personal_information.personal_info, // Spread the existing home_address fields
+                                            [e.target.name]: e.target.value, // Dynamically set the updated field
+                                        },
+                                    })
+                                )
+                            }
                             className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                         />
                     </div>
@@ -38,9 +59,24 @@ export default function ProfileAddressInfoSection() {
                     </label>
                     <div className="mt-2">
                         <input
-                        disabled
                             id="street_address_2"
                             name="street_address_2"
+
+                            value={
+                                personal_information?.personal_info
+                                    ?.street_address_2 ?? ""
+                            }
+                            onChange={(e) =>
+                                dispatch(
+                                    setPersonalInformation({
+                                        ...personal_information,
+                                        personal_info: {
+                                            ...personal_information.personal_info, // Spread the existing home_address fields
+                                            [e.target.name]: e.target.value, // Dynamically set the updated field
+                                        },
+                                    })
+                                )
+                            }
                             type="text"
                             className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                         />
@@ -56,29 +92,43 @@ export default function ProfileAddressInfoSection() {
                     </label>
                     <div className="mt-2">
                         <select
-                            disabled
                             name="barangay"
                             placeholder="Barangay"
+                            value={personal_information?.personal_info?.barangay ?? ""}
+                            
+                            onChange={(e) =>
+                                dispatch(
+                                    setPersonalInformation({
+                                        ...personal_information,
+                                        personal_info: {
+                                            ...personal_information.personal_info, // Spread the existing home_address fields
+                                            [e.target.name]: e.target.value, // Dynamically set the updated field
+                                        },
+                                    })
+                                )
+                            }
                             className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                         >
-                            <option value="" disabled selected>
+                            <option value="" selected>
                                 -- Select a Barangay --
                             </option>
-                            <option>Bairan</option>
-                            <option>Bagawines</option>
-                            <option>Cabulihan</option>
-                            <option>Don Esperidion Villegas</option>
-                            <option>Guba</option>
-                            <option selected>Macapso</option>
-                            <option>Maglahos</option>
-                            <option>Malangsa</option>
-                            <option>Molobolo</option>
-                            <option>Pinocawan</option>
-                            <option>Poblacion</option>
-                            <option>Puan</option>
-                            <option>Tabon</option>
-                            <option>Tagbino</option>
-                            <option>Ulay</option>
+                            <option value="Bairan">Bairan</option>
+                            <option value="Bagawines">Bagawines</option>
+                            <option value="Cabulihan">Cabulihan</option>
+                            <option value="Don Esperidion Villegas">
+                                Don Esperidion Villegas
+                            </option>
+                            <option value="Guba">Guba</option>
+                            <option value="Macapso">Macapso</option>
+                            <option value="Maglahos">Maglahos</option>
+                            <option value="Malangsa">Malangsa</option>
+                            <option value="Molobolo">Molobolo</option>
+                            <option value="Pinocawan">Pinocawan</option>
+                            <option value="Poblacion">Poblacion</option>
+                            <option value="Puan">Puan</option>
+                            <option value="Tabon">Tabon</option>
+                            <option value="Tagbino">Tagbino</option>
+                            <option value="Ulay">Ulay</option>
                         </select>
                     </div>
                 </div>
@@ -92,10 +142,21 @@ export default function ProfileAddressInfoSection() {
                     </label>
                     <div className="mt-2">
                         <input
-                        disabled
                             name="city"
                             type="text"
-                            value="Vallehermoso"
+                            value={personal_information?.personal_info?.city ?? ""}
+                            
+                            onChange={(e) =>
+                                dispatch(
+                                    setPersonalInformation({
+                                        ...personal_information,
+                                        personal_info: {
+                                            ...personal_information.personal_info, // Spread the existing home_address fields
+                                            [e.target.name]: e.target.value, // Dynamically set the updated field
+                                        },
+                                    })
+                                )
+                            }
                             className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                         />
                     </div>
@@ -110,11 +171,22 @@ export default function ProfileAddressInfoSection() {
                     </label>
                     <div className="mt-2">
                         <input
-                        disabled
                             id="Province"
-                            name="Province"
+                            name="province"
                             type="text"
-                            value="Negros Oriental"
+                            value={personal_information?.personal_info?.province ?? ""}
+                            
+                            onChange={(e) =>
+                                dispatch(
+                                    setPersonalInformation({
+                                        ...personal_information,
+                                        personal_info: {
+                                            ...personal_information.personal_info, // Spread the existing home_address fields
+                                            [e.target.name]: e.target.value, // Dynamically set the updated field
+                                        },
+                                    })
+                                )
+                            }
                             className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                         />
                     </div>
@@ -129,13 +201,23 @@ export default function ProfileAddressInfoSection() {
                     </label>
                     <div className="mt-2">
                         <select
-                            disabled
                             name="region"
+                            value={personal_information?.personal_info?.region ?? ""}
+                            
+                            onChange={(e) =>
+                                dispatch(
+                                    setPersonalInformation({
+                                        ...personal_information,
+                                        personal_info: {
+                                            ...personal_information.personal_info, // Spread the existing home_address fields
+                                            [e.target.name]: e.target.value, // Dynamically set the updated field
+                                        },
+                                    })
+                                )
+                            }
                             className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                         >
-                            <option value="" disabled>
-                                -- Select a Region --
-                            </option>
+                            <option value="">-- Select a Region --</option>
 
                             <optgroup label="Luzon">
                                 <option value="ncr">

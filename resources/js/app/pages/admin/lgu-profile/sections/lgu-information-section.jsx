@@ -26,6 +26,7 @@ export default function LguInformationSection({ id }) {
         province: "",
         region: null,
     });
+    
 console.log('addressaddressaddress',address)
     useEffect(() => {
         setForm((prevForm) => ({

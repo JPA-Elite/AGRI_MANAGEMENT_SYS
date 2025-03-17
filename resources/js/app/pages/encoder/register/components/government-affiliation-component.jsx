@@ -10,6 +10,8 @@ export default function GovernmentAffiliationComponent() {
     const { personal_information } = useSelector(
         (store) => store.personal_information
     );
+    const { organizations } = useSelector((store) => store.organization);
+    console.log("organizations", organizations);
     const dispatch = useDispatch();
     return (
         <div>
@@ -31,7 +33,7 @@ export default function GovernmentAffiliationComponent() {
                         <div className="mt-2">
                             <div className="flex items-center gap-x-3 mb-3">
                                 <input
-                                    name="pwd"
+                                    name="PWD"
                                     type="radio"
                                     value="YES"
                                     onChange={(e) =>
@@ -57,7 +59,7 @@ export default function GovernmentAffiliationComponent() {
                             </div>
                             <div className="flex items-center gap-x-3">
                                 <input
-                                    name="pwd"
+                                    name="PWD"
                                     type="radio"
                                     value="NO"
                                     onChange={(e) =>
@@ -94,7 +96,7 @@ export default function GovernmentAffiliationComponent() {
                         <div className="mt-2">
                             <div className="flex items-center gap-x-3 mb-3">
                                 <input
-                                    name="4ps"
+                                    name="4Ps"
                                     type="radio"
                                     value="YES"
                                     onChange={(e) =>
@@ -120,7 +122,7 @@ export default function GovernmentAffiliationComponent() {
                             </div>
                             <div className="flex items-center gap-x-3">
                                 <input
-                                    name="4ps"
+                                    name="4Ps"
                                     type="radio"
                                     value="NO"
                                     onChange={(e) =>
@@ -157,7 +159,7 @@ export default function GovernmentAffiliationComponent() {
                         <div className="mt-2">
                             <div className="flex items-center gap-x-3 mb-3">
                                 <input
-                                    name="indigenous"
+                                    name="indigenous_group"
                                     type="radio"
                                     value="YES"
                                     onClick={() => setIsIndigenous(false)}
@@ -184,7 +186,7 @@ export default function GovernmentAffiliationComponent() {
                             </div>
                             <div className="flex items-center gap-x-3">
                                 <input
-                                    name="indigenous"
+                                    name="indigenous_group"
                                     type="radio"
                                     value="NO"
                                     onClick={() => setIsIndigenous(true)}
@@ -212,7 +214,7 @@ export default function GovernmentAffiliationComponent() {
                             {!isIndigenous && (
                                 <>
                                     <input
-                                        name="indigent_specify"
+                                        name="indigenous_group_name"
                                         type="text"
                                         placeholder="If YES, Please Specify"
                                         onChange={(e) =>
@@ -247,7 +249,7 @@ export default function GovernmentAffiliationComponent() {
                     <div className="mt-2">
                         <div className="flex items-center gap-x-3 mb-3">
                             <input
-                                name="gov_id"
+                                name="government_id"
                                 type="radio"
                                 value="YES"
                                 onClick={() => setIsGovernment(false)}
@@ -273,7 +275,7 @@ export default function GovernmentAffiliationComponent() {
                         </div>
                         <div className="flex items-center gap-x-3">
                             <input
-                                name="gov_id"
+                                name="government_id"
                                 type="radio"
                                 value="NO"
                                 onClick={() => setIsGovernment(true)}
@@ -300,7 +302,7 @@ export default function GovernmentAffiliationComponent() {
                         {!isGovernment && (
                             <>
                                 <input
-                                    name="gov_type"
+                                    name="government_id_type"
                                     type="text"
                                     placeholder="If YES, Please Specify ID Type"
                                     onChange={(e) =>
@@ -319,7 +321,7 @@ export default function GovernmentAffiliationComponent() {
                                 />
 
                                 <input
-                                    name="gov_number"
+                                    name="government_id_number"
                                     type="text"
                                     placeholder="ID Number"
                                     onChange={(e) =>
@@ -351,7 +353,7 @@ export default function GovernmentAffiliationComponent() {
                     <div className="mt-2">
                         <div className="flex items-center gap-x-3 mb-3">
                             <input
-                                name="farm_assoc"
+                                name="farmers_association"
                                 type="radio"
                                 value="YES"
                                 // onClick={() => setIsCooperative(false)}
@@ -377,18 +379,20 @@ export default function GovernmentAffiliationComponent() {
                         </div>
                         <div className="flex items-center gap-x-3">
                             <input
-                                name="farm_assoc"
+                                name="farmers_association"
                                 type="radio"
                                 value="NO"
                                 onClick={() => setIsCooperative(true)}
                                 onChange={(e) =>
-                                    setPersonalInformation({
-                                        ...personal_information,
-                                        government_affiliation: {
-                                            ...personal_information.government_affiliation, // Spread the existing government_affiliation fields
-                                            [e.target.name]: e.target.value, // Dynamically set the updated field
-                                        },
-                                    })
+                                    dispatch(
+                                        setPersonalInformation({
+                                            ...personal_information,
+                                            government_affiliation: {
+                                                ...personal_information.government_affiliation, // Spread the existing government_affiliation fields
+                                                [e.target.name]: e.target.value, // Dynamically set the updated field
+                                            },
+                                        })
+                                    )
                                 }
                                 className="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white checked:border-green-600 checked:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden [&:not(:checked)]:before:hidden"
                             />
@@ -399,12 +403,12 @@ export default function GovernmentAffiliationComponent() {
                                 NO
                             </label>
                         </div>
-                        {!isCooperative && (
+                        {personal_information?.government_affiliation
+                            ?.farmers_association == "YES" && (
                             <>
-                                <input
-                                    name="farmassoc_name"
-                                    type="text"
-                                    placeholder="If YES, Please Specify"
+                                <select
+                                    id="farmers_association_name"
+                                    name="farmers_association_name"
                                     onChange={(e) =>
                                         dispatch(
                                             setPersonalInformation({
@@ -417,8 +421,23 @@ export default function GovernmentAffiliationComponent() {
                                             })
                                         )
                                     }
-                                    className="block w-1/2 rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 mt-4 sm:text-sm/6"
-                                />
+                                    className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
+                                >
+                                    <option value="" disabled selected>
+                                        -- Member of any Farmers
+                                        Association/Cooperative? --
+                                    </option>
+                                    {organizations.map((res, i) => {
+                                        return (
+                                            <option
+                                                value={res.organization_name}
+                                                key={i}
+                                            >
+                                                {res.organization_name}
+                                            </option>
+                                        );
+                                    })}
+                                </select>
                             </>
                         )}
                     </div>

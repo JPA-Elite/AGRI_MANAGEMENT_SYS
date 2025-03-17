@@ -127,7 +127,7 @@ Route::middleware('auth:sanctum')->prefix('verifier')->group(function () {
         return Inertia::render('verifier/settings/page');
     });
 
-   
+
     Route::get('profile/{id}', function () {
         return Inertia::render('verifier/profile/page');
     });
@@ -185,9 +185,11 @@ Route::get('/encoder/settings', function () {
     return Inertia::render('encoder/settings/page');
 });
 
-Route::get('/encoder/profile', function () {
+Route::get('/encoder/profile/{id}', function () {
     return Inertia::render('encoder/profile/page');
 });
+
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

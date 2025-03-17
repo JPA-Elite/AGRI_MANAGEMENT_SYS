@@ -16,9 +16,10 @@ import { useSelector } from "react-redux";
 import moment from "moment";
 import Swal from "sweetalert2";
 import VerifierLayout from "../layout";
+import ProfileVerifySection from "./sections/profile-verify-section";
 
 export default function ProfilePage() {
-    const id = window.location.pathname.split("/")[3];
+    const id = window.location?.pathname.split("/")[3];
     const [loading, setLoading] = useState(false);
     const { personal_information } = useSelector(
         (store) => store.personal_information
@@ -45,6 +46,7 @@ export default function ProfilePage() {
             setLoading(false);
         }
     }
+    console.log("personal_information", personal_information?.personal_info);
     return (
         <VerifierLayout>
             <div className="overflow-hidden bg-gray-200 shadow-xl sm:rounded-lg">
@@ -114,7 +116,7 @@ export default function ProfilePage() {
                             </header>
 
                             <main>
-                                <div className="p-3">
+                                <div className="p-3 flex items-center justify-between">
                                     <span className="isolate inline-flex rounded-md shadow-sm">
                                         <button
                                             type="button"
@@ -124,7 +126,9 @@ export default function ProfilePage() {
                                         >
                                             <FaFilePen className="size-5 mr-2 text-green-600" />
 
-                                            {loading ? "Loading..." : "Save Profile"}
+                                            {loading
+                                                ? "Loading..."
+                                                : "Save Profile"}
                                         </button>
                                         {/* <button
                                             type="button"
@@ -142,7 +146,16 @@ export default function ProfilePage() {
                                             Export to PDF
                                         </a>
                                     </span>
+                                    {personal_information?.personal_info?.status ==
+                                    "pending" && (
+                                    <ProfileVerifySection
+                                        data={
+                                            personal_information?.personal_info
+                                        }
+                                    />
+                                )}
                                 </div>
+                                
                                 <hr />
                                 <ProfilePersonalInfoSection />
                                 <ProfileAddressInfoSection />

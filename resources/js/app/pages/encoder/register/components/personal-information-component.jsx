@@ -41,7 +41,7 @@ export default function PersonalInformationComponent() {
                                         })
                                     )
                                 }
-                                name="first_name"
+                                name="firstname"
                                 type="text"
                                 autoComplete="given-name"
                                 className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
@@ -58,7 +58,7 @@ export default function PersonalInformationComponent() {
                         </label>
                         <div className="mt-2">
                             <input
-                                name="middle_name"
+                                name="middlename"
                                 onChange={(e) =>
                                     dispatch(
                                         setPersonalInformation({
@@ -87,7 +87,7 @@ export default function PersonalInformationComponent() {
                         <div className="mt-2">
                             <input
                                 id="last_name"
-                                name="last_name"
+                                name="lastname"
                                 onChange={(e) =>
                                     dispatch(
                                         setPersonalInformation({
@@ -148,7 +148,7 @@ export default function PersonalInformationComponent() {
                         </label>
                         <div className="mt-2">
                             <input
-                                name="maiden_name"
+                                name="mothers_maiden"
                                 type="text"
                                 onChange={(e) =>
                                     dispatch(
@@ -389,7 +389,7 @@ export default function PersonalInformationComponent() {
                         <div className="mt-2">
                             <input
                                 id="telephone"
-                                name="telephone"
+                                name="landline"
                                 type="text"
                                 onChange={(e) =>
                                     dispatch(
@@ -445,7 +445,7 @@ export default function PersonalInformationComponent() {
                         <div className="mt-2">
                             <input
                                 id="contact_mobile"
-                                name="contact_mobile"
+                                name="contact_person_mobile"
                                 type="text"
                                 onChange={(e) =>
                                     dispatch(
@@ -474,7 +474,7 @@ export default function PersonalInformationComponent() {
                             <div className="flex justify-items-center gap-x-3">
                                 <input
                                     id="householdhead"
-                                    name="householdhead"
+                                    name="household_head"
                                     type="radio"
                                     value="YES"
                                     onClick={() => setIsHouseHold(true)}
@@ -503,7 +503,7 @@ export default function PersonalInformationComponent() {
 
                                 <input
                                     id="householdhead"
-                                    name="householdhead"
+                                    name="household_head"
                                     type="radio"
                                     value="NO"
                                     onClick={() => setIsHouseHold(false)}
@@ -543,7 +543,7 @@ export default function PersonalInformationComponent() {
                                     Name of Household Head
                                 </label>
                                 <input
-                                    name="household_name"
+                                    name="household_head_name"
                                     type="text"
                                     onChange={(e) =>
                                         dispatch(

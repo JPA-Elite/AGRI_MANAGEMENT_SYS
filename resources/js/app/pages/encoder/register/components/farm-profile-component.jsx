@@ -41,7 +41,8 @@ function FarmProfileComponent() {
                                 setPersonalInformation({
                                     ...personal_information,
                                     farm_profile: {
-                                        ...personal_information.farm_profile, // Spread the existing home_address fields
+                                        ...personal_information.farm_profile,
+                                        farm_activity: [],
                                         [e.target.name]: e.target.value, // Dynamically set the updated field
                                     },
                                 })
@@ -77,7 +78,8 @@ function FarmProfileComponent() {
                                 setPersonalInformation({
                                     ...personal_information,
                                     farm_profile: {
-                                        ...personal_information.farm_profile, // Spread the existing home_address fields
+                                        ...personal_information.farm_profile,
+                                        farm_activity: [],
                                         [e.target.name]: e.target.value, // Dynamically set the updated field
                                     },
                                 })
@@ -106,7 +108,8 @@ function FarmProfileComponent() {
                                 setPersonalInformation({
                                     ...personal_information,
                                     farm_profile: {
-                                        ...personal_information.farm_profile, // Spread the existing home_address fields
+                                        ...personal_information.farm_profile,
+                                        farm_activity: [],
                                         [e.target.name]: e.target.value, // Dynamically set the updated field
                                     },
                                 })
@@ -135,7 +138,8 @@ function FarmProfileComponent() {
                                 setPersonalInformation({
                                     ...personal_information,
                                     farm_profile: {
-                                        ...personal_information.farm_profile, // Spread the existing home_address fields
+                                        ...personal_information.farm_profile,
+                                        farm_activity: [],
                                         [e.target.name]: e.target.value, // Dynamically set the updated field
                                     },
                                 })
@@ -183,13 +187,16 @@ function FarmProfileComponent() {
 
                             <div className="col-span-8 ml-3">
                                 <input
-                                    name="Annual_Income"
+                                    name="annual_income"
                                     type="number"
                                     onChange={(e) =>
                                         dispatch(
-                                            setForm({
-                                                ...form,
-                                                [e.target.name]: e.target.value,
+                                            setPersonalInformation({
+                                                ...personal_information,
+                                                farm_profile: {
+                                                    ...personal_information.farm_profile,
+                                                    [e.target.name]: e.target.value, // Dynamically set the updated field
+                                                },
                                             })
                                         )
                                     }

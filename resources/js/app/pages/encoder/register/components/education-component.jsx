@@ -8,6 +8,7 @@ export default function EducationComponent() {
         (store) => store.personal_information
     );
     const dispatch = useDispatch();
+    
     return (
         <div>
             <div className="border-b border-gray-900/10 pb-12">
@@ -29,8 +30,8 @@ export default function EducationComponent() {
                         <div className="mt-2">
                             <select
                                 id="education"
-                                name="education"
-                                oonChange={(e) =>
+                                name="highest_education"
+                                onChange={(e) =>
                                     dispatch(
                                         setPersonalInformation({
                                             ...personal_information,

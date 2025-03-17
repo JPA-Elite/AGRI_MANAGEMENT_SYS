@@ -4,10 +4,21 @@ import FirstFormSection from "./first-form-section";
 import SecondFormSection from "./second-form-section";
 import ThirdFormSection from "./third-form-section";
 import PreviewFormSection from "./preview-form-section";
+import { useDispatch, useSelector } from "react-redux";
+import store from "@/app/store/store";
+import { store_personal_information_thunk } from "@/app/redux/personal-information-thunk";
+import { router } from "@inertiajs/react";
+import moment from "moment";
+import { setPersonalInformation } from "@/app/redux/personal-information-slice";
 
 export default function RegistrationStepperSection() {
     const [currentStep, setCurrentStep] = useState(1); // Set the first step as current (1-based index)
+    const { personal_information } = useSelector(
+        (store) => store.personal_information
+    );
+    const dispatch = useDispatch();
 
+    const [loading, setLoading] = useState(false);
     const steps = [
         { id: "01", name: "Personal Information", description: "Completed" },
         { id: "02", name: "Farm Profile", description: "Current" },
@@ -27,8 +38,8 @@ export default function RegistrationStepperSection() {
                 index + 1 < currentStep
                     ? "complete"
                     : index + 1 === currentStep
-                        ? "current"
-                        : "upcoming",
+                    ? "current"
+                    : "upcoming",
         }));
 
     const stepsWithStatus = updateStepStatus();
@@ -64,20 +75,42 @@ export default function RegistrationStepperSection() {
                 return null;
         }
     };
-
+    async function submitHandler(params) {
+        console.log("waaaaaaaaaaaaa", personal_information);
+        setLoading(true);
+        try {
+            await store.dispatch(
+                store_personal_information_thunk({
+                    ...personal_information,
+                    register_id: moment().format("MDDYYYYHHmmss"),
+                })
+            );
+            setLoading(false);
+            dispatch(
+                setPersonalInformation({
+                    land_farmers: [{ name: "" }],
+                    parcels: [{}],
+                })
+            );
+            router.visit("/encoder/register?status=register");
+        } catch (error) {
+            console.log("error", error);
+            setLoading(false);
+        }
+    }
     return (
         <div>
             <div className="lg:border-b lg:border-t lg:border-gray-200">
-                <nav
-                    aria-label="Progress"
-                    className=""
-                >
+                <nav aria-label="Progress" className="">
                     <ol
                         role="list"
                         className="overflow-hidden rounded-md lg:flex lg:rounded-none lg:border-l lg:border-r lg:border-b lg:border-gray-200"
                     >
                         {stepsWithStatus.map((step, stepIdx) => (
-                            <li key={step.id} className="relative overflow-hidden lg:flex-1">
+                            <li
+                                key={step.id}
+                                className="relative overflow-hidden lg:flex-1"
+                            >
                                 {/* Separator for all steps except the first */}
                                 {stepIdx > 0 && (
                                     <div
@@ -100,13 +133,17 @@ export default function RegistrationStepperSection() {
                                 )}
                                 <div
                                     className={classNames(
-                                        stepIdx === 0 ? "rounded-t-md border-b-0" : "",
-                                        stepIdx === steps.length - 1 ? "rounded-b-md border-t-0" : "",
-                                        "overflow-hidden border border-gray-200 lg:border-0"
+                                        stepIdx === 0
+                                            ? "rounded-t-md border-b-0"
+                                            : "",
+                                        stepIdx === steps.length - 1
+                                            ? "rounded-b-md border-t-0"
+                                            : "",
+                                        "overflow-hidden border  border-gray-200 lg:border-0"
                                     )}
                                 >
                                     <button
-                                        onClick={() => handleStepClick(stepIdx)}
+                                        // onClick={() => handleStepClick(stepIdx)}
                                         className="group w-full text-left:"
                                     >
                                         {step.status === "complete" ? (
@@ -117,7 +154,9 @@ export default function RegistrationStepperSection() {
                                                 />
                                                 <span
                                                     className={classNames(
-                                                        stepIdx !== 0 ? "lg:pl-9" : "",
+                                                        stepIdx !== 0
+                                                            ? "lg:pl-9"
+                                                            : "",
                                                         "flex items-start px-6 py-5 text-sm font-medium"
                                                     )}
                                                 >
@@ -147,7 +186,9 @@ export default function RegistrationStepperSection() {
                                                 />
                                                 <span
                                                     className={classNames(
-                                                        stepIdx !== 0 ? "lg:pl-9" : "",
+                                                        stepIdx !== 0
+                                                            ? "lg:pl-9"
+                                                            : "",
                                                         "flex items-start px-6 py-5 text-sm font-medium"
                                                     )}
                                                 >
@@ -176,13 +217,17 @@ export default function RegistrationStepperSection() {
                                                 />
                                                 <span
                                                     className={classNames(
-                                                        stepIdx !== 0 ? "lg:pl-9" : "",
+                                                        stepIdx !== 0
+                                                            ? "lg:pl-9"
+                                                            : "",
                                                         "flex items-start px-6 py-5 text-sm font-medium"
                                                     )}
                                                 >
                                                     <span className="shrink-0">
                                                         <span className="flex size-10 items-center justify-center rounded-full border-2 border-gray-300">
-                                                            <span className="text-gray-500">{step.id}</span>
+                                                            <span className="text-gray-500">
+                                                                {step.id}
+                                                            </span>
                                                         </span>
                                                     </span>
                                                     <span className="ml-4 mt-0.5 flex min-w-0 flex-col">
@@ -200,7 +245,6 @@ export default function RegistrationStepperSection() {
                                 </div>
                             </li>
                         ))}
-
                     </ol>
                 </nav>
                 <div className="mb-8 mt-4">{renderCurrentForm()}</div>
@@ -210,14 +254,25 @@ export default function RegistrationStepperSection() {
                         className="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400"
                         disabled={currentStep === 1}
                     >
-                       Previous
+                        Previous
                     </button>
                     <button
-                        onClick={currentStep === steps.length ? () => alert('Form Submitted') : handleNext} // Change this action to submit or redirect
+                        onClick={
+                            currentStep === steps.length
+                                ? () => submitHandler()
+                                : handleNext
+                        }
+                        disabled={loading}
                         className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
-                        disabled={currentStep === steps.length}
+                        // disabled={currentStep === steps.length}
                     >
-                        {currentStep === steps.length ? "Submit" : "Next"}
+                        {loading ? (
+                            <>Loading...</>
+                        ) : currentStep === steps.length ? (
+                            "Submit"
+                        ) : (
+                            "Next"
+                        )}
                     </button>
                 </div>
             </div>
