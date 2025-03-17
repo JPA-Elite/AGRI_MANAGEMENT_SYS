@@ -42,6 +42,11 @@ export default function LoginPage({ status, canResetPassword }) {
                 <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
                     <div className="bg-gray-100 px-6 py-12 shadow-xl sm:rounded-lg sm:px-12">
                         <form onSubmit={submit} className="space-y-6">
+                            {status && (
+                                <div className="mb-4 font-medium text-sm text-green-600">
+                                    {status}
+                                </div>
+                            )}
                             <div>
                                 <label
                                     htmlFor="email"
@@ -63,6 +68,10 @@ export default function LoginPage({ status, canResetPassword }) {
                                         className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-green-700 sm:text-sm/6"
                                     />
                                 </div>
+                                <InputError
+                                    message={errors.email}
+                                    className="mt-2"
+                                />
                             </div>
 
                             <div>
@@ -86,6 +95,10 @@ export default function LoginPage({ status, canResetPassword }) {
                                         className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-green-700 sm:text-sm/6"
                                     />
                                 </div>
+                                <InputError
+                                    message={errors.password}
+                                    className="mt-2"
+                                />
                             </div>
 
                             <div className="flex items-center justify-between">
