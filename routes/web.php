@@ -140,55 +140,55 @@ Route::middleware('auth:sanctum')->prefix('verifier')->group(function () {
 // Route::get('verify', function () {
 //     return Inertia::render('verifier/verify/page');
 // });
+Route::middleware('auth:sanctum')->prefix('encoder')->group(function () {
+    Route::get('dashboard', function () {
+        return Inertia::render('encoder/dashboard/page');
+    });
 
-Route::get('/encoder/dashboard', function () {
-    return Inertia::render('encoder/dashboard/page');
+    Route::get('register', function () {
+        return Inertia::render('encoder/register/page');
+    });
+
+    Route::get('beneficiary', function () {
+        return Inertia::render('encoder/beneficiary/page');
+    });
+
+    Route::get('reports', function () {
+        return Inertia::render('encoder/reports/page');
+    });
+
+    Route::get('accounts', function () {
+        return Inertia::render('encoder/accounts/page');
+    });
+
+    Route::get('create-account', function () {
+        return Inertia::render('encoder/create-account/page');
+    });
+
+    Route::get('lgu-profile', function () {
+        return Inertia::render('encoder/lgu-profile/page');
+    });
+
+    Route::get('verifier', function () {
+        return Inertia::render('encoderpage');
+    });
+
+    Route::get('organization', function () {
+        return Inertia::render('encoder/organization/page');
+    });
+
+    Route::get('contact', function () {
+        return Inertia::render('encoder/contact/page');
+    });
+
+    Route::get('settings', function () {
+        return Inertia::render('encoder/settings/page');
+    });
+
+    Route::get('profile/{id}', function () {
+        return Inertia::render('encoder/profile/page');
+    });
 });
-
-Route::get('/encoder/register', function () {
-    return Inertia::render('encoder/register/page');
-});
-
-Route::get('/encoder/beneficiary', function () {
-    return Inertia::render('encoder/beneficiary/page');
-});
-
-Route::get('/encoder/reports', function () {
-    return Inertia::render('encoder/reports/page');
-});
-
-Route::get('/encoder/accounts', function () {
-    return Inertia::render('encoder/accounts/page');
-});
-
-Route::get('/encoder/create-account', function () {
-    return Inertia::render('encoder/create-account/page');
-});
-
-Route::get('/encoder/lgu-profile', function () {
-    return Inertia::render('encoder/lgu-profile/page');
-});
-
-Route::get('/encoder/verifier', function () {
-    return Inertia::render('encoderpage');
-});
-
-Route::get('/encoder/organization', function () {
-    return Inertia::render('encoder/organization/page');
-});
-
-Route::get('/encoder/contact', function () {
-    return Inertia::render('encoder/contact/page');
-});
-
-Route::get('/encoder/settings', function () {
-    return Inertia::render('encoder/settings/page');
-});
-
-Route::get('/encoder/profile/{id}', function () {
-    return Inertia::render('encoder/profile/page');
-});
-
 
 
 Route::get('/dashboard', function () {

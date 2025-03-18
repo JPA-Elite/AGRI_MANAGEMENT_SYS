@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import {
     Dialog,
@@ -25,6 +25,17 @@ export default function AddUserSection() {
         password2: "",
         status: "Active",
     });
+    const params = new URLSearchParams(window.location.search);
+    const role = params.get("role");
+
+    // console.log(role)
+
+    useEffect(() => {
+        setFormData({
+            ...formData,
+            role: role == "verifier" ? "Verifier" : "",
+        });
+    }, []);
 
     const [message, setMessage] = useState("");
 
@@ -218,6 +229,10 @@ export default function AddUserSection() {
                                                     <div className="sm:col-span-12">
                                                         <select
                                                             name="role"
+                                                            disabled={
+                                                                role ==
+                                                                "verifier"
+                                                            }
                                                             value={
                                                                 formData.role
                                                             }
@@ -234,6 +249,13 @@ export default function AddUserSection() {
                                                                 -- Select a Role
                                                                 --
                                                             </option>
+                                                            {role ==
+                                                                "verifier" && (
+                                                                <option value="Verifier">
+                                                                    LGU Verifier
+                                                                </option>
+                                                            )}
+
                                                             <option value="Encoder">
                                                                 LGU Encoder
                                                             </option>

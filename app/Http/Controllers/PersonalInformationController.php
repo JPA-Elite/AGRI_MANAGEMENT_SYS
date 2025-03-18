@@ -50,7 +50,7 @@ class PersonalInformationController extends Controller
     {
         $user = Auth::user();
         $query = PersonalInformation::where('status', $request->status);
-      
+
         if ($user->role == 'Admin' && $request->has('search')) {
             $query->where('register_id', $request->search);
         } else if ($user->role != 'Admin' && $request->has('search')) {
@@ -179,13 +179,18 @@ class PersonalInformationController extends Controller
                 }
             }
 
-            $users = User::where('brgy', '=', $request->address_info['barangay'])->get();
+            $users = User::where([
+                ['brgy', '=', $request->address_info['barangay']],
+                ['role', '=', 'Verifier'],
+            ])->get();
+
             foreach ($users as $key => $user) {
                 if ($user) {
                     $user->notify(new PendingNotification($user, $request->all()));
                 }
             }
         }
+        
         return response()->json([
             'response' => 'success',
         ], 200);
