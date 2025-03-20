@@ -8,9 +8,9 @@ use Inertia\Inertia;
 
 class RoleMiddleware
 {
-    public function handle(Request $request, Closure $next, $role_id)
+    public function handle(Request $request, Closure $next, $role)
     {
-        if (!$request->user() || !$this->checkRole($request->user()->role_id, $role_id)) {
+        if (!$request->user() || !$this->checkRole($request->user()->role, $role)) {
             return Inertia::location(route('login')); 
         }
 
