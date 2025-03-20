@@ -18,7 +18,7 @@ class DashboardController extends Controller
         $user = Auth::user();
         $barangay = $user->brgy;
 
-        $total_farmer_query = PersonalInformation::where('status','=','active');
+        $total_farmer_query = PersonalInformation::where('status', '=', 'active');
         $total_workers_query = PersonalInformation::where('status', 'pending');
         $total_fisherfolks_query = PersonalInformation::where('status', 'declined');
         $total_agri_youth_query = PersonalInformation::where('status', 'declined');
@@ -66,21 +66,21 @@ class DashboardController extends Controller
             });
 
         // Apply barangay filter if provided
-        if ($barangay) {
-            $total_farmer_query->where('barangay', $barangay);
-            $total_workers_query->where('barangay', $barangay);
-            $total_fisherfolks_query->where('barangay', $barangay);
-            $total_agri_youth_query->where('barangay', $barangay);
-            $total_male_query->where('barangay', $barangay);
-            $total_female_query->where('barangay', $barangay);
-            $eighteen_24_query->where('barangay', $barangay);
-            $twentyfive_39_query->where('barangay', $barangay);
-            $forty_59_query->where('barangay', $barangay);
-            $above_60_query->where('barangay', $barangay);
-            $fisherfolk_query->where('barangay', $barangay);
-            $farmworker_query->where('barangay', $barangay);
-            $laborer_query->where('barangay', $barangay);
-            $agri_youth_query->where('barangay', $barangay);
+        if ($barangay || $user->role == 'Verifier') {
+            $total_farmer_query->where('barangay', '=', $barangay);
+            $total_workers_query->where('barangay', '=', $barangay);
+            $total_fisherfolks_query->where('barangay', '=', $barangay);
+            $total_agri_youth_query->where('barangay', '=', $barangay);
+            $total_male_query->where('barangay', '=', $barangay);
+            $total_female_query->where('barangay', '=', $barangay);
+            $eighteen_24_query->where('barangay', '=', $barangay);
+            $twentyfive_39_query->where('barangay', '=', $barangay);
+            $forty_59_query->where('barangay', '=', $barangay);
+            $above_60_query->where('barangay', '=', $barangay);
+            $fisherfolk_query->where('barangay', '=', $barangay);
+            $farmworker_query->where('barangay', '=', $barangay);
+            $laborer_query->where('barangay', '=', $barangay);
+            $agri_youth_query->where('barangay', '=', $barangay);
         }
 
         // Execute count queries
