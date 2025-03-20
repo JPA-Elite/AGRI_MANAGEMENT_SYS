@@ -100,7 +100,7 @@ export default function BenefeciaryTableComponent() {
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-200 bg-white">
-                                {personal_informations?.map((person) => (
+                                {personal_informations?.data?.map((person) => (
                                     <tr key={person.email}>
                                         <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
                                             {person.register_id}

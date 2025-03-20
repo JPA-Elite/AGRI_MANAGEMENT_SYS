@@ -1,1 +1,0 @@
-import{j as r}from"./app-BM7TNQmb.js";import o from"./farm-land-component-DKd7HCTD.js";import"./index-BiMPK7ew.js";import"./iconBase-o2Bon-8s.js";import"./UserCircleIcon-BjmuiPLQ.js";function e(){return r.jsx("div",{children:r.jsx(o,{})})}export{e as default};

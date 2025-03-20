@@ -26,11 +26,11 @@ use Inertia\Inertia;
 //     ]);
 // });
 
-Route::get('/', function () {
+Route::middleware('redirectBasedOnRole')->get('/', function () {
     return Inertia::render('login/page');
 })->name('login');
 
-Route::middleware('auth:sanctum')->prefix('administrator')->group(function () {
+Route::middleware('auth:sanctum', 'role:Admin')->prefix('administrator')->group(function () {
     Route::get('dashboard', function () {
         return Inertia::render('admin/dashboard/page');
     });
@@ -95,14 +95,13 @@ Route::middleware('auth:sanctum')->prefix('administrator')->group(function () {
     Route::get('profile/{id}', function () {
         return Inertia::render('admin/profile/page');
     });
-    Route::get('profile/{id}/pdf', function () {
-
-        return Inertia::render('admin/profile/pdf/page');
-    });
+   
+});
+Route::get('profile/{id}/pdf', function () {
+    return Inertia::render('admin/profile/pdf/page');
 });
 
-
-Route::middleware('auth:sanctum')->prefix('verifier')->group(function () {
+Route::middleware('auth:sanctum', 'role:Verifier')->prefix('verifier')->group(function () {
     Route::get('dashboard', function () {
         return Inertia::render('verifier/dashboard/page');
     });
@@ -140,7 +139,7 @@ Route::middleware('auth:sanctum')->prefix('verifier')->group(function () {
 // Route::get('verify', function () {
 //     return Inertia::render('verifier/verify/page');
 // });
-Route::middleware('auth:sanctum')->prefix('encoder')->group(function () {
+Route::middleware('auth:sanctum')->prefix('encoder', 'role:Encoder')->group(function () {
     Route::get('dashboard', function () {
         return Inertia::render('encoder/dashboard/page');
     });

@@ -47,17 +47,17 @@ const navigation = [
             },
             {
                 name: "Active Beneficiary",
-                href: "/administrator/beneficiary?status=active",
+                href: "/administrator/beneficiary?page=1&status=active",
                 icon: FcList,
             },
             {
                 name: "Inactive Beneficiary",
-                href: "/administrator/beneficiary?status=inactive",
+                href: "/administrator/beneficiary?page=1&status=inactive",
                 icon: FcList,
             },
             {
                 name: "Declined Beneficiary",
-                href: "/administrator/beneficiary?status=declined",
+                href: "/administrator/beneficiary?page=1&status=declined",
                 icon: FcList,
             },
         ],

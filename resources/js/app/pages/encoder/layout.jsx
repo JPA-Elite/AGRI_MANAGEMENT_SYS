@@ -36,17 +36,17 @@ const navigation = [
             },
             {
                 name: "Pending Beneficiary",
-                href: "/encoder/beneficiary?status=pending",
+                href: "/encoder/beneficiary?page=1&status=pending",
                 icon: FcList,
             },
             {
                 name: "Active Beneficiary",
-                href: "/encoder/beneficiary?status=active",
+                href: "/encoder/beneficiary?page=1&status=active",
                 icon: FcList,
             },
             {
                 name: "Inactive Beneficiary",
-                href: "/encoder/beneficiary?status=inactive",
+                href: "/encoder/beneficiary?page=1&status=inactive",
                 icon: FcList,
             },
         ],

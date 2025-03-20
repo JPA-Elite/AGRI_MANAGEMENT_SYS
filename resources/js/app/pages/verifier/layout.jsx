@@ -31,22 +31,22 @@ const navigation = [
         children: [
             {
                 name: "Verify Beneficiary",
-                href: "/verifier/beneficiary?status=pending",
+                href: "/verifier/beneficiary?page=1&status=pending",
                 icon: FcList,
             },
             {
                 name: "Active Beneficiary",
-                href: "/verifier/beneficiary?status=active",
+                href: "/verifier/beneficiary?page=1&status=active",
                 icon: FcList,
             },
             {
                 name: "Inactive Beneficiary",
-                href: "/verifier/beneficiary?status=inactive",
+                href: "/verifier/beneficiary?page=1&status=inactive",
                 icon: FcList,
             },
             {
                 name: "Declined Beneficiary",
-                href: "/verifier/beneficiary?status=declined",
+                href: "/verifier/beneficiary?page=1&status=declined",
                 icon: FcList,
             },
         ],

@@ -69,7 +69,7 @@ class PersonalInformationController extends Controller
             'parcels',
             'parcel_components',
             'farm_profile'
-        ])->get();
+        ])->paginate(10);
 
         return response()->json([
             'response' => $res,
