@@ -15,7 +15,7 @@ class RedirectBasedOnRole
             if ($account->role == 'Admin') {
                 return redirect('/administrator/dashboard');
             } else if ($account->role == 'Verifier') {
-                return redirect('/customer/dashboard');
+                return redirect('/verifier/dashboard');
             } else if ($account->role == 'Encoder') {
                 return redirect('/encoder/dashboard');
             }
