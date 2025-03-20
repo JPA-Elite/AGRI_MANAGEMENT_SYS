@@ -18,12 +18,12 @@ class DashboardController extends Controller
         $user = Auth::user();
         $barangay = $user->brgy;
 
-        $total_farmer_query = PersonalInformation::where('status', 'active')->where('barangay', $barangay);
-        $total_workers_query = PersonalInformation::where('status', 'pending')->where('barangay', $barangay);
-        $total_fisherfolks_query = PersonalInformation::where('status', 'declined')->where('barangay', $barangay);
-        $total_agri_youth_query = PersonalInformation::where('status', 'declined')->where('barangay', $barangay);
-        $total_male_query = PersonalInformation::where('gender', 'male')->where('status', 'active')->where('barangay', $barangay);
-        $total_female_query = PersonalInformation::where('gender', 'female')->where('status', 'active')->where('barangay', $barangay);
+        $total_farmer_query = PersonalInformation::where('status','=','active');
+        $total_workers_query = PersonalInformation::where('status', 'pending');
+        $total_fisherfolks_query = PersonalInformation::where('status', 'declined');
+        $total_agri_youth_query = PersonalInformation::where('status', 'declined');
+        $total_male_query = PersonalInformation::where('gender', 'male')->where('status', 'active');
+        $total_female_query = PersonalInformation::where('gender', 'female')->where('status', 'active');
 
         // Age group queries
         $eighteen_24_query = PersonalInformation::whereBetween('dob', [
