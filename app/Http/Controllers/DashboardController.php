@@ -18,12 +18,12 @@ class DashboardController extends Controller
         $user = Auth::user();
         $barangay = $user->brgy;
 
-        $total_farmer_query = PersonalInformation::where('status', 'Active');
-        $total_workers_query = PersonalInformation::where('status', 'Pending');
-        $total_fisherfolks_query = PersonalInformation::where('status', 'Declined');
-        $total_agri_youth_query = PersonalInformation::where('status', 'Declined');
-        $total_male_query = PersonalInformation::where('gender', 'male')->where('status', 'active');
-        $total_female_query = PersonalInformation::where('gender', 'female')->where('status', 'active');
+        $total_farmer_query = PersonalInformation::where('status', 'active')->where('barangay', $barangay);
+        $total_workers_query = PersonalInformation::where('status', 'pending')->where('barangay', $barangay);
+        $total_fisherfolks_query = PersonalInformation::where('status', 'declined')->where('barangay', $barangay);
+        $total_agri_youth_query = PersonalInformation::where('status', 'declined')->where('barangay', $barangay);
+        $total_male_query = PersonalInformation::where('gender', 'male')->where('status', 'active')->where('barangay', $barangay);
+        $total_female_query = PersonalInformation::where('gender', 'female')->where('status', 'active')->where('barangay', $barangay);
 
         // Age group queries
         $eighteen_24_query = PersonalInformation::whereBetween('dob', [
@@ -103,7 +103,10 @@ class DashboardController extends Controller
 
         $income_below_5k = Household::whereRaw('(annual_income / 12) < ?', [5000])
             ->whereHas('personal_information', function ($query) use ($barangay, $request) {
+                $user = Auth::user();
                 if ($request->search) {
+                    $query->where('barangay', $barangay);
+                } else if ($user->role == 'Verifier') {
                     $query->where('barangay', $barangay);
                 }
                 $query->where('status', 'active');
@@ -112,7 +115,10 @@ class DashboardController extends Controller
 
         $income_5k = Household::whereRaw('(annual_income / 12) BETWEEN ? AND ?', [5000, 10999])
             ->whereHas('personal_information', function ($query) use ($barangay, $request) {
+                $user = Auth::user();
                 if ($request->search) {
+                    $query->where('barangay', $barangay);
+                } else if ($user->role == 'Verifier') {
                     $query->where('barangay', $barangay);
                 }
                 $query->where('status', 'active');
@@ -120,7 +126,10 @@ class DashboardController extends Controller
 
         $income_11k = Household::whereRaw('(annual_income / 12) BETWEEN ? AND ?', [11000, 20999])
             ->whereHas('personal_information', function ($query) use ($barangay, $request) {
+                $user = Auth::user();
                 if ($request->search) {
+                    $query->where('barangay', $barangay);
+                } else if ($user->role == 'Verifier') {
                     $query->where('barangay', $barangay);
                 }
                 $query->where('status', 'active');
@@ -128,7 +137,10 @@ class DashboardController extends Controller
 
         $income_21k = Household::whereRaw('(annual_income / 12) BETWEEN ? AND ?', [21000, 30999])
             ->whereHas('personal_information', function ($query) use ($barangay, $request) {
+                $user = Auth::user();
                 if ($request->search) {
+                    $query->where('barangay', $barangay);
+                } else if ($user->role == 'Verifier') {
                     $query->where('barangay', $barangay);
                 }
                 $query->where('status', 'active');
@@ -136,7 +148,10 @@ class DashboardController extends Controller
 
         $income_31k = Household::whereRaw('(annual_income / 12) BETWEEN ? AND ?', [31000, 40999])
             ->whereHas('personal_information', function ($query) use ($barangay, $request) {
+                $user = Auth::user();
                 if ($request->search) {
+                    $query->where('barangay', $barangay);
+                } else if ($user->role == 'Verifier') {
                     $query->where('barangay', $barangay);
                 }
                 $query->where('status', 'active');
@@ -144,7 +159,10 @@ class DashboardController extends Controller
 
         $income_above = Household::whereRaw('(annual_income / 12) > ?', [40000])
             ->whereHas('personal_information', function ($query) use ($barangay, $request) {
+                $user = Auth::user();
                 if ($request->search) {
+                    $query->where('barangay', $barangay);
+                } else if ($user->role == 'Verifier') {
                     $query->where('barangay', $barangay);
                 }
                 $query->where('status', 'active');
@@ -154,7 +172,7 @@ class DashboardController extends Controller
         $top_organizations = Organization::join('government_affiliations', 'organizations.organization_name', '=', 'government_affiliations.farmers_association_name')
             ->join('personal_information', 'government_affiliations.register_id', '=', 'personal_information.register_id')
             ->where('personal_information.status', 'active')
-            ->when($request->search, function ($query) use ($barangay) {
+            ->when(function ($query) use ($barangay) {
                 return $query->where('personal_information.barangay', $barangay);
             })
             ->select('organizations.organization_name', \DB::raw('COUNT(government_affiliations.id) as member_count'))
@@ -200,10 +218,10 @@ class DashboardController extends Controller
         $barangay = $request->search;
 
         // Queries with optional barangay filtering
-        $total_farmer_query = PersonalInformation::where('status', 'Active');
-        $total_workers_query = PersonalInformation::where('status', 'Pending');
-        $total_fisherfolks_query = PersonalInformation::where('status', 'Declined');
-        $total_agri_youth_query = PersonalInformation::where('status', 'Declined');
+        $total_farmer_query = PersonalInformation::where('status', 'active');
+        $total_workers_query = PersonalInformation::where('status', 'pending');
+        $total_fisherfolks_query = PersonalInformation::where('status', 'declined');
+        $total_agri_youth_query = PersonalInformation::where('status', 'declined');
         $total_male_query = PersonalInformation::where('gender', 'male')->where('status', 'active');
         $total_female_query = PersonalInformation::where('gender', 'female')->where('status', 'active');
 

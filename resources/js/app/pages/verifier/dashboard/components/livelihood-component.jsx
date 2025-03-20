@@ -46,7 +46,7 @@ export default function LivelihoodComponent() {
     const series = [
         {
             name: "Main Livelihood Count",
-            data: [dashboard?.farmerWorker ?? 0, dashboard?.fisherfolk ?? 0, dashboard?.laborer ?? 0, dashboard?.agri_youth ?? 0], // Data corresponding to each category
+            data: [dashboard?.farmworker ?? 0, dashboard?.fisherfolk ?? 0, dashboard?.laborer ?? 0, dashboard?.agri_youth ?? 0], // Data corresponding to each category
         },
     ];
     return (
