@@ -199,7 +199,7 @@ class DashboardController extends Controller
             'forty_59' => $forty_59,
             'above_60' => $above_60,
             'fisherfolk' => $fisherfolk,
-            'farmworker' => $farmworker,
+            'farmworker' =>100,
             'laborer' => $laborer,
             'agri_youth' => $agri_youth,
             'income_below_5k' => $income_below_5k,
