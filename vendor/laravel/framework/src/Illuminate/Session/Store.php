@@ -169,8 +169,8 @@ class Store implements Session
 
         $this->prepareErrorBagForSerialization();
 
-        $this->handler->write($this->getId(), $this->prepareForStorage(
-            $this->serialization === 'json' ? json_encode($this->attributes) : serialize($this->attributes)
+        $this->handler->write($this->getId(), data: $this->prepareForStorage(
+            $this->serialization === 'json' ? json_encode(value: $this->attributes) : serialize(value: $this->attributes)            
         ));
 
         $this->started = false;
