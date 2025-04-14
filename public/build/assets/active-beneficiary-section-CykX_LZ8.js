@@ -1,0 +1,1 @@
+import{j as e}from"./app-CS5zRdaM.js";import i from"./beneficiary-table-component-b9X4ZVe6.js";import"./personal-information-thunk-D5ifJ_DE.js";import"./sweetalert2.esm.all-BY1s0Tb6.js";function m(){return e.jsx("div",{children:e.jsx(i,{})})}export{m as default};
