@@ -4,10 +4,17 @@ import { useSelector } from "react-redux";
 import moment from "moment";
 import { Link } from "@inertiajs/react";
 import UpdateAssistanceSection from "./update-assistance-section";
+import SubsidySection from "./subsidy-section";
 
 export default function AssistanceTableSection() {
     const { cash_assistances } = useSelector((store) => store.cash_assistance);
-    console.log("cash_assistances", cash_assistances);
+    const query = new URLSearchParams(window.location.search);
+    const status = query.get("status");
+
+    if (status === "subsidy") {
+        return <SubsidySection />;
+    }
+
     return (
         <div className="px-4 sm:px-6 lg:px-8">
             <div className="sm:flex sm:items-center">

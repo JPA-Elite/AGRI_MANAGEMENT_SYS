@@ -62,7 +62,15 @@ const navigation = [
             },
         ],
     },
-    { name: "Assistance Section", href: "/administrator/assistance", icon: FcMoneyTransfer, current: false },
+    { 
+        name: "Assistance Section",  
+        icon: FcMoneyTransfer,
+        current: false,
+        children: [
+            { name: "Cash Assistance Records", href: "/administrator/assistance?status=assistance", icon: FcList },
+            { name: "Subsidy Beneficiaries List", href: "/administrator/assistance?status=subsidy", icon: FcList },
+        ],
+    },
     {
         name: "Report Section",
         icon: FcComboChart,

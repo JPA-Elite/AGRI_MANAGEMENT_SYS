@@ -106,8 +106,11 @@ class PersonalInformationController extends Controller
             'avatar' => $request->personal_info['avatar'] ?? null,
             'verifier' => $request->personal_info['verifier'] ?? null,
             'register_date' => $request->personal_info['register_date'] ?? null,
-            'status' => 'pending'
+            'status' => 'active'
         ]);
+
+        $request->merge(['status' => 'active']);
+        $this->verify_beneficiary($request);
 
         Household::create([
             'register_id' => $request->register_id,

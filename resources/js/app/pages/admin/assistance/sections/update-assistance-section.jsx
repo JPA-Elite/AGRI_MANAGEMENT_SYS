@@ -191,6 +191,39 @@ console.log('formDataformData',formData)
                                                         />
                                                     </div>
                                                     <div className="sm:col-span-12">
+                                                        <select
+                                                            id="barangay"
+                                                            name="location"
+                                                            placeholder="Barangay"
+                                                            className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
+                                                            value={
+                                                                formData.location
+                                                            }
+                                                            onChange={
+                                                                handleChange
+                                                            }
+                                                        >
+                                                            <option value="" disabled selected>
+                                                                -- Event Location --
+                                                            </option>
+                                                            <option>Bairan</option>
+                                                            <option>Bagawines</option>
+                                                            <option>Cabulihan</option>
+                                                            <option>Don Esperidion Villegas</option>
+                                                            <option>Guba</option>
+                                                            <option>Macapso</option>
+                                                            <option>Maglahos</option>
+                                                            <option>Malangsa</option>
+                                                            <option>Molobolo</option>
+                                                            <option>Pinocawan</option>
+                                                            <option>Poblacion</option>
+                                                            <option>Puan</option>
+                                                            <option>Tabon</option>
+                                                            <option>Tagbino</option>
+                                                            <option>Ulay</option>
+                                                        </select>
+                                                    </div>
+                                                    {/* <div className="sm:col-span-12">
                                                         <input
                                                             name="location"
                                                             type="text"
@@ -204,7 +237,7 @@ console.log('formDataformData',formData)
                                                             }
                                                             className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                                                         />
-                                                    </div>
+                                                    </div> */}
                                                     <div className="sm:col-span-12">
                                                         <textarea
                                                             id="description"

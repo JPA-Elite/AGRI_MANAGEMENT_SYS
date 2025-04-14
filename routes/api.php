@@ -15,6 +15,7 @@ use App\Http\Controllers\ParcelController;
 use App\Http\Controllers\PersonalInformationController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VerifierController;
+use App\Http\Controllers\SubsidyController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -35,8 +36,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return  $user;
 });
 
-
-
 Route::get('/admin_dashboard', [DashboardController::class, 'admin_dashboard']);
 Route::get('/verifier_dashboard', [DashboardController::class, 'verifier_dashboard']);
 Route::resource('farm_profile', FarmProfileController::class);
@@ -54,3 +53,10 @@ Route::resource('accounts', AccountController::class);
 Route::resource('verifier', VerifierController::class);
 Route::resource('cash_assistance_event', CashAssistanceEventController::class);
 Route::post('/login', [AuthController::class, 'login']);
+
+Route::prefix('subsidies')->group(function () {
+    Route::post('/', [SubsidyController::class, 'store']);
+    Route::get('/', [SubsidyController::class, 'index']);
+    Route::get('/{subsidy}', [SubsidyController::class, 'show']);
+    Route::put('/{id}/approve', [SubsidyController::class, 'approve']);
+});

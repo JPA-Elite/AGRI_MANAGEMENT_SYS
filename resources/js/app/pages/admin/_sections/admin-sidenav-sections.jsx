@@ -23,6 +23,7 @@ export default function AdminSidenavSection({
             "Report Section": isOpen == "reports",
             "Account Management": isOpen == "accounts",
             "System Maintenance": isOpen == "system_maintenance",
+            "Assistance Section": isOpen == "assistance",
         }));
     }, []);
 
