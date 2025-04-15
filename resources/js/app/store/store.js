@@ -7,6 +7,10 @@ import organizationSlice  from "../redux/organization-slice";
 import lguProfileSlice  from "../redux/lgu-profile-slice";
 import  cashAssistanceSlice  from "../redux/cash-assistance-slice";
 import subsidyReducer from "../redux/subsidy-slice";
+import equipmentRequestReducer from "../redux/equipment-request-slice";
+import beneficiaryReducer from "../redux/beneficiary-slice";
+import fertilizerRequestReducer from "../redux/fertilizer-request-slice";
+import searchReducer from "../redux/search-slice";
 
 const store = configureStore({
     reducer: {
@@ -18,6 +22,10 @@ const store = configureStore({
         lgu_profile:lguProfileSlice,
         cash_assistance:cashAssistanceSlice,
         subsidy: subsidyReducer,
+        equipment_request: equipmentRequestReducer,
+        beneficiary: beneficiaryReducer,
+        fertilizer_request: fertilizerRequestReducer,
+        search: searchReducer,
     },
 });
 

@@ -24,6 +24,7 @@ export default function AdminSidenavSection({
             "Account Management": isOpen == "accounts",
             "System Maintenance": isOpen == "system_maintenance",
             "Assistance Section": isOpen == "assistance",
+            "Request Section": isOpen == "request", 
         }));
     }, []);
 

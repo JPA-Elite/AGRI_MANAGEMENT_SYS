@@ -268,7 +268,7 @@ export default function BenefeciaryTableComponent() {
                                                                 onClick={() => handleAddSubsidy(person.id)}
                                                                 className="inline-flex items-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500"
                                                             >
-                                                                Add Subsidy
+                                                                Request Subsidy
                                                             </button>
                                                         )}
                                                     </div>

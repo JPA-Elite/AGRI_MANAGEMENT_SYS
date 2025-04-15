@@ -45,3 +45,37 @@ export const MAP_CENTER = {
     lat: 10.3344, // Vallehermoso Poblacion
     lng: 123.3121
 };
+
+export const EQUIPMENT_TYPES = [
+    'Hand Tractor',
+    'Water Pump',
+    'Thresher',
+    'Harvester',
+    'Planter',
+    'Sprayer',
+    'Rotavator',
+    'Rice Transplanter',
+    'Seed Spreader',
+    'Mini Tiller',
+    'Power Weeder',
+    'Reaper',
+    'Combine Harvester',
+    'Irrigation System',
+    'Mist Blower',
+    'Power Sprayer',
+    'Mulcher',
+    'Cultivator'
+];
+
+export const FERTILIZER_TYPES = [
+    'Urea',
+    'Complete (14-14-14)',
+    'Ammonium Sulfate',
+    'Ammonium Phosphate',
+    'Muriate of Potash',
+    'Triple 14',
+    'Triple 16',
+    'Organic Fertilizer'
+];
+
+export const REQUEST_STATUS_OPTIONS = ['pending', 'approved', 'rejected'];

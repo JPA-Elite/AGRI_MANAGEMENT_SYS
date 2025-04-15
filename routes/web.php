@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RequestController;
+use App\Http\Controllers\SearchController;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -45,6 +47,10 @@ Route::middleware('auth:sanctum', 'role:Admin')->prefix('administrator')->group(
 
     Route::get('assistance', function () {
         return Inertia::render('admin/assistance/page');
+    });
+
+    Route::get('request', function () {
+        return Inertia::render('admin/request/page');
     });
 
     Route::get('assistance/{id}', function () {
@@ -94,6 +100,10 @@ Route::middleware('auth:sanctum', 'role:Admin')->prefix('administrator')->group(
 
     Route::get('profile/{id}', function () {
         return Inertia::render('admin/profile/page');
+    });
+
+    Route::get('search', function () {
+        return Inertia::render('admin/search/page');
     });
    
 });

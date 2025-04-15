@@ -72,6 +72,15 @@ const navigation = [
         ],
     },
     {
+        name: "Request Section",
+        icon: FcDataConfiguration,
+        current: false,
+        children: [
+            { name: "Equipment Request", href: "/administrator/request?status=equipment", icon: FcList },
+            { name: "Fertilizer Request", href: "/administrator/request?status=fertilizer", icon: FcList },
+        ],
+    },
+    {
         name: "Report Section",
         icon: FcComboChart,
         current: false,
@@ -136,6 +145,15 @@ export default function AdminLayout({ children }) {
             [name]: !prev[name],
         }));
     };
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        const searchQuery = e.target.search.value;
+        if (searchQuery.trim()) {
+            router.visit(`/administrator/search?query=${searchQuery}`);
+        }
+    };
+
     return (
         <div>
             {/* Static sidebar for desktop */}
@@ -166,8 +184,7 @@ export default function AdminLayout({ children }) {
 
                     <div className="flex flex-1 gap-x-4 self-stretch lg:gap-x-6">
                         <form
-                            action="#"
-                            method="GET"
+                            onSubmit={handleSearch}
                             className="relative flex flex-1"
                         >
                             <label htmlFor="search-field" className="sr-only">
@@ -181,7 +198,7 @@ export default function AdminLayout({ children }) {
                                 id="search-field"
                                 name="search"
                                 type="search"
-                                placeholder="Search..."
+                                placeholder="Search beneficiary name, RSBSA, or address..."
                                 className="block h-full w-full border-0 py-0 pl-8 pr-0 text-gray-900 bg-gray-100 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
                             />
                         </form>

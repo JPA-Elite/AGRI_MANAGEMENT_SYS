@@ -16,6 +16,10 @@ use App\Http\Controllers\PersonalInformationController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VerifierController;
 use App\Http\Controllers\SubsidyController;
+use App\Http\Controllers\EquipmentRequestController;
+use App\Http\Controllers\BeneficiaryController;
+use App\Http\Controllers\FertilizerRequestController;
+use App\Http\Controllers\SearchController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -54,9 +58,25 @@ Route::resource('verifier', VerifierController::class);
 Route::resource('cash_assistance_event', CashAssistanceEventController::class);
 Route::post('/login', [AuthController::class, 'login']);
 
+Route::get('/beneficiaries', [BeneficiaryController::class, 'index']);
+
+Route::get('/search', [SearchController::class, 'search']);
+
 Route::prefix('subsidies')->group(function () {
     Route::post('/', [SubsidyController::class, 'store']);
     Route::get('/', [SubsidyController::class, 'index']);
     Route::get('/{subsidy}', [SubsidyController::class, 'show']);
     Route::put('/{id}/approve', [SubsidyController::class, 'approve']);
+});
+
+Route::prefix('equipment-requests')->group(function () {
+    Route::get('/', [EquipmentRequestController::class, 'index']);
+    Route::post('/', [EquipmentRequestController::class, 'store']);
+    Route::put('/{id}/status', [EquipmentRequestController::class, 'updateStatus']);
+});
+
+Route::prefix('fertilizer-requests')->group(function () {
+    Route::get('/', [FertilizerRequestController::class, 'index']);
+    Route::post('/', [FertilizerRequestController::class, 'store']);
+    Route::put('/{id}/status', [FertilizerRequestController::class, 'updateStatus']);
 });

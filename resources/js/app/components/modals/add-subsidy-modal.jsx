@@ -46,7 +46,7 @@ export default function AddSubsidyModal({ isOpen, setIsOpen, beneficiaryId }) {
                 <div className="fixed inset-0 flex items-center justify-center p-4">
                     <Dialog.Panel className="mx-auto w-full max-w-4xl h-[90vh] rounded-lg bg-white p-6 overflow-y-auto">
                         <div className="sticky top-0 bg-white pb-4 mb-4 border-b">
-                            <Dialog.Title className="text-xl font-semibold">Add Subsidy</Dialog.Title>
+                            <Dialog.Title className="text-xl font-semibold">Request for Subsidy</Dialog.Title>
                             <button 
                                 onClick={() => setIsOpen(false)}
                                 className="absolute top-0 right-0"
