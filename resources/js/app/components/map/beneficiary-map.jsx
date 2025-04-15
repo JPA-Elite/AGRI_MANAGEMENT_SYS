@@ -6,8 +6,13 @@ export default function BeneficiaryMap({ beneficiaries, filters }) {
     const [selectedBarangay, setSelectedBarangay] = useState('all');
 
     const filteredBeneficiaries = beneficiaries.filter(b => {
-        return (selectedLivelihood === 'all' || b.farm_profile?.main_livelihood === selectedLivelihood) &&
-               (selectedBarangay === 'all' || b.barangay === selectedBarangay);
+        const livelihoodMatch = selectedLivelihood === 'all' || 
+            b.farm_profile?.main_livelihood?.toLowerCase() === selectedLivelihood.toLowerCase();
+        
+        const barangayMatch = selectedBarangay === 'all' || 
+            b.barangay?.toLowerCase() === selectedBarangay.toLowerCase();
+
+        return livelihoodMatch && barangayMatch;
     });
 
     const uniqueBarangays = [...new Set(beneficiaries.map(b => b.barangay))];

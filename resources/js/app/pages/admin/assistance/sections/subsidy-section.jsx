@@ -7,15 +7,44 @@ import { Link } from "@inertiajs/react";
 import moment from "moment";
 import Swal from "sweetalert2";
 import ViewSubsidyModal from "@/app/components/modals/view-subsidy-modal";
+import OverlaySpinner from "@/app/components/overlay-spinner";
 
 export default function SubsidySection() {
     const { subsidies, loading } = useSelector((state) => state.subsidy);
     const [isViewModalOpen, setIsViewModalOpen] = useState(false);
     const [selectedSubsidy, setSelectedSubsidy] = useState(null);
+    const [isStatusUpdating, setIsStatusUpdating] = useState(false);
 
     const handleViewDetails = (data) => {
         setSelectedSubsidy(data);
         setIsViewModalOpen(true);
+    };
+
+    const handleStatusUpdate = async (requestId, newStatus) => {
+        try {
+            setIsStatusUpdating(true);
+            await axios.put(`/api/subsidies/${requestId}/status`, {
+                status: newStatus,
+            });
+
+            await store.dispatch(getSubsidiesThunk());
+
+            Swal.fire({
+                title: "Success!",
+                text: `Subsidy status updated to ${newStatus}`,
+                icon: "success",
+                timer: 1500,
+            });
+        } catch (error) {
+            console.error('Status update error:', error);
+            Swal.fire({
+                title: "Error!",
+                text: error.response?.data?.message || "Failed to update status",
+                icon: "error"
+            });
+        } finally {
+            setIsStatusUpdating(false);
+        }
     };
 
     const handleApprove = async (id) => {
@@ -53,6 +82,7 @@ export default function SubsidySection() {
 
     return (
         <>
+            <OverlaySpinner isLoading={isStatusUpdating} />
             <ViewSubsidyModal 
                 isOpen={isViewModalOpen}
                 setIsOpen={setIsViewModalOpen}
@@ -117,31 +147,30 @@ export default function SubsidySection() {
                                                 {moment(subsidy.date_released).format("LLL")}
                                             </td>
                                             <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
-                                                <span className={`inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset ${
-                                                    subsidy.status === 'approved' 
-                                                        ? 'bg-green-50 text-green-700 ring-green-600/20'
-                                                        : 'bg-yellow-50 text-yellow-700 ring-yellow-600/20'
-                                                }`}>
-                                                    {subsidy.status}
-                                                </span>
+                                                <select
+                                                    value={subsidy.status}
+                                                    onChange={(e) => handleStatusUpdate(subsidy.id, e.target.value)}
+                                                    disabled={subsidy.status !== 'pending'}
+                                                    className={`rounded-full px-2 py-1 text-xs font-semibold cursor-${subsidy.status === 'pending' ? 'pointer' : 'not-allowed'} ${
+                                                        subsidy.status === 'approved' 
+                                                            ? 'bg-green-100 text-green-800'
+                                                            : subsidy.status === 'declined'
+                                                            ? 'bg-red-100 text-red-800'
+                                                            : 'bg-yellow-100 text-yellow-800'
+                                                    }`}
+                                                >
+                                                    <option value="pending">Pending</option>
+                                                    <option value="approved">Approved</option>
+                                                    <option value="declined">Declined</option>
+                                                </select>
                                             </td>
                                             <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
-                                                <div className="flex items-center gap-2">
-                                                    <button
-                                                        onClick={() => handleViewDetails(subsidy)}
-                                                        className="block rounded-md bg-blue-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-500"
-                                                    >
-                                                        View Details
-                                                    </button>
-                                                    {subsidy.status !== 'approved' && (
-                                                        <button
-                                                            onClick={() => handleApprove(subsidy.id)}
-                                                            className="block rounded-md bg-green-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-green-500"
-                                                        >
-                                                            Approve
-                                                        </button>
-                                                    )}
-                                                </div>
+                                                <button
+                                                    onClick={() => handleViewDetails(subsidy)}
+                                                    className="text-blue-600 hover:text-blue-900"
+                                                >
+                                                    View Details
+                                                </button>
                                             </td>
                                         </tr>
                                     ))}

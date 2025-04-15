@@ -76,8 +76,7 @@ const navigation = [
         icon: FcDataConfiguration,
         current: false,
         children: [
-            { name: "Equipment Request", href: "/administrator/request?status=equipment", icon: FcList },
-            { name: "Fertilizer Request", href: "/administrator/request?status=fertilizer", icon: FcList },
+            { name: "Requests List", href: "/administrator/request?status=all", icon: FcList },
         ],
     },
     {

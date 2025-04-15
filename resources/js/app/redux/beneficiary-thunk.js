@@ -16,3 +16,18 @@ export const getActiveBeneficiariesThunk = createAsyncThunk(
         }
     }
 );
+
+export const getBeneficiariesThunk = createAsyncThunk(
+    "beneficiary/getBeneficiaries",
+    async (_, { dispatch }) => {
+        try {
+            dispatch(setLoading(true));
+            const response = await axios.get("/api/beneficiaries?status=active");
+            dispatch(setBeneficiaries(response.data));
+        } catch (error) {
+            dispatch(setError(error.message));
+        } finally {
+            dispatch(setLoading(false));
+        }
+    }
+);

@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('fertilizer_requests', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('beneficiary_id')->constrained('personal_information')->onDelete('cascade');
+            $table->foreignId('beneficiary_id');
             $table->string('fertilizer_type');
             $table->integer('quantity');
             $table->date('requested_date');

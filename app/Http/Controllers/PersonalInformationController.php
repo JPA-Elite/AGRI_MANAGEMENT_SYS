@@ -21,7 +21,6 @@ class PersonalInformationController extends Controller
 {
     public function verify_beneficiary(Request $request)
     {
-
         $personalInformation = PersonalInformation::where('register_id', $request->register_id)->first();
         $auth = Auth::user();
 

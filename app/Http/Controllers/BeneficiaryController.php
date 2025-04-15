@@ -13,7 +13,7 @@ class BeneficiaryController extends Controller
         $query = PersonalInformation::query();
         
         if ($request->has('status')) {
-            $query->where('status', $request->status);
+            $query->where('status', $request->status)->with('farm_profile');
         }
 
         return $query->paginate(10);

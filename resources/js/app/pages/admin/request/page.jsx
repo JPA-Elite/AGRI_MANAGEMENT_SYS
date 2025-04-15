@@ -1,7 +1,6 @@
 import React from 'react';
 import AdminLayout from '../layout';
-import EquipmentRequestSection from './sections/equipment-request-section';
-import FertilizerRequestSection from './sections/fertilizer-request-section';
+import RequestListSection from './sections/request-list-section';
 import NotFoundSection from './sections/not-found-section';
 
 export default function RequestPage() {
@@ -10,10 +9,8 @@ export default function RequestPage() {
 
     const renderSection = () => {
         switch (status) {
-            case 'equipment':
-                return <EquipmentRequestSection />;
-            case 'fertilizer':
-                return <FertilizerRequestSection />;
+            case 'all':
+                return <RequestListSection />;
             default:
                 return <NotFoundSection />;
         }

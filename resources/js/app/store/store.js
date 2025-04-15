@@ -11,6 +11,7 @@ import equipmentRequestReducer from "../redux/equipment-request-slice";
 import beneficiaryReducer from "../redux/beneficiary-slice";
 import fertilizerRequestReducer from "../redux/fertilizer-request-slice";
 import searchReducer from "../redux/search-slice";
+import requestReducer from "../redux/request-slice";
 
 const store = configureStore({
     reducer: {
@@ -26,6 +27,7 @@ const store = configureStore({
         beneficiary: beneficiaryReducer,
         fertilizer_request: fertilizerRequestReducer,
         search: searchReducer,
+        request: requestReducer,
     },
 });
 

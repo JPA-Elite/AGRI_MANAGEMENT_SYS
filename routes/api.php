@@ -20,6 +20,7 @@ use App\Http\Controllers\EquipmentRequestController;
 use App\Http\Controllers\BeneficiaryController;
 use App\Http\Controllers\FertilizerRequestController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\BeneficiaryRequestController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -67,6 +68,7 @@ Route::prefix('subsidies')->group(function () {
     Route::get('/', [SubsidyController::class, 'index']);
     Route::get('/{subsidy}', [SubsidyController::class, 'show']);
     Route::put('/{id}/approve', [SubsidyController::class, 'approve']);
+    Route::put('/{id}/status', [SubsidyController::class, 'updateStatus']);
 });
 
 Route::prefix('equipment-requests')->group(function () {
@@ -79,4 +81,10 @@ Route::prefix('fertilizer-requests')->group(function () {
     Route::get('/', [FertilizerRequestController::class, 'index']);
     Route::post('/', [FertilizerRequestController::class, 'store']);
     Route::put('/{id}/status', [FertilizerRequestController::class, 'updateStatus']);
+});
+
+Route::prefix('beneficiary-requests')->group(function () {
+    Route::get('/', [BeneficiaryRequestController::class, 'index']);
+    Route::post('/', [BeneficiaryRequestController::class, 'store']);
+    Route::put('/{id}/status', [BeneficiaryRequestController::class, 'updateStatus']);
 });

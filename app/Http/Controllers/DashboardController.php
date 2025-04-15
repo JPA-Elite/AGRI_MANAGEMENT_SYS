@@ -219,9 +219,9 @@ class DashboardController extends Controller
 
         // Queries with optional barangay filtering
         $total_farmer_query = PersonalInformation::where('status', 'active');
-        $total_workers_query = PersonalInformation::where('status', 'pending');
-        $total_fisherfolks_query = PersonalInformation::where('status', 'declined');
-        $total_agri_youth_query = PersonalInformation::where('status', 'declined');
+        $total_workers_query = PersonalInformation::where('status', 'active');
+        $total_fisherfolks_query = PersonalInformation::where('status', 'active');
+        $total_agri_youth_query = PersonalInformation::where('status', 'active');
         $total_male_query = PersonalInformation::where('gender', 'male')->where('status', 'active');
         $total_female_query = PersonalInformation::where('gender', 'female')->where('status', 'active');
 
@@ -284,10 +284,27 @@ class DashboardController extends Controller
         }
 
         // Execute count queries
-        $total_farmer = $total_farmer_query->count();
-        $total_workers = $total_workers_query->count();
-        $total_fisherfolks = $total_fisherfolks_query->count();
-        $total_agri_youth = $total_agri_youth_query->count();
+        $total_farmer = $total_farmer_query
+            ->whereHas('farm_profile', function ($query) {
+                $query->where('main_livelihood', 'like', '%Farmer%');
+            })
+            ->count();
+
+        $total_workers = $total_workers_query
+        ->whereHas('farm_profile', function ($query) {
+            $query->where('main_livelihood', 'like', '%FarmWorker%');
+        })
+        ->count();
+        $total_fisherfolks = $total_fisherfolks_query
+            ->whereHas('farm_profile', function ($query) {
+                $query->where('main_livelihood', 'like', '%Fisherfolk%');
+            })
+            ->count();
+        $total_agri_youth = $total_agri_youth_query
+        ->whereHas('farm_profile', function ($query) {
+            $query->where('main_livelihood', 'like', '%Youth%');
+        })
+        ->count();
         $total_male = $total_male_query->count();
         $total_female = $total_female_query->count();
         $eighteen_24 = $eighteen_24_query->count();
