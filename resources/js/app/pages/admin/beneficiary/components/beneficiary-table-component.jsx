@@ -27,7 +27,7 @@ export default function BenefeciaryTableComponent() {
     const [isSubsidyModalOpen, setIsSubsidyModalOpen] = useState(false);
     const [selectedBeneficiary, setSelectedBeneficiary] = useState(null);
     const [showMap, setShowMap] = useState(false);
-    const statusOptions = ['active', 'inactive', 'declined'];
+    const statusOptions = ['active', 'inactive'];
     const query = new URLSearchParams(window.location.search);
     const status = query.get("status");
 

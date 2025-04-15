@@ -55,11 +55,11 @@ const navigation = [
                 href: "/administrator/beneficiary?page=1&status=inactive",
                 icon: FcList,
             },
-            {
-                name: "Declined Beneficiary",
-                href: "/administrator/beneficiary?page=1&status=declined",
-                icon: FcList,
-            },
+            // {
+            //     name: "Declined Beneficiary",
+            //     href: "/administrator/beneficiary?page=1&status=declined",
+            //     icon: FcList,
+            // },
         ],
     },
     { 
