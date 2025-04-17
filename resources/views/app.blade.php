@@ -12,7 +12,7 @@
         <link rel="icon" href="/images/doa.png" type="image/png">
         
 
-        <!-- Scripts -->
+        <!-- Scripts --> 
         @routes
         @viteReactRefresh
         @vite(['resources/js/app.jsx', "resources/js/app/pages/{$page['component']}.jsx"])
