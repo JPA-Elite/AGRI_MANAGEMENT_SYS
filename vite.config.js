@@ -5,6 +5,11 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
     build: {
         chunkSizeWarningLimit: 99999999999, // Adjust chunk size warning limit if needed
+        manifest: true,
+        outDir: 'public/build',
+        rollupOptions: {
+            input: 'resources/js/app.jsx',
+        },
     },
     plugins: [
         laravel({
