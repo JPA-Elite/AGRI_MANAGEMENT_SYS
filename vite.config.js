@@ -15,6 +15,7 @@ export default defineConfig({
         laravel({
             input: 'resources/js/app.jsx',
             refresh: true,
+            publicPath: 'https://agri-management-sys-941081a104e0.herokuapp.com/build/',
         }),
         react(),
     ],
