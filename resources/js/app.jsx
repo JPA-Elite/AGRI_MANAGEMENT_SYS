@@ -13,7 +13,7 @@ import { Provider } from "react-redux";
 // if (csrfToken) {
 //     axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken;
 //     axios.defaults.headers.common['X-XSRF-TOKEN'] = csrfToken;
-// }
+// } 
 
 const appName = import.meta.env.VITE_APP_NAME || "Laravel";
 
