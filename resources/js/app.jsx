@@ -1,19 +1,11 @@
 import "./bootstrap";
 import "../css/app.css";
-import axios from 'axios'; // Import Axios
 import { createRoot } from "react-dom/client";
 import { createInertiaApp } from "@inertiajs/react";
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
 import store from "./app/store/store";
 import { Provider } from "react-redux";
 
-// Set CSRF token globally for Axios requests
-// const csrfToken = document.head.querySelector('meta[name="csrf-token"]')?.content;
-
-// if (csrfToken) {
-//     axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken;
-//     axios.defaults.headers.common['X-XSRF-TOKEN'] = csrfToken;
-// } 
 
 const appName = import.meta.env.VITE_APP_NAME || "Laravel";
 
