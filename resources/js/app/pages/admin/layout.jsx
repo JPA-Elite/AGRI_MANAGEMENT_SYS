@@ -104,7 +104,7 @@ const teams = [
         current: false,
         children: [
             { name: "LGU Profile", href: "/administrator/system_maintenance/lgu-profile", icon: FcList },
-            { name: "Brgy.Verifier", href: "/administrator/system_maintenance/verifier?role=verifier", icon: FcList },
+            // { name: "Brgy.Verifier", href: "/administrator/system_maintenance/verifier?role=verifier", icon: FcList },
             { name: "Organization", href: "/administrator/system_maintenance/organization", icon: FcList },
         ],
     },
