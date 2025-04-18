@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Log::info(app()->environment());
+        Log::info("Logs: " . app()->environment());
         Schema::defaultStringLength(191);
 
         if (app()->environment('production')) {
