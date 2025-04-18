@@ -23,13 +23,6 @@ export default function LoginPage({ status, canResetPassword }) {
     const submit = (e) => {
         e.preventDefault();
 
-        // Get CSRF token from the cookie and set it in the headers
-        const csrfToken = document.head.querySelector('meta[name="csrf-token"]')?.content;
-
-        if (csrfToken) {
-            axios.defaults.headers.common['X-XSRF-TOKEN'] = csrfToken;
-        }
-
         post(route("auth.login"));
     };
     return (
