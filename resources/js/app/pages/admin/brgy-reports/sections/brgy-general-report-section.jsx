@@ -8,6 +8,7 @@ import LivelihoodComponent from "../../dashboard/components/livelihood-component
 import BrgyActiveAgriworkerComponent from "../components/brgy-active-agriworker-component";
 import GraphSection from "../../dashboard/sections/graph-section";
 import { router } from "@inertiajs/react";
+import { BARANGAYS } from "@/app/constants/general";
 
 export default function BrgyReportSection() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -26,30 +27,18 @@ export default function BrgyReportSection() {
                     placeholder="Barangay"
                     value={search}
                     onChange={(e) =>
-                       router.visit('/administrator/reports/brgy?search='+e.target.value)
+                        router.visit('/administrator/reports/brgy?search=' + e.target.value)
                     }
                     className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 mb-3 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
                 >
                     <option value="" disabled selected>
                         -- Select a Barangay --
                     </option>
-                    <option value="Bairan">Bairan</option>
-                    <option value="Bagawines">Bagawines</option>
-                    <option value="Cabulihan">Cabulihan</option>
-                    <option value="Don Esperidion Villegas">
-                        Don Esperidion Villegas
-                    </option>
-                    <option value="Guba">Guba</option>
-                    <option value="Macapso">Macapso</option>
-                    <option value="Maglahos">Maglahos</option>
-                    <option value="Malangsa">Malangsa</option>
-                    <option value="Molobolo">Molobolo</option>
-                    <option value="Pinocawan">Pinocawan</option>
-                    <option value="Poblacion">Poblacion</option>
-                    <option value="Puan">Puan</option>
-                    <option value="Tabon">Tabon</option>
-                    <option value="Tagbino">Tagbino</option>
-                    <option value="Ulay">Ulay</option>
+                    {BARANGAYS.map((barangay) => (
+                        <option key={barangay} value={barangay}>
+                            {barangay}
+                        </option>
+                    ))}
                 </select>
             </div>
             <div className="flex justify-between">
@@ -74,7 +63,7 @@ export default function BrgyReportSection() {
             </div>*/}
             <StatsSection />
             <GraphSection />
-            <BrgyActiveAgriworkerComponent /> 
+            <BrgyActiveAgriworkerComponent />
         </div>
     );
 }

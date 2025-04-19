@@ -193,7 +193,7 @@ export default function AddRequestModal({ isOpen, setIsOpen, onRequestAdded }) {
                         <Dialog.Panel className="mx-auto w-full max-w-6xl rounded-lg bg-white p-6 shadow-xl my-8">
                             <div className="sticky top-0 bg-white border-b pb-4 mb-4">
                                 <Dialog.Title className="text-lg font-medium">Add New Request</Dialog.Title>
-                                <button onClick={() => setIsOpen(false)} className="absolute top-4 right-4">
+                                <button onClick={() => setIsOpen(false)} className="absolute top-0 right-0">
                                     <XMarkIcon className="h-6 w-6 text-gray-500" />
                                 </button>
                             </div>

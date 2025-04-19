@@ -6,6 +6,7 @@ import {
     FunnelIcon,
     XCircleIcon,
 } from "@heroicons/react/24/outline";
+import { BARANGAYS } from "@/app/constants/general";
 
 export default function FilterSearchComponent() {
     const callsToAction = [
@@ -94,21 +95,11 @@ export default function FilterSearchComponent() {
                                     <option value="" disabled selected>
                                         -- Select a Barangay --
                                     </option>
-                                    <option>Bairan</option>
-                                    <option>Bagawines</option>
-                                    <option>Cabulihan</option>
-                                    <option>Don Esperidion Villegas</option>
-                                    <option>Guba</option>
-                                    <option>Macapso</option>
-                                    <option>Maglahos</option>
-                                    <option>Malangsa</option>
-                                    <option>Molobolo</option>
-                                    <option>Pinocawan</option>
-                                    <option>Poblacion</option>
-                                    <option>Puan</option>
-                                    <option>Tabon</option>
-                                    <option>Tagbino</option>
-                                    <option>Ulay</option>
+                                    {BARANGAYS.map((barangay) => (
+                                        <option key={barangay} value={barangay}>
+                                            {barangay}
+                                        </option>
+                                    ))}
                                 </select>
                             </div>
                         </div>

@@ -16,6 +16,7 @@ import {
     update_cash_assistance_thunk,
 } from "@/app/redux/cash-assistance-thunk";
 import Swal from "sweetalert2";
+import { BARANGAYS } from "@/app/constants/general";
 
 export default function UpdateAssistanceSection({ data }) {
     const [open, setOpen] = useState(false);
@@ -28,7 +29,7 @@ export default function UpdateAssistanceSection({ data }) {
         description: "",
         livelihoods: [],
     });
-console.log('formDataformData',formData)
+    console.log('formDataformData', formData)
     useEffect(() => {
         setFormData(data);
     }, [open]);
@@ -47,10 +48,10 @@ console.log('formDataformData',formData)
         }
         setLoading(true);
         try {
-          
+
             await store.dispatch(update_cash_assistance_thunk(formData));
             await store.dispatch(get_cash_assistance_thunk());
-       
+
             setLoading(false);
             setFormData({
                 name: "",
@@ -206,21 +207,11 @@ console.log('formDataformData',formData)
                                                             <option value="" disabled selected>
                                                                 -- Event Location --
                                                             </option>
-                                                            <option>Bairan</option>
-                                                            <option>Bagawines</option>
-                                                            <option>Cabulihan</option>
-                                                            <option>Don Esperidion Villegas</option>
-                                                            <option>Guba</option>
-                                                            <option>Macapso</option>
-                                                            <option>Maglahos</option>
-                                                            <option>Malangsa</option>
-                                                            <option>Molobolo</option>
-                                                            <option>Pinocawan</option>
-                                                            <option>Poblacion</option>
-                                                            <option>Puan</option>
-                                                            <option>Tabon</option>
-                                                            <option>Tagbino</option>
-                                                            <option>Ulay</option>
+                                                            {BARANGAYS.map((barangay) => (
+                                                                <option key={barangay} value={barangay}>
+                                                                    {barangay}
+                                                                </option>
+                                                            ))}
                                                         </select>
                                                     </div>
                                                     {/* <div className="sm:col-span-12">
@@ -279,20 +270,20 @@ console.log('formDataformData',formData)
                                                                                         .target
                                                                                         .checked
                                                                                         ? [
-                                                                                              ...prev.livelihoods,
-                                                                                              e
-                                                                                                  .target
-                                                                                                  .value,
-                                                                                          ] // Add if checked
+                                                                                            ...prev.livelihoods,
+                                                                                            e
+                                                                                                .target
+                                                                                                .value,
+                                                                                        ] // Add if checked
                                                                                         : prev.livelihoods.filter(
-                                                                                              (
-                                                                                                  item
-                                                                                              ) =>
-                                                                                                  item !==
-                                                                                                  e
-                                                                                                      .target
-                                                                                                      .value
-                                                                                          ), // Remove if unchecked
+                                                                                            (
+                                                                                                item
+                                                                                            ) =>
+                                                                                                item !==
+                                                                                                e
+                                                                                                    .target
+                                                                                                    .value
+                                                                                        ), // Remove if unchecked
                                                                             })
                                                                         );
                                                                     }}
@@ -326,20 +317,20 @@ console.log('formDataformData',formData)
                                                                                         .target
                                                                                         .checked
                                                                                         ? [
-                                                                                              ...prev.livelihoods,
-                                                                                              e
-                                                                                                  .target
-                                                                                                  .value,
-                                                                                          ] // Add if checked
+                                                                                            ...prev.livelihoods,
+                                                                                            e
+                                                                                                .target
+                                                                                                .value,
+                                                                                        ] // Add if checked
                                                                                         : prev.livelihoods.filter(
-                                                                                              (
-                                                                                                  item
-                                                                                              ) =>
-                                                                                                  item !==
-                                                                                                  e
-                                                                                                      .target
-                                                                                                      .value
-                                                                                          ), // Remove if unchecked
+                                                                                            (
+                                                                                                item
+                                                                                            ) =>
+                                                                                                item !==
+                                                                                                e
+                                                                                                    .target
+                                                                                                    .value
+                                                                                        ), // Remove if unchecked
                                                                             })
                                                                         );
                                                                     }}
@@ -357,7 +348,7 @@ console.log('formDataformData',formData)
                                                                 <input
                                                                     type="checkbox"
                                                                     id="fisherfolk"
-                                                                    
+
                                                                     checked={formData.livelihoods.some((res) => res.name === 'Fisherfolk')}
                                                                     name="fisherfolk"
                                                                     onChange={(
@@ -373,20 +364,20 @@ console.log('formDataformData',formData)
                                                                                         .target
                                                                                         .checked
                                                                                         ? [
-                                                                                              ...prev.livelihoods,
-                                                                                              e
-                                                                                                  .target
-                                                                                                  .value,
-                                                                                          ] // Add if checked
+                                                                                            ...prev.livelihoods,
+                                                                                            e
+                                                                                                .target
+                                                                                                .value,
+                                                                                        ] // Add if checked
                                                                                         : prev.livelihoods.filter(
-                                                                                              (
-                                                                                                  item
-                                                                                              ) =>
-                                                                                                  item !==
-                                                                                                  e
-                                                                                                      .target
-                                                                                                      .value
-                                                                                          ), // Remove if unchecked
+                                                                                            (
+                                                                                                item
+                                                                                            ) =>
+                                                                                                item !==
+                                                                                                e
+                                                                                                    .target
+                                                                                                    .value
+                                                                                        ), // Remove if unchecked
                                                                             })
                                                                         );
                                                                     }}
@@ -424,20 +415,20 @@ console.log('formDataformData',formData)
                                                                                         .target
                                                                                         .checked
                                                                                         ? [
-                                                                                              ...prev.livelihoods,
-                                                                                              e
-                                                                                                  .target
-                                                                                                  .value,
-                                                                                          ] // Add if checked
+                                                                                            ...prev.livelihoods,
+                                                                                            e
+                                                                                                .target
+                                                                                                .value,
+                                                                                        ] // Add if checked
                                                                                         : prev.livelihoods.filter(
-                                                                                              (
-                                                                                                  item
-                                                                                              ) =>
-                                                                                                  item !==
-                                                                                                  e
-                                                                                                      .target
-                                                                                                      .value
-                                                                                          ), // Remove if unchecked
+                                                                                            (
+                                                                                                item
+                                                                                            ) =>
+                                                                                                item !==
+                                                                                                e
+                                                                                                    .target
+                                                                                                    .value
+                                                                                        ), // Remove if unchecked
                                                                             })
                                                                         );
                                                                     }}

@@ -10,6 +10,7 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import { FaUserPlus } from "react-icons/fa6";
 import store from "@/app/store/store";
 import { get_users_thunk } from "@/app/redux/user-thunk";
+import { BARANGAYS } from "@/app/constants/general";
 
 export default function AddUserSection() {
     const [open, setOpen] = useState(false);
@@ -251,10 +252,10 @@ export default function AddUserSection() {
                                                             </option>
                                                             {role ==
                                                                 "verifier" && (
-                                                                <option value="Verifier">
-                                                                    LGU Verifier
-                                                                </option>
-                                                            )}
+                                                                    <option value="Verifier">
+                                                                        LGU Verifier
+                                                                    </option>
+                                                                )}
 
                                                             <option value="Encoder">
                                                                 LGU Encoder
@@ -280,52 +281,11 @@ export default function AddUserSection() {
                                                             -- Select a Barangay
                                                             --
                                                         </option>
-                                                        <option value="Bairan">
-                                                            Bairan
-                                                        </option>
-                                                        <option value="Bagawines">
-                                                            Bagawines
-                                                        </option>
-                                                        <option value="Cabulihan">
-                                                            Cabulihan
-                                                        </option>
-                                                        <option value="Don Esperidion Villegas">
-                                                            Don Esperidion
-                                                            Villegas
-                                                        </option>
-                                                        <option value="Guba">
-                                                            Guba
-                                                        </option>
-                                                        <option value="Macapso">
-                                                            Macapso
-                                                        </option>
-                                                        <option value="Maglahos">
-                                                            Maglahos
-                                                        </option>
-                                                        <option value="Malangsa">
-                                                            Malangsa
-                                                        </option>
-                                                        <option value="Molobolo">
-                                                            Molobolo
-                                                        </option>
-                                                        <option value="Pinocawan">
-                                                            Pinocawan
-                                                        </option>
-                                                        <option value="Poblacion">
-                                                            Poblacion
-                                                        </option>
-                                                        <option value="Puan">
-                                                            Puan
-                                                        </option>
-                                                        <option value="Tabon">
-                                                            Tabon
-                                                        </option>
-                                                        <option value="Tagbino">
-                                                            Tagbino
-                                                        </option>
-                                                        <option value="Ulay">
-                                                            Ulay
-                                                        </option>
+                                                        {BARANGAYS.map((barangay) => (
+                                                            <option key={barangay} value={barangay}>
+                                                                {barangay}
+                                                            </option>
+                                                        ))}
                                                     </select>
                                                     <div className="sm:col-span-12">
                                                         <hr />

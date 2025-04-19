@@ -11,6 +11,7 @@ import { FaUserPlus } from "react-icons/fa6";
 import axios from "axios";
 import store from "@/app/store/store";
 import { get_users_thunk } from "@/app/redux/user-thunk";
+import { BARANGAYS } from "@/app/constants/general";
 
 export default function AddVerifierSection({ addUser }) {
     const [open, setOpen] = useState(false);
@@ -236,52 +237,11 @@ export default function AddVerifierSection({ addUser }) {
                                                                 -- Select a
                                                                 Barangay --
                                                             </option>
-                                                            <option>
-                                                                Bairan
-                                                            </option>
-                                                            <option>
-                                                                Bagawines
-                                                            </option>
-                                                            <option>
-                                                                Cabulihan
-                                                            </option>
-                                                            <option>
-                                                                Don Esperidion
-                                                                Villegas
-                                                            </option>
-                                                            <option>
-                                                                Guba
-                                                            </option>
-                                                            <option>
-                                                                Macapso
-                                                            </option>
-                                                            <option>
-                                                                Maglahos
-                                                            </option>
-                                                            <option>
-                                                                Malangsa
-                                                            </option>
-                                                            <option>
-                                                                Molobolo
-                                                            </option>
-                                                            <option>
-                                                                Pinocawan
-                                                            </option>
-                                                            <option>
-                                                                Poblacion
-                                                            </option>
-                                                            <option>
-                                                                Puan
-                                                            </option>
-                                                            <option>
-                                                                Tabon
-                                                            </option>
-                                                            <option>
-                                                                Tagbino
-                                                            </option>
-                                                            <option>
-                                                                Ulay
-                                                            </option>
+                                                            {BARANGAYS.map((barangay) => (
+                                                                <option key={barangay} value={barangay}>
+                                                                    {barangay}
+                                                                </option>
+                                                            ))}
                                                         </select>
                                                     </div>
 

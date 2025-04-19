@@ -7,6 +7,7 @@ import {
 } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { FunnelIcon } from "@heroicons/react/20/solid";
+import { BARANGAYS } from "@/app/constants/general";
 
 export default function FilterDrawerComponent() {
     const [open, setOpen] = useState(false);
@@ -39,7 +40,7 @@ export default function FilterDrawerComponent() {
                                     <div className="px-4 sm:px-6">
                                         <div className="flex items-start justify-between">
                                             <DialogTitle className="text-base font-semibold text-gray-900">
-                                                <FunnelIcon className="size-4 float-left"/> Filter Search
+                                                <FunnelIcon className="size-4 float-left" /> Filter Search
                                             </DialogTitle>
                                             <div className="ml-3 flex h-7 items-center">
                                                 <button
@@ -62,109 +63,99 @@ export default function FilterDrawerComponent() {
                                         </div>
                                     </div>
                                     <div className="relative mt-6 flex-1 px-4 sm:px-6">
-                                    <div>
-                        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-                            <div className="sm:col-span-12">
-                                <input
-                                    id="rsbsa_id"
-                                    name="rsbsa_id"
-                                    type="text"
-                                    placeholder="RSBSA Number"
-                                    className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
-                                />
-                            </div>
+                                        <div>
+                                            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                                                <div className="sm:col-span-12">
+                                                    <input
+                                                        id="rsbsa_id"
+                                                        name="rsbsa_id"
+                                                        type="text"
+                                                        placeholder="RSBSA Number"
+                                                        className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
+                                                    />
+                                                </div>
 
-                            <div className="sm:col-span-12">
-                                <input
-                                    id="reg_id"
-                                    name="reg_id"
-                                    type="text"
-                                    placeholder="Registration Number"
-                                    className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
-                                />
-                            </div>
+                                                <div className="sm:col-span-12">
+                                                    <input
+                                                        id="reg_id"
+                                                        name="reg_id"
+                                                        type="text"
+                                                        placeholder="Registration Number"
+                                                        className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
+                                                    />
+                                                </div>
 
-                            <div className="sm:col-span-6">
-                                <input
-                                    id="lastname"
-                                    name="lastname"
-                                    type="text"
-                                    placeholder="Lastname"
-                                    className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
-                                />
-                            </div>
+                                                <div className="sm:col-span-6">
+                                                    <input
+                                                        id="lastname"
+                                                        name="lastname"
+                                                        type="text"
+                                                        placeholder="Lastname"
+                                                        className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
+                                                    />
+                                                </div>
 
-                            <div className="sm:col-span-6">
-                                <input
-                                    id="firstname"
-                                    name="firstname"
-                                    type="text"
-                                    placeholder="Firstname"
-                                    className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
-                                />
-                            </div>
+                                                <div className="sm:col-span-6">
+                                                    <input
+                                                        id="firstname"
+                                                        name="firstname"
+                                                        type="text"
+                                                        placeholder="Firstname"
+                                                        className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
+                                                    />
+                                                </div>
 
-                            <div className="sm:col-span-12">
-                                <select
-                                    id="barangay"
-                                    name="barangay"
-                                    placeholder="Barangay"
-                                    className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
-                                >
-                                    <option value="" disabled selected>
-                                        -- Select a Barangay --
-                                    </option>
-                                    <option>Bairan</option>
-                                    <option>Bagawines</option>
-                                    <option>Cabulihan</option>
-                                    <option>Don Esperidion Villegas</option>
-                                    <option>Guba</option>
-                                    <option>Macapso</option>
-                                    <option>Maglahos</option>
-                                    <option>Malangsa</option>
-                                    <option>Molobolo</option>
-                                    <option>Pinocawan</option>
-                                    <option>Poblacion</option>
-                                    <option>Puan</option>
-                                    <option>Tabon</option>
-                                    <option>Tagbino</option>
-                                    <option>Ulay</option>
-                                </select>
-                            </div>
+                                                <div className="sm:col-span-12">
+                                                    <select
+                                                        id="barangay"
+                                                        name="barangay"
+                                                        placeholder="Barangay"
+                                                        className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
+                                                    >
+                                                        <option value="" disabled selected>
+                                                            -- Select a Barangay --
+                                                        </option>
+                                                        {BARANGAYS.map((barangay) => (
+                                                            <option key={barangay} value={barangay}>
+                                                                {barangay}
+                                                            </option>
+                                                        ))}
+                                                    </select>
+                                                </div>
 
-                            <div className="sm:col-span-12">
-                                <select
-                                    id="barangay"
-                                    name="barangay"
-                                    placeholder="Barangay"
-                                    className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
-                                >
-                                    <option value="" disabled selected>
-                                        -- Select a Livelihood --
-                                    </option>
-                                    <option>Farmer</option>
-                                    <option>Farmworker/Laborer</option>
-                                    <option>Fisherfolk</option>
-                                    <option>Agri-youth</option>
-                                </select>
-                            </div>
-                        </div>
-                </div>
-                <div className="flex shrink-0 justify-end px-4 py-4">
-                  <button
-                    type="button"
-                    onClick={() => setOpen(false)}
-                    className="rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:ring-gray-400"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    type="submit"
-                    className="ml-4 inline-flex justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500"
-                  >
-                    Search
-                  </button>
-                </div>
+                                                <div className="sm:col-span-12">
+                                                    <select
+                                                        id="barangay"
+                                                        name="barangay"
+                                                        placeholder="Barangay"
+                                                        className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
+                                                    >
+                                                        <option value="" disabled selected>
+                                                            -- Select a Livelihood --
+                                                        </option>
+                                                        <option>Farmer</option>
+                                                        <option>Farmworker/Laborer</option>
+                                                        <option>Fisherfolk</option>
+                                                        <option>Agri-youth</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="flex shrink-0 justify-end px-4 py-4">
+                                            <button
+                                                type="button"
+                                                onClick={() => setOpen(false)}
+                                                className="rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:ring-gray-400"
+                                            >
+                                                Cancel
+                                            </button>
+                                            <button
+                                                type="submit"
+                                                className="ml-4 inline-flex justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500"
+                                            >
+                                                Search
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </DialogPanel>

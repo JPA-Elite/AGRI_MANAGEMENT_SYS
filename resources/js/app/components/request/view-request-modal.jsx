@@ -72,9 +72,9 @@ export default function ViewRequestModal({ isOpen, setIsOpen, data, onStatusUpda
                 <div className="fixed inset-0 flex items-start justify-center p-4 overflow-y-auto">
                     <div className="min-h-full flex items-center w-full">
                         <Dialog.Panel className="mx-auto w-full max-w-4xl rounded-lg bg-white p-8 shadow-xl">
-                            <div className="border-b pb-4 mb-4">
+                            <div className="relative border-b pb-4 mb-4">
                                 <Dialog.Title className="text-lg font-medium">Request Details</Dialog.Title>
-                                <button onClick={() => setIsOpen(false)} className="absolute top-4 right-4">
+                                <button onClick={() => setIsOpen(false)} className="absolute top-0 right-0">
                                     <XMarkIcon className="h-6 w-6 text-gray-500" />
                                 </button>
                             </div>

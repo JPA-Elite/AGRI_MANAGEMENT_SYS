@@ -1,6 +1,7 @@
 import { setPersonalInformation } from "@/app/redux/personal-information-slice";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { BARANGAYS } from "@/app/constants/general";
 
 export default function ProfileAddressInfoSection() {
     const { personal_information } = useSelector(
@@ -95,7 +96,7 @@ export default function ProfileAddressInfoSection() {
                             name="barangay"
                             placeholder="Barangay"
                             value={personal_information?.personal_info?.barangay ?? ""}
-                            
+
                             onChange={(e) =>
                                 dispatch(
                                     setPersonalInformation({
@@ -112,23 +113,11 @@ export default function ProfileAddressInfoSection() {
                             <option value="" selected>
                                 -- Select a Barangay --
                             </option>
-                            <option value="Bairan">Bairan</option>
-                            <option value="Bagawines">Bagawines</option>
-                            <option value="Cabulihan">Cabulihan</option>
-                            <option value="Don Esperidion Villegas">
-                                Don Esperidion Villegas
-                            </option>
-                            <option value="Guba">Guba</option>
-                            <option value="Macapso">Macapso</option>
-                            <option value="Maglahos">Maglahos</option>
-                            <option value="Malangsa">Malangsa</option>
-                            <option value="Molobolo">Molobolo</option>
-                            <option value="Pinocawan">Pinocawan</option>
-                            <option value="Poblacion">Poblacion</option>
-                            <option value="Puan">Puan</option>
-                            <option value="Tabon">Tabon</option>
-                            <option value="Tagbino">Tagbino</option>
-                            <option value="Ulay">Ulay</option>
+                            {BARANGAYS.map((barangay) => (
+                                <option key={barangay} value={barangay}>
+                                    {barangay}
+                                </option>
+                            ))}
                         </select>
                     </div>
                 </div>
@@ -145,7 +134,7 @@ export default function ProfileAddressInfoSection() {
                             name="city"
                             type="text"
                             value={personal_information?.personal_info?.city ?? ""}
-                            
+
                             onChange={(e) =>
                                 dispatch(
                                     setPersonalInformation({
@@ -175,7 +164,7 @@ export default function ProfileAddressInfoSection() {
                             name="province"
                             type="text"
                             value={personal_information?.personal_info?.province ?? ""}
-                            
+
                             onChange={(e) =>
                                 dispatch(
                                     setPersonalInformation({
@@ -203,7 +192,7 @@ export default function ProfileAddressInfoSection() {
                         <select
                             name="region"
                             value={personal_information?.personal_info?.region ?? ""}
-                            
+
                             onChange={(e) =>
                                 dispatch(
                                     setPersonalInformation({

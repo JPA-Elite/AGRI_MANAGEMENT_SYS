@@ -8,6 +8,7 @@ import {
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { FunnelIcon } from "@heroicons/react/20/solid";
 import { FaUserPlus } from "react-icons/fa6";
+import { BARANGAYS } from "@/app/constants/general";
 
 export default function AddVerifierSection() {
     const [open, setOpen] = useState(false);
@@ -140,38 +141,11 @@ export default function AddVerifierSection() {
                                                             -- Select a Barangay
                                                             --
                                                         </option>
-                                                        <option>Bairan</option>
-                                                        <option>
-                                                            Bagawines
-                                                        </option>
-                                                        <option>
-                                                            Cabulihan
-                                                        </option>
-                                                        <option>
-                                                            Don Esperidion
-                                                            Villegas
-                                                        </option>
-                                                        <option>Guba</option>
-                                                        <option>Macapso</option>
-                                                        <option>
-                                                            Maglahos
-                                                        </option>
-                                                        <option>
-                                                            Malangsa
-                                                        </option>
-                                                        <option>
-                                                            Molobolo
-                                                        </option>
-                                                        <option>
-                                                            Pinocawan
-                                                        </option>
-                                                        <option>
-                                                            Poblacion
-                                                        </option>
-                                                        <option>Puan</option>
-                                                        <option>Tabon</option>
-                                                        <option>Tagbino</option>
-                                                        <option>Ulay</option>
+                                                        {BARANGAYS.map((barangay) => (
+                                                            <option key={barangay} value={barangay}>
+                                                                {barangay}
+                                                            </option>
+                                                        ))}
                                                     </select>
                                                 </div>
 
@@ -209,7 +183,7 @@ export default function AddVerifierSection() {
                                                 </div>
 
                                                 <div className="sm:col-span-12">
-                                                   <hr />
+                                                    <hr />
                                                 </div>
                                             </div>
                                         </div>

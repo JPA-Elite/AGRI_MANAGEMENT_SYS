@@ -2,6 +2,7 @@ import { setPersonalInformation } from "@/app/redux/personal-information-slice";
 import { setForm } from "@/app/redux/register-slice";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { BARANGAYS } from "@/app/constants/general";
 
 export default function AddressInformationComponent() {
     const { personal_information } = useSelector(
@@ -119,23 +120,11 @@ export default function AddressInformationComponent() {
                                 <option value="" disabled selected>
                                     -- Select a Barangay --
                                 </option>
-                                <option value="Bairan">Bairan</option>
-                                <option value="Bagawines">Bagawines</option>
-                                <option value="Cabulihan">Cabulihan</option>
-                                <option value="Don Esperidion Villegas">
-                                    Don Esperidion Villegas
-                                </option>
-                                <option value="Guba">Guba</option>
-                                <option value="Macapso">Macapso</option>
-                                <option value="Maglahos">Maglahos</option>
-                                <option value="Malangsa">Malangsa</option>
-                                <option value="Molobolo">Molobolo</option>
-                                <option value="Pinocawan">Pinocawan</option>
-                                <option value="Poblacion">Poblacion</option>
-                                <option value="Puan">Puan</option>
-                                <option value="Tabon">Tabon</option>
-                                <option value="Tagbino">Tagbino</option>
-                                <option value="Ulay">Ulay</option>
+                                {BARANGAYS.map((barangay) => (
+                                    <option key={barangay} value={barangay}>
+                                        {barangay}
+                                    </option>
+                                ))}
                             </select>
                         </div>
                     </div>
@@ -214,27 +203,27 @@ export default function AddressInformationComponent() {
                             Region
                         </label>
                         <input
-                                id="Province"
-                                name="province"
-                                type="text"
-                                value={
-                                    personal_information?.address_info
-                                        ?.region ?? ""
-                                }
-                                readOnly
-                                onChange={(e) =>
-                                    dispatch(
-                                        setPersonalInformation({
-                                            ...personal_information,
-                                            address_info: {
-                                                ...personal_information.address_info, // Spread the existing home_address fields
-                                                [e.target.name]: e.target.value, // Dynamically set the updated field
-                                            },
-                                        })
-                                    )
-                                }
-                                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
-                            />
+                            id="Province"
+                            name="province"
+                            type="text"
+                            value={
+                                personal_information?.address_info
+                                    ?.region ?? ""
+                            }
+                            readOnly
+                            onChange={(e) =>
+                                dispatch(
+                                    setPersonalInformation({
+                                        ...personal_information,
+                                        address_info: {
+                                            ...personal_information.address_info, // Spread the existing home_address fields
+                                            [e.target.name]: e.target.value, // Dynamically set the updated field
+                                        },
+                                    })
+                                )
+                            }
+                            className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:ring-green-500 focus:border-green-500 sm:text-sm/6"
+                        />
                     </div>
                 </div>
             </div>

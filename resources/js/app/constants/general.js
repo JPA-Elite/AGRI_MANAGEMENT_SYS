@@ -1,19 +1,19 @@
 export const BARANGAYS = [
+    'Bairan',
     'Bagawines',
-    'Balugo',
     'Cabulihan',
-    'Don Antipolo',
-    'Domolog',
+    'Don Esperidion Villegas',
     'Guba',
-    'Julagdan',
     'Macapso',
     'Maglahos',
     'Malangsa',
+    'Molobolo',
+    'Pinocawan',
     'Poblacion',
     'Puan',
+    'Tabon',
     'Tagbino',
-    'Tandayag',
-    'Villegas'
+    'Ulay'
 ];
 
 export const LIVELIHOODS = [
@@ -24,21 +24,21 @@ export const LIVELIHOODS = [
 ];
 
 export const BARANGAY_COORDINATES = {
-    'Bagawines': { lat: 10.3601, lng: 123.3206 },
-    'Balugo': { lat: 10.3371, lng: 123.3027 },
-    'Cabulihan': { lat: 10.3745, lng: 123.3009 },
-    'Don Antipolo': { lat: 10.3132, lng: 123.3106 },
-    'Domolog': { lat: 10.3409, lng: 123.3201 },
-    'Guba': { lat: 10.3152, lng: 123.2977 },
-    'Julagdan': { lat: 10.3318, lng: 123.3287 },
-    'Macapso': { lat: 10.3291, lng: 123.3224 },
-    'Maglahos': { lat: 10.3447, lng: 123.3159 },
-    'Malangsa': { lat: 10.3382, lng: 123.3098 },
-    'Poblacion': { lat: 10.3344, lng: 123.3121 }, // Town center
-    'Puan': { lat: 10.3206, lng: 123.3038 },
-    'Tagbino': { lat: 10.3465, lng: 123.3245 },
-    'Tandayag': { lat: 10.3533, lng: 123.3172 },
-    'Villegas': { lat: 10.3176, lng: 123.3189 }
+    "Bairan": { lat: 10.3842, lng: 123.3009 },
+    "Bagawines": { lat: 10.3601, lng: 123.3206 },
+    "Cabulihan": { lat: 10.3745, lng: 123.3009 },
+    "Don Esperidion Villegas": { lat: 10.317, lng: 123.3272 },
+    "Guba": { lat: 10.307, lng: 123.2756 },
+    "Macapso": { lat: 10.3767, lng: 123.3234 },
+    "Maglahos": { lat: 10.3957, lng: 123.2644 },
+    "Malangsa": { lat: 10.3204, lng: 123.3065 },
+    "Molobolo": { lat: 10.2901, lng: 123.3177 },
+    "Pinocawan": { lat: 10.3362, lng: 123.2756 },
+    "Poblacion": { lat: 10.3344, lng: 123.3121 },
+    "Puan": { lat: 10.3233, lng: 123.3234 },
+    "Tabon": { lat: 10.3004, lng: 123.3121 },
+    "Tagbino": { lat: 10.375, lng: 123.2756 },
+    "Ulay": { lat: 10.3606, lng: 123.2953 },
 };
 
 export const MAP_CENTER = {
@@ -599,6 +599,38 @@ export const REQUEST_OPTIONS = {
                 { name: 'GPS Device', type: 'Location Tracking' },
                 { name: 'Data Logger', type: 'Recording Device' },
                 { name: 'Presentation Software', type: 'Project Sharing' }
+            ],
+            'School Garden Tools': [
+                { name: 'Mini Rake', type: 'Soil Preparation' },
+                { name: 'Hand Trowel', type: 'Planting Tool' },
+                { name: 'Garden Gloves', type: 'Protection Gear' },
+                { name: 'Compost Bin', type: 'Sustainability Kit' },
+                { name: 'Plant Labels', type: 'Identification Tool' },
+                { name: 'Small Greenhouse', type: 'Climate Control' }
+            ],
+            'Research Equipment': [
+                { name: 'Microscope', type: 'Observation Tool' },
+                { name: 'Lab Notebook', type: 'Documentation Tool' },
+                { name: 'Measuring Cylinders', type: 'Science Kit' },
+                { name: 'Sample Containers', type: 'Specimen Collection' },
+                { name: 'Test Kits', type: 'Analysis Tools' },
+                { name: 'Data Recording Sheet', type: 'Tracking Aid' }
+            ],
+            'Documentation Kit': [
+                { name: 'Digital Camera', type: 'Visual Documentation' },
+                { name: 'Notebook & Pens', type: 'Manual Recording' },
+                { name: 'Audio Recorder', type: 'Voice Notes' },
+                { name: 'Tripod Stand', type: 'Camera Accessory' },
+                { name: 'Portable Scanner', type: 'Document Archiving' },
+                { name: 'Storage Drive', type: 'Data Backup' }
+            ],
+            'Learning Materials': [
+                { name: 'Posters and Charts', type: 'Visual Aid' },
+                { name: 'Flash Cards', type: 'Interactive Learning' },
+                { name: 'Worksheets', type: 'Practice Material' },
+                { name: 'Storybooks', type: 'Reading Material' },
+                { name: 'Activity Books', type: 'Hands-on Engagement' },
+                { name: 'CD/DVD Educational Media', type: 'Supplemental Learning' }
             ]
         },
         schedule_options: [

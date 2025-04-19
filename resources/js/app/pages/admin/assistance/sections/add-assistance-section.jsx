@@ -15,6 +15,7 @@ import {
     store_cash_assistance_thunk,
 } from "@/app/redux/cash-assistance-thunk";
 import Swal from "sweetalert2";
+import { BARANGAYS } from "@/app/constants/general";
 
 export default function AddAssistanceSection() {
     const [open, setOpen] = useState(false);
@@ -203,21 +204,11 @@ export default function AddAssistanceSection() {
                                                             <option value="" disabled selected>
                                                                 -- Event Location --
                                                             </option>
-                                                            <option>Bairan</option>
-                                                            <option>Bagawines</option>
-                                                            <option>Cabulihan</option>
-                                                            <option>Don Esperidion Villegas</option>
-                                                            <option>Guba</option>
-                                                            <option>Macapso</option>
-                                                            <option>Maglahos</option>
-                                                            <option>Malangsa</option>
-                                                            <option>Molobolo</option>
-                                                            <option>Pinocawan</option>
-                                                            <option>Poblacion</option>
-                                                            <option>Puan</option>
-                                                            <option>Tabon</option>
-                                                            <option>Tagbino</option>
-                                                            <option>Ulay</option>
+                                                            {BARANGAYS.map((barangay) => (
+                                                            <option key={barangay} value={barangay}>
+                                                                {barangay}
+                                                            </option>
+                                                        ))}
                                                         </select>
                                                     </div>
                                                     {/* <div className="sm:col-span-12">
