@@ -24,26 +24,26 @@ export const LIVELIHOODS = [
 ];
 
 export const BARANGAY_COORDINATES = {
-    "Bairan": { lat: 10.3842, lng: 123.3009 },
-    "Bagawines": { lat: 10.3601, lng: 123.3206 },
-    "Cabulihan": { lat: 10.3745, lng: 123.3009 },
-    "Don Esperidion Villegas": { lat: 10.317, lng: 123.3272 },
-    "Guba": { lat: 10.307, lng: 123.2756 },
-    "Macapso": { lat: 10.3767, lng: 123.3234 },
-    "Maglahos": { lat: 10.3957, lng: 123.2644 },
-    "Malangsa": { lat: 10.3204, lng: 123.3065 },
-    "Molobolo": { lat: 10.2901, lng: 123.3177 },
-    "Pinocawan": { lat: 10.3362, lng: 123.2756 },
-    "Poblacion": { lat: 10.3344, lng: 123.3121 },
-    "Puan": { lat: 10.3233, lng: 123.3234 },
-    "Tabon": { lat: 10.3004, lng: 123.3121 },
-    "Tagbino": { lat: 10.375, lng: 123.2756 },
-    "Ulay": { lat: 10.3606, lng: 123.2953 },
+    "Bairan": { lat: 10.39357, lng: 123.29810 },
+    "Bagawines": { lat: 10.35825, lng: 123.32471 },
+    "Cabulihan": { lat: 10.37876, lng: 123.30016 },
+    "Don Esperidion Villegas": { lat: 10.31665, lng: 123.32741 },
+    "Guba": { lat: 10.31066, lng: 123.26437 },
+    "Macapso": { lat: 10.37875, lng: 123.33200 },
+    "Maglahos": { lat: 10.40011, lng: 123.27321 },
+    "Malangsa": { lat: 10.32417, lng: 123.29566 },
+    "Molobolo": { lat: 10.28575, lng: 123.32518 },
+    "Pinocawan": { lat: 10.34261, lng: 123.29312 },
+    "Poblacion": { lat: 10.33595, lng: 123.32464 },
+    "Puan": { lat: 10.32516, lng: 123.32705 },
+    "Tabon": { lat: 10.30241, lng: 123.32658 },
+    "Tagbino": { lat: 10.37627, lng: 123.26866 },
+    "Ulay": { lat: 10.36551, lng: 123.30119 },
 };
 
 export const MAP_CENTER = {
-    lat: 10.3344, // Vallehermoso Poblacion
-    lng: 123.3121
+    lat: 10.33595, // Vallehermoso Poblacion
+    lng: 123.32464
 };
 
 export const EQUIPMENT_TYPES = [
